@@ -1,3 +1,3 @@
 # Kannika-Notas
 
-https://kannikakabilar.github.io/Kannika-Notas/index.html
+[Hardware_BitLogic](https://kannikakabilar.github.io/Kannika-Notas/Hardware_BitLogic.txt)
