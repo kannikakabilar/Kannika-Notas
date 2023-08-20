@@ -42,6 +42,51 @@ Hash Table
 
   Initializing HashMap and HashSet in Java
 
+    import java.util.HashMap;
+    import java.util.HashSet;
+
+    HashMap<String, String> capitalCities = new HashMap<String, String>();
+    capitalCities.put("USA", "Washington DC");
+    String USCapital = capitalCities.get("USA");  // "Washington DC"
+
+    for (String i : capitalCities.keySet()) {
+        System.out.println(i);  // Print keys
+    }
+
+    for (String i : capitalCities.values()) {
+        System.out.println(i);  // Print values
+    }
+
+    HashSet<String> cars = new HashSet<String>();
+    cars.add("McLaren");
+    cars.contains("McLaren"); // Returns True
+
+
+Sample HashMap/HashSet Qs
+
+
+___________________________________________
+
+
+Trees
+
+Sample Tree Implementations
+
+
+___________________________________________
+
+
+Graphs
+
+Terms
+  - order of a graph = # of vertices in graph
+  - size of a graph = # of edges of a graph
+  - null graph = 0 edges in graph (but may have vertices)
+  - complete graph = has edges with all combination of vertices
+  - adjacency matrix = nxn matrix where matrix[i][j] indicates an edge/edge_weight between vertex i and j
+  - adjacency list = key-value table where there's 1 key for each vertex and a list with vertices that the key vertex connects to
+
+___________________________________________
 
 
 
