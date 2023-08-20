@@ -1,7 +1,7 @@
 Computer Hardware
-
-CMOD Battery - Powers BIOS chip
-
+<details>
+<summary>CMOD Battery - Powers BIOS chip</summary>
+<code style="white-space:wrap;">
 BIOS Process
     - Performs Power-On-Self-Test
     - Loads OS files from hard disk to RAM
@@ -11,7 +11,8 @@ Failure of CMOS battery is indicated by constant beeping sounds and date&time re
 
 BIOS can be used to overclock the CPU
     - clock speed = reading rate of incoming electrical pulse
-
+</code>
+</details>
 Internal Memory
     - ROM (stable memory): stores firmware files (hardware control)
     - RAM (volatile memory): allows to use multiple apps at the same time
