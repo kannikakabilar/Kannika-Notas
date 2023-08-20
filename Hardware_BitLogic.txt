@@ -34,6 +34,8 @@ RAID (Redundant Array of Independent Disks)
 
 _______________________________________________________________________________________________________________________________________________________________
 
+Bit Logic
+
 Bit Manipulation
      bin# + bin# = bin# * 2 = logically left shift bin# by 1 bit
      bin# * (2^x) = logically left shift bin# by x bits
