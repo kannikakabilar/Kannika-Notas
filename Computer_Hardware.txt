@@ -61,6 +61,23 @@ Shifts
     right arithmetic shift: 1100 => 1->1100 => 1110     |    left arithmetic shift: 1100 => 1100<-0 => 1000 (same as left logical shift)
 
 
+CPU Architecture
+
+            [Control Unit, ALU, CPU Registers, L1 Cache]
+                                 ^
+                                 |
+Input Devices =============>    RAM   ===============>  Output Devices
+(ie: mouse, keyboard)            |                      (ie: monitor, speaker)
+                                 v
+                            [Hard Disk]
+
+    Control Unit Functions
+        - fetch (data from memory)
+        - decode (using binary decoder)
+        - execute
+        - write back to memory
+
+
 
 
 
