@@ -21,3 +21,54 @@ Amortized Time = Time_taken_for_N_operations/N (~> average time taken for each o
                  = O(1)
 
 Easily Reduced Time Complexity: electronically transferring a file = O(size_of_file) ; transferring a file by airplane = O(1)
+
+
+Recursive Algorithms
+
+Sample Qs
+
+
+___________________________________________
+
+Divide & Conquer   -   break down problem into smaller different subproblems
+
+Sample Qs
+
+
+Sorting Algos
+
+___________________________________________
+
+Dynamic Programming   -   for repetitive subproblems
+
+Terms
+  Memoization: Top-down approach, recursive, uses dictionaries
+  Tabulation: Bottom-up approach, iterative, uses 2-D array
+
+Sample Qs
+
+
+___________________________________________
+
+Greedy Algorithm
+
+Requirements: choice property, optimal substructure, no backtracking, not always optimal
+
+Sample Qs
+
+
+___________________________________________
+
+Backtracking
+
+- better than naive because eliminates an option when it doesn't work instead of naively checking validity at the end
+
+Sample Qs
+
+
+___________________________________________
+
+
+
+
+
