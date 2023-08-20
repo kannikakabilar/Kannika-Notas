@@ -1,0 +1,23 @@
+Algorithms
+
+Big O: f(n) ∈ O(g(n)) iff for some constant C and N0, f(N) <= c * g(N) for all N > N0
+Big Ω: f(n) ∈ Ω(g(n)) iff for some constant C and N0, f(N) >= c * g(N) for all N > N0
+Big Θ: f(n) ∈ Θ(g(n)) iff f(n) ∈ Ω(g(n)) AND f(n) ∈ O(g(n))
+
+Little O: f(n) ∈ O(g(n)) iff for some constant C and N0, f(N) < c * g(N) for all N > N0
+!Note: Strictly less than NOT equal to
+
+Worst case: an input that causes the maximum time for the program to complete execution
+
+Amortized Time = Time_taken_for_N_operations/N (~> average time taken for each operation)
+               = (time taken for normal ops + time taken for slow ops) / N
+
+  Cost of Nth insertion  = | O(N), if N-1 is a power of 2
+                         = | O(1), otherwise
+
+  Amortized Cost = ( O(1+1+1+...) + O(1+2+4+...) ) / N
+                      ^N terms         ^|log2N|+1 terms
+                 = ( O(N) + O(2N) ) / N 
+                 = O(1)
+
+Easily Reduced Time Complexity: electronically transferring a file = O(size_of_file) ; transferring a file by airplane = O(1)
