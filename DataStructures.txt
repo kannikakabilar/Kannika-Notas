@@ -21,9 +21,9 @@ def sortedArrayToBST(nums: List[int]):
     root = len(nums)//2 
     tree = TreeNode(nums[root])
 
-    tree.left = sortedArrayToBST(self, nums[:root])
+    tree.left = sortedArrayToBST(nums[:root])
 
-    tree.right = sortedArrayToBST(self, nums[root+1:])
+    tree.right = sortedArrayToBST(nums[root+1:])
     
     return tree
 
@@ -51,7 +51,7 @@ def reverseMerge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         else:                             
             nums1[last] = nums2[n - 1]
             n -= 1
-        last -= 1  # of the two conditions one will be true, & new last pointer will be defined
+        last -= 1  
 
     while n > 0:
         nums1[last] = nums2[n - 1]
@@ -161,18 +161,294 @@ def stockProfit(prices: List[int]) -> int:
 
 ___________________________________________
 
-
 Linked Lists   -   inserting = O(1) but everything else O(n)
 
 Sample Linked List Qs
 
+def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
+        
+        head = ListNode()                    
+        m = head                             # Use this variable to traverse through
+        while (l1 and l2):     
 
+            if l1.val < l2.val:              
+                m.next = ListNode(l1.val)
+                l1 = l1.next
+
+            elif l2.val <= l1.val:          
+                m.next = ListNode(l2.val)
+                l2 = l2.next
+
+            m = m.next
+        
+        if l1 is not None:                  
+            m.next = l1
+        if l2 is not None:
+            m.next = l2
+
+        return head.next  
+
+def deleteDuplicates(head: ListNode) -> ListNode:
+    if head is None:                
+        return head
+
+    m = head                        # Leave a pointer to the head
+    prev = m.val                    
+    temp = m                        
+    m = m.next
+
+    while m is not None:            
+        if m.val == prev:           
+            temp.next = m.next      
+        
+        else:                       
+            prev = m.val            
+            temp = temp.next  
+
+        m = m.next
+    return head
+
+def removeElements(head: ListNode, val: int) -> ListNode:
+    if head is None:                               
+        return head
+
+    m = head                                       
+    while (m is not None) and m.val == val:        # Find first node that does NOT equal val
+        m = m.next
+    
+    head = m                                       
+    temp = m                                       
+    if m is not None:                              
+        m = m.next
+
+    while m is not None:                           
+        if m.val == val:                          
+            temp.next = m.next                     
+        else:                                      
+            temp = temp.next                       
+        m = m.next
+
+    return head
+
+def reverseList(head: ListNode) -> ListNode:
+    if (head is None) or (head.next is None):       # Handle empty linked list and 1-element linked list case
+        return head   
+
+    prev = None
+    current = head
+
+    while(current is not None):
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next
+
+    head = prev
+    return head
+
+def isPalindrome(head: ListNode) -> bool:
+
+    if not head.next:
+        return True
+    
+    # find the middle
+    fast, slow = head, head
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
+
+    # reverse the second half
+    prev = None        
+    while slow:
+        tmp = slow.next
+        slow.next = prev
+        prev = slow
+        slow = tmp
+    
+    # check if palindrome:
+    left, right = head, prev
+    while right:
+        if left.val != right.val:
+            return False
+        left = left.next
+        right = right.next
+
+    return True  
+
+def middleNode(head: ListNode) -> ListNode:
+    if not head.next:
+        return True
+    
+    # find the middle
+    fast, slow = head, head
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
+
+  return slow
+
+def getDecimalValue(head: ListNode) -> int:
+    
+    res = 0                           
+    place = 0                         
+    if head is None:                  
+        return res
+    tmp = head
+
+    while not(tmp is None):           # Calculate the total number of digits
+        place += 1
+        tmp = tmp.next
+    tmp2 = head
+    place -= 1  
+
+    while not(tmp2 is None):          # Traverse through bin str and sum the decimal value
+        res += (2**place)*tmp2.val    
+        tmp2 = tmp2.next
+        place -= 1
+
+    return res
+
+Check if a LL has a cycle
+  1) if all elements are distint => fast and slow method where fast would catch up to slow
+  2) change value of elements to -1 and check if you ever reach -1
 ___________________________________________
 
 Stacks   -   used for evaluating math expr and recursive function calls
 
 Sample Stack Qs
 
+def validParentheses(s: str) -> bool:
+    d = {'(':')', '{':'}','[':']'}
+    stack = []
+    for i in s:
+        if i in d:  
+            stack.append(i)
+        elif len(stack) == 0 or d[stack.pop()] != i:  
+            return False
+    return len(stack) == 0 
+
+def inorderTraversal(root: TreeNode) -> List[int]:
+        
+    lst = []
+    if root is None:
+        return lst
+    if root.left is None:
+        lst.append(root.val)
+        lst += inorderTraversal(root.right)
+    else:
+        lst += inorderTraversal(root.left)
+        lst.append(root.val)
+        lst += inorderTraversal(root.right)
+        
+    return lst
+
+def backspaceCompare(s: str, t: str) -> bool:
+    s_lst = []
+    t_lst = []
+
+    for i in s:
+        if i == "#" and len(s_lst) > 0:
+            s_lst.pop()
+        elif i == "#" and len(s_lst) == 0:
+            continue
+        else:
+            s_lst.append(i)
+
+    for i in t:
+        if i == "#" and len(t_lst) > 0:
+            t_lst.pop()
+        elif i == "#" and len(t_lst) == 0:
+            continue
+        else:
+            t_lst.append(i)
+
+    if len(t_lst) != len(s_lst):
+        return False
+    for i in range(len(s_lst)):
+        if s_lst[i] != t_lst[i]:
+            return False
+        
+    return True
+
+def removeOuterParentheses(s: str) -> str:
+    res = []
+    curOpen = 0
+    for c in s:
+        if c == '(':
+            if curOpen:
+                res.append(c)
+            curOpen += 1
+        else:
+            curOpen -= 1
+            if curOpen:
+                res.append(c)
+    
+    return ''.join(res)
+
+def removeConsecutiveDuplicates(s: str) -> str:
+    lst = []
+    
+    for i in range(len(s)):
+        if len(lst) > 0 and s[i] == lst[-1]:
+            lst.pop()
+        else:
+            lst.append(s[i])
+    return ''.join(lst)
+
+def buildArray(target: List[int], n: int) -> List[str]:
+    lst = []
+    for i in range(1, n+1):
+        if i in target:
+            lst.append("Push")
+        elif i < target[-1]:
+            
+            lst.append("Push")
+            lst.append("Pop")
+            
+    return lst
+
+def fldOperations(logs: List[str]) -> int:
+    level = 0
+    for i in logs:
+        if i == "../" and level > 0:
+            level -= 1
+        elif i != "../" and i != "./":
+            level += 1
+    return level
+
+def maxDepth(s: str) -> int:
+    d = 0
+    high = 0
+    for i in s:
+        if i == "(":
+            d += 1
+            if d > high:
+                high = d
+        if i == ")":
+            d -= 1
+    return high
+___________________________________________
+
+Queues   
+
+Time Required to Wait in Circular Line
+
+def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
+    time = 0
+    i = 0
+    tmp = 0
+    
+    while tickets[k] != 0:
+        if tickets[i] > 0:
+            tickets[i] = tickets[i] - 1
+            #tickets.pop(0)
+            #tickets.append(tmp)
+            time += 1
+            
+            
+        i = (i + 1) % len(tickets)
+        
+    return time
 
 ___________________________________________
 
@@ -207,6 +483,7 @@ Hash Table
 
 
 Sample HashMap/HashSet Qs
+
 
 
 ___________________________________________
