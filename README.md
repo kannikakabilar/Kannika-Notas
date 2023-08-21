@@ -4,6 +4,8 @@
 
 [Data Structures](https://kannikakabilar.github.io/Kannika-Notas/DataStructures/)
 
+[Algorithms](https://kannikakabilar.github.io/Kannika-Notas/Algorithms/)
+
 
 
 
