@@ -35,6 +35,7 @@
 
 ___________________________________________
 
+
 <h3 style="color:#030394">Divide & Conquer</h3>
 -   break down problem into smaller different subproblems
 
@@ -44,6 +45,7 @@ ___________________________________________
 <h3 style="color:#030394">Sorting Algos</h3>
 
 ___________________________________________
+
 
 <h3 style="color:#030394">Dynamic Programming</h3>   
 -   for repetitive subproblems
@@ -57,6 +59,7 @@ ___________________________________________
 
 ___________________________________________
 
+
 <h3 style="color:#030394">Greedy Algorithm</h3>
 - Requirements: choice property, optimal substructure, no backtracking, not always optimal
 
@@ -65,6 +68,7 @@ ___________________________________________
 
 ___________________________________________
 
+
 <h3 style="color:#030394">Backtracking</h3>
 - better than naive because eliminates an option when it doesn't work instead of naively checking validity at the end
 
@@ -72,6 +76,7 @@ ___________________________________________
 
 
 ___________________________________________
+
 
 
 
