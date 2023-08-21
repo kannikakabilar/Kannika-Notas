@@ -1,11 +1,12 @@
 <h1 style="color:#8096c2">Computer Hardware</h1>
 
-<h3 style="color:#8096c2">CMOD Battery</h3> - Powers BIOS chip
+<h3 style="color:#8096c2">CMOD Battery</h3> 
+&ensp;&ensp;      - Powers BIOS chip
 
 <h3 style="color:#8096c2">BIOS Process</h3>
-&ensp;&ensp;      - Performs Power-On-Self-Test <br>
-&ensp;&ensp;      - Loads OS files from hard disk to RAM <br>
-&ensp;&ensp;      - Boots up and connects hardware to OS <br> <br>
+- Performs Power-On-Self-Test <br>
+- Loads OS files from hard disk to RAM <br>
+- Boots up and connects hardware to OS <br> <br>
 
 Failure of CMOS battery is indicated by constant beeping sounds and date&time reset <br> <br>
 
@@ -21,10 +22,12 @@ BIOS can be used to overclock the CPU <br>
  &ensp;&ensp;     - dual core (!= single_core x2) the 2nd process start a little before the first process finishes <br>
  &ensp;&ensp;     - server CPUs have about 70 cores <br>
  &ensp;&ensp;     - app data access pattern <br>
- &ensp;&ensp;&ensp;    CPU registers <=> L1 cache <=> L2 cache <=> L3 cache <=> RAM <=> Hard disk <br> <br>
+ 
+ &ensp;&ensp;&ensp;    **CPU registers <=> L1 cache <=> L2 cache <=> L3 cache <=> RAM <=> Hard disk** <br> <br>
 
-<h3 style="color:#8096c2">Transistor</h3> - controls the flow of the electrical signals <br>
-&ensp;&ensp;           - transistors can be combined to form a logic gate <br> <br>
+<h3 style="color:#8096c2">Transistor</h3> 
+&ensp;&ensp; - controls the flow of the electrical signals <br>
+&ensp;&ensp; - transistors can be combined to form a **logic gate** <br> <br>
 
 <h3 style="color:#8096c2">RAID (Redundant Array of Independent Disks)</h3>
 
@@ -74,7 +77,7 @@ ____________________________________________________________________________
 | **right logical shift**: 1100 => 0->1100 => 0110        |    **left logically shift**: 1100 => 1100<-0 => 1000       |
 | **right arithmetic shift**: 1100 => 1->1100 => 1110     |    **left arithmetic shift**: 1100 => 1100<-0 => 1000 <br>(same as left logical shift) |
 
-<br> <br>
+<br>
 
 <h3 style="color:#8096c2">CPU Architecture</h3>
 
