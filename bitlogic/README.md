@@ -1,6 +1,6 @@
 # Data Structures
 
-Primitive DS       - Predefined way of storing data (ex: int, char, float, double)
+**Primitive DS**       - Predefined way of storing data (ex: int, char, float, double)
 Non-Primitive DS   - It can store any set of values and even objects
 
   Linear DS        - elements stored sequentially
@@ -64,7 +64,7 @@ def reverseMerge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
 
 
 <span style="color: red">
-####Generate Pascal
+**Generate Pascal**
 </span>
 def generatePascal(numRows: int) -> List[List[int]]:
     l = []
@@ -471,6 +471,7 @@ Hash Table
 
   Initializing HashMap and HashSet in Java
 
+```java
     import java.util.HashMap;
     import java.util.HashSet;
 
@@ -489,7 +490,7 @@ Hash Table
     HashSet<String> cars = new HashSet<String>();
     cars.add("McLaren");
     cars.contains("McLaren"); // Returns True
-
+```
 
 Sample HashMap/HashSet Qs
 
