@@ -466,7 +466,258 @@ ___________________________________________
 
 <h4>Sample Qs</h4>
 
+**Fibonacci Term**
+```python
+def fib(self, n: int) -> int:
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        nm1 = 1
+        nm2 = 1
+        
+        for i in range(2, n):
+            tmp = nm2
+            nm2 = nm2 + nm1
+            nm1 = tmp
+            
+        return nm2
+```
 
+**Is Sub Sequence?**
+```python
+def isSubsequence(self, s: str, t: str) -> bool:
+    m = len(t)
+    n = len(s)
+    
+    if n == 0:
+        return True
+    
+    j = 0
+    for i in range(m):
+        if s[j] == t[i]:
+            j += 1
+        if j == n:
+            return True
+            
+    return j == n
+```
+
+**Counting Binary Bits**
+```python
+def countBits(self, n: int) -> List[int]:
+    if n<=1:
+        if n==0:
+            return [0]
+        else:
+            return [0,1]
+                
+        dp = [0]*(n+1)
+
+        dp[1] = 1
+        
+        dp[2] = 1
+
+        for i in range(3,n+1):
+            if i%2==0:
+                val = i//2
+                dp[i] = dp[val]
+                # val its basically i<<2
+            else:
+                dp[i] = dp[i-1]+1
+        return dp
+```
+
+**Longest Common Sequence**
+- Memoized
+```python
+def lcs(X, Y, m, n, dp):
+
+    if (m == 0 or n == 0):
+        return 0
+
+    if (dp[m][n] != -1):
+        return dp[m][n]
+
+    if X[m - 1] == Y[n - 1]:
+        dp[m][n] = 1 + lcs(X, Y, m - 1, n - 1, dp)
+        return dp[m][n]
+
+    dp[m][n] = max(lcs(X, Y, m, n - 1, dp),lcs(X, Y, m - 1, n, dp))
+    return dp[m][n]
+```
+- Tabulated
+```python
+def lcs(X , Y):
+    m = len(X)
+    n = len(Y)
+ 
+    # declaring the array for storing the dp values
+    L = [[None]*(n+1) for i in range(m+1)]
+ 
+    for i in range(m+1):
+        for j in range(n+1):
+            if i == 0 or j == 0 :
+                L[i][j] = 0
+            elif X[i-1] == Y[j-1]:
+                L[i][j] = L[i-1][j-1]+1
+            else:
+                L[i][j] = max(L[i-1][j] , L[i][j-1])
+ 
+    return L[m][n]
+```
+
+**Subset Sum**
+- Memoized
+```python
+def subsetSum(A, n, k, lookup):
+
+    if k == 0:
+        return True
+
+    if n <= 0 or k < 0:
+        return False
+
+    key = (n, k)
+ 
+    if key not in lookup:
+        # Case 1. Include the current item 
+        include = subsetSum(A, n - 1, k - A[n], lookup)
+
+        # Case 2. Exclude the current item 
+        exclude = subsetSum(A, n - 1, k, lookup)
+ 
+        # Assign true if we get subset by including or excluding the current item
+        lookup[key] = include or exclude
+ 
+    return lookup[key]
+```
+- Tabulated
+```python
+def isSubsetSum(set, n, sum):
+      
+    subset = [[False] * (sum + 1) for i in range(n + 1)]
+      
+    for i in range(n + 1):
+        subset[i][0] = True
+          
+    for i in range(1, sum + 1):
+         subset[0][i]= False
+              
+    for i in range(1, n + 1):
+        for j in range(1, sum + 1):
+
+            if j<set[i-1]:
+                subset[i][j] = subset[i-1][j]
+
+            else:
+                subset[i][j] = (subset[i-1][j] or 
+                                subset[i - 1][j-set[i-1]])
+      
+    return subset[n][sum]
+```
+
+**0/1 Knapsack Problem**
+```python
+def knapSack(C, wt, val, n):
+    K = [[0 for j in range(C + 1)] for i in range(n + 1)]
+
+    for i in range(n + 1):
+        for j in range(C + 1):
+            if i == 0 or j == 0:
+                K[i][j] = 0
+            if j < wt[i-1]:
+                K[i][j] = K[i-1][j]   
+            else:
+                K[i][j] = max(val[i-1]+ K[i-1][j-wt[i-1]], K[i-1][j])
+
+    ​return K[n][C]
+```
+
+**Weighted Job Scheduling**
+```python
+class Job:
+    def __init__(self, start, finish, weight):
+        self.start = start
+        self.finish = finish
+        self.weight = weight
+
+def find_max_weight(jobs):
+    # Sort jobs based on finish times
+    jobs.sort(key=lambda job: job.finish)
+
+    n = len(jobs)
+    dp = [0] * n
+
+    for i in range(n):
+        dp[i] = jobs[i].weight
+
+    for i in range(1, n):
+        for j in range(i):
+            if jobs[j].finish <= jobs[i].start:
+                # for each job, check if including the 'j' jobs before it profits more than just completing the ith job
+                dp[i] = max(dp[i], dp[j] + jobs[i].weight)    
+
+    return max(dp)
+
+# Example usage
+jobs = [Job(1, 3, 5), Job(2, 5, 6), Job(4, 6, 5), Job(6, 7, 4), Job(5, 8, 11), Job(7, 9, 2)]
+print("Maximum Weight:", find_max_weight(jobs))
+```
+
+**Floyd Warshall**
+```python
+INF = float('inf')
+
+def floyd_warshall(graph):
+    n = len(graph)
+    dist = [[0 if i == j else INF for j in range(n)] for i in range(n)]
+
+    for u in range(n):
+        for v, weight in graph[u]:
+            dist[u][v] = weight
+
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+
+    return dist
+```
+
+**Bellman Ford**
+```python
+def bellmanFord(V, edges, src):    
+    
+    # Step 1 - Initialization
+    INF = 999999999
+    dis = [INF for x in range(V)]
+    
+    dis[src] = 0 # Since we're already at src
+    
+    # Step 2 - For V-1 times, traverse over, all the edges and checking if a shorter path between any edge u to v is possible.     
+    for _ in range(V-1): 
+        for j in range(len(edges)): 
+            s = edges[j][0]      # Source vertex
+            d = edges[j][1]      # destination vertex
+            wt = edges[j][2]   # weight of edge from u to v
+            
+            # Update dis[v] from u if it can be reached with lower weight
+            if(dis[s] != INF and dis[s] + wt < dis[d]):
+                dis[d] = dis[s] + wt
+                
+    # Step 3 - Checking for negative edge weight cycle
+    for i in range(len(edges)):
+        s = edges[i][0]
+        d = edges[i][1]
+        wt = edges[i][2]
+
+        if(dis[s] != INF and dis[s] + wt < dis[d]):
+            return []
+
+    return dis 
+```
 ___________________________________________
 
 
@@ -474,6 +725,8 @@ ___________________________________________
 - Requirements: choice property, optimal substructure, no backtracking, not always optimal
 
 <h4>Sample Qs</h4>
+
+**Coin Change**
 
 
 ___________________________________________
