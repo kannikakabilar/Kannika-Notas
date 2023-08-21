@@ -322,6 +322,138 @@ def listPrimes(n):
 
 <h3 style="color:#0303ad">Sorting Algos</h3>
 
+**Heap Sort**
+```python
+def heapify(arr, n, i):
+    largest = i
+    left_child = 2 * i + 1
+    right_child = 2 * i + 2
+
+    if left_child < n and arr[left_child] > arr[largest]:
+        largest = left_child
+
+    if right_child < n and arr[right_child] > arr[largest]:
+        largest = right_child
+
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+
+    # Build a max heap - Start from the last non-leaf node and heapify as the indices go up
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    # Extract elements from the heap one by one
+    for i in range(n - 1, 0, -1):
+        arr[0], arr[i] = arr[i], arr[0]  # Swap the root with the last element
+        heapify(arr, i, 0)  # Heapify the reduced heap
+```
+
+**Bubble Sort**
+```python
+def bubbleSort(arr):
+    n = len(arr)
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+```
+
+| Cons | Pros |
+|------|------|
+| O(n^2) even on average case |  w/ Parallel processing => BubbleSort sorts in O(n) time better than Insertion and Selection sorts
+| performs too many swaps/writes
+| O(n^2) even on partially sorted list
+
+**Insertion Sort**
+```python
+def insertionSort(arr):
+    for i in range(1, len(arr)): 
+        key = arr[i] 
+        # Keep swapping curr element(key) in the sorted section until curr element is put in the correct place
+        j = i-1
+        while j >= 0 and key < arr[j] :
+                arr[j + 1] = arr[j]
+                j -= 1
+        arr[j + 1] = key
+```
+
+**Shell Sort**
+```python
+def shell_sort(arr):
+    n = len(arr)
+    gap = n // 2  
+
+    while gap > 0:
+        for i in range(gap, n):
+            temp = arr[i]
+            j = i
+
+            while j >= gap and arr[j - gap] > temp:
+                arr[j] = arr[j - gap]
+                j -= gap
+
+            arr[j] = temp
+
+        gap //= 2  
+```
+
+**Selection Sort**
+```python
+import sys
+
+def selectionSort(A): 
+    for i in range(len(A)):
+      
+        # Find the minimum element from the unsorted part
+        min_idx = i
+        for j in range(i+1, len(A)):
+            if A[min_idx] > A[j]:
+                min_idx = j
+                 
+        # Swap the found minimum element with end of sorted part     
+        A[i], A[min_idx] = A[min_idx], A[i]
+```
+
+**Topological Sort**
+```python
+from collections import defaultdict
+
+class Graph:
+    def __init__(self, vertices):
+        ​self.graph = defaultdict(list) # dictionary containing adjacency List
+        self.V = vertices # No. of vertices
+
+    def addEdge(self, u, v):
+        self.graph[u].append(v)
+
+    # helper function
+    def topologicalSortUtil(self, v, visited, stack):      
+        visited[v] = True
+        # Recur for all the vertices adjacent to this vertex
+        for i in self.graph[v]:
+            if visited[i] == False:
+                self.topologicalSortUtil(i, visited, stack)
+        # Push child vertices before parent
+        stack.append(v)
+
+    # main function 
+    def topologicalSort(self):
+        # Initially mark all the vertices as not visited
+        visited = [False] * self.V
+        stack = []
+
+        # Get all vertices from graph added to stack
+        for i in range(self.V):
+            if visited[i] == False:
+                self.topologicalSortUtil(i, visited, stack)
+        print(stack[::-1]) # return list in REVERSE order
+```
+
 ___________________________________________
 
 
