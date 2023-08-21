@@ -539,8 +539,15 @@ Sample Tree Implementations
         - all leaves have the same depth
 
   - Heap
-    - Treap
-  - Splay
+      Max/Min Heap: all children node values are less/higher than parent
+      Insertion: insert in the next according space and performing swapping with parent
+      Deletion: swap node-to-be-deleted with last node, delete last node, perform swapping with the switched node
+
+    - Treap: mix of BST and and Heap
+        - each node stores 2 values (key=value_inserted, priority=random_num)
+        - insert according key which follows BST, then perform AVL rotations to maintain priority which follows Heap
+      
+  - Splay: just like BST but perform AVL rotations each time an element is accessed and make it the root node
 
 ___________________________________________
 
