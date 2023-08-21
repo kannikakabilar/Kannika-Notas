@@ -1,19 +1,19 @@
-# Data Structures
+<h1 style="color:aqua">Data Structures</h1>
 
 **Primitive DS**       - Predefined way of storing data (ex: int, char, float, double)
-Non-Primitive DS   - It can store any set of values and even objects
+**Non-Primitive DS**   - It can store any set of values and even objects
 
-  Linear DS        - elements stored sequentially
-  Non-Linear DS    - elements connect to more than 1 elements (ie: trees, graphs)
+  **Linear DS**        - elements stored sequentially
+  **Non-Linear DS**    - elements connect to more than 1 elements (ie: trees, graphs)
 
-  Static DS        - fixed size (ie: Arrays) 
-  Dynamic DS       - can increase size as elements get inserted (ie: Linked List)
+  **Static DS**        - fixed size (ie: Arrays) 
+  **Dynamic DS**       - can increase size as elements get inserted (ie: Linked List)
 
 
-Arrays   -   indexing = O(1) but everything else O(n)
+<h3 style="color:aqua">Arrays</h3>   -   indexing = O(1) but everything else O(n)
 
-Sample Array Qs
-#### Sorted Array To BST
+### Sample Array Qs
+**Sorted Array To BST**
 ```python
 def sortedArrayToBST(nums: List[int]):
     if len(nums) == 0:
