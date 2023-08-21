@@ -1,18 +1,19 @@
-<h1 style="color:aqua">Data Structures</h1>
+<h1 style="color:#5c91fa">Data Structures</h1>
 
 **Primitive DS**       - Predefined way of storing data (ex: int, char, float, double)</br>
 **Non-Primitive DS**   - It can store any set of values and even objects</br>
 
-|  **Linear DS**        - elements stored sequentially</br>
-|  **Non-Linear DS**    - elements connect to more than 1 elements (ie: trees, graphs)</br>
+&ensp;&ensp;  **Linear DS**        - elements stored sequentially</br>
+&ensp;&ensp;  **Non-Linear DS**    - elements connect to more than 1 elements (ie: trees, graphs)</br>
 
-:  **Static DS**        - fixed size (ie: Arrays) </br>
-:  **Dynamic DS**       - can increase size as elements get inserted (ie: Linked List)</br>
+&ensp;&ensp;  **Static DS**        - fixed size (ie: Arrays) </br>
+&ensp;&ensp;  **Dynamic DS**       - can increase size as elements get inserted (ie: Linked List)</br>
 
 
-<h3 style="color:aqua">Arrays</h3>   -   indexing = O(1) but everything else O(n)
+<h3 style="color:#5c91fa">Arrays</h3>   -   indexing = O(1) but everything else O(n)
 
-### Sample Array Qs
+#### Sample Array Qs
+
 **Sorted Array To BST**
 ```python
 def sortedArrayToBST(nums: List[int]):
@@ -28,7 +29,8 @@ def sortedArrayToBST(nums: List[int]):
     
     return tree
 ```
-#### Search Sorted Array
+**Search Sorted Array**
+```python
   def searchSortedArray(nums: List[int], target: int) -> int:
       left, right = 0, len(nums) - 1              
           
@@ -41,8 +43,8 @@ def sortedArrayToBST(nums: List[int]):
           else:                                   
               left = middle + 1
       return left
-
-#### Reverse Merge
+```
+**Reverse Merge**
 ```python
 def reverseMerge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
 
@@ -62,10 +64,8 @@ def reverseMerge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         n, last = n - 1, last - 1
 ```
 
-
-<span style="color: red">
 **Generate Pascal**
-</span>
+```python
 def generatePascal(numRows: int) -> List[List[int]]:
     l = []
     for i in range(numRows):
@@ -78,7 +78,9 @@ def generatePascal(numRows: int) -> List[List[int]]:
             else:
                 l[i].append(l[i-1][j-1] + l[i-1][j])
     return l
-
+```
+**Stock Profit**
+```python
 def stockProfit(prices: List[int]) -> int:
 
     if prices != []:
@@ -92,13 +94,17 @@ def stockProfit(prices: List[int]) -> int:
             diff = prices[i] - min
 
     return diff
-
+```
+**Find The Single Number**
+```python
 def singleNumber(nums: List[int]) -> int:
     res = 0
     for num in nums:
         res ^= num
     return res
-
+```
+**Remove Duplicates**
+```python
 def removeDuplicates(nums: List[int]) -> int:
     length = len(nums)
     if length == 1:    
@@ -116,7 +122,9 @@ def removeDuplicates(nums: List[int]) -> int:
                 count += 1             
         
         return count
-
+```
+**Remove Element**
+```python
 def removeElement(nums: List[int], val: int) -> int:
     j = 0                        # Create 2 pointers i and j
     i = 0
@@ -125,7 +133,9 @@ def removeElement(nums: List[int], val: int) -> int:
             nums[i] = nums[j]    
             i += 1               
     return i
-
+```
+**Move Zeroes To End**
+```python
 def moveZeroes(nums: List[int]) -> None:
     i = 0                        # Create 2 pointers i and j
     j = 0
@@ -142,7 +152,9 @@ def moveZeroes(nums: List[int]) -> None:
         nums[len(nums)-(j+1)] = 0
         
     return nums
-
+```
+**Kadane's Algorithm - Max Sub Array**
+```python
 def maxSubArray(nums: List[int]) -> int:
     # Kadane's algorithm
     maxi=nums[0] 
@@ -155,7 +167,9 @@ def maxSubArray(nums: List[int]) -> int:
             sums=0
     
     return maxi
-
+```
+**Kadane's Algorithm - Stock Profit**
+```python
 def stockProfit(prices: List[int]) -> int:
     # Kadane's algorithm
     maxCur = 0
@@ -167,13 +181,15 @@ def stockProfit(prices: List[int]) -> int:
         maxSoFar = max(maxCur, maxSoFar)
 
     return maxSoFar
-
+```
 ___________________________________________
 
-Linked Lists   -   inserting = O(1) but everything else O(n)
+<h3 style="color:#5c91fa">Linked Lists</h3>   -   inserting = O(1) but everything else O(n)
 
-Sample Linked List Qs
+#### Sample Linked List Qs
 
+**Merge 2 Lists**
+```python
 def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
         
         head = ListNode()                    
@@ -196,7 +212,9 @@ def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
             m.next = l2
 
         return head.next  
-
+```
+**Delete Duplicates**
+```python
 def deleteDuplicates(head: ListNode) -> ListNode:
     if head is None:                
         return head
@@ -216,7 +234,9 @@ def deleteDuplicates(head: ListNode) -> ListNode:
 
         m = m.next
     return head
-
+```
+**Remove Elements**
+```python
 def removeElements(head: ListNode, val: int) -> ListNode:
     if head is None:                               
         return head
@@ -238,7 +258,9 @@ def removeElements(head: ListNode, val: int) -> ListNode:
         m = m.next
 
     return head
-
+```
+**Reverse List**
+```python
 def reverseList(head: ListNode) -> ListNode:
     if (head is None) or (head.next is None):       # Handle empty linked list and 1-element linked list case
         return head   
@@ -254,7 +276,9 @@ def reverseList(head: ListNode) -> ListNode:
 
     head = prev
     return head
-
+```
+**Is Palindrome?**
+```python
 def isPalindrome(head: ListNode) -> bool:
 
     if not head.next:
@@ -283,7 +307,9 @@ def isPalindrome(head: ListNode) -> bool:
         right = right.next
 
     return True  
-
+```
+**Find Middle Node**
+```python
 def middleNode(head: ListNode) -> ListNode:
     if not head.next:
         return True
@@ -295,7 +321,9 @@ def middleNode(head: ListNode) -> ListNode:
         slow = slow.next
 
   return slow
-
+```
+**Binary to Decimal**
+```python
 def getDecimalValue(head: ListNode) -> int:
     
     res = 0                           
@@ -316,16 +344,18 @@ def getDecimalValue(head: ListNode) -> int:
         place -= 1
 
     return res
-
-Check if a LL has a cycle
-  1) if all elements are distint => fast and slow method where fast would catch up to slow
-  2) change value of elements to -1 and check if you ever reach -1
+```
+**Check if a LL has a cycle** </br>
+&ensp;&ensp;  1) if all elements are distint => fast and slow method where fast would catch up to slow </br>
+&ensp;&ensp;  2) change value of elements to -1 and check if you ever reach -1 </br>
 ___________________________________________
 
-Stacks   -   used for evaluating math expr and recursive function calls
+<h3 style="color:#5c91fa">Stacks</h3>   -   used for evaluating math expr and recursive function calls
 
-Sample Stack Qs
+#### Sample Stack Qs
 
+**Valid Parentheses**
+```python
 def validParentheses(s: str) -> bool:
     d = {'(':')', '{':'}','[':']'}
     stack = []
@@ -335,7 +365,9 @@ def validParentheses(s: str) -> bool:
         elif len(stack) == 0 or d[stack.pop()] != i:  
             return False
     return len(stack) == 0 
-
+```
+**Inorder Traversal**
+```python
 def inorderTraversal(root: TreeNode) -> List[int]:
         
     lst = []
@@ -350,7 +382,9 @@ def inorderTraversal(root: TreeNode) -> List[int]:
         lst += inorderTraversal(root.right)
         
     return lst
-
+```
+**Backspace Compare**
+```python
 def backspaceCompare(s: str, t: str) -> bool:
     s_lst = []
     t_lst = []
@@ -378,7 +412,9 @@ def backspaceCompare(s: str, t: str) -> bool:
             return False
         
     return True
-
+```
+**Remove Outer Parentheses**
+```python
 def removeOuterParentheses(s: str) -> str:
     res = []
     curOpen = 0
@@ -393,7 +429,9 @@ def removeOuterParentheses(s: str) -> str:
                 res.append(c)
     
     return ''.join(res)
-
+```
+**Remove Consecutive Duplicates**
+```python
 def removeConsecutiveDuplicates(s: str) -> str:
     lst = []
     
@@ -403,7 +441,9 @@ def removeConsecutiveDuplicates(s: str) -> str:
         else:
             lst.append(s[i])
     return ''.join(lst)
-
+```
+**Build Array**
+```python
 def buildArray(target: List[int], n: int) -> List[str]:
     lst = []
     for i in range(1, n+1):
@@ -415,7 +455,9 @@ def buildArray(target: List[int], n: int) -> List[str]:
             lst.append("Pop")
             
     return lst
-
+```
+**Folder Operations**
+```python
 def fldOperations(logs: List[str]) -> int:
     level = 0
     for i in logs:
@@ -424,7 +466,9 @@ def fldOperations(logs: List[str]) -> int:
         elif i != "../" and i != "./":
             level += 1
     return level
-
+```
+**Max Depth of Brackets**
+```python
 def maxDepth(s: str) -> int:
     d = 0
     high = 0
@@ -436,12 +480,13 @@ def maxDepth(s: str) -> int:
         if i == ")":
             d -= 1
     return high
+```
 ___________________________________________
 
-Queues   
+<h3 style="color:#5c91fa">Queues  </h3> 
 
-Time Required to Wait in Circular Line
-
+**Time Required to Wait in Circular Line**
+```python
 def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
     time = 0
     i = 0
@@ -458,18 +503,18 @@ def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
         i = (i + 1) % len(tickets)
         
     return time
-
+```
 ___________________________________________
 
-Hash Table
+<h3 style="color:#5c91fa">Hash Table</h3>
 
-  Terms
-    - Hash function: input is key-value and the output is memory address/slot# of where the element will be stored
-    - Collision => chaining: when 2 elements are directed to the same slot use linked list or trees to store the element at that address
-    - Open Addressing: store all values within the hash table
-      - Linear Probing: if hash(x) % S is full => (hash(x) + 1) % S
+### Terms
+- **Hash function**: input is key-value and the output is memory address/slot# of where the element will be stored</br>
+- **Collision => chaining**: when 2 elements are directed to the same slot use linked list or trees to store the element at that address</br>
+- **Open Addressing**: store all values within the hash table</br>
+    - **Linear Probing**: if hash(x) % S is full => (hash(x) + 1) % S</br></br>
 
-  Initializing HashMap and HashSet in Java
+  **Initializing HashMap and HashSet in Java**
 
 ```java
     import java.util.HashMap;
@@ -492,18 +537,19 @@ Hash Table
     cars.contains("McLaren"); // Returns True
 ```
 
-Sample HashMap/HashSet Qs
+#### Sample HashMap/HashSet Qs
 
-  Find a pair of nums with given sum and an array of nums
-  Roman Numeral to Num
-  Keeping track of values
-  is Isomorphic?
-  is Anagram? (ie: Nathaniel Black => Anabella Thick)
-  is List unique?
-  union & intersection of 2 LL
-  missing elements of a range
+  - Find a pair of nums with given sum and an array of nums</br>
+  - Roman Numeral to Num</br>
+  - Keeping track of values</br>
+  - is Isomorphic?</br>
+  - is Anagram? (ie: Nathaniel Black => Anabella Thick)</br>
+  - is List unique?</br>
+  - union & intersection of 2 LL</br>
+  - missing elements of a range</br></br>
 
-# 4 elements such that a + b = c + d
+**4 elements such that a + b = c + d**
+```python
 def find_pair_of_sum(arr: list, n: int):
     map = {}
  
@@ -516,61 +562,61 @@ def find_pair_of_sum(arr: list, n: int):
                 return
             else:
                 map[sum] = (arr[i], arr[j])
-
+```
 ___________________________________________
 
 
-Trees
+<h3 style="color:#5c91fa">Trees</h3>
 
-Sample Tree Implementations
+### Sample Tree Implementation Explanations
 
-  - N-ary: each node can have upto N children
-  - Binary: each node can have upto 2 children
-  - BST: left_child.val < root.val < right_child.val
+  - **N-ary**: each node can have upto N children
+  - **Binary**: each node can have upto 2 children
+  - **BST**: left_child.val < root.val < right_child.val</br></br>
 
-  - AVL: better for searching, height <= log2(n)
-        types of rotations
-          left-left case => right rotation
-          left-right case => left rotate, right rotate
-          right-left case => right rotate, left rotate
-          right-right case => left rotation
+  - **AVL**: better for searching, height <= log2(n)</br>
+        types of rotations</br>
+          &ensp;&ensp;left-left case => right rotation</br>
+          &ensp;&ensp;left-right case => left rotate, right rotate</br>
+          &ensp;&ensp;right-left case => right rotate, left rotate</br>
+          &ensp;&ensp;right-right case => left rotation</br></br>
 
-  - Red-Black: better for insertion and deletion
-      rules
-        1) root is always black
-        2) all leaves are black
-        3) all leaves have same # of black ancestors
-        4) all children of red nodes are black
+  - **Red-Black**: better for insertion and deletion</br>
+      rules</br>
+        &ensp;&ensp;1) root is always black</br>
+        &ensp;&ensp;2) all leaves are black</br>
+        &ensp;&ensp;3) all leaves have same # of black ancestors</br>
+        &ensp;&ensp;4) all children of red nodes are black</br></br>
 
-  - B-Tree
-      notes
-        - each node can have upto n-1 values
-        - each node can have atmost n children and at least n/2 children
-        - all leaves have the same depth
+  - **B-Tree**</br>
+      notes</br>
+        &ensp;&ensp;- each node can have upto n-1 values</br>
+        &ensp;&ensp;- each node can have atmost n children and at least n/2 children</br>
+        &ensp;&ensp;- all leaves have the same depth</br></br>
 
-  - Heap
-      Max/Min Heap: all children node values are less/higher than parent
-      Insertion: insert in the next according space and performing swapping with parent
-      Deletion: swap node-to-be-deleted with last node, delete last node, perform swapping with the switched node
+  - **Heap**</br>
+      &ensp;&ensp;- Max/Min Heap: all children node values are less/higher than parent</br>
+      &ensp;&ensp;- Insertion: insert in the next according space and performing swapping with parent</br>
+      &ensp;&ensp;- Deletion: swap node-to-be-deleted with last node, delete last node, perform swapping with the switched node</br>
 
-    - Treap: mix of BST and and Heap
-        - each node stores 2 values (key=value_inserted, priority=random_num)
-        - insert according key which follows BST, then perform AVL rotations to maintain priority which follows Heap
+    - **Treap**: mix of BST and and Heap </br>
+        &ensp;&ensp;- each node stores 2 values (key=value_inserted, priority=random_num)</br>
+        &ensp;&ensp;- insert according key which follows BST, then perform AVL rotations to maintain priority which follows Heap</br></br>
       
-  - Splay: just like BST but perform AVL rotations each time an element is accessed and make it the root node
+  - **Splay**: just like BST but perform AVL rotations each time an element is accessed and make it the root node
 
 ___________________________________________
 
 
-Graphs
+<h3 style="color:#5c91fa">Graphs</h3>
 
-Terms
-  - order of a graph = # of vertices in graph
-  - size of a graph = # of edges of a graph
-  - null graph = 0 edges in graph (but may have vertices)
-  - complete graph = has edges with all combination of vertices
-  - adjacency matrix = nxn matrix where matrix[i][j] indicates an edge/edge_weight between vertex i and j
-  - adjacency list = key-value table where there's 1 key for each vertex and a list with vertices that the key vertex connects to
+### Terms
+  - **order of a graph** = # of vertices in graph
+  - **size of a graph** = # of edges of a graph
+  - **null graph** = 0 edges in graph (but may have vertices)
+  - **complete graph** = has edges with all combination of vertices
+  - **adjacency matrix** = nxn matrix where matrix[i][j] indicates an edge/edge_weight between vertex i and j
+  - **adjacency list** = key-value table where there's 1 key for each vertex and a list with vertices that the key vertex connects to
 
 ___________________________________________
 
