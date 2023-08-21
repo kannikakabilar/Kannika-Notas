@@ -34,7 +34,82 @@
 
 <h4>Sample Qs</h4>
 
+**Depth First Search**
+```python
+def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
 
+    print(start)
+
+    for child in graph[start]:
+​        if not(child in visited):
+            dfs(graph, child, visited)
+    return visited
+
+graph = {'0': set(['1', '2']),
+         '1': set(['0', '3', '4']),
+         '2': set(['0']),
+         '3': set(['1']),
+         '4': set(['2', '3'])}
+
+dfs(graph, '0')
+```
+
+**Breadth First Search**
+```python
+def bfs(graph, root):
+
+    visited = set()
+    queue = []
+
+    visited.add(root)
+    print(str(root) + " ", end="")
+
+    for child in graph[root]:
+        visited.add(child)
+        queue.append(child)
+
+    while len(queue) != 0:
+
+        vertex = queue.pop(0)
+        print(str(vertex) + " ", end="")
+
+        for child in graph[vertex]:
+            if child not in visited:
+                visited.add(child)
+                queue.append(child)
+
+```
+
+**Tower of Hanoi**
+```python
+def hanoi(n , src, dest, aux):
+    if n == 1:
+        print("Move disk 1 from "+src+ " to "+dest)
+    else:
+        hanoi(n-1, src, aux, dest)
+        print("Move disk "+ n +" from " +src+" to "+dest)
+        hanoi(n-1, aux, dest, src)
+
+# Driver code
+n = 4
+TowerOfHanoi(n, 'A', 'C', 'B')
+```
+
+**Greatest Common Divisor**
+```python
+def gcf(a, b):
+    if a == 0 or b == 0:
+        return a + b
+    elif a == b:
+        return a
+    elif a > b:
+        return gcf(a%b, b)
+    else:
+        return gcf(a, b%a)
+```
 ___________________________________________
 
 
