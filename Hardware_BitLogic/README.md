@@ -34,7 +34,9 @@ BIOS can be used to overclock the CPU <br>
 &ensp;&ensp;        unlikely for 2 disks to fail simultaneously <br>
 - **RAID 10** = RAID 1 + 0 = spread data across different pairs of disks and each pair is copy of each other
  <br> <br>
+ 
 ____________________________________________________________________________
+
 
 <h1 style="color:#8096c2">Bit Logic</h1>
 
@@ -49,7 +51,7 @@ ____________________________________________________________________________
 | x XOR 0 =  x    |    x or 0 = x   |    x and 1 = x  |
 | x XOR 1 = ~x    |    x or x = x   |    x and x = x  |
 
-<br> <br>
+<br> 
 
 <h3 style="color:#8096c2">2's Complement and Negative Binary Numbers</h3>
 
