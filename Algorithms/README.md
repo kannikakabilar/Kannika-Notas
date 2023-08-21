@@ -26,19 +26,19 @@
 | = O(1)
 
 **Easily Reduced Time Complexity**: electronically transferring a file = O(size_of_file) ; transferring a file by airplane = O(1)
-
+<br> <br>
 
 <h3 style="color:#030394">Recursive Algorithms</h3>
 
-Sample Qs
+<h4>Sample Qs</h4>
 
 
 ___________________________________________
 
-<h3 style="color:#030394">Divide & Conquer<h3 style="color:#030394">
+<h3 style="color:#030394">Divide & Conquer</h3>
 -   break down problem into smaller different subproblems
 
-Sample Qs
+<h4>Sample Qs</h4>
 
 
 <h3 style="color:#030394">Sorting Algos</h3>
@@ -52,25 +52,23 @@ ___________________________________________
   **Memoization**: Top-down approach, recursive, uses dictionaries
   **Tabulation**: Bottom-up approach, iterative, uses 2-D array
 
-Sample Qs
+<h4>Sample Qs</h4>
 
 
 ___________________________________________
 
 <h3 style="color:#030394">Greedy Algorithm</h3>
+- Requirements: choice property, optimal substructure, no backtracking, not always optimal
 
-Requirements: choice property, optimal substructure, no backtracking, not always optimal
-
-Sample Qs
+<h4>Sample Qs</h4>
 
 
 ___________________________________________
 
 <h3 style="color:#030394">Backtracking</h3>
-
 - better than naive because eliminates an option when it doesn't work instead of naively checking validity at the end
 
-Sample Qs
+<h4>Sample Qs</h4>
 
 
 ___________________________________________
