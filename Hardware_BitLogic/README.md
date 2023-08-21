@@ -1,1 +1,91 @@
-# Hardware
+# Computer Hardware
+
+CMOD Battery - Powers BIOS chip
+
+BIOS Process
+    - Performs Power-On-Self-Test
+    - Loads OS files from hard disk to RAM
+    - Boots up and connects hardware to OS
+
+Failure of CMOS battery is indicated by constant beeping sounds and date&time reset
+
+BIOS can be used to overclock the CPU
+    - clock speed = reading rate of incoming electrical pulse
+
+Internal Memory
+    - ROM (stable memory): stores firmware files (hardware control)
+    - RAM (volatile memory): allows to use multiple apps at the same time
+
+CPU (silicon chip)
+    - dual core (!= single_core x2) the 2nd process start a little before the first process finishes
+    - server CPUs have about 70 cores
+    - app data access pattern
+        CPU registers <=> L1 cache <=> L2 cache <=> L3 cache <=> RAM <=> Hard disk
+
+Transistor - controls the flow of the electrical signals
+           - transistors can be combined to form a logic gate
+
+RAID (Redundant Array of Independent Disks)
+    - RAID 0: spread data accross multiple disks
+    - RAID 1: keep a copy of each disk
+    - RAID 5: use a parity disk (ie: Disk A XOR Disk B = Disk C)
+        unlikely for 2 disks to fail simultaneously
+    - RAID 10 = RAID 1 + 0 = spread data across different pairs of disks and each pair is copy of each other
+
+_______________________________________________________________________________________________________________________________________________________________
+
+Bit Logic
+
+Bit Manipulation
+     bin# + bin# = bin# * 2 = logically left shift bin# by 1 bit
+     bin# * (2^x) = logically left shift bin# by x bits
+
+Bit Tricks
+    x XOR 0 =  x    |    x & x = x    |    x & 1 = x
+    x XOR 1 = ~x    |    x | x = x    |    x | 0 = x
+
+2's Complement and Negative Binary Numbers
+
+    - 1st way to write a negative binary number
+        write 1 as the sign bit
+        [In decimal] (2^the remaining # of bits excluding sign bit) + neg_num = y
+        ans = write 1(sign-bit) and y in binary
+
+    - 2nd way to write a negative binary number
+        write 1 as the sign bit
+        neg_num * (-1) = j => write j in binary in the remaining # of bits (excluding sign bit)
+        k = 1's complement of j (inverse each bit in j) + 1
+        ans = concatenate 1(sign-bit) and k
+
+Shifts
+    right rotate: 1100 => 0110                          |    left rotate: 1100 => 1001
+    right logical shift: 1100 => 0->1100 => 0110        |    left logically shift: 1100 => 1100<-0 => 1000
+    right arithmetic shift: 1100 => 1->1100 => 1110     |    left arithmetic shift: 1100 => 1100<-0 => 1000 (same as left logical shift)
+
+
+CPU Architecture
+
+            [Control Unit, ALU, CPU Registers, L1 Cache]
+                                 ^
+                                 |
+Input Devices =============>    RAM   ===============>  Output Devices
+(ie: mouse, keyboard)            |                      (ie: monitor, speaker)
+                                 v
+                            [Hard Disk]
+
+    Control Unit Functions
+        - fetch (data from memory)
+        - decode (using binary decoder)
+        - execute
+        - write back to memory
+
+
+
+
+
+
+
+
+
+
+
