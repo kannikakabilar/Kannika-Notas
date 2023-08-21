@@ -25,7 +25,7 @@
 | = ( O(N) + O(2N) ) / N 
 | = O(1)
 
-<br> <br>
+<br> 
 
 **Easily Reduced Time Complexity**: electronically transferring a file = O(size_of_file) ; transferring a file by airplane = O(1)
 <br> <br>
@@ -53,8 +53,8 @@ ___________________________________________
 -   for repetitive subproblems
 
 ### Terms
-  **Memoization**: Top-down approach, recursive, uses dictionaries <br>
-  **Tabulation**: Bottom-up approach, iterative, uses 2-D array
+- **Memoization**: Top-down approach, recursive, uses dictionaries <br>
+- **Tabulation**: Bottom-up approach, iterative, uses 2-D array
 
 <h4>Sample Qs</h4>
 
