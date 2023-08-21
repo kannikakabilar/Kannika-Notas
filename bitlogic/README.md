@@ -11,8 +11,8 @@ Non-Primitive DS   - It can store any set of values and even objects
 
 
 Arrays   -   indexing = O(1) but everything else O(n)
-
-Sample Array Qs
+<details>
+<summary>Sample Array Qs</summary>
 
 def sortedArrayToBST(nums: List[int]):
     if len(nums) == 0:
@@ -26,7 +26,8 @@ def sortedArrayToBST(nums: List[int]):
     tree.right = sortedArrayToBST(nums[root+1:])
     
     return tree
-
+</details>
+<code>
 def searchSortedArray(nums: List[int], target: int) -> int:
     left, right = 0, len(nums) - 1              
         
@@ -39,7 +40,7 @@ def searchSortedArray(nums: List[int], target: int) -> int:
         else:                                   
             left = middle + 1
     return left
-
+</code>
 def reverseMerge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
 
     last = m + n - 1
