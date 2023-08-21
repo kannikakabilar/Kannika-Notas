@@ -11,9 +11,10 @@ Non-Primitive DS   - It can store any set of values and even objects
 
 
 Arrays   -   indexing = O(1) but everything else O(n)
-<details>
-<summary>Sample Array Qs</summary>
 
+Sample Array Qs
+#### Sorted Array To BST
+```python
 def sortedArrayToBST(nums: List[int]):
     if len(nums) == 0:
         return None
@@ -26,21 +27,23 @@ def sortedArrayToBST(nums: List[int]):
     tree.right = sortedArrayToBST(nums[root+1:])
     
     return tree
-</details>
-<code>
-def searchSortedArray(nums: List[int], target: int) -> int:
-    left, right = 0, len(nums) - 1              
-        
-    while left <= right:                        
-        middle = (right+left) // 2       
-        if nums[middle] == target:              
-            return middle
-        if nums[middle] > target:               
-            right = middle - 1
-        else:                                   
-            left = middle + 1
-    return left
-</code>
+```
+#### Search Sorted Array
+  def searchSortedArray(nums: List[int], target: int) -> int:
+      left, right = 0, len(nums) - 1              
+          
+      while left <= right:                        
+          middle = (right+left) // 2       
+          if nums[middle] == target:              
+              return middle
+          if nums[middle] > target:               
+              right = middle - 1
+          else:                                   
+              left = middle + 1
+      return left
+
+#### Reverse Merge
+```python
 def reverseMerge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
 
     last = m + n - 1
@@ -57,6 +60,9 @@ def reverseMerge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
     while n > 0:
         nums1[last] = nums2[n - 1]
         n, last = n - 1, last - 1
+```
+
+
 
 def generatePascal(numRows: int) -> List[List[int]]:
     l = []
