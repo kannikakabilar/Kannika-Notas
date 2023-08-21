@@ -48,13 +48,6 @@ def dfs(graph, start, visited=None):
             dfs(graph, child, visited)
     return visited
 
-graph = {'0': set(['1', '2']),
-         '1': set(['0', '3', '4']),
-         '2': set(['0']),
-         '3': set(['1']),
-         '4': set(['2', '3'])}
-
-dfs(graph, '0')
 ```
 
 **Breadth First Search**
@@ -114,10 +107,218 @@ ___________________________________________
 
 
 <h3 style="color:#0303ad">Divide & Conquer</h3>
--   break down problem into smaller different subproblems
+- break down problem into smaller different subproblems
 
 <h4>Sample Qs</h4>
 
+**Merge Sort**
+```python
+def mergeSort(array):
+
+    if len(array) == 0:
+         return array  
+    m = len(array) // 2
+    L = array[:m]
+    R = array[m:]
+    
+    mergeSort(L)
+    mergeSort(R)
+    
+    # merge
+    i = j = k = 0
+    while i < len(L) and j < len(R):
+         if L[i] < R[j]:
+             array[k] = L[i]
+             i += 1
+         else:
+             array[k] = R[j]
+             j += 1
+         k += 1
+    
+    while i < len(L):
+         array[k] = L[i]
+         i += 1
+         k += 1
+    while j < len(R):
+         array[k] = R[j]
+         j += 1
+         k += 1
+```
+
+**Quick Sort**
+```python
+def quickSort(array, low, high):
+    if low < high:
+
+        piv = partition(array, low, high)
+        quickSort(array, low, piv - 1)
+        quickSort(array, piv + 1, high)
+
+def partition(array, low, high):
+
+    pivot = array[high]
+
+    i = low - 1
+
+    for j in range(low, high):
+        if array[j] <= pivot:
+            i = i + 1
+            (array[i], array[j]) = (array[j], array[i])
+
+    (array[i + 1], array[high]) = (array[high], array[i + 1])
+    return i + 1
+```
+
+| Merge Sort | Quick Sort |
+|------------|------------|
+|- it is parallelizable | - average-case runtime is faster than mergesort |
+|- works better with linked list | - better cache performance due to its localized and sequential memory access pattern during partitioning |
+|- external sorting requirements (sorting large datasets that don't fit in memory), Merge Sort is often used | - partitioning process has a lower overhead compared to merging process |
+|- preserves the original order of equal value elements that quicksort does not 
+
+<br>
+
+**Karatsuba Algorithm**
+| Elements |
+|-----------------|
+| a  =  xH  *  yH
+| d  =  xL  *  yL
+| e  =  (xH  +  xL)  *  (yH  +  yL)  -  a  -  d
+| xy  =  (a * (b^n))  +  (e  *  (b^(n/2)​))  +  d
+
+```python
+from math import ceil, floor
+
+def karatsuba(x,y):
+   
+    if x < 10 and y < 10: # in other words, if x and y are single digits
+        return x*y
+
+    n = max(len(str(x)), len(str(y)))
+    m = ceil(n/2)   
+
+    x_H  = floor(x / 10**m)
+    x_L = x % (10**m)
+
+    y_H = floor(y / 10**m)
+    y_L = y % (10**m)
+
+    a = karatsuba(x_H,y_H)
+    d = karatsuba(x_L,y_L)
+    e = karatsuba(x_H + x_L, y_H + y_L) - a - d
+
+    return int(a*(10**(m*2)) + e*(10**m) + d)
+```
+
+**Find MaxMin (DAC)**
+- Naive method would perform 2*(n-1) comparisons but DAC takes (3*n/2)-2 comparisons
+
+```python
+def MaxMinDAC (arr, low, high):
+    if low == high:
+        return arr[low], arr[low]
+    elif high - low == 1:
+        return max(arr[low], arr[high]), min(arr[low], arr[high])
+    else:
+        mid = (low + high)//2
+        L_max, L_min = MaxMinDAC (arr, low, mid)
+        R_max, R_min = MaxMinDAC (arr, mid+1, high)
+
+        return max(L_max, R_max), min(L_min, R_min)
+```
+
+**Preorder List To BST**
+```python
+def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
+    if len(preorder) == 0:
+        return None
+    node = preorder.pop(0)
+    root = TreeNode(node)
+    l = []
+    r = []
+
+    for val in preorder:
+        if val < node:
+            l.append(val)
+        else:
+            r.append(val)
+
+    root.left = self.bstFromPreorder(l)
+    root.right =  self.bstFromPreorder(r)
+    return root
+```
+**Reverse String**
+```python
+def reverseString(self, s: List[str]) -> None:
+    # Modify s in-place, space complexity = O(1)
+    low = 0 
+    high = len(s)-1
+    while low < high:
+        s[low], s[high] = s[high], s[low]
+        low += 1
+        high -= 1
+```
+**Find a pair that sums to target in a Sorted Array**
+```python
+def twoSum(self, numbers: List[int], target: int) -> List[int]:
+    if len(numbers) == 2:
+        return [0, 1]
+    
+    low = 0
+    high = len(numbers) - 1
+    
+    while high > low:        
+        if numbers[low] + numbers[high] == target:
+            return [low, high]
+        
+        elif numbers[low] + numbers[high] < target:
+            low += 1
+            
+        elif numbers[low] + numbers[high] > target:
+            high -= 1
+```
+**Swap values w/o tmp var**
+```python
+a = a + b
+b = a - b    # => (a + b) - b
+a = a - b    # => (a + b) - a
+
+​(*using xor)
+x = x ^ y
+y = x ^ y
+x = x ^ y
+```
+**List Primes**
+-  In order to check if a given number, n is prime <br>
+  - You just need to check if n can be divided by any num from 2 to sqrt(n) <br>
+&ensp;&ensp;&ensp;&ensp;  because for every a * b = n => a <= sqrt(n) and b >= sqrt(n) <br>
+
+```python
+def listPrimes(n):
+  lst = []
+  for i in range(n+1):
+    if i == 0 or i == 1:
+      lst.append(False)
+    else:
+      lst.append(True)
+      
+  i = 2
+  j = 3
+  nxt = n+1
+  while i < (n+1):
+    for j in range(i+1, n+1):
+      if i != j and j % i == 0:
+        lst[j] = False
+      else:
+        if nxt > j:
+          nxt = j
+    i = nxt
+    nxt = n+1
+      
+  for k in range(len(lst)):
+    if lst[k]:
+      print(k)
+```
 
 <h3 style="color:#0303ad">Sorting Algos</h3>
 
