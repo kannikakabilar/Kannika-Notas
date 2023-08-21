@@ -484,7 +484,28 @@ Hash Table
 
 Sample HashMap/HashSet Qs
 
+  Find a pair of nums with given sum and an array of nums
+  Roman Numeral to Num
+  Keeping track of values
+  is Isomorphic?
+  is Anagram? (ie: Nathaniel Black => Anabella Thick)
+  is List unique?
+  union & intersection of 2 LL
+  missing elements of a range
 
+# 4 elements such that a + b = c + d
+def find_pair_of_sum(arr: list, n: int):
+    map = {}
+ 
+    for i in range(n):
+        for j in range(i+1, n):
+            sum = arr[i] + arr[j]
+ 
+            if sum in map:
+                print(f"{map[sum]} and ({arr[i]}, {arr[j]})")
+                return
+            else:
+                map[sum] = (arr[i], arr[j])
 
 ___________________________________________
 
@@ -493,6 +514,33 @@ Trees
 
 Sample Tree Implementations
 
+  - N-ary: each node can have upto N children
+  - Binary: each node can have upto 2 children
+  - BST: left_child.val < root.val < right_child.val
+
+  - AVL: better for searching, height <= log2(n)
+        types of rotations
+          left-left case => right rotation
+          left-right case => left rotate, right rotate
+          right-left case => right rotate, left rotate
+          right-right case => left rotation
+
+  - Red-Black: better for insertion and deletion
+      rules
+        1) root is always black
+        2) all leaves are black
+        3) all leaves have same # of black ancestors
+        4) all children of red nodes are black
+
+  - B-Tree
+      notes
+        - each node can have upto n-1 values
+        - each node can have atmost n children and at least n/2 children
+        - all leaves have the same depth
+
+  - Heap
+    - Treap
+  - Splay
 
 ___________________________________________
 
