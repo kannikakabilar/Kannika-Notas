@@ -348,7 +348,9 @@ def getDecimalValue(head: ListNode) -> int:
 **Check if a LL has a cycle** <br>
 &ensp;&ensp;  1) if all elements are distint => fast and slow method where fast would catch up to slow <br>
 &ensp;&ensp;  2) change value of elements to -1 and check if you ever reach -1 <br>
+
 ___________________________________________
+
 
 <h3 style="color:#5c91fa">Stacks</h3>   -   used for evaluating math expr and recursive function calls
 
