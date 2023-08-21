@@ -1,4 +1,4 @@
-<h1 style="color:#030394">Algorithms</h1>
+<h1 style="color:#0303a1">Algorithms</h1>
 
 **Big O**: f(n) ∈ O(g(n)) iff for some constant C and N0, f(N) <= c * g(N) for all N > N0 <br>
 **Big Ω**: f(n) ∈ Ω(g(n)) iff for some constant C and N0, f(N) >= c * g(N) for all N > N0 <br>
@@ -28,7 +28,7 @@
 **Easily Reduced Time Complexity**: electronically transferring a file = O(size_of_file) ; transferring a file by airplane = O(1)
 <br> <br>
 
-<h3 style="color:#030394">Recursive Algorithms</h3>
+<h3 style="color:#0303a1">Recursive Algorithms</h3>
 
 <h4>Sample Qs</h4>
 
@@ -36,18 +36,18 @@
 ___________________________________________
 
 
-<h3 style="color:#030394">Divide & Conquer</h3>
+<h3 style="color:#0303a1">Divide & Conquer</h3>
 -   break down problem into smaller different subproblems
 
 <h4>Sample Qs</h4>
 
 
-<h3 style="color:#030394">Sorting Algos</h3>
+<h3 style="color:#0303a1">Sorting Algos</h3>
 
 ___________________________________________
 
 
-<h3 style="color:#030394">Dynamic Programming</h3>   
+<h3 style="color:#0303a1">Dynamic Programming</h3>   
 -   for repetitive subproblems
 
 ### Terms
@@ -60,7 +60,7 @@ ___________________________________________
 ___________________________________________
 
 
-<h3 style="color:#030394">Greedy Algorithm</h3>
+<h3 style="color:#0303a1">Greedy Algorithm</h3>
 - Requirements: choice property, optimal substructure, no backtracking, not always optimal
 
 <h4>Sample Qs</h4>
@@ -69,7 +69,7 @@ ___________________________________________
 ___________________________________________
 
 
-<h3 style="color:#030394">Backtracking</h3>
+<h3 style="color:#0303a1">Backtracking</h3>
 - better than naive because eliminates an option when it doesn't work instead of naively checking validity at the end
 
 <h4>Sample Qs</h4>
