@@ -63,7 +63,9 @@ def reverseMerge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
 ```
 
 
-
+<span style="color: red">
+####Generate Pascal
+</span>
 def generatePascal(numRows: int) -> List[List[int]]:
     l = []
     for i in range(numRows):
