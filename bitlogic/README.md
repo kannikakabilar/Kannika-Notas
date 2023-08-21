@@ -1,13 +1,13 @@
 <h1 style="color:aqua">Data Structures</h1>
 
-**Primitive DS**       - Predefined way of storing data (ex: int, char, float, double)
-**Non-Primitive DS**   - It can store any set of values and even objects
+**Primitive DS**       - Predefined way of storing data (ex: int, char, float, double)</br>
+**Non-Primitive DS**   - It can store any set of values and even objects</br>
 
-  **Linear DS**        - elements stored sequentially
-  **Non-Linear DS**    - elements connect to more than 1 elements (ie: trees, graphs)
+|  **Linear DS**        - elements stored sequentially</br>
+|  **Non-Linear DS**    - elements connect to more than 1 elements (ie: trees, graphs)</br>
 
-  **Static DS**        - fixed size (ie: Arrays) 
-  **Dynamic DS**       - can increase size as elements get inserted (ie: Linked List)
+:  **Static DS**        - fixed size (ie: Arrays) </br>
+:  **Dynamic DS**       - can increase size as elements get inserted (ie: Linked List)</br>
 
 
 <h3 style="color:aqua">Arrays</h3>   -   indexing = O(1) but everything else O(n)
