@@ -345,9 +345,9 @@ def getDecimalValue(head: ListNode) -> int:
 
     return res
 ```
-**Check if a LL has a cycle** </br>
-&ensp;&ensp;  1) if all elements are distint => fast and slow method where fast would catch up to slow </br>
-&ensp;&ensp;  2) change value of elements to -1 and check if you ever reach -1 </br>
+**Check if a LL has a cycle** <br>
+&ensp;&ensp;  1) if all elements are distint => fast and slow method where fast would catch up to slow <br>
+&ensp;&ensp;  2) change value of elements to -1 and check if you ever reach -1 <br>
 ___________________________________________
 
 <h3 style="color:#5c91fa">Stacks</h3>   -   used for evaluating math expr and recursive function calls
@@ -509,10 +509,10 @@ ___________________________________________
 <h3 style="color:#5c91fa">Hash Table</h3>
 
 ### Terms
-- **Hash function**: input is key-value and the output is memory address/slot# of where the element will be stored</br>
-- **Collision => chaining**: when 2 elements are directed to the same slot use linked list or trees to store the element at that address</br>
-- **Open Addressing**: store all values within the hash table</br>
-    - **Linear Probing**: if hash(x) % S is full => (hash(x) + 1) % S</br></br>
+- **Hash function**: input is key-value and the output is memory address/slot# of where the element will be stored<br>
+- **Collision => chaining**: when 2 elements are directed to the same slot use linked list or trees to store the element at that address<br>
+- **Open Addressing**: store all values within the hash table<br>
+    - **Linear Probing**: if hash(x) % S is full => (hash(x) + 1) % S<br><br>
 
   **Initializing HashMap and HashSet in Java**
 
@@ -539,14 +539,14 @@ ___________________________________________
 
 #### Sample HashMap/HashSet Qs
 
-  - Find a pair of nums with given sum and an array of nums</br>
-  - Roman Numeral to Num</br>
-  - Keeping track of values</br>
-  - is Isomorphic?</br>
-  - is Anagram? (ie: Nathaniel Black => Anabella Thick)</br>
-  - is List unique?</br>
-  - union & intersection of 2 LL</br>
-  - missing elements of a range</br></br>
+  - Find a pair of nums with given sum and an array of nums<br>
+  - Roman Numeral to Num<br>
+  - Keeping track of values<br>
+  - is Isomorphic?<br>
+  - is Anagram? (ie: Nathaniel Black => Anabella Thick)<br>
+  - is List unique?<br>
+  - union & intersection of 2 LL<br>
+  - missing elements of a range<br><br>
 
 **4 elements such that a + b = c + d**
 ```python
@@ -572,36 +572,36 @@ ___________________________________________
 
   - **N-ary**: each node can have upto N children
   - **Binary**: each node can have upto 2 children
-  - **BST**: left_child.val < root.val < right_child.val</br></br>
+  - **BST**: left_child.val < root.val < right_child.val<br><br>
 
-  - **AVL**: better for searching, height <= log2(n)</br>
-        types of rotations</br>
-          &ensp;&ensp;left-left case => right rotation</br>
-          &ensp;&ensp;left-right case => left rotate, right rotate</br>
-          &ensp;&ensp;right-left case => right rotate, left rotate</br>
-          &ensp;&ensp;right-right case => left rotation</br></br>
+  - **AVL**: better for searching, height <= log2(n)<br>
+        types of rotations<br>
+          &ensp;&ensp;left-left case => right rotation<br>
+          &ensp;&ensp;left-right case => left rotate, right rotate<br>
+          &ensp;&ensp;right-left case => right rotate, left rotate<br>
+          &ensp;&ensp;right-right case => left rotation<br><br>
 
-  - **Red-Black**: better for insertion and deletion</br>
-      rules</br>
-        &ensp;&ensp;1) root is always black</br>
-        &ensp;&ensp;2) all leaves are black</br>
-        &ensp;&ensp;3) all leaves have same # of black ancestors</br>
-        &ensp;&ensp;4) all children of red nodes are black</br></br>
+  - **Red-Black**: better for insertion and deletion<br>
+      rules<br>
+        &ensp;&ensp;1) root is always black<br>
+        &ensp;&ensp;2) all leaves are black<br>
+        &ensp;&ensp;3) all leaves have same # of black ancestors<br>
+        &ensp;&ensp;4) all children of red nodes are black<br><br>
 
-  - **B-Tree**</br>
-      notes</br>
-        &ensp;&ensp;- each node can have upto n-1 values</br>
-        &ensp;&ensp;- each node can have atmost n children and at least n/2 children</br>
-        &ensp;&ensp;- all leaves have the same depth</br></br>
+  - **B-Tree**<br>
+      notes<br>
+        &ensp;&ensp;- each node can have upto n-1 values<br>
+        &ensp;&ensp;- each node can have atmost n children and at least n/2 children<br>
+        &ensp;&ensp;- all leaves have the same depth<br><br>
 
-  - **Heap**</br>
-      &ensp;&ensp;- Max/Min Heap: all children node values are less/higher than parent</br>
-      &ensp;&ensp;- Insertion: insert in the next according space and performing swapping with parent</br>
-      &ensp;&ensp;- Deletion: swap node-to-be-deleted with last node, delete last node, perform swapping with the switched node</br>
+  - **Heap**<br>
+      &ensp;&ensp;- Max/Min Heap: all children node values are less/higher than parent<br>
+      &ensp;&ensp;- Insertion: insert in the next according space and performing swapping with parent<br>
+      &ensp;&ensp;- Deletion: swap node-to-be-deleted with last node, delete last node, perform swapping with the switched node<br>
 
-    - **Treap**: mix of BST and and Heap </br>
-        &ensp;&ensp;- each node stores 2 values (key=value_inserted, priority=random_num)</br>
-        &ensp;&ensp;- insert according key which follows BST, then perform AVL rotations to maintain priority which follows Heap</br></br>
+    - **Treap**: mix of BST and and Heap <br>
+        &ensp;&ensp;- each node stores 2 values (key=value_inserted, priority=random_num)<br>
+        &ensp;&ensp;- insert according key which follows BST, then perform AVL rotations to maintain priority which follows Heap<br><br>
       
   - **Splay**: just like BST but perform AVL rotations each time an element is accessed and make it the root node
 
