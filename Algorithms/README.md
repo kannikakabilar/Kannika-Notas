@@ -755,7 +755,7 @@ graph = {'a':{'b':5,'c':2},
 source = 'a'
 destination = 'f'
 
-unvisited = graph  # add all nodes of graph to unvisited
+unvisited = graph  
 shortest_distances = {}
 route = [] 
 path_nodes = {}
@@ -786,6 +786,265 @@ while(unvisited):
 
 **Kruskal's**
 
+​Given a graph find the MST <br>
+1) Sort all the edges from low weight to high <br>
+2) Take the edge with the lowest weight and add it to the spanning tree. If adding the edge created a cycle, then reject this edge. <br>
+3) Keep adding edges until we reach all vertices. <br>
+
+```python
+class DisjointSet:
+    def __init__(self, n):
+        self.parent = list(range(n))  # Initialize parent pointers
+        self.rank = [0] * n  # Initialize ranks
+
+    # The purpose of this code is to find the representative (also known as the main root) of a given element x in the disjoint-set.
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])  # Path compression
+        return self.parent[x]
+    
+    # Union: merges 2 disjoint sets - finds the least weighted edge that connects the 2 disjoint set
+    def union(self, x, y):
+        root_x = self.find(x)
+        root_y = self.find(y)
+        
+        if root_x != root_y:
+            if self.rank[root_x] > self.rank[root_y]:
+                self.parent[root_y] = root_x  # Attach smaller rank tree under root of higher rank tree
+            else:
+                self.parent[root_x] = root_y
+                if self.rank[root_x] == self.rank[root_y]:
+                    self.rank[root_y] += 1
+
+def kruskal(graph, n):
+    graph.sort(key=lambda edge: edge[2])  # Sort edges by weight - lowest to highest
+    disjoint_set = DisjointSet(n)  # Initialize disjoint-set data structure
+    minimum_spanning_tree = []  # To store the selected edges of the MST
+
+    # for each edge in graph from lowest to highest - 
+    for u, v, weight in graph:
+        # This condition checks whether adding the current edge (u, v) to the MST would create a cycle. It does this by checking if the parent (root) of vertex u is different from the parent (root) of vertex v in the disjoint-set data structure. If they have different parents, it means that adding this edge won't form a cycle.
+        if disjoint_set.find(u) != disjoint_set.find(v):
+            disjoint_set.union(u, v)  # Union two sets if they are not connected
+            minimum_spanning_tree.append((u, v, weight))
+    
+    return minimum_spanning_tree
+```
+
+**Prim's**
+
+Given a graph find the MST <br>
+1) Initialize the minimum spanning tree with a vertex chosen at random and add it to the tree. <br>
+2) Find an minimum weight edges that connect the tree to a new vertices (not already in the tree) <br>
+3) Keep repeating step 2 until we get a minimum spanning tree (when all vertices become part of the tree) <br>
+
+```python
+from heapq import heappop, heappush
+
+def prim(graph, start):
+    n = len(graph)
+    visited = [False] * n
+    min_heap = [(0, start)]  # Heap of (weight, vertex) pairs
+    minimum_spanning_tree = []
+
+    while min_heap:
+        weight, node = heappop(min_heap)
+        if visited[node]:
+            continue
+        visited[node] = True
+
+        for neighbor, edge_weight in graph[node]:
+            if not visited[neighbor]:
+                heappush(min_heap, (edge_weight, neighbor))
+        
+        if node != start:  # Skip the start node
+            minimum_spanning_tree.append((node, weight))
+
+    return minimum_spanning_tree
+```
+
+**Fractional Knapsack**
+```python
+class Item:
+    def __init__(self, value, weight):
+        self.value = value
+        self.weight = weight
+
+def fractionalKnapsack(W, arr):
+
+ # sort items based on ratio => highest-value per weight to lowest
+    arr.sort(key=lambda x: (x.value/x.weight), reverse=True)
+
+    finalvalue = 0.0
+
+    for item in arr:
+        # If adding Item won't overflow, add it completely
+        if item.weight <= W:
+            W -= item.weight
+            finalvalue += item.value
+        # If we can't add current Item, add fractional part of it
+        else:
+           finalvalue += item.value * W / item.weight
+           break
+
+    return finalvalue
+```
+
+**Traveling Salesman**
+```python
+def tsp_greedy(graph, start):
+    n = len(graph)
+    visited = [False] * n       # keep track of the visited nodes
+    tour = [start]                 # order of nodes visited
+    total_distance = 0
+    current_city = start
+
+    for _ in range(n - 1):    # loop through until every n-1 nodes other than start node is visited
+        nearest_city = None
+        min_distance = float('inf')
+
+        # loop through all connected nodes to the current node and find the node that can be reached with the least distance
+        for next_city in range(n):     
+            if not visited[next_city] and graph[current_city][next_city] < min_distance:
+                nearest_city = next_city
+                min_distance = graph[current_city][next_city]
+
+        tour.append(nearest_city)
+        total_distance += min_distance
+        visited[nearest_city] = True.      # mark next city as visited for hamiltonian cycle or mark current city as visited for path
+        current_city = nearest_city       # set next city in tour to the least distance node
+
+    # Return to the starting city
+    tour.append(start)
+    total_distance += graph[current_city][start]
+
+    return tour, total_distance
+```
+
+**Activity Selection**
+```python
+def activity_selection(activities):
+    n = len(activities)
+    activities.sort(key=lambda x: x[1])  # Sort activities by finish time
+    selected_activities = [activities[0]]
+    
+    last_selected = 0  # Index of the last selected activity
+    
+    for i in range(1, n):    # for each of the next selected activities check if its start time is after finish time of current activity
+        if activities[i][0] >= activities[last_selected][1]:
+            selected_activities.append(activities[i])
+            last_selected = i
+    
+    return selected_activities
+```
+
+**Job Sequencing**
+```python
+# t = no. of jobs to schedule
+def printJobScheduling(arr, t):
+
+    n = len(arr)
+
+    # Sort all jobs according to decreasing order of profit
+    for i in range(n):
+        for j in range(n - 1 - i):
+            if arr[j][2] < arr[j + 1][2]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+    result = [False] * t    # To keep track of free time slots
+
+    job = ['-1'] * t    # To store result (Sequence of jobs)
+
+    # Iterate through all given jobs
+    for i in range(len(arr)):
+        # Find a free slot for this job
+        # (Note that we start from the last possible slot)
+        for j in range(min(t - 1, arr[i][1] - 1), -1, -1):
+            # Free slot found
+            if result[j] is False:
+                result[j] = True
+                job[j] = arr[i][0]
+                break
+
+    print(job)    # print the sequence
+```
+
+**Ford Fulkerson**
+```python
+from collections import defaultdict
+
+class Graph:
+
+    def __init__(self, graph):
+        self.graph = graph # residual graph
+        self. ROW = len(graph)
+        # self.COL = len(gr[0])
+
+     '''Returns true if there is a path from source 's' to sink 't' in
+     residual graph. Also fills parent[] to store the path '''
+    def BFS(self, s, t, parent):
+
+        # Mark all the vertices as not visited
+        visited = [False]*(self.ROW)
+        # Create a queue for BFS
+        queue = []
+        # Mark the source node as visited and enqueue it
+        queue.append(s)
+        visited[s] = True
+
+        # Standard BFS Loop
+        while queue:
+
+            # Dequeue a vertex from queue and print it
+            u = queue.pop(0)
+
+            # Get all adjacent vertices of the dequeued vertex u
+            # If a adjacent has not been visited, then mark it visited and enqueue it
+            for ind, val in enumerate(self.graph[u]):
+                if visited[ind] == False and val > 0:
+                # If we find a connection to the sink node, then there is no point in BFS anymore
+                # We just have to set its parent and can return true
+                    queue.append(ind)
+                    visited[ind] = True
+                    parent[ind] = u
+                    if ind == t:
+                        return True
+
+        # We didn't reach sink in BFS starting from source, so return false
+        return False
+   
+    # Returns the maximum flow from s to t in the given graph
+    def FordFulkerson(self, source, sink):
+
+        # This array is filled by BFS and to store path
+        parent = [-1]*(self.ROW)
+
+        max_flow = 0 # There is no flow initially
+
+        # Augment the flow while there is path from source to sink
+        ​while self.BFS(source, sink, parent) :
+
+        # Find minimum residual capacity of the edges along the path filled by BFS.
+        # Or we can say find the maximum flow through the path found.
+            path_flow = float("Inf")
+            s = sink
+            while(s != source):
+                path_flow = min (path_flow, self.graph[parent[s]][s])
+                s = parent[s]
+
+            # Add path flow to overall flow
+            max_flow += path_flow
+
+            # update residual capacities of the edges and reverse edges along the path
+            v = sink
+            while(v != source):
+                u = parent[v]
+                self.graph[u][v] -= path_flow
+                self.graph[v][u] += path_flow
+                v = parent[v]
+
+        ​return max_flow
+```
 ___________________________________________
 
 
