@@ -969,75 +969,24 @@ def printJobScheduling(arr, t):
     print(job)    # print the sequence
 ```
 
-**Ford Fulkerson**
-```python
-from collections import defaultdict, deque
+**Ford Fulkerson** <br>
 
-class Graph:
-    def __init__(self, vertices):
-        self.V = vertices
-        self.graph = defaultdict(dict)
-        
-    def add_edge(self, u, v, capacity):
-        self.graph[u][v] = capacity
-        self.graph[v][u] = 0  # Reverse edge with zero capacity
-        
-    def bfs(self, parent, source, sink):
-        visited = [False] * self.V
-        queue = deque()
-        queue.append(source)
-        visited[source] = True
-        
-        while queue:
-            u = queue.popleft()
-            for v, capacity in self.graph[u].items():
-                if not visited[v] and capacity > 0:
-                    queue.append(v)
-                    visited[v] = True
-                    parent[v] = u
-                    
-        return visited[sink]
-    
-    def ford_fulkerson(self, source, sink):
-        parent = [-1] * self.V
-        max_flow = 0
-        
-        while self.bfs(parent, source, sink):
-            path_flow = float('inf')
-            s = sink
-            
-            while s != source:
-                path_flow = min(path_flow, self.graph[parent[s]][s])
-                s = parent[s]
-            
-            max_flow += path_flow
-            
-            v = sink
-            while v != source:
-                u = parent[v]
-                self.graph[u][v] -= path_flow
-                self.graph[v][u] += path_flow
-                v = parent[v]
-                
-        return max_flow
+- max flow algorithm / bottleneck value  -  How it works?
+> - how much flow can we push through the given network from src node to sink node where each edge has a certain capacity
+> - select a path from src to sink and send flow equal to smallest weighted edge
+> - update capacity of all the used edge and select the next path, until capacity of all paths are 0
 
-# Example graph representation: (source, sink, capacity)
-graph = Graph(6)
-graph.add_edge(0, 1, 16)
-graph.add_edge(0, 2, 13)
-graph.add_edge(1, 2, 10)
-graph.add_edge(1, 3, 12)
-graph.add_edge(2, 1, 4)
-graph.add_edge(2, 4, 14)
-graph.add_edge(3, 2, 9)
-graph.add_edge(3, 5, 20)
-graph.add_edge(4, 3, 7)
-graph.add_edge(4, 5, 4)
+- rules
+> - if backward edge (edge point opposite direction of how we want to go through) => max
+_cap/max_cap
+> - if forward edge (edge point exact direction of how we want to go through) => 0/max_cap
 
-source, sink = 0, 5
-max_flow = graph.ford_fulkerson(source, sink)
-print("Maximum Flow:", max_flow)
-```
+- Applications
+> - how much data can be sent through from network to network (at a time)
+> - how much water can flow through the pipes (at a time)
+> - how many cars can go through traffic (side by side)
+> - what is the net electric current that can be sent through wires
+
 ___________________________________________
 
 
