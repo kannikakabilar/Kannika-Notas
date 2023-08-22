@@ -732,14 +732,14 @@ ___________________________________________
 - Repeat the above step until the target value is reached
 
 **Huffman Coding**
-- Create a dictionary that stores the frequency of each char in the given string
-- Build a Min Heap based on the frequency
-- Pop smallest frequency and initialize it as a node
-- Pop next smallest node and set it as a right node and prev_node as left child and root node = sum_of_right_&_left_nodes
-- Perform above step until Heap becomes empty to complete building the Huffman Tree
-- Each leaf of the Huffman Tree represents a char, traverse through Huffman Tree to build binary string for each char
-    - left_nodes => append '0' | right_nodes => append '1'
-- Use binary rep of each char to compress original string
+1) Create a dictionary that stores the frequency of each char in the given string <br>
+2) Build a Min Heap based on the frequency <br>
+3) Pop smallest frequency and initialize it as a node <br>
+4) Pop next smallest node and set it as a right node and prev_node as left child and root node = sum_of_right_&_left_nodes <br>
+5) Perform above step until Heap becomes empty to complete building the Huffman Tree <br>
+6) Each leaf of the Huffman Tree represents a char, traverse through Huffman Tree to build binary string for each char <br>
+    - left_nodes => append '0' | right_nodes => append '1' <br>
+7) Use binary rep of each char to compress original string <br>
 
 **Dijkstra's**
 ```python
