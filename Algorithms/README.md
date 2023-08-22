@@ -178,7 +178,8 @@ def partition(array, low, high):
 
 <br>
 
-**Karatsuba Algorithm**
+**Karatsuba Algorithm** <br>
+
 | Elements |
 |-----------------|
 | a  =  xH  *  yH
@@ -727,7 +728,63 @@ ___________________________________________
 <h4>Sample Qs</h4>
 
 **Coin Change**
+- Always choose the greatest coin value that is lower or equal to the target value
+- Repeat the above step until the target value is reached
 
+**Huffman Coding**
+- Create a dictionary that stores the frequency of each char in the given string
+- Build a Min Heap based on the frequency
+- Pop smallest frequency and initialize it as a node
+- Pop next smallest node and set it as a right node and prev_node as left child and root node = sum_of_right_&_left_nodes
+- Perform above step until Heap becomes empty to complete building the Huffman Tree
+- Each leaf of the Huffman Tree represents a char, traverse through Huffman Tree to build binary string for each char
+    - left_nodes => append '0' | right_nodes => append '1'
+- Use binary rep of each char to compress original string
+
+**Dijkstra's**
+```python
+import math
+
+graph = {'a':{'b':5,'c':2},
+        'b':{'a':5,'c':7,'d':8},     
+        'c':{'a':2,'b':7,'d':4,'e':8},
+        'd':{'b':8,'c':4,'e':6, 'f':4},
+        'e':{'c':8,'d':6,'f':3}, 
+        'f':{'e':3, 'd':4}}
+
+source = 'a'
+destination = 'f'
+
+unvisited = graph  # add all nodes of graph to unvisited
+shortest_distances = {}
+route = [] 
+path_nodes = {}
+
+# set the distance of all nodes to inf and src to 0
+for nodes in unvisited:
+   shortest_distances[nodes] = math.inf
+shortest_distances[source] = 0
+
+while(unvisited):
+       min_node = None
+       # for each node find the node that is unvisited and can be reached with the lowest weight
+       for current_node in unvisited: 
+           if min_node is None:
+               min_node = current_node        
+           elif shortest_distances[min_node] > shortest_distances[current_node]:
+               min_node = current_node
+
+       # for each node connected to the current min_node, update its distance if it can be reached through curr min_node with lower weight
+       for node,value in unvisited[min_node].items():
+           if value + shortest_distances[min_node] < shortest_distances[node]:  
+               shortest_distances[node] = value + shortest_distances[min_node]
+               path_nodes[node] = min_node
+
+       # remove the curr min_node from unvisited
+       unvisited.pop(min_node)
+```
+
+**Kruskal's**
 
 ___________________________________________
 
