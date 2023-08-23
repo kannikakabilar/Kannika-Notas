@@ -944,9 +944,9 @@ def activity_selection(activities):
 - given a set of jobs, its deadline, and its profits, select the jobs that can be completed within a time period and get maximum profit (assuming each job only takes 1 unit of time)
 
 - applications
-> project management
-> jobs scheduled on processors or servers to maximize resource utilization and meet deadline
-> allocating resources in cloud computing based on deadlines and profit value 
+> - project management
+> - jobs scheduled on processors or servers to maximize resource utilization and meet deadline
+> - allocating resources in cloud computing based on deadlines and profit value 
 
 ```python
 def printJobScheduling(arr, t):    # t = no. of jobs to schedule
