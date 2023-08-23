@@ -922,7 +922,7 @@ def tsp_greedy(graph, start):
 
 **Activity Selection**
 ```python
-def activity_selection(activities):
+def activitySelection(activities):
     n = len(activities)
     activities.sort(key=lambda x: x[1])  # Sort activities by finish time (erliest to latest)
     selected_activities = [activities[0]]
@@ -949,7 +949,7 @@ def activity_selection(activities):
 > - allocating resources in cloud computing based on deadlines and profit value 
 
 ```python
-def printJobScheduling(arr, t):    # t = no. of jobs to schedule
+def jobSequencing(arr, t):    # t = no. of jobs to schedule
 
     n = len(arr)
 
