@@ -821,7 +821,7 @@ def kruskal(graph, n):
     disjoint_set = DisjointSet(n)  # Initialize disjoint-set data structure
     minimum_spanning_tree = []  # To store the selected edges of the MST
 
-    # for each edge in graph from lowest to highest - 
+    # for each edge in graph from lowest to highest
     for u, v, weight in graph:
         # This condition checks whether adding the current edge (u, v) to the MST would create a cycle. It does this by checking if the parent (root) of vertex u is different from the parent (root) of vertex v in the disjoint-set data structure. If they have different parents, it means that adding this edge won't form a cycle.
         if disjoint_set.find(u) != disjoint_set.find(v):
@@ -878,12 +878,12 @@ def fractionalKnapsack(W, arr):
     finalvalue = 0.0
 
     for item in arr:
-        # If adding Item won't overflow, add it completely
-        if item.weight <= W:
+
+        if item.weight <= W:            # If adding Item won't overflow, add it completely
             W -= item.weight
             finalvalue += item.value
-        # If we can't add current Item, add fractional part of it
-        else:
+
+        else:            # If we can't add current Item, add fractional part of it
            finalvalue += item.value * W / item.weight
            break
 
@@ -914,8 +914,7 @@ def tsp_greedy(graph, start):
         visited[nearest_city] = True.      # mark next city as visited for hamiltonian cycle or mark current city as visited for path
         current_city = nearest_city       # set next city in tour to the least distance node
 
-    # Return to the starting city
-    tour.append(start)
+    tour.append(start)    # Return to the starting city
     total_distance += graph[current_city][start]
 
     return tour, total_distance
@@ -925,12 +924,14 @@ def tsp_greedy(graph, start):
 ```python
 def activity_selection(activities):
     n = len(activities)
-    activities.sort(key=lambda x: x[1])  # Sort activities by finish time
+    activities.sort(key=lambda x: x[1])  # Sort activities by finish time (erliest to latest)
     selected_activities = [activities[0]]
     
     last_selected = 0  # Index of the last selected activity
     
-    for i in range(1, n):    # for each of the next selected activities check if its start time is after finish time of current activity
+    for i in range(1, n):
+
+        # for each of the next selected activities check if its start time is after finish time of current activity
         if activities[i][0] >= activities[last_selected][1]:
             selected_activities.append(activities[i])
             last_selected = i
@@ -939,9 +940,16 @@ def activity_selection(activities):
 ```
 
 **Job Sequencing**
+
+- given a set of jobs, its deadline, and its profits, select the jobs that can be completed within a time period and get maximum profit (assuming each job only takes 1 unit of time)
+
+- applications
+> project management
+> jobs scheduled on processors or servers to maximize resource utilization and meet deadline
+> allocating resources in cloud computing based on deadlines and profit value 
+
 ```python
-# t = no. of jobs to schedule
-def printJobScheduling(arr, t):
+def printJobScheduling(arr, t):    # t = no. of jobs to schedule
 
     n = len(arr)
 
@@ -952,21 +960,21 @@ def printJobScheduling(arr, t):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
     result = [False] * t    # To keep track of free time slots
-
     job = ['-1'] * t    # To store result (Sequence of jobs)
 
-    # Iterate through all given jobs
-    for i in range(len(arr)):
-        # Find a free slot for this job
-        # (Note that we start from the last possible slot)
+    for i in range(len(arr)):    # Iterate through all given jobs
+
+        # The loop checks for a free time slot that is available before the curr_job's deadline. It starts from the latest possible slot before the deadline and goes backward until it finds a free slot or reaches the beginning.
+
+        # Take the minimum of (total # of slots, deadline of current job)
         for j in range(min(t - 1, arr[i][1] - 1), -1, -1):
-            # Free slot found
-            if result[j] is False:
+            
+            if result[j] is False:    # Free slot found
                 result[j] = True
                 job[j] = arr[i][0]
                 break
 
-    print(job)    # print the sequence
+    return job  
 ```
 
 **Ford Fulkerson** <br>
