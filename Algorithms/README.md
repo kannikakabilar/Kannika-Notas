@@ -999,10 +999,276 @@ ___________________________________________
 
 
 <h3 style="color:#0303ad">Backtracking</h3>
-- better than naive because eliminates an option when it doesn't work instead of naively checking validity at the end
+- better than naive because eliminates a generating option as soon it finds that it doesn't work <br> instead of naively generating all options and then checking validity at the end
 
 <h4>Sample Qs</h4>
 
+**N-Queens**
+```python
+def is_safe(board, row, col, n):
+
+    for i in range(col):    # Check the left side of the current row
+        if board[row][i] == 1:
+            return False
+    
+    for i, j in zip(range(row, -1, -1), range(col, -1, -1)):    # Check upper diagonal on the left side
+        if board[i][j] == 1:
+            return False
+    
+    for i, j in zip(range(row, n, 1), range(col, -1, -1)):    # Check lower diagonal on the left side
+        if board[i][j] == 1:
+            return False
+    
+    return True
+
+def solve_n_queens(n):
+    board = [[0] * n for _ in range(n)]
+    
+    if not solve_n_queens_util(board, 0, n):
+        print("No solution exists.")
+    else:
+        print_solution(board)
+
+def solve_n_queens_util(board, col, n):
+    if col >= n:
+        return True
+    
+    for i in range(n):
+        if is_safe(board, i, col, n):
+            board[i][col] = 1
+            
+            if solve_n_queens_util(board, col + 1, n):
+                return True
+            
+            board[i][col] = 0
+    
+    return False
+
+def print_solution(board):
+    for row in board:
+        print(" ".join("Q" if cell == 1 else "-" for cell in row))
+    print()
+
+```
+
+**Graph Coloring / M-Coloring**
+```python
+def is_safe(vertex, color, graph, coloring, num_colors):
+    for neighbor in graph[vertex]:
+        if coloring[neighbor] == color:
+            return False
+    return True
+
+def graph_coloring_util(graph, num_colors, vertex, coloring):
+    if vertex == len(graph):
+        return True
+    
+    for color in range(1, num_colors + 1):
+        if is_safe(vertex, color, graph, coloring, num_colors):
+            coloring[vertex] = color
+            if graph_coloring_util(graph, num_colors, vertex + 1, coloring):
+                return True
+            coloring[vertex] = 0
+    
+    return False
+
+def graph_coloring(graph, num_colors):
+    coloring = [0] * len(graph)
+    if not graph_coloring_util(graph, num_colors, 0, coloring):
+        print("No solution exists.")
+    else:
+        print("Graph Coloring Solution:")
+        print(coloring)
+
+# Example graph representation: {vertex: [neighbors]}
+graph = {
+    0: [1, 2],
+    1: [0, 2, 3],
+    2: [0, 1, 3],
+    3: [1, 2]
+}
+
+num_colors = 3
+graph_coloring(graph, num_colors)
+
+```
+
+**Generate All Binary Strings**
+```python
+def generate_binary_strings(n):
+    def backtrack(current_string):
+        if len(current_string) == n:
+            binary_strings.append(current_string)
+            return
+        
+        backtrack(current_string + '0')
+        backtrack(current_string + '1')
+    
+    binary_strings = []
+    backtrack('')
+    return binary_strings
+
+# Example usage
+n = 3
+result = generate_binary_strings(n)
+for binary_string in result:
+    print(binary_string)
+```
+
+**Hamiltonian Cycle**
+```python
+def is_safe(vertex, path, graph, pos):
+    if graph[path[pos - 1]][vertex] == 0:
+        return False
+    
+    if vertex in path:
+        return False
+    
+    return True
+
+def hamiltonian_cycle_util(graph, path, pos, n):
+    if pos == n:
+        if graph[path[pos - 1]][path[0]] == 1:
+            return True
+        return False
+    
+    for vertex in range(1, n):
+        if is_safe(vertex, path, graph, pos):
+            path[pos] = vertex
+            if hamiltonian_cycle_util(graph, path, pos + 1, n):
+                return True
+            path[pos] = -1
+    
+    return False
+
+def hamiltonian_cycle(graph):
+    n = len(graph)
+    path = [-1] * n
+    path[0] = 0
+    
+    if not hamiltonian_cycle_util(graph, path, 1, n):
+        print("No Hamiltonian Cycle exists.")
+    else:
+        print("Hamiltonian Cycle:")
+        print(path)
+
+# Example graph representation (adjacency matrix)
+graph = [
+    [0, 1, 1, 1, 0],
+    [1, 0, 1, 0, 1],
+    [1, 1, 0, 1, 0],
+    [1, 0, 1, 0, 1],
+    [0, 1, 0, 1, 0]
+]
+
+hamiltonian_cycle(graph)
+```
+
+**Knight's Tour**
+```python
+def is_valid_move(x, y, board, n):
+    if x >= 0 and y >= 0 and x < n and y < n and board[x][y] == -1:
+        return True
+    return False
+
+def knight_tour_util(board, n, move_number, x, y, x_moves, y_moves):
+    if move_number == n * n:
+        return True
+    
+    for i in range(8):
+        next_x = x + x_moves[i]
+        next_y = y + y_moves[i]
+        if is_valid_move(next_x, next_y, board, n):
+            board[next_x][next_y] = move_number
+            if knight_tour_util(board, n, move_number + 1, next_x, next_y, x_moves, y_moves):
+                return True
+            board[next_x][next_y] = -1
+    
+    return False
+
+def knight_tour(n):
+    board = [[-1] * n for _ in range(n)]
+    x_moves = [2, 1, -1, -2, -2, -1, 1, 2]
+    y_moves = [1, 2, 2, 1, -1, -2, -2, -1]
+    
+    board[0][0] = 0
+    
+    if not knight_tour_util(board, n, 1, 0, 0, x_moves, y_moves):
+        print("No solution exists.")
+    else:
+        print("Knight's Tour Solution:")
+        for row in board:
+            print(row)
+
+# Example chessboard size
+n = 8
+knight_tour(n)
+```
+
+**Sudoku Solver**
+```python
+def is_valid(board, row, col, num):
+    # Check if the same number exists in the current row or column
+    for i in range(9):
+        if board[row][i] == num or board[i][col] == num:
+            return False
+    
+    # Check if the same number exists in the current 3x3 subgrid
+    start_row, start_col = 3 * (row // 3), 3 * (col // 3)
+    for i in range(3):
+        for j in range(3):
+            if board[start_row + i][start_col + j] == num:
+                return False
+    
+    return True
+
+def solve_sudoku(board):
+    empty_cell = find_empty_cell(board)
+    if not empty_cell:
+        return True
+    
+    row, col = empty_cell
+    for num in range(1, 10):
+        if is_valid(board, row, col, num):
+            board[row][col] = num
+            
+            if solve_sudoku(board):
+                return True
+            
+            board[row][col] = 0
+    
+    return False
+
+def find_empty_cell(board):
+    for i in range(9):
+        for j in range(9):
+            if board[i][j] == 0:
+                return i, j
+    return None
+
+def print_board(board):
+    for row in board:
+        print(" ".join(str(cell) for cell in row))
+
+# Example Sudoku puzzle (0 represents empty cells)
+sudoku_board = [
+    [5, 3, 0, 0, 7, 0, 0, 0, 0],
+    [6, 0, 0, 1, 9, 5, 0, 0, 0],
+    [0, 9, 8, 0, 0, 0, 0, 6, 0],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3],
+    [4, 0, 0, 8, 0, 3, 0, 0, 1],
+    [7, 0, 0, 0, 2, 0, 0, 0, 6],
+    [0, 6, 0, 0, 0, 0, 2, 8, 0],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5],
+    [0, 0, 0, 0, 8, 0, 0, 7, 9]
+]
+
+if solve_sudoku(sudoku_board):
+    print("Sudoku Solution:")
+    print_board(sudoku_board)
+else:
+    print("No solution exists.")
+```
 
 ___________________________________________
 
