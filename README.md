@@ -6,6 +6,10 @@
 
 [Algorithms](https://kannikakabilar.github.io/Kannika-Notas/Algorithms/)
 
+[Java](https://kannikakabilar.github.io/Kannika-Notas/Java/)
+
+[JavaScript](https://kannikakabilar.github.io/Kannika-Notas/JavaScript/)
+
 
 
 
