@@ -1,9 +1,25 @@
 <h1 style="color:#fcc603">JavaScript</h1>
 
+JavaScript's \<script> tag should be placed before the closing \<body> tag to reduce page loading time.
+
 <h3 style="color:#fcc603">Variables</h3>
 
+- Variables declared without a keyword become **global variables**, irrespective of where they are declared (ie: in a function)
+- Variables declared with **let** & **const**
+    - must be declared before use
+    - cannot be redeclared
+    - can only be used within block scope that it was declared
+    - cannot bind with this (for objects)
+    - cannot be hoisted
+- **var** is used for supporting old browsers, allows hoisting, and binds to this
+
+\* **Hoisting** is JavaScript's default behavior of moving all declarations (not initialization) to the top of the current scope
+(var variables can be used first and then declared after)
+
 ```javascript
-var count = 0;
+myGlobalVar = 9;    // variable w/o keyword => global variable
+var count = 99;
+var count;        // can be re-declared and it would still have value 99
 let count = 0;
 const count = 0;    // const won't allow you to change its value
 console.log("hello kan");    // print
