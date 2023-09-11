@@ -118,3 +118,91 @@ if(equalsCheck(arr1, arr2)){
     return false;
 }
 ```
+
+<h3 style="color:#fcc603">Functions</h3>
+
+```javascript
+// Anonymous Self-Invoking Function
+(function () {
+  let x = "Hello!!";  // I will invoke myself
+})();
+
+// Creating a function using a Function constructor
+const sum = new Function('a', 'b', 'return a + b');
+console.log(sum(2, 7));    // Expected output: 9
+
+// With call(), an object can use a method belonging to another object.
+const person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+const person1 = {
+  firstName:"Kannika",
+  lastName: "Kabilar"
+}
+person.fullName.call(person1, "Toronto", "Canada");
+// Same as call() but => The apply() method takes args an array instead of separately
+person.fullName.apply(person1, ["Toronto", "Canada"]);
+
+/* Closure */
+const add = (function () {
+  let counter = 0;
+  return function () {counter += 1; return counter}
+})();    // Calls itself and returns a function which is stored in add - this allows the function to have 'counter' as a private variable
+
+add();
+add();
+add();
+// the counter is now 3  
+```
+
+**Arguments are Passed by Value** and **Objects are Passed by Reference**
+
+<h3 style="color:#fcc603">Objects</h3>
+
+```javascript
+// Creating an object
+const person = {
+  firstName: "Kannika",
+  lastName : "Kabilar",
+  id       : 1999,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Accessing properties of an object
+objectName.property      // person.age
+objectName["property"]   // person["age"]
+objectName[expression]   // x = "age"; person[x]
+
+// Methods of an object
+name = person.fullName();    
+name = person.fullName;    // If you access the fullName property, without (), it will return the function definition
+
+// JSON Stringify an object
+const person = {
+  name: "Kannika",
+  age: 23,
+  city: "Toronto"
+};
+
+let myString = JSON.stringify(person);
+document.getElementById("demo").innerHTML = myString;   
+// The result will be a string following the JSON notation: {"name":"Kannika", "age":23, "city":"Toronto"}
+
+/* Constructor */
+function Person(firstName, lastName, age, eyeColor) {
+  this.firstName = firstName; 
+  this.lastName = lastName;
+  this.age = age;
+  this.eyeColor = eyeColor;
+  this.changeAge = function (age) {
+    this.age = age;
+  };
+}
+
+const fighter1 = new Person("Nina", "Williams", 24, "blue");    // using the constructor
+const fighter2 = new Person("Jin", "Kazama", 21, "grey");
+```
