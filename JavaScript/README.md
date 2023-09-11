@@ -47,12 +47,17 @@ num.toString();    // returns number stored in num to a string
 let str = arr.join('');    // combine elements of arr with empty string and return string
 ```
 
+- 3 ways to get parts of a string
+    - slice(start, end)
+    - substring(start, end)
+    - substr(start, length)
+
 <h3 style="color:#fcc603">Arrays</h3>
 
 ```javascript
 arr = Array.from(mySet);    // set to array
 
-arr.sort(function(a, b) {return a-b;});    // built-in sort
+arr.sort(function(a, b) {return a-b;});    // by default js sorts as strings to sort numbers input this function
 
 arr.push(9);    // append number 9 to arr
 
@@ -68,7 +73,34 @@ arr.reduce((partialSum, a) => partialSum + a, 0);    // returns the sum of all e
 
 Math.max(...arr);    // returns the max element of the array
 
-arr.reverse();   
+arr.reverse();
+
+const planets = ["Mercury", "Venus", "Neptune"];
+planets[6] = "Jupiter";  // Creates undefined "holes" in planets
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+// result:  Banana * Orange * Apple * Mango
+let fruit = fruits.pop();    // removes and returns the last element | fruit = Mango
+let fruit = fruits.shift();    // removes and returns the first element | fruit = Banana
+fruits.unshift("Lemon");    // adds new element to the beginning of the array and returns array length
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+/* new elements are added at index 2, 2 elements from index 2 and 3 are removed and returned from og array, "Lemon" and "Kiwi" are  the new elements added to the array */
+let removed = fruits.splice(2, 2, "Lemon", "Kiwi");
+
+const fruits = ["Apple", "Banana", "Mango", "Orange", "Lemon"];
+const citrus = fruits.slice(3);    // citrus = "Orange", "Lemon"
+const yellow = fruits.slice(1, 3);    // yellow = "Banana", "Mango"
+
+fruits.includes("Mango"); // is true
+
+/* Filtering an array */
+const numbers = [45, 4, 9, 16, 25];
+const over18 = numbers.filter(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+}
 ```
 
 <h3 style="color:#fcc603">Hash Sets</h3>
@@ -205,4 +237,58 @@ function Person(firstName, lastName, age, eyeColor) {
 
 const fighter1 = new Person("Nina", "Williams", 24, "blue");    // using the constructor
 const fighter2 = new Person("Jin", "Kazama", 21, "grey");
+```
+
+<h3 style="color:#fcc603">Regex</h3>
+
+```javascript
+let text = "Visit Canada!";
+let n = text.search("Canada");    // n = 6
+let result = text.replace(/canada/i, "USA");    // Search for 'canada' (case insensitive) and replace it; result = "Visit USA!"
+```
+
+<h3 style="color:#fcc603">Strict Mode</h3>
+
+```javascript
+x = 3.14;       // This will not cause an error
+myFunction();
+
+"use strict";
+let x = 3.14;
+delete x;    // This will cause an error because deleting is not allowed
+```
+
+<h3 style="color:#fcc603">Modules: Imports & Exports</h3>
+
+```javascript
+// Example 1
+/* person.js */
+export const name = "Kazuya";
+export const age = 48;
+
+/* main.js */    // Importing Named Exports
+import { name, age } from "./person.js";
+
+// Example 2
+/* message.js */
+const message = () => {
+const name = "Jesse";
+const age = 40;
+return name + ' is ' + age + 'years old.';
+};
+export default message;
+
+/* main.js */
+import message from "./message.js";
+```
+
+<h3 style="color:#fcc603">Debugger</h3>
+
+The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function.
+With the debugger turned on, this code will stop executing before it executes the third line.
+
+```javascript
+let x = 15 * 5;
+debugger;
+document.getElementById("demo").innerHTML = x;
 ```
