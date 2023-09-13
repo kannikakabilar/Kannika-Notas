@@ -270,3 +270,54 @@ let x = 15 * 5;
 debugger;
 document.getElementById("demo").innerHTML = x;
 ```
+
+<h3 style="color:#fcc603">Objects vs. Classes</h3>
+- Objects are used for creating a single entity with their own state & behaviour (almost like a specific instance of a class with its own unique property values)
+- Classes are like a blueprint of an object that allows to create multiple instances (multiple objects with same state and behaviour)
+
+<h3 style="color:#fcc603">Classes</h3>
+
+```javascript
+class Person {    // Every class must have a method called constructor
+  constructor(name, birthYear) {
+    this.name = name;
+    this.birthYear = birthYear;
+  }
+  age(currentYear) {    // methods don't need function keyword
+    return currentYear - this.year;
+  }
+}
+-
+class Student extends Person {     // use extends to inherit from parent class like java
+  static counter = 0;    // Static property (used from class not from any instance of class)
+  constructor(name, birthYear, id) {
+    Student.counter += 1
+    super(name, birthYear);    // methods and properties/attributes from parent method can be used in this class
+    this.id = id;
+  }
+  info() {
+    let year = new Date();    // * classes follow strict mode rules
+    return 'Name: ' + this.name + ', age: ' + this.age(year) + ', student ID: ' + this.id;
+  }
+-
+// Getters and Setters
+  get sname() {    // even if the getter is a method, you don't use parentheses when you want to get the property value
+    return this.name;
+  }
+  set sname(x) {
+    this.name = x;
+  }
+}
+-
+// Static method - defined on the class itself. Cannot call a static method on an object, only on an object class.
+static getTotal() {
+    return "Total Students: " + Student.counter;
+  }
+
+
+let year = date.getFullYear();
+
+let kan = new Person("Kannika", 2023);
+document.getElementById("demo").innerHTML=​ "Hi, I am " + kan.age(year) + " years old.";
+document.getElementById("demo2").innerHTML=​ Student.getTotal();
+```
