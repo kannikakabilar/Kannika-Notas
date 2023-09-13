@@ -11,6 +11,9 @@ JavaScript's \<script> tag should be placed before the closing \<body> tag to re
     - can only be used within block scope that it was declared
     - cannot bind with this (for objects)
     - cannot be hoisted
+
+\* **let** allows to change values of variables while **const** does not!
+
 - **var** is used for supporting old browsers, allows hoisting, and binds to this
 
 \* **Hoisting** is JavaScript's default behavior of moving all declarations (not initialization) to the top of the current scope
@@ -47,10 +50,7 @@ num.toString();    // returns number stored in num to a string
 let str = arr.join('');    // combine elements of arr with empty string and return string
 ```
 
-- 3 ways to get parts of a string
-    - slice(start, end)
-    - substring(start, end)
-    - substr(start, length)
+- Get parts of a string/Array: **slice(start, end)**
 
 <h3 style="color:#fcc603">Arrays</h3>
 
@@ -62,8 +62,6 @@ arr.sort(function(a, b) {return a-b;});    // by default js sorts as strings to 
 arr.push(9);    // append number 9 to arr
 
 arr1.concat(arr2)    // arr1+arr2 returns concatenation of 2 arrays
-
-Array.from(mySet);    // returns an array from set
 
 arr.slice(0, i);    // return arr[0:i]
 
@@ -79,8 +77,6 @@ const planets = ["Mercury", "Venus", "Neptune"];
 planets[6] = "Jupiter";  // Creates undefined "holes" in planets
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits.join(" * ");
-// result:  Banana * Orange * Apple * Mango
 let fruit = fruits.pop();    // removes and returns the last element | fruit = Mango
 let fruit = fruits.shift();    // removes and returns the first element | fruit = Banana
 fruits.unshift("Lemon");    // adds new element to the beginning of the array and returns array length
@@ -88,10 +84,6 @@ fruits.unshift("Lemon");    // adds new element to the beginning of the array an
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 /* new elements are added at index 2, 2 elements from index 2 and 3 are removed and returned from og array, "Lemon" and "Kiwi" are  the new elements added to the array */
 let removed = fruits.splice(2, 2, "Lemon", "Kiwi");
-
-const fruits = ["Apple", "Banana", "Mango", "Orange", "Lemon"];
-const citrus = fruits.slice(3);    // citrus = "Orange", "Lemon"
-const yellow = fruits.slice(1, 3);    // yellow = "Banana", "Mango"
 
 fruits.includes("Mango"); // is true
 
@@ -223,20 +215,6 @@ const person = {
 let myString = JSON.stringify(person);
 document.getElementById("demo").innerHTML = myString;   
 // The result will be a string following the JSON notation: {"name":"Kannika", "age":23, "city":"Toronto"}
-
-/* Constructor */
-function Person(firstName, lastName, age, eyeColor) {
-  this.firstName = firstName; 
-  this.lastName = lastName;
-  this.age = age;
-  this.eyeColor = eyeColor;
-  this.changeAge = function (age) {
-    this.age = age;
-  };
-}
-
-const fighter1 = new Person("Nina", "Williams", 24, "blue");    // using the constructor
-const fighter2 = new Person("Jin", "Kazama", 21, "grey");
 ```
 
 <h3 style="color:#fcc603">Regex</h3>
