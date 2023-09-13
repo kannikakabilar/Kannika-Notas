@@ -12,7 +12,7 @@ JavaScript's \<script> tag should be placed before the closing \<body> tag to re
     - cannot bind with this (for objects)
     - cannot be hoisted
 
-\* **let** allows to change values of variables while **const** does not!
+\* **let** allows to change values of variables while **const** <span style="color:red">does not</span>!
 
 - **var** is used for supporting old browsers, allows hoisting, and binds to this
 
