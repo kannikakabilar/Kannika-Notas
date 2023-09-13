@@ -321,3 +321,29 @@ let kan = new Person("Kannika", 2023);
 document.getElementById("demo").innerHTML=​ "Hi, I am " + kan.age(year) + " years old.";
 document.getElementById("demo2").innerHTML=​ Student.getTotal();
 ```
+
+<h3 style="color:#fcc603">JSON</h3>
+
+Stores objects as text
+
+**JSON.parse()**    -    converts JSON strings into JavaScript objects
+
+**JSON.stringify()**    -    converts an object into a JSON string
+
+\* JSON values cannot be: function, date, undefined ; but it can be string, number, object, array ...
+
+```javascript
+<p id="demo"></p>
+<script>
+// jsonText contains a string of how objects are stored in JSON.stringify(obj1) is called
+// object employees is an array and it contains 3 person object
+let jsonText = '{"employees":[' +
+'{"firstName":"Steve","lastName":"Fox" },' +
+'{"firstName":"Anna","lastName":"Williams" },' +
+'{"firstName":"Julia","lastName":"Chang" }]}';
+
+const obj = JSON.parse(jsonText);    // Convert the json formatted string into a JavaScript object
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
+```
