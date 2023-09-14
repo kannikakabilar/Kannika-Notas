@@ -390,7 +390,7 @@ myElements = $("p.intro");   // return a list of all <p> elements with class="in
 ```
 
 ```html
-<-- Filtering html elems example -->
+<-- Filtering html elems with jQuery example -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -424,3 +424,7 @@ $(document).ready(function(){
 </body>
 </html>
 ```
+
+
+***Note**: getElementById is an example of HTML DOM
+- HTML DOM can be used to change text of html elems, change its css, perform form validation, and animation.
