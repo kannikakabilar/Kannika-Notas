@@ -371,3 +371,13 @@ xhttp.onload = function() {
 xhtp.send();
 // If 'POST': xhttp.send("fname=Kannika&lname=Kabilar");
 ```
+
+<h3 style="color:#fcc603">jQuery</h3>
+
+- It can be used for: animation, event handling, html element manipulation, and
+    - traversing & filtering through html elems => useful for searching through text in webpage
+- It can also be used with AJAX
+
+```javascript
+myElement = $("#id01");
+```
