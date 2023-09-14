@@ -380,4 +380,47 @@ xhtp.send();
 
 ```javascript
 myElement = $("#id01");
+// same as: myElement = document.getElementById("id01");
+
+myElements = $("p");    // return all <p> elements
+// same as: myElements = document.getElementsByTagName("p");
+
+myElements = $("p.intro");   // return a list of all <p> elements with class="intro"
+// same as: myElements = document.querySelectorAll("p.intro");
+```
+
+```html
+<-- Filtering html elems example -->
+<!DOCTYPE html>
+<html>
+<head>
+<-- include below line to use jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>Filterable List</h2>
+<p>Type something in the input field to search the list for specific items:</p>  
+<input id="myInput" type="text" placeholder="Search...">
+<br>
+
+<ul id="myList">
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+  <li>Fourth</li>
+</ul>
+  
+</body>
+</html>
 ```
