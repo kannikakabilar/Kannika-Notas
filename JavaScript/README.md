@@ -324,7 +324,7 @@ document.getElementById("demo2").innerHTML=​ Student.getTotal();
 
 <h3 style="color:#fcc603">JSON</h3>
 
-Stores objects as text
+Stores JS objects or JS arrays as text
 
 **JSON.parse()**    -    converts JSON strings into JavaScript objects
 
@@ -346,4 +346,28 @@ const obj = JSON.parse(jsonText);    // Convert the json formatted string into a
 document.getElementById("demo").innerHTML =
 obj.employees[1].firstName + " " + obj.employees[1].lastName;
 </script>
+```
+
+<h3 style="color:#fcc603">AJAX</h3>
+
+- allows the feature of not collecting all data from server when loading the webpage only when it is requested
+
+\* The below chunk of code can be put inside a function & the function can be executed when a button is clicked or when a letter is typed in an input field
+```javascript
+// Step 1: Create an instance of an XMLHttpRequest
+var xhttp = new XMLHttpRequest();
+
+// Step 2: Either we are receiving data from webserver (GET) or we are sending to webserver (POST)
+xhttp.open('GET', 'some-url.com');
+// The url should be a datafile in the following format: JSON, XML, PHP, ASP, Database
+
+// Step 3: Execute this function when the webpage requests it
+xhttp.onload = function() {
+    . . .  // use xhttp.responseText or this.responseText to use the data that we collected from url
+    . . .  // it contains contains JSON stringified data (or string data) or this.responseXML if url is xml file
+};
+
+// Step 4: Send either our 'GET' request or 'POST' request to webserver
+xhtp.send();
+// If 'POST': xhttp.send("fname=Kannika&lname=Kabilar");
 ```
