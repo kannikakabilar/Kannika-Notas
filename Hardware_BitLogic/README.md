@@ -96,7 +96,23 @@ Input Devices =============>    RAM   ===============>  Output Devices
     - execute <br>
     - write back to memory <br>
 
+<h3 style="color:#8096c2">XOR</h3>
 
+\[ _ 1 _ 2 _ 3 _ \] <br>
+\[ 1 ^ 0 ^ 2 ^ 1 \] <br>
+\[ 1 (1^1) (0^2) (2^3) \] <br><br>
+
+- xor is like a triangle - as long as you have any 2 of the numbers, you can get the third number
+   A <br>
+ B ^ C  &emsp;  =>  &emsp;  A ^ B = C | A ^ C = B | B ^ C = A <br><br>
+
+**All doubles cancel out**
+
+A ^ A ^ B ^ B ^ C = C  &emsp;   because A ^ A = 0 and A ^ 0 = A <br><br>
+
+**Bitwise Operators (&, ^, |) are Associative and Commutative** - order doesn't matter; can be distributed/factored
+
+A&B ^ A&C &emsp; &#8596; &emsp; A & (B ^ C)
 
 
 
