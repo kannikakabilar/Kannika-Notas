@@ -102,17 +102,63 @@ Input Devices =============>    RAM   ===============>  Output Devices
 \[ 1 ^ 0 ^ 2 ^ 1 \] <br>
 \[ 1 (1^1) (0^2) (2^3) \] <br><br>
 
-- xor is like a triangle - as long as you have any 2 of the numbers, you can get the third number
-   A <br>
- B ^ C  &emsp;  =>  &emsp;  A ^ B = C | A ^ C = B | B ^ C = A <br><br>
+- xor is like a triangle - as long as you have any 2 of the numbers, you can get the third number <br>
+ _ A _<br>
+ B ^ C  &emsp;&emsp;  =>  &emsp;&emsp;  A ^ B = C | A ^ C = B | B ^ C = A <br><br>
 
 **All doubles cancel out**
 
-A ^ A ^ B ^ B ^ C = C  &emsp;   because A ^ A = 0 and A ^ 0 = A <br><br>
+A ^ A ^ B ^ B ^ C = C  &emsp;&emsp;   because A ^ A = 0 and A ^ 0 = A <br><br>
 
-**Bitwise Operators (&, ^, |) are Associative and Commutative** - order doesn't matter; can be distributed/factored
+**Bitwise Operators (&, ^, \|) are Associative and Commutative** - order doesn't matter; can be distributed/factored
 
-A&B ^ A&C &emsp; &#8596; &emsp; A & (B ^ C)
+A&B ^ A&C &emsp;&emsp; &#8596; &emsp;&emsp; A & (B ^ C) <br><br>
+
+<h3 style="color:#8096c2">Bit Count</h3>
+
+In <span style="color:#fc6b03">Java</span>
+```java
+int num = 11;    // Binary: 1011
+Integer.bitCount(num);    // returns # of 1s in binary rep = 3
+Integer.reverse(num);     // reverses binary form = 1101 = 13
+```
+
+**Reverse Looping**
+```java
+for(int i=0; i<arr.length; i++){
+ if(arr[arr.length-i-1] == ...
+}
+```
+
+ <br><br>
+
+<h3 style="color:#8096c2">Bit Shifting</h3>
+
+**Count # of 1s in a binary rep of a number**
+if a num % 2 == 0 <br>
+&emsp;&emsp; => last bit of num in binary is 0 <br>
+&emsp;&emsp; => else last bit of num in binary is 1 <br><br>
+
+&emsp;&emsp; num << 1 &emsp;&emsp; (move to the next right-most bit) <br><br>
+
+*last bit = right-most bit <br>
+
+<h3 style="color:#8096c2">Counting Bits w/ Dynamic Programming</h3>
+
+if num % 2 == 0
+&emsp;&emsp; => num has same # of bits as  num/2
+&emsp;&emsp; => else num has same # of bits as (num-1) + 1
+
+<h3 style="color:#8096c2">Signed vs. Unsigned int</h3>
+
+- **signed:** variable can contain positive and negative values (contains sign-bit)
+- **unsigned:** variable only contains positive int (no dedicated sign-bit)
+
+In <span style="color:#fc6b03">Java</span>
+
+- if num = 5 <br>
+- then ~num equals 1's complement and flipping sign bit <br>
+&emsp;&emsp; => 0101 => 1010
 
 
 
