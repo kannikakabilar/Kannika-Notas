@@ -516,7 +516,7 @@ ___________________________________________
 - **Open Addressing**: store all values within the hash table<br>
     - **Linear Probing**: if hash(x) % S is full => (hash(x) + 1) % S<br><br>
 
-  **Initializing HashMap and HashSet in Java**
+  **Initializing HashMaps in Java**
 
 ```java
     import java.util.HashMap;
@@ -534,9 +534,34 @@ ___________________________________________
         System.out.println(i);  // Print values
     }
 
+    // HashMap Integer example
+    HashMap <Integer, Integer> freq = new HashMap <Integer, Integer>();
+    freq.containsKey(2);    // Checks if the hashmap has key=2
+
+    freq.put(2, freq.get(2)+1);   // updating value of a key in hash map
+    freq.keySet();
+    freq.values();    // returns a list of values
+
+    Integer [] myArr = new Integer[10];
+    HashMap <Integer, Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr));    // change an array into a hash set
+
+```
+
+*HashMaps in java are **pass by reference** (if hashmap is changed in function, the changes can be seen outside the function too) <br><br>
+
+  **Initializing HashSets in Java**
+  
+```java
     HashSet<String> cars = new HashSet<String>();
     cars.add("McLaren");
     cars.contains("McLaren"); // Returns True
+
+    HashSet <String> uniqueNums = new HashSet <String>();
+    uniqueNums.add(n);    // add elements to hash set
+    uniqueNums.size();    // get size of hash set
+    uniqueNums.contains(9);    // returns true if the hash set contains 9
+    uniqueNums.remove(3);    // removes element 3 from hash set
+    uniqueNums.clear();    // deletes everything in set
 ```
 
 #### Sample HashMap/HashSet Qs
