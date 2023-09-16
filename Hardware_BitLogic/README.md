@@ -158,7 +158,13 @@ In <span style="color:#fc6b03">Java</span>
 
 - if num = 5 <br>
 - then ~num equals 1's complement and flipping sign bit <br>
-&emsp;&emsp; => 0101 => 1010
+&emsp;&emsp; => 0101 => 1010 <br>
+
+<h3 style="color:#8096c2">Bitmasking</h3>
+
+- used when you want only part of the binary bits <br>
+for ex:  we just want the 1st 2 bits of 1101  <br>
+&emsp;&emsp; we can 'and' it with 0011 => 1101 & 0011 = 0001
 
 <br><br><br>
 
