@@ -130,7 +130,7 @@ for(int i=0; i<arr.length; i++){
 }
 ```
 
- <br><br>
+ <br>
 
 <h3 style="color:#8096c2">Bit Shifting</h3>
 
@@ -139,15 +139,15 @@ if a num % 2 == 0 <br>
 &emsp;&emsp; => last bit of num in binary is 0 <br>
 &emsp;&emsp; => else last bit of num in binary is 1 <br><br>
 
-&emsp;&emsp; num << 1 &emsp;&emsp; (move to the next right-most bit) <br><br>
+&emsp;&emsp; num = num << 1 &emsp;&emsp; (move to the next right-most bit) <br><br>
 
 *last bit = right-most bit <br>
 
 <h3 style="color:#8096c2">Counting Bits w/ Dynamic Programming</h3>
 
-if num % 2 == 0
-&emsp;&emsp; => num has same # of bits as  num/2
-&emsp;&emsp; => else num has same # of bits as (num-1) + 1
+if num % 2 == 0 <br>
+&emsp;&emsp; => num has same # of bits as  num/2 <br>
+&emsp;&emsp; => else num has same # of bits as (num-1) + 1 <br>
 
 <h3 style="color:#8096c2">Signed vs. Unsigned int</h3>
 
@@ -159,6 +159,8 @@ In <span style="color:#fc6b03">Java</span>
 - if num = 5 <br>
 - then ~num equals 1's complement and flipping sign bit <br>
 &emsp;&emsp; => 0101 => 1010
+
+<br><br><br>
 
 
 
