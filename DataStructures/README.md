@@ -512,9 +512,10 @@ ___________________________________________
 
 ### Terms
 - **Hash function**: input is key-value and the output is memory address/slot# of where the element will be stored<br>
-- **Collision => chaining**: when 2 elements are directed to the same slot use linked list or trees to store the element at that address<br>
-- **Open Addressing**: store all values within the hash table<br>
-    - **Linear Probing**: if hash(x) % S is full => (hash(x) + 1) % S<br><br>
+A Hashmap can be designed by creating a large array where the key(int) can be the index of the array and the value can be stored at that index of the array
+- **Collision => chaining**: when 2 elements are directed to the same slot use linked list or trees to store the element at that address <br>
+- **Open Addressing**: store all values within the hash table <br>
+    - **Linear Probing**: if hash(x) % S is full => (hash(x) + 1) % S <br><br>
 
   **Initializing HashMaps in Java**
 
@@ -563,6 +564,8 @@ ___________________________________________
     uniqueNums.remove(3);    // removes element 3 from hash set
     uniqueNums.clear();    // deletes everything in set
 ```
+
+- Hash Tables (work similar to HashMaps) aren't used anymore but they provide enumeration and are thread safe while Hash Maps don't
 
 #### Sample HashMap/HashSet Qs
 
