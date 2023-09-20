@@ -21,6 +21,7 @@
 
 ### Perform a palindrome-like check 
 - compare 1st & last elem, 2nd and 2nd-last elem, ...
+- use i=0 and compare arr\[i\] and arr\[arr.length-i-1\]
 
 ### Remove palindromic subsequence until string is empty
 - Given a string made-up of only 2 letters
@@ -69,7 +70,7 @@ var sortArrayByParity = function(nums) {
 };
 ```
 
-### Sometime 2 pointers of 1 array can be like:
+### Sometimes 2 pointers of 1 array can be like:
 - i = 0 and arr.length-i-1 &ensp;&ensp; or
 - i = 0; j = 1; and they are incremented like: i+=2 and j+=2 where i<arr.length and j<arr.length &ensp;&ensp; <br>
  &ensp;&ensp; or &ensp;&ensp; **Window Sliding**<br>
@@ -292,5 +293,5 @@ var checkPowersOfThree = function(n) {
 
 
 
-
+A search in a sorted collection, think binary search. Minimum # of steps, think BFS. Min/max K elements, think heap. Optimization, think DP. 
 
