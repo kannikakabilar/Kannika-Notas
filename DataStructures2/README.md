@@ -22,8 +22,6 @@
 ### Perform a palindrome-like check 
 - compare 1st & last elem, 2nd and 2nd-last elem, ...
 
-### Swapping inside a while(flag) loop
-
 ### Remove palindromic subsequence until string is empty
 - Given a string made-up of only 2 letters
 - at a single step, a palindromic subsequence can be removed
@@ -73,8 +71,8 @@ var sortArrayByParity = function(nums) {
 
 ### Sometime 2 pointers of 1 array can be like:
 - i = 0 and arr.length-i-1 &ensp;&ensp; or
-- i = 0; j = 1; and they are incremented like: i+=2 and j+=2 where i<arr.length and j<arr.length &ensp;&ensp; 
- &ensp;&ensp; or **Window Sliding**<br>
+- i = 0; j = 1; and they are incremented like: i+=2 and j+=2 where i<arr.length and j<arr.length &ensp;&ensp; <br>
+ &ensp;&ensp; or &ensp;&ensp; **Window Sliding**<br>
 - i = 0; while(i+k<arr.length) where we are looping through contiguous subsequence of size k
 
 **Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold**
@@ -103,5 +101,195 @@ var numOfSubarrays = function(arr, k, threshold) {
 - start with outer loop i=0; i<arr.length;
   - add inner loop j=i (or j=i+1) ; j<arr.length
       - body of inner loop contains subset for [i, j)
+
+
+<h2 style="color:#1669f0">Math</h2>
+
+### Handling Big Numbers
+- In Java, when handling big numbers => convert them to strings and/or use **long int num = ...** 
+
+- In JavaScript, when handling big numbers => convert them to strings and/or use **BigInt(num)**
+
+```javascript
+/* Calculate the product of all integers in the inclusive range [left, right] and write it in a specific format */
+
+var abbreviateProduct = function(left, right) {
+    let prod = 1;
+    while(left<=right){
+        prod = BigInt(prod)*BigInt(left);
+        left++;
+    }
+    // # of trailing zeros must be cocatenated after 'e' in the resultin string
+    let c = 0;
+    while(prod%BigInt(10)==0){
+        prod = BigInt(prod) / BigInt(10);
+        c++;
+    }
+    let numStr = prod.toString();
+    // if # of digits of prod > 10, then write it in this format: [first 5 digits of prod]...[last 5 digits of prod]e[#_of_trailing_zeros]
+    if(numStr.length<=10){
+        return numStr+"e"+c.toString();
+    }else{
+        return numStr.slice(0, 5)+"..."+numStr.slice(numStr.length-5, numStr.length)+"e"+c.toString();
+    }
+};
+```
+
+### Prime Palindrome: Given n, find a number a greater or equal to n that is a palindrome and a prime number
+
+```javascript
+var isPrime = function(n) {
+    if(n<=1||n==4||n==8||n==6){
+        return false;
+    }
+    if(n==2||n==3||n==5||n==7){
+        return true;
+    }
+    for(let i=3; i<=Math.sqrt(n); i+=2){
+        if(n%i == 0){
+            return false;
+        }
+    }
+    return true;
+};
+var isPalindrome = function(n) {
+    n = n.toString();
+    let i = 0;
+    while(i<n.length){
+        if(n[i]!=n[n.length-i-1]){
+            return false;
+        }
+        i++;
+    }
+    return true;
+};
+var primePalindrome = function(n) {
+    while(true){
+        if(n==1||n==2){
+            return 2;
+        }else if(n%2==0){
+            n++;
+            continue;
+        }
+        if(isPalindrome(n) && isPrime(n)){
+            return n;
+        }
+        n+=2;
+    }
+};
+```
+
+### Count # of primes strictly less than n
+
+```javascript
+var countPrimes = function(n) {
+    let count = 0;
+    let arr = [];
+    for(let i=2; i<n; i++){
+        if(arr[i]){
+            continue;
+        }else{
+            count++;
+        }
+        for(let j=i+i; j<=n; j+=i){
+            arr[j]=true;
+        }
+    }
+    return count;   
+};
+```
+
+### Reverse an integer
+
+```javascript
+var reverse = function(x) {
+    if(x==0){
+        return 0;
+    }
+    let str = x.toString();
+    let arr = str.split('');
+    let res = "";
+    if(str[0]=="-"){
+        res += "-";
+    }
+    for(let i=0; i<str.length; i++){
+        if(str[str.length-i-1]=="-"){
+            //res += "-";
+            continue;
+        }else if(i==0 && str[str.length-i-1]=="0"){
+            continue;
+        }
+        res += str[str.length-i-1];
+    }    
+    
+    if(BigInt(res)<BigInt(-2147483648) || BigInt(res)>BigInt(2147483647)){
+        return 0;
+    }else{
+        return parseInt(res, 10);
+    }
+    
+};
+```
+
+### Summing &ensp;&ensp; 1+3+5+...+n &ensp;&ensp; or &ensp;&ensp; 2+4+6+...+n
+- Sequence: 1, 3, 5, 7, 9, ...
+  - formula to get nth term = 1 + 2*(n-1)
+  - formula to get sum = n*(1 + nth_term)/2
+
+- Sequence: 2, 4, 6, 8, 10, ...
+  - formula to get nth term = 2 + 2*(n-1)
+  - formula to get sum = n*(2 + nth_term)/2
+
+**Minimum Operations to Make Array Equal**
+
+```javascript
+var minOperations = function(n) {
+    if(n%2 == 0){
+        let myn = n/2;
+        let res = 2 + (2*(myn-1));
+        return (res * myn)/2;
+    }else{
+        let mym = (n-1)/2;
+        let res = 4 + (2*(mym-1));
+        return (res * mym)/2;
+    }
+    
+};
+```
+
+### Like converting a decimal number to binary: Given a number check if it can be written by sum of powers-of-3
+
+```javascript
+var checkPowersOfThree = function(n) {
+    if(n==0 || n%3==2){
+        return false;
+    }else if(n==1){
+        return true;
+    }else{
+        let count = 1;
+        while(Math.pow(3, count)<n){
+            count++;
+        }
+        if(Math.pow(3, count) == n){
+            return true;
+        }else{
+            count--;
+            n -= Math.pow(3, count);
+            for(let i=count-1; i>=0; i--){
+                if(Math.pow(3, i)<=n){
+                    n -= Math.pow(3, i);
+                }
+            }
+            return n==0;
+        }
+    }
+};
+```
+
+
+
+
+
+
 
 
