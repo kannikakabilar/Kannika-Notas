@@ -257,7 +257,8 @@ var minOperations = function(n) {
 };
 ```
 
-### Like converting a decimal number to binary: Given a number check if it can be written by sum of powers-of-3
+### Like converting a decimal number to binary: 
+### &ensp; Given a number check if it can be written by sum of powers-of-3
 
 ```javascript
 var checkPowersOfThree = function(n) {
