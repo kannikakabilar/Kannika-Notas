@@ -338,6 +338,36 @@ var findDuplicates = function(nums) {
 };
 ```
 
+Given an integer array => create a 2D array from it such that each row in the 2D array contians distinct elements and the number of rows should be minimal <br>
+
+for example:
+Input: nums = \[1,3,4,1,2,3,1\]
+Output: \[\[1,3,4,2\],\[1,3\],\[1\]\]
+
+```javascript
+var findMatrix = function(nums) {
+    let freq = new Map();
+    let res = [];
+    for(let i=0; i<nums.length; i++){
+        if(freq.has(nums[i])){
+            freq.set(nums[i], freq.get(nums[i])+1);
+        }else{
+            freq.set(nums[i], 1);
+        }
+    }
+
+    for(let [key, value] of freq){
+        for(let j=0; j<Math.min(res.length, value); j++){
+            res[j].push(key);
+        }
+        while(res.length<value){
+            res.push([key]);
+        }
+    }
+    return res;
+};
+```
+
 
 
 
