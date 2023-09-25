@@ -368,6 +368,34 @@ var findMatrix = function(nums) {
 };
 ```
 
+Given an integer array groupSizes, where groupSizes[i] is the size of the group that person i is in. Return a list of groups such that each person i is in a group of size groupSizes[i].
+
+for example
+Input: groupSizes = \[3,3,3,3,3,1,3\]
+Output: \[\[5\],\[0,1,2\],\[3,4,6\]\] 
+
+```javascript
+var groupThePeople = function(groupSizes) {
+    let res = [];
+    let groups = {};
+
+    let size = 0;
+    for(let i=0; i<groupSizes.length; i++){
+        size = groupSizes[i];
+        if(!groups[size]){
+            groups[size] = [];
+        }
+        groups[size].push(i);
+
+        if(groups[size].length == size){
+            res.push(groups[size]);
+            delete groups[size];
+        }
+    }
+    return res;
+};
+```
+
 
 
 
