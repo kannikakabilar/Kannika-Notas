@@ -241,6 +241,35 @@ var reverse = function(x) {
   - formula to get nth term = 2 + 2*(n-1)
   - formula to get sum = n*(2 + nth_term)/2
 
+### Summing 1+2+3+4+...+n
+- formula to get sum = n*(n+1)/2
+
+**Given an integer array nums, return the number of subarrays filled with 0.
+A subarray is a contiguous non-empty sequence of elements within an array.**
+
+```javascript
+var zeroFilledSubarray = function(nums) {
+    let start = -1;
+    let count = 0;
+    let n = 0;
+    for(let i=0; i<nums.length; i++){
+        if(start!=-1 && nums[i]!=0){
+            n = i - start;
+            count += ((n*(n+1))/2);
+            start = -1;
+        }else if(start==-1 && nums[i]==0){
+            start = i;
+        }
+    }
+    if(start!=-1){
+        n = nums.length - start;
+        count += ((n*(n+1))/2);
+        start = -1;
+    }
+    return count;
+};
+```
+
 **Minimum Operations to Make Array Equal**
 
 ```javascript
@@ -288,6 +317,26 @@ var checkPowersOfThree = function(n) {
 };
 ```
 
+<h2 style="color:#1669f0">Arrays + HashMap</h2>
+
+Given an integer array nums of length n where all the integers of nums are in the range \[1, n\] and each integer appears once or twice, return an array of all the integers that appears twice. Try time complexity O(n) and space complexity O(1)
+
+```javascript
+var findDuplicates = function(nums) {
+    let res = [];
+    for(let n of nums){
+        if(n<=nums.length && nums[n-1]>nums.length){
+            res.push(Math.abs(n));
+        }else if(n>nums.length && nums[n-nums.length-1]>nums.length){
+            res.push(Math.abs(n));
+        }else{
+            nums[n-1] = nums[n-1] + nums.length;
+        }
+        console.log(nums);
+    }
+    return res;
+};
+```
 
 
 
