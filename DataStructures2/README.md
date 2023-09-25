@@ -293,5 +293,5 @@ var checkPowersOfThree = function(n) {
 
 
 
-A search in a sorted collection, think binary search. Minimum # of steps, think BFS. Min/max K elements, think heap. Optimization, think DP. 
+A search in a sorted collection, think binary search. Minimum # of steps, think BFS. Min/max K elements, think heap. Optimization, think DP. Parentheses, think stacks. 
 
