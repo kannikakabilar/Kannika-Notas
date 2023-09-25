@@ -46,6 +46,10 @@ str1.localeCompare(str2)==0     // returns true if both strs are exactly equal
 parseInt("1999");    // returns 1999 Number
 
 num.toString();    // returns number stored in num to a string
+num.toString(2);    // returns number stored in num to a binary string
+
+str.replaceAll("Canada", "USA");    // replace all instances of "Canada" with "USA" in str
+str.replaceAll("c", "");    // removes all instances of c in str
 
 let str = arr.join('');    // combine elements of arr with empty string and return string
 ```
