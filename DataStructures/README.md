@@ -352,7 +352,7 @@ def getDecimalValue(head: ListNode) -> int:
 ___________________________________________
 
 
-<h3 style="color:#5c91fa">Stacks</h3>   -   used for evaluating math expr and recursive function calls
+<h3 style="color:#5c91fa">Stacks</h3>   -   used for evaluating parentheses, math expr and recursive function calls
 
 #### Sample Stack Qs
 
