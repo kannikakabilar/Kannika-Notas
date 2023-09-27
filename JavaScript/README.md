@@ -372,7 +372,7 @@ xhttp.onload = function() {
 };
 
 // Step 4: Send either our 'GET' request or 'POST' request to webserver
-xhtp.send();
+xhttp.send();
 // If 'POST': xhttp.send("fname=Kannika&lname=Kabilar");
 ```
 
