@@ -64,21 +64,6 @@ def reverseMerge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         n, last = n - 1, last - 1
 ```
 
-**Generate Pascal**
-```python
-def generatePascal(numRows: int) -> List[List[int]]:
-    l = []
-    for i in range(numRows):
-        l.append([])
-        for j in range(i+1):
-            if i == 0 or i == 1:
-                l[i].append(1)
-            elif j == 0 or j == i:
-                l[i].append(1)
-            else:
-                l[i].append(l[i-1][j-1] + l[i-1][j])
-    return l
-```
 **Stock Profit**
 ```python
 def stockProfit(prices: List[int]) -> int:
@@ -103,37 +88,7 @@ def singleNumber(nums: List[int]) -> int:
         res ^= num
     return res
 ```
-**Remove Duplicates**
-```python
-def removeDuplicates(nums: List[int]) -> int:
-    length = len(nums)
-    if length == 1:    
-        return 1
 
-    else:
-        j = 0                          # i and j double pointers
-        i = 1
-        count = 1                      
-        
-        for i in range(length):        
-            if nums[i] != nums[j]:
-                j += 1                 # j only increases if i reaches a distinct element
-                nums[j] = nums[i]      
-                count += 1             
-        
-        return count
-```
-**Remove Element**
-```python
-def removeElement(nums: List[int], val: int) -> int:
-    j = 0                        # Create 2 pointers i and j
-    i = 0
-    for j in range:              
-        if nums[j] != val:       
-            nums[i] = nums[j]    
-            i += 1               
-    return i
-```
 **Move Zeroes To End**
 ```python
 def moveZeroes(nums: List[int]) -> None:
@@ -152,6 +107,25 @@ def moveZeroes(nums: List[int]) -> None:
         nums[len(nums)-(j+1)] = 0
         
     return nums
+```
+**If elements are from \[1, n\] => then try using them as index**
+Given a list of nums of size n that contains elements 1 to n, return a list of elements from nums that occur twice (or more) in the list.
+
+```javascript
+var findDuplicates = function(nums) {
+    let res = [];
+    for(let n of nums){
+        if(n<=nums.length && nums[n-1]>nums.length){
+            res.push(Math.abs(n));
+        }else if(n>nums.length && nums[n-nums.length-1]>nums.length){
+            res.push(Math.abs(n));
+        }else{
+            nums[n-1] = nums[n-1] + nums.length;
+        }
+        console.log(nums);
+    }
+    return res;
+};
 ```
 **Kadane's Algorithm - Max Sub Array**
 ```python
@@ -277,6 +251,22 @@ def reverseList(head: ListNode) -> ListNode:
     head = prev
     return head
 ```
+
+**Find Middle Node**
+```python
+def middleNode(head: ListNode) -> ListNode:
+    if not head.next:
+        return True
+    
+    # find the middle
+    fast, slow = head, head
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
+
+  return slow
+```
+
 **Is Palindrome?**
 ```python
 def isPalindrome(head: ListNode) -> bool:
@@ -308,20 +298,7 @@ def isPalindrome(head: ListNode) -> bool:
 
     return True  
 ```
-**Find Middle Node**
-```python
-def middleNode(head: ListNode) -> ListNode:
-    if not head.next:
-        return True
-    
-    # find the middle
-    fast, slow = head, head
-    while fast and fast.next:
-        fast = fast.next.next
-        slow = slow.next
 
-  return slow
-```
 **Binary to Decimal**
 ```python
 def getDecimalValue(head: ListNode) -> int:
