@@ -131,6 +131,51 @@ def maxDepth(s: str) -> int:
             d -= 1
     return high
 ```
+**Push and Pop Sequence of Stack**
+Given an array called pushed which contains the order in which elements were pushed into a stack and another array called popped which contains the order in which the elements were popped from the stack. Return true if this could have been the result of a sequence of push and pop operations on an initially empty stack.
+
+```javascript
+var validateStackSequences = function(pushed, popped) {
+    let stack = [];
+    let j = 0;
+    for(let i=0; i<pushed.length; i++){
+        stack.push(pushed[i]);
+        while(stack.length>0 && popped[j]==stack[stack.length-1]){
+            stack.pop();
+            j++;
+        }
+    }
+    
+    return stack.length==0;
+};
+```
+
+**Remove Minimal Parentheses**
+Remove the minimum amount of parentheses to make it a valid parentheses string
+
+```javascript
+var minRemoveToMakeValid = function(s) {
+    let count = 0;
+    let news = s
+    for(let i=0; i<s.length; i++){
+        if(count>0 && s[i] == ")"){
+            count--;
+        }else if(s[i]==")"){
+            news = news.replace(")", "");
+        }else if(s[i]=="("){
+            count++;
+        }
+    }
+
+    news = news.split("").reverse().join("");
+    while(count != 0){
+        news = news.replace("(", "");
+        count--;
+    }
+    return news.split("").reverse().join("");
+    
+};
+```
 ___________________________________________
 
 <h3 style="color:#5c91fa">Queues  </h3> 
