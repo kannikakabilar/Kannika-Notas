@@ -1,400 +1,216 @@
 <h1 style="color:#1669f0">Data Structures 2</h1>
 
-<h2 style="color:#1669f0">Two Pointers</h2>
+<h3 style="color:#5c91fa">Stacks</h3>   -   used for evaluating parentheses, math expr and recursive function calls
 
-### Given a list or a string - loop through all pairs of elements
-- In Java **Count Pairs Whose Sum is Less than Target**
+#### Sample Stack Qs
 
-```java
-  public int countPairs(List<Integer> nums, int target) {
-      int count = 0;
-      for(int i=0; i<nums.size(); i++){
-          for(int j=i+1; j<nums.size(); j++){
-              if(nums.get(i)+nums.get(j)<target){
-                  count++;
-              }
-          }
-      }
-      return count;
-  }
+**Valid Parentheses**
+```python
+def validParentheses(s: str) -> bool:
+    d = {'(':')', '{':'}','[':']'}
+    stack = []
+    for i in s:
+        if i in d:  
+            stack.append(i)
+        elif len(stack) == 0 or d[stack.pop()] != i:  
+            return False
+    return len(stack) == 0 
 ```
-
-### Perform a palindrome-like check 
-- compare 1st & last elem, 2nd and 2nd-last elem, ...
-- use i=0 and compare arr\[i\] and arr\[arr.length-i-1\]
-
-### Remove palindromic subsequence until string is empty
-- Given a string made-up of only 2 letters
-- at a single step, a palindromic subsequence can be removed
-    - Soln.: if org string is a palindrome => only 1 step is needed to make string empty
-    - else only 2 step is needed to make string empty
-
-In JavaScript
-```javascript
-var removePalindromeSub = function(s) {
-
-    let i = 0;
-    let j = s.length - 1;
-    s = s.split('');
-    while(i<j){
-        if(s[i++]!=s[j--]){
-            return 2;
-        }
-    }
-    return 1;    
-};
+**Inorder Traversal**
+```python
+def inorderTraversal(root: TreeNode) -> List[int]:
+        
+    lst = []
+    if root is None:
+        return lst
+    if root.left is None:
+        lst.append(root.val)
+        lst += inorderTraversal(root.right)
+    else:
+        lst += inorderTraversal(root.left)
+        lst.append(root.val)
+        lst += inorderTraversal(root.right)
+        
+    return lst
 ```
+**Backspace Compare**
+```python
+def backspaceCompare(s: str, t: str) -> bool:
+    s_lst = []
+    t_lst = []
 
-### Partition array such that 1st-half of arr contains only even nums and 2nd-half of arr contains odd nums
+    for i in s:
+        if i == "#" and len(s_lst) > 0:
+            s_lst.pop()
+        elif i == "#" and len(s_lst) == 0:
+            continue
+        else:
+            s_lst.append(i)
 
-```javascript
-var sortArrayByParity = function(nums) {
+    for i in t:
+        if i == "#" and len(t_lst) > 0:
+            t_lst.pop()
+        elif i == "#" and len(t_lst) == 0:
+            continue
+        else:
+            t_lst.append(i)
+
+    if len(t_lst) != len(s_lst):
+        return False
+    for i in range(len(s_lst)):
+        if s_lst[i] != t_lst[i]:
+            return False
+        
+    return True
+```
+**Remove Outer Parentheses**
+```python
+def removeOuterParentheses(s: str) -> str:
+    res = []
+    curOpen = 0
+    for c in s:
+        if c == '(':
+            if curOpen:
+                res.append(c)
+            curOpen += 1
+        else:
+            curOpen -= 1
+            if curOpen:
+                res.append(c)
     
-    let i = 0;
-    while(i<nums.length){
-        if(nums[i]%2 != 0){
-            break;
-        }
-        i++;
-    }
-    let tmp = 0;
-    for(let j=i+1; j<nums.length; j++){
-        if(nums[j]%2==0){
-            tmp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = tmp;
-            i++;
-        }
-    }
-    return nums;
-};
+    return ''.join(res)
 ```
-
-### Sometimes 2 pointers of 1 array can be like:
-- i = 0 and arr.length-i-1 &ensp;&ensp; or
-- i = 0; j = 1; and they are incremented like: i+=2 and j+=2 where i<arr.length and j<arr.length &ensp;&ensp; <br>
- &ensp;&ensp; or &ensp;&ensp; **Window Sliding**<br>
-- i = 0; while(i+k<arr.length) where we are looping through contiguous subsequence of size k
-
-**Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold**
-```javascript
-var average = function(arr, i, j, k){
-    let sum = 0;
-    for(let a=i; a<j; a++){
-        sum += arr[a];
-    }
-    return sum/k;
-}
-var numOfSubarrays = function(arr, k, threshold) {
-    let i = 0;
-    let count = 0;
-    while(i+k<=arr.length){
-        if(average(arr, i, i+k, k)>=threshold){
-            count++;
-        }
-        i++;
-    }
-    return count;
-};
-```
-
-### Looping through all subsets of an array
-- start with outer loop i=0; i<arr.length;
-  - add inner loop j=i (or j=i+1) ; j<arr.length
-      - body of inner loop contains subset for [i, j)
-
-
-<h2 style="color:#1669f0">Math</h2>
-
-### Handling Big Numbers
-- In Java, when handling big numbers => convert them to strings and/or use **long int num = ...** 
-
-- In JavaScript, when handling big numbers => convert them to strings and/or use **BigInt(num)**
-
-```javascript
-/* Calculate the product of all integers in the inclusive range [left, right] and write it in a specific format */
-
-var abbreviateProduct = function(left, right) {
-    let prod = 1;
-    while(left<=right){
-        prod = BigInt(prod)*BigInt(left);
-        left++;
-    }
-    // # of trailing zeros must be cocatenated after 'e' in the resultin string
-    let c = 0;
-    while(prod%BigInt(10)==0){
-        prod = BigInt(prod) / BigInt(10);
-        c++;
-    }
-    let numStr = prod.toString();
-    // if # of digits of prod > 10, then write it in this format: [first 5 digits of prod]...[last 5 digits of prod]e[#_of_trailing_zeros]
-    if(numStr.length<=10){
-        return numStr+"e"+c.toString();
-    }else{
-        return numStr.slice(0, 5)+"..."+numStr.slice(numStr.length-5, numStr.length)+"e"+c.toString();
-    }
-};
-```
-
-### Prime Palindrome: Given n, find a number a greater or equal to n that is a palindrome and a prime number
-
-```javascript
-var isPrime = function(n) {
-    if(n<=1||n==4||n==8||n==6){
-        return false;
-    }
-    if(n==2||n==3||n==5||n==7){
-        return true;
-    }
-    for(let i=3; i<=Math.sqrt(n); i+=2){
-        if(n%i == 0){
-            return false;
-        }
-    }
-    return true;
-};
-var isPalindrome = function(n) {
-    n = n.toString();
-    let i = 0;
-    while(i<n.length){
-        if(n[i]!=n[n.length-i-1]){
-            return false;
-        }
-        i++;
-    }
-    return true;
-};
-var primePalindrome = function(n) {
-    while(true){
-        if(n==1||n==2){
-            return 2;
-        }else if(n%2==0){
-            n++;
-            continue;
-        }
-        if(isPalindrome(n) && isPrime(n)){
-            return n;
-        }
-        n+=2;
-    }
-};
-```
-
-### Count # of primes strictly less than n
-
-```javascript
-var countPrimes = function(n) {
-    let count = 0;
-    let arr = [];
-    for(let i=2; i<n; i++){
-        if(arr[i]){
-            continue;
-        }else{
-            count++;
-        }
-        for(let j=i+i; j<=n; j+=i){
-            arr[j]=true;
-        }
-    }
-    return count;   
-};
-```
-
-### Reverse an integer
-
-```javascript
-var reverse = function(x) {
-    if(x==0){
-        return 0;
-    }
-    let str = x.toString();
-    let arr = str.split('');
-    let res = "";
-    if(str[0]=="-"){
-        res += "-";
-    }
-    for(let i=0; i<str.length; i++){
-        if(str[str.length-i-1]=="-"){
-            //res += "-";
-            continue;
-        }else if(i==0 && str[str.length-i-1]=="0"){
-            continue;
-        }
-        res += str[str.length-i-1];
-    }    
+**Remove Consecutive Duplicates**
+```python
+def removeConsecutiveDuplicates(s: str) -> str:
+    lst = []
     
-    if(BigInt(res)<BigInt(-2147483648) || BigInt(res)>BigInt(2147483647)){
-        return 0;
-    }else{
-        return parseInt(res, 10);
-    }
+    for i in range(len(s)):
+        if len(lst) > 0 and s[i] == lst[-1]:
+            lst.pop()
+        else:
+            lst.append(s[i])
+    return ''.join(lst)
+```
+**Build Array**
+```python
+def buildArray(target: List[int], n: int) -> List[str]:
+    lst = []
+    for i in range(1, n+1):
+        if i in target:
+            lst.append("Push")
+        elif i < target[-1]:
+            
+            lst.append("Push")
+            lst.append("Pop")
+            
+    return lst
+```
+**Folder Operations**
+```python
+def fldOperations(logs: List[str]) -> int:
+    level = 0
+    for i in logs:
+        if i == "../" and level > 0:
+            level -= 1
+        elif i != "../" and i != "./":
+            level += 1
+    return level
+```
+**Max Depth of Brackets**
+```python
+def maxDepth(s: str) -> int:
+    d = 0
+    high = 0
+    for i in s:
+        if i == "(":
+            d += 1
+            if d > high:
+                high = d
+        if i == ")":
+            d -= 1
+    return high
+```
+___________________________________________
+
+<h3 style="color:#5c91fa">Queues  </h3> 
+
+**Time Required to Wait in Circular Line**
+```python
+def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
+    time = 0
+    i = 0
+    tmp = 0
     
-};
+    while tickets[k] != 0:
+        if tickets[i] > 0:
+            tickets[i] = tickets[i] - 1
+            #tickets.pop(0)
+            #tickets.append(tmp)
+            time += 1
+            
+            
+        i = (i + 1) % len(tickets)
+        
+    return time
 ```
+___________________________________________
 
-### Summing &ensp;&ensp; 1+3+5+...+n &ensp;&ensp; or &ensp;&ensp; 2+4+6+...+n
-- Sequence: 1, 3, 5, 7, 9, ...
-  - formula to get nth term = 1 + 2*(n-1)
-  - formula to get sum = n*(1 + nth_term)/2
+<h3 style="color:#5c91fa">Trees</h3>
 
-- Sequence: 2, 4, 6, 8, 10, ...
-  - formula to get nth term = 2 + 2*(n-1)
-  - formula to get sum = n*(2 + nth_term)/2
+### Sample Tree Implementation Explanations
 
-### Summing 1+2+3+4+...+n
-- formula to get sum = n*(n+1)/2
+  - **N-ary**: each node can have upto N children
+  - **Binary**: each node can have upto 2 children
+  - **BST**: left_child.val < root.val < right_child.val<br><br>
 
-**Given an integer array nums, return the number of subarrays filled with 0.
-A subarray is a contiguous non-empty sequence of elements within an array.**
+  - **AVL**: better for searching, height <= log2(n)<br>
+        types of rotations<br>
+          &ensp;&ensp;left-left case => right rotation<br>
+          &ensp;&ensp;left-right case => left rotate, right rotate<br>
+          &ensp;&ensp;right-left case => right rotate, left rotate<br>
+          &ensp;&ensp;right-right case => left rotation<br><br>
 
-```javascript
-var zeroFilledSubarray = function(nums) {
-    let start = -1;
-    let count = 0;
-    let n = 0;
-    for(let i=0; i<nums.length; i++){
-        if(start!=-1 && nums[i]!=0){
-            n = i - start;
-            count += ((n*(n+1))/2);
-            start = -1;
-        }else if(start==-1 && nums[i]==0){
-            start = i;
-        }
-    }
-    if(start!=-1){
-        n = nums.length - start;
-        count += ((n*(n+1))/2);
-        start = -1;
-    }
-    return count;
-};
-```
+  - **Red-Black**: better for insertion and deletion<br>
+      rules<br>
+        &ensp;&ensp;1) root is always black<br>
+        &ensp;&ensp;2) all leaves are black<br>
+        &ensp;&ensp;3) all leaves have same # of black ancestors<br>
+        &ensp;&ensp;4) all children of red nodes are black<br><br>
 
-**Minimum Operations to Make Array Equal**
+  - **B-Tree**<br>
+      notes<br>
+        &ensp;&ensp;- each node can have upto n-1 values<br>
+        &ensp;&ensp;- each node can have atmost n children and at least n/2 children<br>
+        &ensp;&ensp;- all leaves have the same depth<br><br>
 
-```javascript
-var minOperations = function(n) {
-    if(n%2 == 0){
-        let myn = n/2;
-        let res = 2 + (2*(myn-1));
-        return (res * myn)/2;
-    }else{
-        let mym = (n-1)/2;
-        let res = 4 + (2*(mym-1));
-        return (res * mym)/2;
-    }
-    
-};
-```
+  - **Heap**<br>
+      &ensp;&ensp;- Max/Min Heap: all children node values are less/higher than parent<br>
+      &ensp;&ensp;- Insertion: insert in the next according space and performing swapping with parent<br>
+      &ensp;&ensp;- Deletion: swap node-to-be-deleted with last node, delete last node, perform swapping with the switched node<br>
 
-### Like converting a decimal number to binary: 
-### &ensp; Given a number check if it can be written by sum of powers-of-3
+    - **Treap**: mix of BST and and Heap <br>
+        &ensp;&ensp;- each node stores 2 values (key=value_inserted, priority=random_num)<br>
+        &ensp;&ensp;- insert according key which follows BST, then perform AVL rotations to maintain priority which follows Heap<br><br>
+      
+  - **Splay**: just like BST but perform AVL rotations each time an element is accessed and make it the root node
 
-```javascript
-var checkPowersOfThree = function(n) {
-    if(n==0 || n%3==2){
-        return false;
-    }else if(n==1){
-        return true;
-    }else{
-        let count = 1;
-        while(Math.pow(3, count)<n){
-            count++;
-        }
-        if(Math.pow(3, count) == n){
-            return true;
-        }else{
-            count--;
-            n -= Math.pow(3, count);
-            for(let i=count-1; i>=0; i--){
-                if(Math.pow(3, i)<=n){
-                    n -= Math.pow(3, i);
-                }
-            }
-            return n==0;
-        }
-    }
-};
-```
+___________________________________________
 
-<h2 style="color:#1669f0">Arrays + HashMap</h2>
 
-Given an integer array nums of length n where all the integers of nums are in the range \[1, n\] and each integer appears once or twice, return an array of all the integers that appears twice. Try time complexity O(n) and space complexity O(1)
+<h3 style="color:#5c91fa">Graphs</h3>
 
-```javascript
-var findDuplicates = function(nums) {
-    let res = [];
-    for(let n of nums){
-        if(n<=nums.length && nums[n-1]>nums.length){
-            res.push(Math.abs(n));
-        }else if(n>nums.length && nums[n-nums.length-1]>nums.length){
-            res.push(Math.abs(n));
-        }else{
-            nums[n-1] = nums[n-1] + nums.length;
-        }
-        console.log(nums);
-    }
-    return res;
-};
-```
+### Terms
+  - **order of a graph** = # of vertices in graph
+  - **size of a graph** = # of edges of a graph
+  - **null graph** = 0 edges in graph (but may have vertices)
+  - **complete graph** = has edges with all combination of vertices
+  - **adjacency matrix** = nxn matrix where matrix[i][j] indicates an edge/edge_weight between vertex i and j
+  - **adjacency list** = key-value table where there's 1 key for each vertex and a list with vertices that the key vertex connects to
 
-Given an integer array => create a 2D array from it such that each row in the 2D array contians distinct elements and the number of rows should be minimal <br>
+___________________________________________
 
-for example:
-Input: nums = \[1,3,4,1,2,3,1\]
-Output: \[\[1,3,4,2\],\[1,3\],\[1\]\]
 
-```javascript
-var findMatrix = function(nums) {
-    let freq = new Map();
-    let res = [];
-    for(let i=0; i<nums.length; i++){
-        if(freq.has(nums[i])){
-            freq.set(nums[i], freq.get(nums[i])+1);
-        }else{
-            freq.set(nums[i], 1);
-        }
-    }
-
-    for(let [key, value] of freq){
-        for(let j=0; j<Math.min(res.length, value); j++){
-            res[j].push(key);
-        }
-        while(res.length<value){
-            res.push([key]);
-        }
-    }
-    return res;
-};
-```
-
-Given an integer array groupSizes, where groupSizes[i] is the size of the group that person i is in. Return a list of groups such that each person i is in a group of size groupSizes[i].
-
-for example
-Input: groupSizes = \[3,3,3,3,3,1,3\]
-Output: \[\[5\],\[0,1,2\],\[3,4,6\]\] 
-
-```javascript
-var groupThePeople = function(groupSizes) {
-    let res = [];
-    let groups = {};
-
-    let size = 0;
-    for(let i=0; i<groupSizes.length; i++){
-        size = groupSizes[i];
-        if(!groups[size]){
-            groups[size] = [];
-        }
-        groups[size].push(i);
-
-        if(groups[size].length == size){
-            res.push(groups[size]);
-            delete groups[size];
-        }
-    }
-    return res;
-};
-```
 
 
 
