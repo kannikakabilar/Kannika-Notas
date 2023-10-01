@@ -524,7 +524,7 @@ var numOfSubarrays = function(arr, k, threshold) {
 <h2 style="color:#1669f0">Math</h2>
 
 ### Handling Big Numbers
-- In Java, when handling big numbers => convert them to strings and/or use **long int num = ...** 
+- In Java, when handling big numbers => convert them to strings and/or use **long num = ...** 
 
 - In JavaScript, when handling big numbers => convert them to strings and/or use **BigInt(num)**
 
