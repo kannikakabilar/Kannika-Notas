@@ -201,6 +201,7 @@ def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
 ```
 
 **Creating a weave pattern using Queues**
+<br>
 Given an integer array called 'deck' change the order of its element such that it can be 'revealed in an increasing order'
 *reveal increasing order - the resulting array should contain weave patterns, for ex:
 Input: deck = \[17,13,11,2,3,5,7\]
@@ -292,6 +293,60 @@ PriorityQueue<Integer> pq = list.get(j);
 int [][] array = new int [mat.length] [2];
 // fill array with values ...
 Arrays.sort(array, (a, b) -> a[0]==b[0] ? a[1]-b[1] : a[0]-b[0]);
+```
+
+**Working with ArrayList in Java**
+
+```java
+// Initialize
+ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+
+// Add an element
+myNumbers.add(nums[i]);
+
+// Sort the List
+Collections.sort(myNumbers);
+
+// Get the value at the ith index
+int ith = myNumbers.get(i);
+
+// Create an ArrayList of int arrays
+ArrayList<int[]> lst = new ArrayList<int[]>();
+lst.add(\[1, 2\]);
+```
+
+**Implement the SmallestInfiniteSet class:**
+You have a set which contains all positive integers \[1, 2, 3, 4, 5, ...\]. <br>
+- SmallestInfiniteSet() Initializes the SmallestInfiniteSet object to contain all positive integers.
+- int popSmallest() Removes and returns the smallest integer contained in the infinite set.
+- void addBack(int num) Adds a positive integer num back into the infinite set, if it is not already in the infinite set.
+
+```java
+class SmallestInfiniteSet {
+    int smallest = 1;
+    HashSet <Integer> mySet = new HashSet <Integer>();
+
+    public SmallestInfiniteSet() {
+    }
+    
+    public int popSmallest() {
+        int res = smallest;
+        mySet.add(smallest);
+        int i = 1;
+        while(mySet.contains(i)){
+            i++;
+        }
+        smallest = i;
+        return res;
+    }
+    
+    public void addBack(int num) {
+        if(num<smallest){
+            smallest = num;
+        }
+        mySet.remove(num);
+    }
+}
 ```
 ___________________________________________
 
