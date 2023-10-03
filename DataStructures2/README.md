@@ -199,6 +199,100 @@ def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
         
     return time
 ```
+
+**Creating a weave pattern using Queues**
+Given an integer array called 'deck' change the order of its element such that it can be 'revealed in an increasing order'
+*reveal increasing order - the resulting array should contain weave patterns, for ex:
+Input: deck = \[17,13,11,2,3,5,7\]
+Output: \[2,13,3,11,5,17,7\]
+Explanation: In the output, 2 gets revealed (removed from list), 13 gets put at the end of the list. Then 3 gets revealed, the next smallest value (removed from list) and 11 gets put at the end of the list, and so on... Keep doing this and all elements will be revealed in increasing order.
+
+```javascript
+var deckRevealedIncreasing = function(deck) {
+    let arr = deck.sort((a,b)=>b-a);
+    let queue = [arr.shift()];
+
+    while(arr.length>0){
+        queue.unshift(queue.pop());
+        queue.unshift(arr.shift());
+    }
+    return queue;
+};
+```
+
+**Priority Queues in Java**
+
+```java
+// Initialize Min Heap
+PriorityQueue <Integer> pq = new PriorityQueue <Integer>();
+// Initialize Max Heap
+PriorityQueue <Integer> pq = new PriorityQueue <Integer>(Collections.reverseOrder());
+
+// Add an element to the heap
+pq.add(9);
+
+// Pop the min or max element from the heap
+int root = pq.poll();
+
+// Size of heap (Get # of elements in heap)
+int heapLen = pq.size();
+```
+
+**Implement HeapSort: Heapify and turning array into a heap**
+
+```python
+def heapify(arr, n, i):
+    largest = i
+    left_child = 2 * i + 1
+    right_child = 2 * i + 2
+
+    if left_child < n and arr[left_child] > arr[largest]:
+        largest = left_child
+
+    if right_child < n and arr[right_child] > arr[largest]:
+        largest = right_child
+
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+
+    # Build a max heap - Start from the last non-leaf node and heapify as the indices go up
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    # Extract elements from the heap one by one
+    for i in range(n - 1, 0, -1):
+        arr[0], arr[i] = arr[i], arr[0]  # Swap the root with the last element
+        heapify(arr, i, 0)  # Heapify the reduced heap
+```
+
+**Create an ArrayList of Priority Queues in Java**
+
+```java
+ArrayList<PriorityQueue<Integer>> list = new ArrayList<>();
+for(int i=0; i<grid.length; i++){
+    // Create a new priority queue for each row in the grid
+    PriorityQueue<Integer> row = new PriorityQueue<>(Collections.reverseOrder());
+    for(int j=0; j<grid[i].length; j++){    // Add all values of the row to the priority queue
+        row.add(grid[i][j]);
+    }
+    list.add(row);
+}
+
+// Given index j - get the jth priority queue from the ArrayList
+PriorityQueue<Integer> pq = list.get(j);
+```
+
+**Given 2D arrays like \[\[9, 6\], \[8, 7\]\] sort it by the 1st value of each element in Java**
+
+```java
+int [][] array = new int [mat.length] [2];
+// fill array with values ...
+Arrays.sort(array, (a, b) -> a[0]==b[0] ? a[1]-b[1] : a[0]-b[0]);
+```
 ___________________________________________
 
 <h3 style="color:#5c91fa">Trees</h3>
