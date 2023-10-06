@@ -414,6 +414,38 @@ def find_pair_of_sum(arr: list, n: int):
             else:
                 map[sum] = (arr[i], arr[j])
 ```
+
+**LeetCode: 2022 - Convert array to 2D array**
+
+```java
+class Solution {
+    public List<List<Integer>> findMatrix(int[] nums) {
+        List <List<Integer>> lst = new ArrayList<List<Integer>>();
+        HashMap <Integer, Integer> freq = new HashMap<Integer, Integer>();
+        for(int i=0; i<nums.length; i++){
+            if(freq.containsKey(nums[i])){
+                freq.put(nums[i], freq.get(nums[i])+1);
+            }else{
+                freq.put(nums[i], 1);
+            }
+        }
+        int expected = nums.length;
+        int curr = 0;
+        while(curr<expected){
+            HashSet <Integer> mySet = new HashSet <Integer> ();
+            for(int key : freq.keySet()){
+                if(freq.get(key)>0){
+                    mySet.add(key);
+                    freq.put(key, freq.get(key)-1);
+                    curr++;
+                }
+            }
+            lst.add(new ArrayList<Integer>(mySet));
+        }
+        return lst;
+    }
+}
+```
 ___________________________________________
 
 
