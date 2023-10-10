@@ -389,6 +389,322 @@ ___________________________________________
       
   - **Splay**: just like BST but perform AVL rotations each time an element is accessed and make it the root node
 
+### Sample Tree Qs
+
+**Range Sum of BST - LeetCode Q:938**
+Given the root node of a binary search tree and two integers low and high, return the sum of values of all nodes with a value in the inclusive range \[low, high\].
+
+```javascript
+var rangeSumBST = function(root, low, high) {
+    let lft;
+    let rht;
+    if(!root){
+        return 0;
+    }else{
+        if(low<=root.val && root.val<=high){
+            lft = rangeSumBST(root.left, low, high);
+            rht = rangeSumBST(root.right, low, high);
+            return root.val+lft+rht;
+        }else if(root.val>high){
+            lft = rangeSumBST(root.left, low, high);
+            return lft;
+        }else if(root.val<high){
+            rht = rangeSumBST(root.right, low, high);
+            return rht;
+        }
+    }
+};
+```
+
+**Perform Post-Order Traversal on an N-ary Tree - LeetCode Q:590**
+
+```java
+    public List<Integer> postorder(Node root) {
+        if(root != null){
+            List <Integer> res = new ArrayList<Integer>();
+            for(int i=0; i<root.children.size(); i++){
+                res.addAll(postorder(root.children.get(i)));
+            }
+            res.add(root.val);
+            return res;
+        }else{
+            return new ArrayList<Integer>();
+        }
+    }
+```
+
+**Invert/Mirror a Binary Tree - LeetCode Q:226**
+
+```python
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if root is None or (root.left is None and root.right is None):
+            return root
+        else:
+            tmp = root.left
+            root.left = root.right
+            root.right = tmp
+            self.invertTree(root.left)
+            self.invertTree(root.right)
+            return root
+```
+
+**Root to Leaves Paths - LeetCode Q:1022**
+Each node has a value of either 1 or 0. Construct a binary string from root to each of the leaves and sum the binary values and return them. 
+
+```java
+    public int sumRootToLeaf(TreeNode root) {
+        if(root.left==null && root.right==null){
+            return root.val;
+        }
+        int left = 0;
+        int right = 0;
+        if(root.left != null){
+            left = Integer.parseInt(Integer.toBinaryString(root.val) + Integer.toString(root.left.val), 2);
+            root.left.val = left;
+            left = sumRootToLeaf(root.left);
+        }
+        if(root.right != null){
+            right = Integer.parseInt(Integer.toBinaryString(root.val) + Integer.toString(root.right.val), 2);
+            root.right.val = right;
+            right = sumRootToLeaf(root.right);
+        }
+        return left + right;
+
+    }
+```
+
+**Count Good Nodes in Binary Tree - LeetCode Q:1448**
+Given a binary tree root, a node X in the tree is named good if in the path from root to X there are no nodes with a value greater than X. Return the number of good nodes in the binary tree.
+
+```java
+    public int helper(TreeNode root, int target){
+        if(root == null){
+            return 0;
+        }else{
+            int res = 0;
+            if(root.left != null && root.left.val == target){
+                res = res + 1 + helper(root.left, target);
+            }else if(root.left != null && root.left.val > target){
+                res = res + 1 + helper(root.left, root.left.val);
+            }else{
+                res += helper(root.left, target);
+            }
+            if(root.right != null && root.right.val == target){
+                res = res + 1 + helper(root.right, target);
+            }else if(root.right != null && root.right.val > target){
+                res = res + 1 + helper(root.right, root.right.val);
+            }else{
+                res += helper(root.right, target);
+            }
+            
+            return res;
+            
+        }
+    }
+    public int goodNodes(TreeNode root) {
+        if(root == null){
+            return 0;
+        }else{
+            return 1 + helper(root, root.val);
+        }
+        
+    }
+```
+
+**Count Nodes where root value equals to Average of Subtree (avrg includes root.val) - LeetCode Q: 2265**
+
+- helper functions are very helpful when working with trees
+
+```java
+    public int subtreeSum (TreeNode root){
+        if(root == null){
+            return 0;
+        }else{
+            return root.val + subtreeSum(root.left) + subtreeSum(root.right);
+        }
+    }
+    public int subtreeSize (TreeNode root){
+        if(root == null){
+            return 0;
+        }else{
+            return 1 + subtreeSize(root.left) + subtreeSize(root.right);
+        }
+    }
+    public int averageOfSubtree(TreeNode root) {
+        ArrayList <TreeNode> q = new ArrayList <>();
+        int total = 0;
+        q.add(root);
+        while(q.size()>0){
+            TreeNode t = q.get(0);
+            q.remove(t);
+            if(t.left != null){
+                q.add(t.left);
+            }
+            if(t.right != null){
+                q.add(t.right);
+            }
+            if(t.val == (int)(subtreeSum(t)/subtreeSize(t))){
+                total++;
+            }
+        }
+        return total;
+    }
+```
+
+**Return the Maximum difference between a node and its ancestor - LeetCode Q: 1026**
+
+Find the maximum value v such that v = |a.val - b.val| and a is an ancestor of b
+
+```java
+    public int helper (TreeNode root, int min, int max){
+        if(root==null){
+            return max-min;
+        }
+        max = Math.max(max, root.val);
+        min = Math.min(min, root.val);
+        return Math.max(helper(root.left, min, max), helper(root.right, min, max));
+    }
+    public int maxAncestorDiff(TreeNode root) {
+        if(root == null){
+            return 0;
+        }else{
+            return helper(root, root.val, root.val);
+        }
+    }
+```
+
+**Return a list of all possible full binary trees with 'n' nodes - LeetCode Q: 894**
+
+```java
+class Solution {
+    Map <Integer, List<TreeNode>> memo = new HashMap<>();
+
+    public List<TreeNode> allPossibleFBT(int n) {
+        if(!memo.containsKey(n)){
+            List<TreeNode> lst = new LinkedList<>();
+            if(n==1){
+                lst.add(new TreeNode(0));
+            }else if(n%2 == 1){
+                for(int i=0; i<n; i++){
+                    int j = n - 1 - i;
+                    for(TreeNode left : allPossibleFBT(i)){
+                        for(TreeNode right : allPossibleFBT(j)){
+                            TreeNode root = new TreeNode(0);
+                            root.left = left;
+                            root.right = right;
+                            lst.add(root);
+                        }
+                    }
+                }
+            }
+            memo.put(n, lst);
+        }
+        return memo.get(n);
+        
+    }
+}
+```
+
+**Given a tree, return a balanced BST**
+
+```java
+    public List<Integer> inorderBST(TreeNode root){
+        if(root == null){
+            return new ArrayList<Integer>();
+        }else{
+            List <Integer> lst = new ArrayList<Integer>();
+            lst.addAll(inorderBST(root.left));
+            lst.add(root.val);
+            lst.addAll(inorderBST(root.right));
+            return lst;
+        }
+    }
+    public TreeNode lstToBST(List<Integer> lst){
+        if(lst.size() == 0){
+            return null;
+        }else{
+            int rootIdx = (int)(lst.size()/2);
+            TreeNode root = new TreeNode(lst.get(rootIdx));
+            root.left = lstToBST(lst.subList(0, rootIdx));
+            root.right = lstToBST(lst.subList(rootIdx+1, lst.size()));
+            return root;
+        }
+    }
+
+    public TreeNode balanceBST(TreeNode root) {
+        if(root == null){
+            return root;
+        }else{
+            List <Integer> lst = inorderBST(root);
+            return lstToBST(lst);
+
+        }
+    }
+```
+
+**Reverse Odd Levels of Tree and get path - LeetCode Q:2415**
+
+```java
+    public void traverse(TreeNode l, TreeNode r, int level){
+        if(l==null || r==null){
+            return ;
+        }
+        if(level%2==1){
+            int val = l.val;
+            l.val = r.val;
+            r.val = val;
+        }
+        traverse(l.left, r.right, level+1);
+        traverse(l.right, r.left, level+1);
+    }
+    public TreeNode reverseOddLevels(TreeNode root) {
+        traverse(root.left, root.right, 1);
+        return root;
+    }
+```
+
+**Recursively Delete the Leaves w/ given value - LeetCode Q:1325**
+
+```java
+    boolean flag = true;
+    public TreeNode remlef (TreeNode root, int target){
+        if(root != null && root.left == null && root.right == null && root.val == target){
+            flag = true;
+            return null;
+        }else{
+            if(root == null){
+                return root;
+            }
+            if(root.left != null){
+                root.left = remlef(root.left, target);
+            }
+            if(root.right != null){
+                root.right = remlef(root.right, target);
+            }
+            return root;
+        }
+    }
+    public TreeNode removeLeafNodes(TreeNode root, int target) {
+        
+        while(flag){
+            flag = false;
+            root = remlef(root, target);
+        }
+        return root;
+    }
+```
+
+**Count Nodes of a binary tree (where nodes are filled from left to right) in O(logn) - LeetCode Q: 222**
+
+
+
 ___________________________________________
 
 
