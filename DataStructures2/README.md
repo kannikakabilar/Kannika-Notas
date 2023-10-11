@@ -392,7 +392,7 @@ ___________________________________________
 ### Sample Tree Qs
 
 **Range Sum of BST - LeetCode Q:938**
-Given the root node of a binary search tree and two integers low and high, return the sum of values of all nodes with a value in the inclusive range \[low, high\].
+<br> Given the root node of a binary search tree and two integers low and high, return the sum of values of all nodes with a value in the inclusive range \[low, high\].
 
 ```javascript
 var rangeSumBST = function(root, low, high) {
@@ -415,6 +415,7 @@ var rangeSumBST = function(root, low, high) {
     }
 };
 ```
+<br>
 
 **Perform Post-Order Traversal on an N-ary Tree - LeetCode Q:590**
 
@@ -432,6 +433,8 @@ var rangeSumBST = function(root, low, high) {
         }
     }
 ```
+
+<br>
 
 **Invert/Mirror a Binary Tree - LeetCode Q:226**
 
@@ -455,8 +458,10 @@ class Solution:
             return root
 ```
 
+<br>
+
 **Root to Leaves Paths - LeetCode Q:1022**
-Each node has a value of either 1 or 0. Construct a binary string from root to each of the leaves and sum the binary values and return them. 
+<br> Each node has a value of either 1 or 0. Construct a binary string from root to each of the leaves and sum the binary values and return them. 
 
 ```java
     public int sumRootToLeaf(TreeNode root) {
@@ -480,8 +485,10 @@ Each node has a value of either 1 or 0. Construct a binary string from root to e
     }
 ```
 
+<br>
+
 **Count Good Nodes in Binary Tree - LeetCode Q:1448**
-Given a binary tree root, a node X in the tree is named good if in the path from root to X there are no nodes with a value greater than X. Return the number of good nodes in the binary tree.
+<br> Given a binary tree root, a node X in the tree is named good if in the path from root to X there are no nodes with a value greater than X. Return the number of good nodes in the binary tree.
 
 ```java
     public int helper(TreeNode root, int target){
@@ -517,6 +524,8 @@ Given a binary tree root, a node X in the tree is named good if in the path from
         
     }
 ```
+
+<br>
 
 **Count Nodes where root value equals to Average of Subtree (avrg includes root.val) - LeetCode Q: 2265**
 
@@ -558,9 +567,11 @@ Given a binary tree root, a node X in the tree is named good if in the path from
     }
 ```
 
+<br>
+
 **Return the Maximum difference between a node and its ancestor - LeetCode Q: 1026**
 
-Find the maximum value v such that v = |a.val - b.val| and a is an ancestor of b
+Find the maximum value v such that v = \|a.val - b.val\| and a is an ancestor of b
 
 ```java
     public int helper (TreeNode root, int min, int max){
@@ -579,6 +590,8 @@ Find the maximum value v such that v = |a.val - b.val| and a is an ancestor of b
         }
     }
 ```
+
+<br>
 
 **Return a list of all possible full binary trees with 'n' nodes - LeetCode Q: 894**
 
@@ -611,6 +624,8 @@ class Solution {
     }
 }
 ```
+
+<br>
 
 **Given a tree, return a balanced BST**
 
@@ -649,6 +664,8 @@ class Solution {
     }
 ```
 
+<br>
+
 **Reverse Odd Levels of Tree and get path - LeetCode Q:2415**
 
 ```java
@@ -669,6 +686,8 @@ class Solution {
         return root;
     }
 ```
+
+<br>
 
 **Recursively Delete the Leaves w/ given value - LeetCode Q:1325**
 
@@ -700,6 +719,8 @@ class Solution {
         return root;
     }
 ```
+
+<br>
 
 **Count Nodes of a binary tree (where nodes are filled from left to right) in O(logn) - LeetCode Q: 222**
 
