@@ -726,6 +726,8 @@ class Solution {
 
 **Path in Zig-Zag Labelled Binary Tree - LeetCode Q:1104**
 
+**Implement Trie DS - LeetCode Q:208, 14**
+
 ___________________________________________
 
 
