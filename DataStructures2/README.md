@@ -724,7 +724,7 @@ class Solution {
 
 **Count Nodes of a binary tree (where nodes are filled from left to right) in O(logn) - LeetCode Q: 222**
 
-
+**Path in Zig-Zag Labelled Binary Tree - LeetCode Q:1104**
 
 ___________________________________________
 
