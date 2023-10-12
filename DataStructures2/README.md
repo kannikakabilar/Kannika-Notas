@@ -735,6 +735,201 @@ ___________________________________________
 
 <h3 style="color:#5c91fa">Graphs</h3>
 
+### Sample Graph Qs
+
+**Ninimum # of vertices to reach all nodes - LeetCode Q:1557**
+<br>
+Find the smallest set of vertices from which all nodes in the graph are reachable. It's guaranteed that a unique solution exists.
+<br>
+Given 2-D array of edges where edges\[i\] = \[from_i, to_i\]. The graph is directed and acyclic. Hint: A node that does not have any incoming edge can only be reached by itself => only count the node w/ zero incoming edges
+
+```java
+    public List<Integer> findSmallestSetOfVertices(int n, List<List<Integer>> edges) {
+        List <Integer> res = new ArrayList<Integer>();
+        HashSet <Integer> mySet = new HashSet <Integer>();
+        for(int i=0; i<edges.size(); i++){
+            mySet.add(edges.get(i).get(1));
+        } 
+        for(int j=0; j<n; j++){
+            if(!mySet.contains(j)){
+                res.add(j);
+            }
+        }
+        return res;
+    }
+```
+<br><br>
+**Get 2 nodes when combined have the highest # of edges - LeetCode Q:1615**
+<br>
+```java
+    public int maximalNetworkRank(int n, int[][] roads) {
+        HashMap <Integer, HashSet<Integer>> myMap = new HashMap <Integer, HashSet<Integer>>();
+        for(int i=0; i<roads.length; i++){
+            if(myMap.containsKey(roads[i][0])){
+                myMap.get(roads[i][0]).add(roads[i][1]);
+
+            }else{
+                HashSet <Integer> mySet1 = new HashSet <Integer>();
+                mySet1.add(roads[i][1]);
+                myMap.put(roads[i][0], mySet1);
+            }
+            if(myMap.containsKey(roads[i][1])){
+                myMap.get(roads[i][1]).add(roads[i][0]);
+
+            }else{
+                HashSet <Integer> mySet2 = new HashSet <Integer>();
+                mySet2.add(roads[i][0]);
+                myMap.put(roads[i][1], mySet2);
+            }
+        }
+        int highest = 0;
+        int num = 0;
+        HashSet <Integer> tmp = new HashSet <Integer>();
+        for(int k : myMap.keySet()){
+            for(int j : myMap.keySet()){
+                if(k != j){
+                    tmp = new HashSet<>(myMap.get(k));
+                    num = tmp.size();
+                    num += myMap.get(j).size();
+                    tmp.addAll(myMap.get(j));
+
+                    if(tmp.contains(k)&&tmp.contains(j)&&myMap.get(k).contains(j)){
+                        num--;
+                    }
+
+                   if(num>highest){
+                       highest = num;
+                   }
+                }
+                tmp.clear();
+                num = 0;
+            }
+        }
+        return highest;
+    }
+```
+<br><br>
+**Keeping track of node info by traversing through edges - LeetCode Q:2374**
+<br>
+```java
+    public int edgeScore(int[] edges) {
+        HashMap <Integer, Long> myMap = new HashMap <Integer, Long>();
+        for(int i=0; i<edges.length; i++){
+            if(myMap.containsKey(edges[i])){
+                myMap.put(edges[i], myMap.get(edges[i])+i);
+            }else{
+                myMap.put(edges[i], (long)i);
+            }
+        }
+        long highest = 0;
+        int node = 0;
+        for(int k : myMap.keySet()){
+            if(myMap.get(k)>highest){
+                node = k;
+                highest = myMap.get(k);
+            }
+            if(myMap.get(k)==highest){
+                node = Math.min(k, node);
+            }
+        }
+        return node;
+    }
+```
+<br><br>
+**Add at most 2 edges to make degree of all nodes even - Leetcode Q:2508**
+<br>
+Hint: The number of nodes with an odd degree in the original graph should be either 0, 2, or 4. Try to work on each of these cases.
+```java
+    public boolean isPossible(int n, List<List<Integer>> edges) {
+        HashMap <Integer, Integer> myMap = new HashMap <Integer, Integer>();
+        HashSet <List<Integer>> myEdges = new HashSet <List<Integer>>();
+        for(int i=0; i<edges.size(); i++){
+            if(myMap.containsKey(edges.get(i).get(1))){
+                myMap.put(edges.get(i).get(1), myMap.get(edges.get(i).get(1))+1);
+            }else{
+                myMap.put(edges.get(i).get(1), 1);
+            }
+            if(myMap.containsKey(edges.get(i).get(0))){
+                myMap.put(edges.get(i).get(0), myMap.get(edges.get(i).get(0))+1);
+            }else{
+                myMap.put(edges.get(i).get(0), 1);
+            }
+            List<Integer> pair1 = new ArrayList();
+            pair1.add(edges.get(i).get(0));
+            pair1.add(edges.get(i).get(1));
+            myEdges.add(pair1);
+            List<Integer> pair2 = new ArrayList();
+            pair2.add(edges.get(i).get(1));
+            pair2.add(edges.get(i).get(0));
+            myEdges.add(pair2);
+        }
+        
+        List<Integer> odd = new ArrayList();
+        for(int k : myMap.keySet()){
+            if(myMap.get(k)%2!=0){
+                odd.add(k);
+            }
+        }
+        System.out.println(odd.size());
+        if(odd.size()==0){
+            return true;
+        }else if(odd.size()==2){
+            int a = odd.get(0);
+            int b = odd.get(1);
+            List<Integer> myPair = new ArrayList();
+            myPair.add(a);
+            myPair.add(b);
+            if(!myEdges.contains(myPair)){
+                return true;
+            }else{
+                for(int i=1; i<=n; i++){
+                    List<Integer> myPair1 = new ArrayList();
+                    myPair1.add(a);
+                    myPair1.add(i);
+                    List<Integer> myPair2 = new ArrayList();
+                    myPair2.add(i);
+                    myPair2.add(b);
+                    if(!myEdges.contains(myPair1) && !myEdges.contains(myPair2)) return true;
+                }
+                return false;
+            }
+        }else if(odd.size()==4){
+            int a = odd.get(0);
+            int b = odd.get(1);
+            int c = odd.get(2);
+            int d = odd.get(3);
+            List<Integer> myPair1 = new ArrayList();
+                    myPair1.add(a);
+                    myPair1.add(b);
+                    List<Integer> myPair2 = new ArrayList();
+                    myPair2.add(a);
+                    myPair2.add(c);
+                    List<Integer> myPair3 = new ArrayList();
+                    myPair3.add(a);
+                    myPair3.add(d);
+                    List<Integer> myPair4 = new ArrayList();
+                    myPair4.add(c);
+                    myPair4.add(d);
+                    List<Integer> myPair5 = new ArrayList();
+                    myPair5.add(b);
+                    myPair5.add(d);
+                    List<Integer> myPair6 = new ArrayList();
+                    myPair6.add(b);
+                    myPair6.add(c);
+            //System.out.println(myPair1);
+            if ((!myEdges.contains(myPair1) && !myEdges.contains(myPair4)) ||
+            (!myEdges.contains(myPair2) && !myEdges.contains(myPair5)) ||
+            (!myEdges.contains(myPair3) && !myEdges.contains(myPair6))){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        return false;
+    }
+```
+
+
 ### Terms
   - **order of a graph** = # of vertices in graph
   - **size of a graph** = # of edges of a graph
