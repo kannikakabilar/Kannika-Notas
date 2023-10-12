@@ -37,7 +37,27 @@ BIOS can be used to overclock the CPU <br>
 &ensp;&ensp;        unlikely for 2 disks to fail simultaneously <br>
 - **RAID 10** = RAID 1 + 0 = spread data across different pairs of disks and each pair is copy of each other
  <br> <br>
- 
+
+ <h3 style="color:#8096c2">CPU Architecture</h3>
+
+```
+            [Control Unit, ALU, CPU Registers, L1 Cache]
+                                 ^
+                                 |
+Input Devices =============>    RAM   ===============>  Output Devices
+(ie: mouse, keyboard)            |                      (ie: monitor, speaker)
+                                 v
+                            [Hard Disk]
+```
+<br>
+
+- **Control Unit Functions**
+    - fetch (data from memory) <br>
+    - decode (using binary decoder) <br>
+    - execute <br>
+    - write back to memory <br>
+
+<br> <br>
 ____________________________________________________________________________
 
 
@@ -78,23 +98,6 @@ ____________________________________________________________________________
 | **right arithmetic shift**: 1100 => 1->1100 => 1110     |    **left arithmetic shift**: 1100 => 1100<-0 => 1000 <br>(same as left logical shift) |
 
 <br>
-
-<h3 style="color:#8096c2">CPU Architecture</h3>
-
-```
-            [Control Unit, ALU, CPU Registers, L1 Cache]
-                                 ^
-                                 |
-Input Devices =============>    RAM   ===============>  Output Devices
-(ie: mouse, keyboard)            |                      (ie: monitor, speaker)
-                                 v
-                            [Hard Disk]
-```
-- **Control Unit Functions**
-    - fetch (data from memory) <br>
-    - decode (using binary decoder) <br>
-    - execute <br>
-    - write back to memory <br>
 
 <h3 style="color:#8096c2">XOR</h3>
 
@@ -147,7 +150,7 @@ if a num % 2 == 0 <br>
 
 if num % 2 == 0 <br>
 &emsp;&emsp; => num has same # of bits as  num/2 <br>
-&emsp;&emsp; => else num has same # of bits as (num-1) + 1 <br>
+else => num has same # of bits as (num-1) + 1 <br>
 
 <h3 style="color:#8096c2">Signed vs. Unsigned int</h3>
 
