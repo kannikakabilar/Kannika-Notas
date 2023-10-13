@@ -80,14 +80,6 @@ def stockProfit(prices: List[int]) -> int:
 
     return diff
 ```
-**Find The Single Number**
-```python
-def singleNumber(nums: List[int]) -> int:
-    res = 0
-    for num in nums:
-        res ^= num
-    return res
-```
 
 **Move Zeroes To End**
 ```python
