@@ -364,9 +364,6 @@ A Hashmap can be designed by creating a large array where the key(int) can be th
     freq.keySet();
     freq.values();    // returns a list of values
 
-    Integer [] myArr = new Integer[10];
-    HashMap <Integer, Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr));    // change an array into a hash set
-
 ```
 
 *HashMaps in java are **pass by reference** (if hashmap is changed in function, the changes can be seen outside the function too) <br><br>
@@ -384,6 +381,10 @@ A Hashmap can be designed by creating a large array where the key(int) can be th
     uniqueNums.contains(9);    // returns true if the hash set contains 9
     uniqueNums.remove(3);    // removes element 3 from hash set
     uniqueNums.clear();    // deletes everything in set
+
+    // Array to HashSets
+    Integer [] myArr = new Integer[10];
+    HashSet <Integer, Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr));    // change an array into a hash set
 ```
 
 - Hash Tables (work similar to HashMaps) aren't used anymore but they provide enumeration and are thread safe while Hash Maps don't
