@@ -416,34 +416,33 @@ def find_pair_of_sum(arr: list, n: int):
                 map[sum] = (arr[i], arr[j])
 ```
 
-**LeetCode: 2022 - Convert array to 2D array**
+**LeetCode: 2610 - Convert array to 2D array**
 
 ```java
 class Solution {
     public List<List<Integer>> findMatrix(int[] nums) {
-        List <List<Integer>> lst = new ArrayList<List<Integer>>();
-        HashMap <Integer, Integer> freq = new HashMap<Integer, Integer>();
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        HashMap <Integer, Integer> myMap = new HashMap <Integer, Integer>();
         for(int i=0; i<nums.length; i++){
-            if(freq.containsKey(nums[i])){
-                freq.put(nums[i], freq.get(nums[i])+1);
+            if(myMap.containsKey(nums[i])){
+                myMap.put(nums[i], myMap.get(nums[i])+1);
             }else{
-                freq.put(nums[i], 1);
+                myMap.put(nums[i], 1);
             }
         }
-        int expected = nums.length;
-        int curr = 0;
-        while(curr<expected){
-            HashSet <Integer> mySet = new HashSet <Integer> ();
-            for(int key : freq.keySet()){
-                if(freq.get(key)>0){
-                    mySet.add(key);
-                    freq.put(key, freq.get(key)-1);
-                    curr++;
+        int total = 0;
+        while(total<nums.length){
+            List<Integer> row = new ArrayList<Integer>();
+            for(int k : myMap.keySet()){
+                if(myMap.get(k)>0){
+                    row.add(k);
+                    myMap.put(k, myMap.get(k)-1);
+                    total++;
                 }
             }
-            lst.add(new ArrayList<Integer>(mySet));
+            res.add(row);
         }
-        return lst;
+        return res;
     }
 }
 ```
