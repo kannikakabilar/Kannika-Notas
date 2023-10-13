@@ -63,6 +63,7 @@ ____________________________________________________________________________
 
 <h1 style="color:#8096c2">Bit Logic</h1>
 
+
 <h3 style="color:#8096c2">Bit Manipulation</h3>
 &ensp;&ensp;     bin# + bin# = bin# * 2 = logically left shift bin# by 1 bit <br>
 &ensp;&ensp;     bin# * (2^x) = logically left shift bin# by x bits <br>
@@ -124,6 +125,8 @@ In <span style="color:#fc6b03">Java</span>
 int num = 11;    // Binary: 1011
 Integer.bitCount(num);    // returns # of 1s in binary rep = 3
 Integer.reverse(num);     // reverses binary form = 1101 = 13
+String binStr = Integer.toBinaryString(num);    // returns "1011"
+num == Integer.parseInt(binStr, 2);    // returns true
 ```
 
 **Reverse Looping**
@@ -140,7 +143,7 @@ for(int i=0; i<arr.length; i++){
 **Count # of 1s in a binary rep of a number**
 if a num % 2 == 0 <br>
 &emsp;&emsp; => last bit of num in binary is 0 <br>
-&emsp;&emsp; => else last bit of num in binary is 1 <br><br>
+=> else last bit of num in binary is 1 <br><br>
 
 &emsp;&emsp; num = num << 1 &emsp;&emsp; (move to the next right-most bit) <br><br>
 
@@ -158,10 +161,21 @@ else => num has same # of bits as (num-1) + 1 <br>
 - **unsigned:** variable only contains positive int (no dedicated sign-bit)
 
 In <span style="color:#fc6b03">Java</span>
+```java
+// >> is arithmetic shift right (preserves sign bit), >>> is logical shift right
+int number1 = 2;
+int number2 = -2;
+int number1 = number1 << 2;    // Shift left by 2 bits = 8
+int number2 = number2 << 2;    // = -8
+System.out.println(number1 >>> 2);    // number1 = 8 and this prints 2
+System.out.println(number2 >>> 2);    // number2 = -8 and this prints 1073741822
+```
+
+In <span style="color:#fc6b03">Java</span>
 
 - if num = 5 <br>
-- then ~num equals 1's complement and flipping sign bit <br>
-&emsp;&emsp; => 0101 => 1010 <br>
+- then ~num equals (-1*num)-1 <br>
+&emsp;&emsp; => 0101 => 1010 (~5 = (-5)-1 = -6)<br>
 
 <h3 style="color:#8096c2">Bitmasking</h3>
 
