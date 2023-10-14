@@ -312,7 +312,7 @@ int ith = myNumbers.get(i);
 
 // Create an ArrayList of int arrays
 ArrayList<int[]> lst = new ArrayList<int[]>();
-lst.add(\[1, 2\]);
+lst.add([1, 2]);
 ```
 
 **Implement the SmallestInfiniteSet class:**
