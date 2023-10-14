@@ -200,7 +200,7 @@ def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
     return time
 ```
 
-**Creating a weave pattern using Queues**
+**Creating a weave pattern using Queues - LeetCode Q:950**
 <br>
 Given an integer array called 'deck' change the order of its element such that it can be 'revealed in an increasing order'
 *reveal increasing order - the resulting array should contain weave patterns, for ex:
