@@ -12,7 +12,7 @@
 
 [JavaScript](https://kannikakabilar.github.io/Kannika-Notas/JavaScript/)
 
-[C#](https://kannikakabilar.github.io/Kannika-Notas/C#/)
+[C#](https://kannikakabilar.github.io/Kannika-Notas/C%23/)
 
 
 
