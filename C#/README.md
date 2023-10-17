@@ -64,3 +64,23 @@ Array.Reverse(myLst);
 ```
 
 <h3 style="color:#b69cf7">HashSets & HashMaps</h3>
+
+```c#
+HashSet <int> mySet = new HashSet <int>();
+mySet.Add(9);
+mySet.Contains(9);    // returns true
+
+// HashMap
+Dictionary <string, int> myMap = new Dictionary <string, int>();
+// updating / putting in a value
+int val = 0;
+myMap["Kannika"] = myMap.TryGetValue("Kannika", out val) ? val+1 : 1999;
+```
+
+<h3 style="color:#b69cf7">Math</h3>
+
+```c#
+// *Note: By default C# does integer division cast elements to double before dividing
+int percent = (int)((((double)18)/((double)25)) * 100)
+Math.Max(2, 5);    // returns 5
+```
