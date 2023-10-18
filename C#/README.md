@@ -1,6 +1,6 @@
-<h1 style="color:#5802f7">C#</h1>
+<h1 style="color:#a9aef5">C#</h1>
 
-<h3 style="color:#5802f7">Strings</h3>
+<h3 style="color:#a9aef5">Strings</h3>
 
 ```c#
 Console.WriteLine("Hi Kannika");
@@ -45,7 +45,7 @@ moon = moon.Trim();    // Remove leading and trailing spaces
 
 ```
 
-<h3 style="color:#5802f7">Arrays</h3>
+<h3 style="color:#a9aef5">Arrays</h3>
 
 ```c#
 IList <string> strLst = new List <string>();
@@ -63,7 +63,7 @@ Array.Sort(myLst);
 Array.Reverse(myLst); 
 ```
 
-<h3 style="color:#5802f7">HashSets & HashMaps</h3>
+<h3 style="color:#a9aef5">HashSets & HashMaps</h3>
 
 ```c#
 HashSet <int> mySet = new HashSet <int>();
@@ -77,7 +77,7 @@ int val = 0;
 myMap["Kannika"] = myMap.TryGetValue("Kannika", out val) ? val+1 : 1999;
 ```
 
-<h3 style="color:#5802f7">Math</h3>
+<h3 style="color:#a9aef5">Math</h3>
 
 ```c#
 // *Note: By default C# does integer division cast elements to double before dividing
