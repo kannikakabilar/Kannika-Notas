@@ -29,8 +29,7 @@
 
 **Easily Reduced Time Complexity**: electronically transferring a file = O(size_of_file) ; transferring a file by airplane = O(1)
 <br> <br>
-
-<h3 style="color:#0303ad">Recursive Algorithms</h3>
+<h3 style="color:#0303ad">Depth-First Search</h3>
 
 <h4>Sample Qs</h4>
 
@@ -49,6 +48,210 @@ def dfs(graph, start, visited=None):
     return visited
 
 ```
+
+**Find all Battleships on a board (DFS on 2D array) - LeetCode Q: 419**
+**(Similarly try LeetCode Q: 1992)**
+```java
+        int height = board.length;
+        int width = board[0].length;
+        int ships = 0;
+        for(int i=0; i<height; i++){
+            for(int j=0; j<width; j++){
+                if(board[i][j] == 'X'){
+                    if((i==0 || board[i-1][j]=='.') && (j==0 || board[i][j-1]=='.')){
+                        ships++;
+                    }
+                }
+            }
+        }
+        return ships;
+    }
+```
+
+<h4 style="color:#0303ad">DFS Tree Qs</h4>
+
+**Can Flipping SubTrees make them equivalent? - LeetCode Q: 951**
+
+```java
+    public boolean flipEquiv(TreeNode root1, TreeNode root2) {
+        if(root1==null && root2==null){
+            return true;
+        }else if(root1==null || root2==null || root1.val != root2.val){
+            return false;
+        }else{
+            if(root1.left==null && root1.right==null && root2.left==null && root2.right==null){
+                return root1.val == root2.val;
+            }else{
+                return (flipEquiv(root1.left, root2.left) && flipEquiv(root1.right, root2.right)) || (flipEquiv(root1.left, root2.right) && flipEquiv(root1.right, root2.left));
+            }
+
+        }
+    }
+```
+
+**Lowest Common Ancester - LeetCode Q: 1123**
+
+```java
+    public int getHeight(TreeNode root){
+        if(root == null){
+            return 0;
+        }else{
+            return Math.max(1+getHeight(root.left), 1+getHeight(root.right));
+        }
+    }
+    
+    public TreeNode lcaDeepestLeaves(TreeNode root) {
+        if(root == null){
+            return root;
+        }else{
+            int leftSide = getHeight(root.left);
+            int rightSide = getHeight(root.right);
+            if(leftSide!=rightSide){
+                if(leftSide>rightSide){
+                    return lcaDeepestLeaves(root.left);
+                }else{
+                    return lcaDeepestLeaves(root.right);
+                }
+            }else{
+                return root;
+            }
+        }
+    }
+```
+
+**All paths from source to target - LeetCode Q: 797**
+
+```java
+    List<List<Integer>> res = new ArrayList<List<Integer>>();
+    public void helper(int [][] graph, int curNode, List<Integer> path){
+        if(curNode==graph.length-1){
+            path.add(curNode);
+            res.add(path);
+        }else{
+            path.add(curNode);
+            for(int i=0; i<graph[curNode].length; i++){
+                helper(graph, graph[curNode][i], new ArrayList<Integer>(path));
+            }
+        }
+    }
+    public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+        
+        helper(graph, 0, new ArrayList<Integer>());
+        return res;
+        
+    }
+```
+
+**Cousins in Binary Tree II - LeetCode Q: 2641**
+
+```java
+class Solution {
+    HashMap <Integer, Integer> lvlSum = new HashMap <Integer, Integer>();
+    public void levelSum(TreeNode root, int height){
+        if(root == null){
+            return ;
+        }else{
+            if(lvlSum.containsKey(height)){
+                lvlSum.put(height, lvlSum.get(height)+root.val);
+            }else{
+                lvlSum.put(height, root.val);
+            }
+            levelSum(root.left, height+1);
+            levelSum(root.right, height+1);
+        }
+    }
+    public TreeNode repVal(TreeNode root, int height, int sibSum){
+        if(root == null){
+            return root;
+        }
+        root.val = lvlSum.get(height) - sibSum;
+        int childSum = 0;
+        childSum += root.left != null ? root.left.val : 0;
+        childSum += root.right != null ? root.right.val : 0;
+        root.left = repVal(root.left, height+1, childSum);
+        root.right = repVal(root.right, height+1, childSum);
+
+        return root;
+        
+    }
+    public TreeNode replaceValueInTree(TreeNode root) {
+        levelSum(root, 0);
+        return repVal(root, 0, root.val);
+    }
+}
+```
+**Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q: 1457**
+
+```java
+class Solution {
+    public boolean palperm(int[] nums){
+        int odds = 0;
+        for(int i=0; i<10; i++){
+            if(nums[i]%2!=0){
+                odds++;
+            }
+            if(odds>1){
+                return false;
+            }
+        }
+        return true;
+         
+    }
+    int count = 0;
+    public void dfs(TreeNode root, int[] nums){
+        if(root == null){
+            return ;
+        }else{
+            nums[root.val] = nums[root.val]+1;
+            if(root.left == null && root.right == null){
+                if(palperm(nums)){
+                    count++;
+                }
+            }
+            dfs(root.left, nums);
+            dfs(root.right, nums);
+            // backtrack
+            nums[root.val] = nums[root.val]-1;
+            
+        }
+    }
+    public int pseudoPalindromicPaths (TreeNode root) {
+        int [] nums = new int [10];
+        dfs(root, nums);
+        return count;
+    }
+}
+```
+
+**Tricky One! (need to study) Distribute Coins in Binary Tree - LeetCode Q: 979**
+
+```java
+class Solution {
+    int moves = 0;
+    public int postOrder(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+
+        // Find out the situation of the children first and then the parent (post-order)
+        int coinsLeft = postOrder(root.left);
+        int coinsRight = postOrder(root.right);
+
+        moves += Math.abs(coinsLeft) + Math.abs(coinsRight);
+
+
+        return coinsLeft + coinsRight + root.val - 1;
+    }
+    public int distributeCoins(TreeNode root) {
+        postOrder(root);
+        return moves;
+    }
+}
+```
+
+<br> <br>
+<h3 style="color:#0303ad">Recursive Algorithms</h3>
+
 
 **Breadth First Search**
 ```python
