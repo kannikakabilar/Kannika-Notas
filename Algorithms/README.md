@@ -31,8 +31,6 @@
 <br> <br>
 <h3 style="color:#0303ad">Depth-First Search</h3>
 
-<h4>Sample Qs</h4>
-
 **Depth First Search**
 ```python
 def dfs(graph, start, visited=None):
@@ -49,9 +47,12 @@ def dfs(graph, start, visited=None):
 
 ```
 
+<h4>Sample Qs</h4>
+
 **Find all Battleships on a board (DFS on 2D array) - LeetCode Q: 419**
 **(Similarly try LeetCode Q: 1992)**
 ```java
+    public int countBattleships(char[][] board) {
         int height = board.length;
         int width = board[0].length;
         int ships = 0;
@@ -65,6 +66,56 @@ def dfs(graph, start, visited=None):
             }
         }
         return ships;
+    }
+```
+
+**Where will the Ball Fall - simple DFS - LeetCode Q: 1706**
+
+```java
+    public int[] findBall(int[][] grid) {
+        int [] balls = new int[grid[0].length];
+        int curCol = 0;
+        for(int i=0; i<balls.length; i++){
+            curCol = i;
+            for(int row=0; row<grid.length; row++){
+                if(grid[row][curCol]==-1 && curCol-1<0){
+                    curCol = -1;
+                    break;
+                }else if(grid[row][curCol]==1 && curCol+1==balls.length){
+                    curCol = -1;
+                    break;
+                }else if(grid[row][curCol]==1 && grid[row][curCol+1]==-1){
+                    curCol = -1;
+                    break;
+                }else if(grid[row][curCol]==-1 && grid[row][curCol-1]==1){
+                    curCol = -1;
+                    break;
+                }else{
+                    curCol += grid[row][curCol];
+                }
+            }
+            balls[i] = curCol;
+        }
+        return balls;
+    }
+```
+
+**Validate Binary Search Tree - LeetCode Q: 98**
+
+* When working with extreme integer values -> you can use Long.MIN_VALUE to Long.MAX_VALUE to act as -infinity to +infinity
+
+```java
+    public boolean helper (TreeNode root, long mini, long maxi){
+        if(root==null){
+            return true;
+        }else{
+            boolean curr = (root.val > mini) && (root.val < maxi);
+            return curr && helper(root.left, mini, root.val) && helper(root.right, root.val, maxi);
+        }
+    }
+    public boolean isValidBST(TreeNode root) {
+
+        return helper(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 ```
 
@@ -120,6 +171,8 @@ def dfs(graph, start, visited=None):
 ```
 
 **All paths from source to target - LeetCode Q: 797**
+
+*Sometimes integer & hashmap variables need to be declared outside functions (lie global variables to keep track of data) - (fo ex: tracking total sum of the node values for each level of a binary tree)
 
 ```java
     List<List<Integer>> res = new ArrayList<List<Integer>>();
@@ -223,6 +276,45 @@ class Solution {
 }
 ```
 
+*When values are within a certain range (ie: 0 to n-1) - using an array might be faster than a hashmap
+
+**Find Largest Value in Each Tree Row - LeetCode Q: 515**
+
+```java
+class Solution {
+    int [] res;
+    public int getHeight(TreeNode root, int height){
+        if(root == null){
+            return height;
+        }else{
+            return Math.max(getHeight(root.left, height+1), getHeight(root.right, height+1));
+        }
+    }
+    public void dfs(TreeNode root, int height){
+        if(root == null){
+            return ;
+        }else{
+            
+            res[height] = Math.max(res[height], root.val);
+            dfs(root.left, height+1);
+            dfs(root.right, height+1);
+        }
+    }
+    public List<Integer> largestValues(TreeNode root) {
+        res = new int [getHeight(root, 0)];
+        for(int i=0; i<res.length; i++){
+            res[i] = Integer.MIN_VALUE;
+        }
+        dfs(root, 0);
+        List <Integer> lst = new ArrayList<Integer>();
+        for(int i=0; i<res.length; i++){
+            lst.add(res[i]);
+        }
+        return lst;
+    }
+}
+```
+
 **Tricky One! (need to study) Distribute Coins in Binary Tree - LeetCode Q: 979**
 
 ```java
@@ -245,6 +337,80 @@ class Solution {
     public int distributeCoins(TreeNode root) {
         postOrder(root);
         return moves;
+    }
+}
+```
+
+<h4 style="color:#0303ad">DFS HashMap Qs</h4>
+
+**Keys and Rooms - LeetCode Q: 841**
+
+```java
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+        HashSet <Integer> toVisit = new HashSet <Integer>();
+        for(int i=0; i<rooms.size(); i++){
+            toVisit.add(i);
+        }
+        List <Integer> myKeys = new ArrayList <Integer>();
+        myKeys.add(0);
+        while(myKeys.size()>0){
+            int curr = myKeys.get(0);
+            myKeys.remove(0);
+            if(toVisit.contains(curr)){
+                myKeys.addAll(rooms.get(curr));
+                toVisit.remove(curr);
+            }
+        }
+        return toVisit.size() == 0;
+
+    }
+```
+
+**Create Binary Tree from Description - LeetCode Q:2196**
+**(Tree Building w/ DFS)**
+
+```java
+class Solution {
+    HashMap <Integer, Integer> lefty = new HashMap <Integer, Integer>();
+    HashMap <Integer, Integer> righty = new HashMap <Integer, Integer>();
+    HashSet <Integer> childs = new HashSet <Integer>();
+    //int root = -1;
+    public int buildMap(int[][] descriptions){
+        //int root = descriptions[0][0];
+        for(int i=0; i<descriptions.length; i++){
+            if(descriptions[i][2]==1){
+                lefty.put(descriptions[i][0], descriptions[i][1]);
+            }else{
+                righty.put(descriptions[i][0], descriptions[i][1]);
+            }  
+            childs.add(descriptions[i][1]);  
+        } 
+        int root = -1;
+        
+        for(int i=0; i<descriptions.length; i++){
+            if(!(childs.contains(descriptions[i][0]))){
+                root = descriptions[i][0];
+            }
+        }  
+        return root;
+
+    }
+    /*public int getRoot(){
+        
+    }*/
+    public TreeNode buildTree(int root){
+        TreeNode myTree = new TreeNode(root);
+        if(lefty.containsKey(root)){
+            myTree.left = buildTree(lefty.get(root));
+        }
+        if(righty.containsKey(root)){
+            myTree.right = buildTree(righty.get(root));
+        }
+        return myTree;
+    }
+    public TreeNode createBinaryTree(int[][] descriptions) {
+        int myRoot = buildMap(descriptions);
+        return buildTree(myRoot);
     }
 }
 ```
