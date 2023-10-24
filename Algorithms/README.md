@@ -395,9 +395,7 @@ class Solution {
         return root;
 
     }
-    /*public int getRoot(){
-        
-    }*/
+
     public TreeNode buildTree(int root){
         TreeNode myTree = new TreeNode(root);
         if(lefty.containsKey(root)){
@@ -411,6 +409,193 @@ class Solution {
     public TreeNode createBinaryTree(int[][] descriptions) {
         int myRoot = buildMap(descriptions);
         return buildTree(myRoot);
+    }
+}
+```
+
+<h4 style="color:#0303ad">DFS 4-Directional Graph-ish Qs</h4>
+
+**Num of Islands - LeetCode Q: 200**
+
+```java
+    public void dfs(char[][] grid, int x, int y){
+        if(x<0 || x==grid.length || y<0 || y==grid[0].length || Character.valueOf(grid[x][y]).equals('0')){
+            return ;
+        }else{
+            grid[x][y] = '0';
+            dfs(grid, x-1, y);
+            dfs(grid, x+1, y);
+            dfs(grid, x, y-1);
+            dfs(grid, x, y+1);
+        }
+    }
+    public int numIslands(char[][] grid) {
+        int count = 0;
+        for(int i=0; i<grid.length; i++){
+            for(int j=0; j<grid[i].length; j++){
+                if(Character.valueOf(grid[i][j]).equals('1')){
+                    dfs(grid, i, j);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+```
+
+**Max Area of Island - LeetCode Q: 695**
+
+```java
+class Solution {
+    HashSet <List<Integer>> visited = new HashSet <List<Integer>>();
+    public int getArea(int[][] grid, int x, int y){
+        if(x>=grid.length || x<0 || y<0 || y>=grid[x].length || grid[x][y]==0 || grid[x][y] == 2){
+            return 0;
+        }else{
+            int area = 1;
+            //System.out.println(x);
+            grid[x][y] = 2;
+            area += x+1 > grid.length ? 0 : getArea(grid, x+1, y);
+            area += y+1 > grid[0].length ? 0 : getArea(grid, x, y+1);
+            area += x-1 < 0 ? 0 : getArea(grid, x-1, y);
+            area += y-1 < 0 ? 0 : getArea(grid, x, y-1);
+            return area;
+        }
+    }
+    public int maxAreaOfIsland(int[][] grid) {
+        int maxi = 0;
+        int tmp = 0;
+        for(int i=0; i<grid.length; i++){
+            for(int j=0; j<grid[i].length; j++){
+                if(grid[i][j]==1){
+                    tmp = getArea(grid, i, j);
+                    maxi = tmp > maxi ? tmp : maxi;
+                }
+            }
+        }
+        return maxi;
+    }
+}
+```
+
+**Count Sub Islands - LeetCode Q: 1905**
+
+```java
+    public int helper(int[][] grid1, int[][] grid2, int x, int y){
+        if(x<0 || x==grid1.length || y<0 || y==grid1[0].length || grid2[x][y]==0){
+            return 1;
+        }else{
+            grid2[x][y] = 0;
+            int left = helper(grid1, grid2, x, y-1);
+            int right = helper(grid1, grid2, x, y+1);
+            int up = helper(grid1, grid2, x-1, y);
+            int down = helper(grid1, grid2, x+1, y);
+            if(left+right+up+down == 4 && grid1[x][y]==1){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+    }
+    private int dfs(int[][] B, int[][] A, int i, int j) {
+        int m = A.length, n = A[0].length, res = 1;
+        if (i < 0 || i == m || j < 0 || j == n || A[i][j] == 0) return 1;
+        A[i][j] = 0;
+        res &= dfs(B, A, i - 1, j);
+        res &= dfs(B, A, i + 1, j);
+        res &= dfs(B, A, i, j - 1);
+        res &= dfs(B, A, i, j + 1);
+        return res & B[i][j];
+    }
+    public int countSubIslands(int[][] grid1, int[][] grid2) {
+        int subIles = 0;
+        int res = 0;
+        for(int i=0; i<grid2.length; i++){
+            for(int j=0; j<grid2[i].length; j++){
+                if(grid2[i][j] == 1){
+                    subIles += helper(grid1, grid2, i, j);
+
+                }
+            }
+        }
+
+        return subIles;
+    }
+```
+
+**Number of Enclaves - LeetCode Q: 1020**
+
+```java
+class Solution {
+    int deserted = 0;
+    public void dfs(int [][] grid, int x, int y){
+        if(x>=0 && x<grid.length && y>=0 && y<grid[x].length && grid[x][y]==1){
+            grid[x][y] = 0;
+            dfs(grid, x+1, y);
+            dfs(grid, x-1, y);
+            dfs(grid, x, y+1);
+            dfs(grid, x, y-1);
+        }
+    }
+    public int numEnclaves(int[][] grid) {
+        for(int i=0; i<grid.length; i++){
+            for(int j=0; j<grid[i].length; j++){
+                if(i==0 || j==0 || i==grid.length-1 || j==grid[i].length-1){
+                    dfs(grid, i, j);
+                }
+            }
+        }
+        for(int i=0; i<grid.length; i++){
+            for(int j=0; j<grid[i].length; j++){
+                if(grid[i][j]==1){
+                    deserted++;
+                }
+            }
+        }
+        return deserted;
+        
+    }
+}
+```
+
+**Classic DFS Graph Q -(Need to study!)- Find if path exists in graph - LeetCode Q: 1971**
+
+```java
+class Solution {
+    boolean found = false;
+    public boolean validPath(int n, int[][] edges, int source, int destination) {
+        if(source == destination){
+            return true;
+        }
+        Map <Integer, List<Integer>> graph = new HashMap();
+        boolean[] visited = new boolean[n];
+
+        for(int i = 0 ; i < n ; i++) graph.put(i, new ArrayList());
+         //construct graph, add bidirectional vertex
+        for(int[] edge : edges){
+           graph.get(edge[0]).add(edge[1]);
+           graph.get(edge[1]).add(edge[0]);
+        }
+
+        dfs(graph, visited, source, destination);
+        return found;
+    }
+
+    private void dfs(Map<Integer, List<Integer>> graph, boolean[] visited, int start, int end){
+        if(visited[start] || found){
+            return;
+        }else{
+            visited[start] = true;
+            for(int nei : graph.get(start)){
+                if(nei == end){
+                    found = true;
+                    break;
+                }
+                if(!visited[nei]){
+                    dfs(graph, visited, nei, end);
+                }
+            }
+        }
     }
 }
 ```
