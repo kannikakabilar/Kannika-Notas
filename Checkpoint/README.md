@@ -122,6 +122,8 @@ Note: Hash Tables (work similar to HashMaps) aren’t used anymore but they prov
 
 23. &ensp; LeetCode Q2610
 
+i. &ensp; Arrays + HashMap - LeetCode Q1282
+
 <h3 style="color:#1669f0">Two Pointers</h3>
 
 24. &ensp; Loop through all pairs of elements - LeetCode Q2824
@@ -145,4 +147,17 @@ Note: Hash Tables (work similar to HashMaps) aren’t used anymore but they prov
 
 31. &ensp; Working with Prime Numbers - LeetCode Q866, Q204
 
-32. &ensp; 
+32. &ensp; Reverse an Integer - LeetCode Q7
+
+33. &ensp; Formula for summing 2+4+6+8+..+n - LeetCode Q1551
+    - nth term = 2 + 2*(n-1)
+    - sum total = n * (2 + nth term)/2
+
+34. &ensp; Formula for summing 1+3+5+..+n
+    - nth term = 1 + 2*(n-1)
+    - sum total = n * (1 + nth term)/2
+    - sum of 1+2+3+4+5+...+n = n*(n+1)/2
+
+35. &ensp; Like converting a decimal number to binary - LeetCode Q1780 (Num is sum of powers of 3?)
+
+___________________________________________
