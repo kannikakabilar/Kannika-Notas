@@ -38,6 +38,8 @@ System.out.println(~num);
 
 13. &ensp; Briefly describe what is bitmasking?
 
+___________________________________________
+
 <h2 style="color:#5c91fa">Data Structures I</h2>
 
 1. &ensp; Differentiate DS Terms: Primitive vs. Non-Primitive ; Linear vs. Non-Linear ; Static vs. Dynamic
@@ -77,3 +79,70 @@ System.out.println(~num);
 17. &ensp; LeetCode Q1290
 
 18. &ensp; What are the 2 ways to check if a LL has cycle? LeetCode Q141
+
+<h3 style="color:#5c91fa">Hash Table</h3>
+
+19. &ensp; Define Terms: **Hash Function** ; **Collision & Chaining** ; **Open-Addressing & Linear-Probing**
+
+20. &ensp; HashMaps in <span style="color:#fc6b03">Java</span>:
+
+    - Intialize a hashmap that will store name string as key and age int as value
+    - Add an key-value element to it
+    - Get value given a key
+    - Check if map contains key and Update key that's already in the map
+    - loop through keySet
+    - loop through values
+    - Delete an element
+
+*HashMaps in <span style="color:#fc6b03">Java</span> are pass by _________ (if hashmap is passed into a function and its values are changed, then the changes can be seen _______ ___ ________ ___)
+
+21. &ensp; HashSets in <span style="color:#fc6b03">Java</span>:
+
+    - Intialize a hashset that will store numbers (ints)
+    - Add an element
+    - Check if the set has an element
+    - Get the Size of the set
+    - Remove an element
+    - Clear all elements
+    - Convert an **ArrayList** to a HashSet
+
+Note: Hash Tables (work similar to HashMaps) aren’t used anymore but they provide enumeration and are thread safe while Hash Maps don’t
+
+- Sample HashMap and HashSet Questions to Think About
+  - Find a pair of nums with given sum and an array of nums<br>
+  - Roman Numeral to Num<br>
+  - Keeping track of values<br>
+  - is Isomorphic?<br>
+  - is Anagram? (ie: Nathaniel Black => Anabella Thick)<br>
+  - is List unique?<br>
+  - union & intersection of 2 LL<br>
+  - missing elements of a range<br><br>
+
+22. &ensp; Given an array, find 4 elements such that a + b = c + d
+
+23. &ensp; LeetCode Q2610
+
+<h3 style="color:#1669f0">Two Pointers</h3>
+
+24. &ensp; Loop through all pairs of elements - LeetCode Q2824
+
+25. &ensp; Perform palindrome check in O(n/2) - LeetCode Q125
+
+26. &ensp; Tricky Palindrome Q - LeetCode Q1332
+
+27. &ensp; Partitioning Array - LeetCode Q905
+
+28. &ensp; Give 3 ways to have 2-Pointers in 1 Array
+    - palindrome-like
+    - even & odd index
+    - window-sliding - LeetCode Q1343
+
+29. &ensp; Loop through all subsets of an array
+
+<h3 style="color:#1669f0">Math</h3>
+
+30. &ensp; How would you handle big numbers in <span style="color:#fc6b03">Java</span> and how would you handle them in <span style="color:#fcc603">JavaScript</span> - LeetCode Q2117
+
+31. &ensp; Working with Prime Numbers - LeetCode Q866, Q204
+
+32. &ensp; 
