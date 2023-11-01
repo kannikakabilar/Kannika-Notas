@@ -36,7 +36,7 @@ int num = 5;
 System.out.println(~num);
 ```
 
-\13. &ensp; Briefly describe what is bitmasking?
+13\. &ensp; Briefly describe what is bitmasking?
 
 ___________________________________________
 
