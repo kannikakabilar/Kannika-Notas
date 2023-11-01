@@ -161,3 +161,43 @@ i. &ensp; Arrays + HashMap - LeetCode Q1282
 35. &ensp; Like converting a decimal number to binary - LeetCode Q1780 (Num is sum of powers of 3?)
 
 ___________________________________________
+
+<h2 style="color:#8096c2">Data Structures II</h2>
+
+<h3 style="color:#1669f0">Stacks</h3>
+1. &ensp; Stacks are used for evaluating: parentheses; math expr; recursive function calls
+
+2. &ensp; LeetCode Q20
+
+3. &ensp; LeetCode Q844
+
+4. &ensp; LeetCode Q1021
+
+5. &ensp; LeetCode Q1047
+
+6. &ensp; LeetCode Q1441
+
+7. &ensp; LeetCode Q1598
+
+8. &ensp; LeetCode Q1614
+
+9. &ensp; LeetCode Q946
+
+10. &ensp; LeetCode Q1249/Q921
+
+<h3 style="color:#1669f0">Queues</h3>
+
+11. &ensp; Time Needed to But Tickets - LeetCode Q2073
+
+12. &ensp; Weave pattern using queues - LeetCode Q950
+
+<h3 style="color:#1669f0">Priority Queues OR Min/Max Heaps</h3>
+
+13. &ensp; In <span style="color:#fc6b03">Java</span>:
+    
+        - Initialize Min Heap & Max Heap
+        - Add elements to the heap
+        - Pop-out the min or max element
+        - Get the size of the heap
+    --------------------------------------------
+        - Create an ArrayList of Priority Queues
