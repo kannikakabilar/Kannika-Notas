@@ -37,3 +37,43 @@ System.out.println(~num);
 ```
 
 13. &ensp; Briefly describe what is bitmasking?
+
+<h2 style="color:#5c91fa">Data Structures I</h2>
+
+1. &ensp; Differentiate DS Terms: Primitive vs. Non-Primitive ; Linear vs. Non-Linear ; Static vs. Dynamic
+
+<h3 style="color:#5c91fa">Arrays</h3>
+2. &ensp; Arrays: indexing = O(?) and everything else = O(?)
+
+3. &ensp; LeetCode Q108
+
+4. &ensp; LeetCode Q704
+
+5. &ensp; LeetCode Q88
+
+6. &ensp; LeetCode Q121
+
+7. &ensp; LeetCode Q283
+
+8. &ensp; If elements of an array are from 1 to n => then how can you approach it? LeetCode Q287
+
+9. &ensp; Kadane's algo LeetCode Q287
+
+<h3 style="color:#5c91fa">Linked Lists</h3>
+10. &ensp; LinkedLists: inserting = O(?) and everything else = O(?)
+
+11. &ensp; LeetCode Q21
+
+12. &ensp; LeetCode Q83
+
+13. &ensp; LeetCode Q203
+
+14. &ensp; LeetCode Q206
+
+15. &ensp; LeetCode Q876
+
+16. &ensp; LeetCode Q234
+
+17. &ensp; LeetCode Q1290
+
+18. &ensp; What are the 2 ways to check if a LL has cycle? LeetCode Q141
