@@ -21,3 +21,19 @@
     - convert an int var to binary sting
     - convert bin string to int
 
+8. &ensp; Reverse loop through binary string
+
+9. &ensp; LeetCode Q338
+
+10. &ensp; Briefly differentiate between signed vs unsigned int
+
+11. &ensp; How do you perform arithmetic & logical shifts in <span style="color:#fc6b03">Java</span> - show with an example
+
+12. &ensp; What gets printed?
+
+```java
+int num = 5;
+System.out.println(~num);
+```
+
+13. &ensp; Briefly describe what is bitmasking?
