@@ -285,4 +285,4 @@ Hint-Note: The number of nodes with an odd-degree in the original graph should b
     - adjacency matrix
     - adjacency list
 
-**! Data Structures Conclusive Note: A search in a sorted collection, think binary search. Minimum # of steps, think BFS. Min/max K elements, think heap. Optimization, think DP. Parentheses, think stacks.**
+**! Data Structures Conclusive Note:** A search in a sorted collection, think binary search. Minimum # of steps, think BFS. Min/max K elements, think heap. Optimization, think DP. Parentheses, think stacks.
