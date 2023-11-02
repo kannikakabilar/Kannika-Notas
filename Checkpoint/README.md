@@ -266,14 +266,14 @@ ___________________________________________
 <h3 style="color:#1669f0">Graphs</h3>
 
 36\. &ensp; LeetCode Q1557
-Hint-Note: A node that does not have any incoming edge can only be reached by itself => only count the node w/ zero incoming edges
+<br>Hint-Note: A node that does not have any incoming edge can only be reached by itself => only count the node w/ zero incoming edges
 
 37\. &ensp; LeetCode Q1615
 
 38\. &ensp; LeetCode Q2374
 
 39\. &ensp; LeetCode Q2508
-Hint-Note: The number of nodes with an odd-degree in the original graph should be either 0, 2, or 4. Try to work on each of these cases.
+<br>Hint-Note: The number of nodes with an odd-degree in the original graph should be either 0, 2, or 4. Try to work on each of these cases.
 
 40\. &ensp; Define the following Graph Terms
     - order of a graph
@@ -328,7 +328,7 @@ ___________________________________________
 2\. &ensp; Where will the Ball Fall - simple DFS - LeetCode Q1706
 
 3\. &ensp; Validate Binary Search Tree - LeetCode Q98
-Hint-Note: When working with extreme integer values -> you can use Long.MIN_VALUE to Long.MAX_VALUE to act as -infinity to +infinity
+<br>Hint-Note: When working with extreme integer values -> you can use Long.MIN_VALUE to Long.MAX_VALUE to act as -infinity to +infinity
 
 <h4 style="color:#0303ad">DFS Tree Qs</h4>
 
@@ -337,12 +337,12 @@ Hint-Note: When working with extreme integer values -> you can use Long.MIN_VALU
 5\. &ensp; Lowest Common Ancester - LeetCode Q1123
 
 6\. &ensp; All paths from source to target - LeetCode Q797
-Hint-Note: Sometimes integer & hashmap variables need to be declared outside functions (lie global variables to keep track of data) - (fo ex: tracking total sum of the node values for each level of a binary tree)
+<br>Hint-Note: Sometimes integer & hashmap variables need to be declared outside functions (lie global variables to keep track of data) - (fo ex: tracking total sum of the node values for each level of a binary tree)
 
 7\. &ensp; Cousins in Binary Tree II - LeetCode Q2641
 
 8\. &ensp; Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457
-Hint-Note: When values are within a certain range (ie: 0 to n-1) - using an array might be faster than a hashmap
+<br>Hint-Note: When values are within a certain range (ie: 0 to n-1) - using an array might be faster than a hashmap
 
 9\. &ensp; Find Largest Value in Each Tree Row - LeetCode Q515
 
@@ -378,7 +378,7 @@ Hint-Note: When values are within a certain range (ie: 0 to n-1) - using an arra
         - Get the value of the first element but do not return it
 
 19\. LeetCode Q429, LeetCode Q958
-Hint-Note: Tree-Level Order traversals are always handled with BFS
+<br>Hint-Note: Tree-Level Order traversals are always handled with BFS
 
 20\. Complete Binary Tree Inserter - LeetCode Q919
 Self-Note: Very good Q to test understanding of BFS
@@ -392,7 +392,7 @@ Notes-for-Q1625
 22\. 4-Directional type of Q using BFS - LeetCode Q994, LeetCode Q1765
 
 23\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433
-Hint-Note: Use HashMaps with BFS to keep track of the 'strings' that you have already visited
+<br>Hint-Note: Use HashMaps with BFS to keep track of the 'strings' that you have already visited
 
 24\. BFS Q that tests your Sorting knowledge - LeetCode Q2471
 
