@@ -125,6 +125,8 @@ Note: Hash Tables (work similar to HashMaps) aren’t used anymore but they prov
 
 i\. &ensp; Arrays + HashMap - LeetCode Q1282
 
+ii\. &ensp; Smallest Infinite Set - LeetCode Q2336
+
 <h3 style="color:#1669f0">Two Pointers</h3>
 
 24\. &ensp; Loop through all pairs of elements - LeetCode Q2824
@@ -200,9 +202,87 @@ ___________________________________________
 
 13\. &ensp; In <span style="color:#fc6b03">Java</span>:
     
-        - Initialize Min Heap & Max Heap
-        - Add elements to the heap
-        - Pop-out the min or max element
-        - Get the size of the heap
-    <br> -------------------------------------------- <br>
-        - Create an ArrayList of Priority Queues
+    - Initialize Min Heap & Max Heap
+    - Add elements to the heap
+    - Pop-out the min or max element
+    - Get the size of the heap
+<br> -------------------------------------------- <br>
+    - Create an ArrayList of Priority Queues
+
+<h3 style="color:#1669f0">Trees</h3>
+
+14\. &ensp; Describe how these simple trees work: N-ary ; Binary ; BST
+
+15\. &ensp; AVL Trees are better for --------- , because the height <= log2(n)
+    - left-left case => ?
+    - left-right case => ?
+
+16\. &ensp; Red-Black Trees are better for --------- and --------
+    - What are the 4 rules for Red-Black Trees?
+
+17\. &ensp; B-Tree
+    - Each node can have upto (how many?) values
+    - Each non-leaf node must have at least (how many?) children and atmost (how many?) children
+    - All leaves have the same -----
+
+18\. &ensp; Heaps (Min/Max Priority Queues)
+    - How do you insert in heaps?
+    - How do you delete in heaps?
+
+19\. &ensp; Treaps are a mix of --- and ----
+    - Each node stores 2 values (what are they - what kind of values?)
+    - How do you insert? And what happens after insertion?
+
+20\. &ensp; Splay Trees are just like BST but perform AVL rotations each time an event occurs (what event?) and it updates the root node accordingly
+
+21\. &ensp; LeetCode Q938
+
+22\. &ensp; LeetCode Q590
+
+23\. &ensp; LeetCode Q226
+
+24\. &ensp; LeetCode Q1022
+
+25\. &ensp; LeetCode Q1448
+
+26\. &ensp; LeetCode Q2265 (helper functions are sometimes needed when working with trees)
+
+27\. &ensp; LeetCode Q1026
+
+28\. &ensp; LeetCode Q894
+
+29\. &ensp; Balance a Binary Search Tree - LeetCode Q1382
+
+30\. &ensp; LeetCode Q2415
+
+31\. &ensp; LeetCode Q1325
+
+32\. &ensp; LeetCode Q222
+
+33\. &ensp; LeetCode Q1104
+
+34\. &ensp; LeetCode Q208, Q14
+
+35\. &ensp; LeetCode Q1373
+
+<h3 style="color:#1669f0">Graphs</h3>
+
+36\. &ensp; LeetCode Q1557
+Hint-Note: A node that does not have any incoming edge can only be reached by itself => only count the node w/ zero incoming edges
+
+37\. &ensp; LeetCode Q1615
+
+38\. &ensp; LeetCode Q2374
+
+39\. &ensp; LeetCode Q2508
+Hint-Note: The number of nodes with an odd-degree in the original graph should be either 0, 2, or 4. Try to work on each of these cases.
+
+40\. Define the following Graph Terms
+    - order of a graph
+    - size of a graph
+    - null graph
+    - complete graph
+    - adjacency matrix
+    - adjacency list
+
+**! Data Structures Conclusive Note: A search in a sorted collection, think binary search. Minimum # of steps, think BFS. Min/max K elements, think heap. Optimization, think DP. Parentheses, think stacks.**
