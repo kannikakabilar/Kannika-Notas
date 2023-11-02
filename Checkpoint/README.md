@@ -43,24 +43,24 @@ ___________________________________________
 
 <h2 style="color:#5c91fa">Data Structures I</h2>
 
-1. &ensp; Differentiate DS Terms: Primitive vs. Non-Primitive ; Linear vs. Non-Linear ; Static vs. Dynamic
+1\. &ensp; Differentiate DS Terms: Primitive vs. Non-Primitive ; Linear vs. Non-Linear ; Static vs. Dynamic
 
 <h3 style="color:#5c91fa">Arrays</h3>
-2. &ensp; Arrays: indexing = O(?) and everything else = O(?)
+2\. &ensp; Arrays: indexing = O(?) and everything else = O(?)
 
-3. &ensp; LeetCode Q108
+3\. &ensp; LeetCode Q108
 
-4. &ensp; LeetCode Q704
+4\. &ensp; LeetCode Q704
 
-5. &ensp; LeetCode Q88
+5\. &ensp; LeetCode Q88
 
-6. &ensp; LeetCode Q121
+6\. &ensp; LeetCode Q121
 
-7. &ensp; LeetCode Q283
+7\. &ensp; LeetCode Q283
 
-8. &ensp; If elements of an array are from 1 to n => then how can you approach it? LeetCode Q287
+8\. &ensp; If elements of an array are from 1 to n => then how can you approach it? LeetCode Q287
 
-9. &ensp; Kadane's algo LeetCode Q287
+9\. &ensp; Kadane's algo LeetCode Q287
 
 <h3 style="color:#5c91fa">Linked Lists</h3>
 10\. &ensp; LinkedLists: inserting = O(?) and everything else = O(?)
@@ -95,7 +95,7 @@ ___________________________________________
     - loop through values
     - Delete an element
 
-* HashMaps in <span style="color:#fc6b03">Java</span> are pass by _________ (if hashmap is passed into a function and its values are changed, then the changes can be seen _______ ___ ________ ___)
+* HashMaps in <span style="color:#fc6b03">Java</span> are pass by --------- (if hashmap is passed into a function and its values are changed, then the changes can be seen ------- --- -------- ---)
 
 21\. &ensp; HashSets in <span style="color:#fc6b03">Java</span>:
 
@@ -142,7 +142,6 @@ ii\. &ensp; Smallest Infinite Set - LeetCode Q2336
     - even & odd index
     - window-sliding - LeetCode Q1343
 
-<br>
 
 29\. &ensp; Loop through all subsets of an array
 
@@ -154,16 +153,15 @@ ii\. &ensp; Smallest Infinite Set - LeetCode Q2336
 
 32\. &ensp; Reverse an Integer - LeetCode Q7
 
-33\. &ensp; Formula for summing 2+4+6+8+..+n - LeetCode Q1551
-    - nth term = 2 + 2*(n-1)
-    - sum total = n * (2 + nth term)/2
+33\. &ensp; Formula for summing 2+4+6+8+..+n - LeetCode Q1551 <br>
+    - nth term = 2 + 2*(n-1) <br>
+    - sum total = n * (2 + nth term)/2 <br>
 
-<br>
 
-34\. &ensp; Formula for summing 1+3+5+..+n
-    - nth term = 1 + 2*(n-1)
-    - sum total = n * (1 + nth term)/2
-    - sum of 1+2+3+4+5+...+n = n*(n+1)/2
+34\. &ensp; Formula for summing 1+3+5+..+n <br>
+    - nth term = 1 + 2*(n-1) <br>
+    - sum total = n * (1 + nth term)/2 <br>
+    - sum of 1+2+3+4+5+...+n = n*(n+1)/2 <br>
 
 35\. &ensp; Like converting a decimal number to binary - LeetCode Q1780 (Num is sum of powers of 3?)
 
@@ -206,32 +204,32 @@ ___________________________________________
     - Add elements to the heap
     - Pop-out the min or max element
     - Get the size of the heap
-<br> -------------------------------------------- <br>
+    ---------------------------------------------
     - Create an ArrayList of Priority Queues
 
 <h3 style="color:#1669f0">Trees</h3>
 
 14\. &ensp; Describe how these simple trees work: N-ary ; Binary ; BST
 
-15\. &ensp; AVL Trees are better for --------- , because the height <= log2(n)
-    - left-left case => ?
-    - left-right case => ?
+15\. &ensp; AVL Trees are better for --------- , because the height <= log2(n) <br>
+    - left-left case => ? <br>
+    - left-right case => ? <br>
 
-16\. &ensp; Red-Black Trees are better for --------- and --------
-    - What are the 4 rules for Red-Black Trees?
+16\. &ensp; Red-Black Trees are better for --------- and -------- <br>
+    - What are the 4 rules for Red-Black Trees? <br>
 
-17\. &ensp; B-Tree
-    - Each node can have upto (how many?) values
-    - Each non-leaf node must have at least (how many?) children and atmost (how many?) children
-    - All leaves have the same -----
+17\. &ensp; B-Tree <br>
+    - Each node can have upto (how many?) values <br>
+    - Each non-leaf node must have at least (how many?) children and atmost (how many?) children <br>
+    - All leaves have the same ----- <br>
 
-18\. &ensp; Heaps (Min/Max Priority Queues)
-    - How do you insert in heaps?
-    - How do you delete in heaps?
+18\. &ensp; Heaps (Min/Max Priority Queues) <br>
+    - How do you insert in heaps? <br>
+    - How do you delete in heaps? <br>
 
-19\. &ensp; Treaps are a mix of --- and ----
-    - Each node stores 2 values (what are they - what kind of values?)
-    - How do you insert? And what happens after insertion?
+19\. &ensp; Treaps are a mix of --- and ---- <br>
+    - Each node stores 2 values (what are they - what kind of values?) <br>
+    - How do you insert? And what happens after insertion? <br>
 
 20\. &ensp; Splay Trees are just like BST but perform AVL rotations each time an event occurs (what event?) and it updates the root node accordingly
 
