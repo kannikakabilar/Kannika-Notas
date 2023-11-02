@@ -275,7 +275,7 @@ Hint-Note: A node that does not have any incoming edge can only be reached by it
 39\. &ensp; LeetCode Q2508
 Hint-Note: The number of nodes with an odd-degree in the original graph should be either 0, 2, or 4. Try to work on each of these cases.
 
-40\. Define the following Graph Terms
+40\. &ensp; Define the following Graph Terms
     - order of a graph
     - size of a graph
     - null graph
@@ -284,3 +284,88 @@ Hint-Note: The number of nodes with an odd-degree in the original graph should b
     - adjacency list
 
 **! Data Structures Conclusive Note:** A search in a sorted collection, think binary search. Minimum # of steps, think BFS. Min/max K elements, think heap. Optimization, think DP. Parentheses, think stacks.
+
+___________________________________________
+
+<h2 style="color:#0303ad">Algorithms</h2>
+
+**Big O**: f(n) ∈ O(g(n)) iff for some constant C and N0, f(N) <= c * g(N) for all N > N0 <br>
+**Big Ω**: f(n) ∈ Ω(g(n)) iff for some constant C and N0, f(N) >= c * g(N) for all N > N0 <br>
+**Big Θ**: f(n) ∈ Θ(g(n)) iff f(n) ∈ Ω(g(n)) AND f(n) ∈ O(g(n)) <br> <br>
+
+**Little o**: f(n) ∈ o(g(n)) iff for some constant C and N0, f(N) < c * g(N) for all N > N0 <br>
+<span style="color:red">!Note: Strictly less than NOT equal to</span> <br> <br>
+
+**Worst case**: an input that causes the maximum time for the program to complete execution <br> <br>
+
+**Amortized Time** <br>
+&ensp;&ensp;  = Time_taken_for_N_operations/N (~> average time taken for each operation) <br>
+&ensp;&ensp;  = (time taken for normal ops + time taken for slow ops) / N <br> <br>
+
+| Cost of Nth insertion 
+|---------------------------------|
+| = O(N), if N-1 is a power of 2
+| = O(1), otherwise
+
+| Amortized Cost
+|---------------------------------|
+| = ( O(1+1+1+...) + O(1+2+4+...) ) / N
+| &ensp;&ensp;&ensp; ^N terms &ensp;&ensp; &ensp;&ensp; ^(log2N)+1 terms
+| = ( O(N) + O(2N) ) / N 
+| = O(1)
+
+<br> 
+
+**Easily Reduced Time Complexity**: electronically transferring a file = O(size_of_file) ; transferring a file by airplane = O(1)
+<br> <br>
+
+<h3 style="color:#0303ad">Depth-First Search</h3>
+
+<h4 style="color:#0303ad">Sample DFS Qs</h4>
+
+1\. &ensp; Find all Battleships on a board (DFS on 2D array) - LeetCode Q419 & Q1992
+
+2\. &ensp; Where will the Ball Fall - simple DFS - LeetCode Q1706
+
+3\. &ensp; Validate Binary Search Tree - LeetCode Q98
+Hint-Note: When working with extreme integer values -> you can use Long.MIN_VALUE to Long.MAX_VALUE to act as -infinity to +infinity
+
+<h4 style="color:#0303ad">DFS Tree Qs</h4>
+
+4\. &ensp; Can Flipping SubTrees make them equivalent? - LeetCode Q951
+
+5\. &ensp; Lowest Common Ancester - LeetCode Q1123
+
+6\. &ensp; All paths from source to target - LeetCode Q797
+Hint-Note: Sometimes integer & hashmap variables need to be declared outside functions (lie global variables to keep track of data) - (fo ex: tracking total sum of the node values for each level of a binary tree)
+
+7\. &ensp; Cousins in Binary Tree II - LeetCode Q2641
+
+8\. &ensp; Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457
+Hint-Note: When values are within a certain range (ie: 0 to n-1) - using an array might be faster than a hashmap
+
+9\. &ensp; Find Largest Value in Each Tree Row - LeetCode Q515
+
+10\. &ensp; Tricky One! (need to study) Distribute Coins in Binary Tree - LeetCode Q979
+
+<h4 style="color:#0303ad">DFS HashMap Qs</h4>
+
+11\. &ensp; Keys and Rooms - LeetCode Q841
+
+12\. &ensp; Create Binary Tree from Description - (Tree Building w/ DFS) - LeetCode Q2196
+
+<h4 style="color:#0303ad">DFS 4-Directional Graph-ish Qs</h4>
+
+13\. &ensp; Num of Islands - LeetCode Q200
+
+14\. &ensp; Max Area of Island - LeetCode Q695
+
+15\. &ensp; Count Sub Islands - LeetCode Q1905
+
+16\. &ensp; Number of Enclaves - LeetCode Q1020
+
+17\. &ensp; Classic DFS Graph Q (Need to study!) - Find if path exists in graph - LeetCode Q1971
+
+<br> <br>
+
+<h3 style="color:#0303ad">Breadth-First Search</h3>
