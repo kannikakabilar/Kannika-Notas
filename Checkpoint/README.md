@@ -383,11 +383,16 @@ Hint-Note: Tree-Level Order traversals are always handled with BFS
 20\. Complete Binary Tree Inserter - LeetCode Q919
 Self-Note: Very good Q to test understanding of BFS
 
-21\. Qs that can also be solved with DFS - LeetCode Q865, LeetCode Q1625
+21\. Qs that can also be solved with DFS - LeetCode Q865 (unusual one), LeetCode Q1625 
+Notes-for-Q1625
+    - how do you lexicographically compare strings in Java?)
+    - Use HashMaps with BFS to keep track of the 'strings' that you have already visited
+    - Create helper functions to perform respective modifications to string
 
-22\. 4-Directional type of Q using BFS - LeetCode Q1765, LeetCode Q994
+22\. 4-Directional type of Q using BFS - LeetCode Q994, LeetCode Q1765
 
 23\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433
+Hint-Note: Use HashMaps with BFS to keep track of the 'strings' that you have already visited
 
 24\. BFS Q that tests your Sorting knowledge - LeetCode Q2471
 
