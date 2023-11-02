@@ -127,7 +127,7 @@ i\. &ensp; Arrays + HashMap - LeetCode Q1282
 
 ii\. &ensp; Smallest Infinite Set - LeetCode Q2336
 
-<h3 style="color:#1669f0">Two Pointers</h3>
+<h3 style="color:#5c91fa">Two Pointers</h3>
 
 24\. &ensp; Loop through all pairs of elements - LeetCode Q2824
 
@@ -145,7 +145,7 @@ ii\. &ensp; Smallest Infinite Set - LeetCode Q2336
 
 29\. &ensp; Loop through all subsets of an array
 
-<h3 style="color:#1669f0">Math</h3>
+<h3 style="color:#5c91fa">Math</h3>
 
 30\. &ensp; How would you handle big numbers in <span style="color:#fc6b03">Java</span> and how would you handle them in <span style="color:#fcc603">JavaScript</span> - LeetCode Q2117
 
@@ -167,7 +167,7 @@ ii\. &ensp; Smallest Infinite Set - LeetCode Q2336
 
 ___________________________________________
 
-<h2 style="color:#8096c2">Data Structures II</h2>
+<h2 style="color:#1669f0">Data Structures II</h2>
 
 <h3 style="color:#1669f0">Stacks</h3>
 1\. &ensp; Stacks are used for evaluating: parentheses; math expr; recursive function calls
