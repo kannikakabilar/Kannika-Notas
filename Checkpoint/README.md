@@ -369,3 +369,26 @@ Hint-Note: When values are within a certain range (ie: 0 to n-1) - using an arra
 <br> <br>
 
 <h3 style="color:#0303ad">Breadth-First Search</h3>
+
+18\. &ensp; In <span style="color:#fc6b03">Java</span>:
+        - Initialize a LinkedList Queue & just a LinkedList (built-in w/ Java)
+        - Add an element to the LLQ
+        - Remove and return the first element in the LLQ
+        - Get the size of the LLQ
+        - Get the value of the first element but do not return it
+
+19\. LeetCode Q429, LeetCode Q958
+Hint-Note: Tree-Level Order traversals are always handled with BFS
+
+20\. Complete Binary Tree Inserter - LeetCode Q919
+Self-Note: Very good Q to test understanding of BFS
+
+21\. Qs that can also be solved with DFS - LeetCode Q865, LeetCode Q1625
+
+22\. 4-Directional type of Q using BFS - LeetCode Q1765, LeetCode Q994
+
+23\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433
+
+24\. BFS Q that tests your Sorting knowledge - LeetCode Q2471
+
+25\. Interesting and Unique BFS Q - (need to study) - LeetCode Q967
