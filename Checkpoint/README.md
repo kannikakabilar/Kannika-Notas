@@ -58,7 +58,10 @@ ___________________________________________
 
 7\. &ensp; LeetCode Q283
 
-8\. &ensp; If elements of an array are from 1 to n => then how can you approach it? LeetCode Q287
+8\. &ensp; If elements of an array are from 1 to n => then how can you approach it? 
+
+    - LeetCode Q287
+    - LeetCode Q41 (Need to learn the trick!)
 
 9\. &ensp; Kadane's algo LeetCode Q287
 
@@ -85,7 +88,7 @@ ___________________________________________
 
 19\. &ensp; Define Terms: **Hash Function** ; **Collision & Chaining** ; **Open-Addressing & Linear-Probing**
 
-20\. &ensp; HashMaps in <span style="color:#fc6b03">Java</span>:
+20\. &ensp; HashMaps in <span style="color:#fc6b03">Java</span>: (skip/skim-over 20. & 21. if you're confident in HashMap & HashSets)
 
     - Intialize a hashmap that will store name string as key and age int as value
     - Add an key-value element to it
@@ -97,7 +100,7 @@ ___________________________________________
 
 * HashMaps in <span style="color:#fc6b03">Java</span> are pass by --------- (if hashmap is passed into a function and its values are changed, then the changes can be seen ------- --- -------- ---)
 
-21\. &ensp; HashSets in <span style="color:#fc6b03">Java</span>:
+21\. &ensp; HashSets in <span style="color:#fc6b03">Java</span>: 
 
     - Intialize a hashset that will store numbers (ints)
     - Add an element
