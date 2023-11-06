@@ -136,11 +136,13 @@ ii\. &ensp; Smallest Infinite Set - LeetCode Q2336
 
 25\. &ensp; Perform palindrome check in O(n/2) - LeetCode Q125
 
-26\. &ensp; Tricky Palindrome Q - LeetCode Q1332
+26\. &ensp; Tricky Palindrome Q - LeetCode Q1332 
+<br> Hint-Note: Think about base-case string with length 3
 
-27\. &ensp; Partitioning Array - LeetCode Q905
+27\. &ensp; Partitioning Array - LeetCode Q905 => Q922(harder)
 
 28\. &ensp; Give 3 ways to have 2-Pointers in 1 Array
+
     - palindrome-like
     - even & odd index
     - window-sliding - LeetCode Q1343
