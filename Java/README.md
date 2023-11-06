@@ -33,6 +33,7 @@ String arrToStr = new String(merge);    // combines the char array into a string
 
 char [] arr1 = str1.toCharArray();    // converts the string into a char array
 
+String str3 = str1.replace("k", "c);    // replace all occurrence of 'k' with 'c'
 ```
 
 <h3 style="color:#fa6339">Hash Sets</h3>
