@@ -371,6 +371,7 @@ ___________________________________________
 <h3 style="color:#0303ad">Breadth-First Search</h3>
 
 18\. &ensp; In <span style="color:#fc6b03">Java</span>:
+
         - Initialize a LinkedList Queue & just a LinkedList (built-in w/ Java)
         - Add an element to the LLQ
         - Remove and return the first element in the LLQ
@@ -381,10 +382,10 @@ ___________________________________________
 <br>Hint-Note: Tree-Level Order traversals are always handled with BFS
 
 20\. Complete Binary Tree Inserter - LeetCode Q919
-Self-Note: Very good Q to test understanding of BFS
+<br>Self-Note: Very good Q to test understanding of BFS
 
 21\. Qs that can also be solved with DFS - LeetCode Q865 (unusual one), LeetCode Q1625 
-Notes-for-Q1625
+<br>Notes-for-Q1625
     - how do you lexicographically compare strings in Java?)
     - Use HashMaps with BFS to keep track of the 'strings' that you have already visited
     - Create helper functions to perform respective modifications to string
@@ -397,3 +398,25 @@ Notes-for-Q1625
 24\. BFS Q that tests your Sorting knowledge - LeetCode Q2471
 
 25\. Interesting and Unique BFS Q - (need to study) - LeetCode Q967
+
+**Note:** A common BFS / DFS Q (that's not included here) is to check if a given graph is bipartite
+
+
+<h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
+
+26\. LeetCode Q779 - Need to study
+<br>Hint-Note: Build a tree when working with binary num replacements
+
+27\. LeetCode Q390 - Don't understand - (Math related)
+
+28\. LeetCode Q105, Q106, Q889(~slightly trickier) 
+<br>Self-Note: If you can do Q105, then you can do Q106
+
+**Note:** A common Div&Conq Q (that's not included here) is to find the closest pair of points,given a list of points.
+
+
+<h3 style="color:#0303ad">Binary Search</h3>
+
+- rotated sorted array search
+- find peaks in array
+- kth smallest element in a sorted matrix
