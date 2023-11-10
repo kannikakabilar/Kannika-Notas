@@ -62,6 +62,7 @@ ___________________________________________
 
     - LeetCode Q287
     - LeetCode Q41 (Need to learn the trick!)
+    - LeetCode Q1608
 
 9\. &ensp; Kadane's algo LeetCode Q287
 
@@ -129,6 +130,8 @@ Note: Hash Tables (work similar to HashMaps) aren’t used anymore but they prov
 i\. &ensp; Arrays + HashMap - LeetCode Q1282
 
 ii\. &ensp; Smallest Infinite Set - LeetCode Q2336
+
+iii\. &ensp; Tricky Hashset Q - LeetCode Q888
 
 <h3 style="color:#5c91fa">Two Pointers</h3>
 
@@ -422,6 +425,56 @@ ___________________________________________
 
 <h3 style="color:#0303ad">Binary Search</h3>
 
-- rotated sorted array search
-- find peaks in array
-- kth smallest element in a sorted matrix
+29\. **Note:** It is important to realize that binary search can only be performed on ------ value-set / value-range / mountain-ish values-sets
+
+30\. In <span style="color:#fc6b03">Java</span> sort a int \[\] arr using built-in sort. In an algorithm Q, if array sorted? => binary search. But sometimes you have to call the built-in sort on the given array.
+
+<h4 style="color:#0303ad">Simple Basic Qs</h4>
+
+31\. LeetCode Q374
+
+32\. LeetCode Q744
+
+33\. LeetCode Q1385
+<br>Hint-Note: Subtraction in an absolute sign can result following range: |a - b| = c means b can be between a-c to a+c
+
+<h4 style="color:#0303ad">Peaks & Valleys Qs</h4>
+
+34\. LeetCode Q852
+
+35\. LeetCode Q162
+
+36\. LeetCode Q1901 (nlogm + 2D arr)
+
+<h4 style="color:#0303ad">Maximize Consecutives Qs</h4>
+
+37\. LeetCode Q1004 (if you do this one, you can do the one below)
+
+38\. LeetCode Q2024
+
+<h4 style="color:#0303ad">Search Rotated Array Qs</h4>
+
+39\. LeetCode Q153
+
+40\. LeetCode Q33
+
+<h4 style="color:#0303ad">Search 2-D Array Q (logm * logn)</h4>
+
+41\. LeetCode Q74
+
+<h4 style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func Qs</h4>
+
+42\. LeetCode Q2540
+<br>Self-Note: Can also be solved in O(m+n) with merge-sort-like thinking but try doing it in n*logm
+
+43\. LeetCode Q1237
+
+44\. LeetCode Q1011
+<br>Hint-Note: Try to understand what range/values can be iterated w/ binary search
+
+<br>Hint-Note: Manually set your own 'high' value for below 2 Qs
+
+45\. LeetCode Q2517
+
+46\. LeetCode Q1170 (can skip this one if you have a good grasp of bin search)
+
