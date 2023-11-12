@@ -246,7 +246,7 @@ ___________________________________________
 
 21\. &ensp; LeetCode Q938
 
-22\. &ensp; LeetCode Q590
+22\. &ensp; LeetCode Q590 (How do you concatenate 2 arraylists in java?)
 
 23\. &ensp; LeetCode Q226
 
