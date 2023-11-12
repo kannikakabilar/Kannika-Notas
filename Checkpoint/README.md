@@ -157,7 +157,7 @@ iii\. &ensp; Tricky Hashset Q - LeetCode Q888
 
 30\. &ensp; How would you handle big numbers in <span style="color:#fc6b03">Java</span> and how would you handle them in <span style="color:#fcc603">JavaScript</span> - LeetCode Q2117
 
-31\. &ensp; Working with Prime Numbers - LeetCode Q866, <mark style="background-color:#e4d4fa">**Q204** (Need to learn Sieve of Eratosthenes)</mark>
+31\. &ensp; Working with Prime Numbers - LeetCode Q866, <mark style="background-color:##efe3ff"><strong>Q204 (Need to learn Sieve of Eratosthenes)</strong></mark>
 
 32\. &ensp; Reverse an Integer - LeetCode Q7
 
@@ -202,7 +202,7 @@ ___________________________________________
 
 11\. &ensp; Time Needed to But Tickets - LeetCode Q2073
 
-12\. &ensp; Weave pattern using queues - LeetCode <mark style="background-color:#e4d4fa">**Q950**</mark>
+12\. &ensp; Weave pattern using queues - LeetCode <mark style="background-color:#efe3ff"><strong>Q950</strong></mark>
 
 <h3 style="color:#1669f0">Priority Queues OR Min/Max Heaps</h3>
 
