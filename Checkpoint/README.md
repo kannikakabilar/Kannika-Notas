@@ -211,9 +211,12 @@ ___________________________________________
     - Initialize Min Heap & Max Heap
     - Add elements to the heap
     - Pop-out the min or max element
+    - Get the min or max element but don't remove it
     - Get the size of the heap
+    - Remove an element 'x' from the heap
     ---------------------------------------------
     - Create an ArrayList of Priority Queues
+    - Try doing LeetCode Q2593 or any othe heap Q that you haven't done before
 
 <h3 style="color:#1669f0">Trees</h3>
 
