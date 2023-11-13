@@ -203,6 +203,7 @@ ___________________________________________
 11\. &ensp; Time Needed to But Tickets - LeetCode Q2073
 
 12\. &ensp; Weave pattern using queues - LeetCode <mark style="background-color:#efe3ff"><strong>Q950</strong></mark>
+<br>Hint-Note: Think in reverse-order => in the game you reveal a card and then put one card at the end of the deck - so when we are designing the deck => we add the highest-value card (deck array sorted in descending array) to the deck, then we remove a card from the bottom to and place it on top, and then we add the next highest-value card and so on..
 
 <h3 style="color:#1669f0">Priority Queues OR Min/Max Heaps</h3>
 
@@ -259,6 +260,9 @@ ___________________________________________
 27\. &ensp; LeetCode Q1026
 
 28\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q894</strong></mark>
+<br>Hint-Note: Think about if there are n total nodes, 1 for root and i nodes for left-subtree, how much would the right subtree have?
+<br> -use recursion to generate subtrees with i nodes for left-subtree and for each left-subtree loop through every possible right-subtree
+<br> -store the list of subtrees of size-n-nodes into a hashmap
 
 29\. &ensp; Balance a Binary Search Tree - LeetCode Q1382 (how do you get subarray of an arraylist?)
 
