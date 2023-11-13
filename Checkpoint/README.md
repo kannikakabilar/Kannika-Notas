@@ -270,7 +270,7 @@ ___________________________________________
 
 34\. &ensp; LeetCode Q208 (Trie), Q14
 
-35\. &ensp; LeetCode Q1373
+35\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q1373</strong></mark>
 
 <h3 style="color:#1669f0">Graphs</h3>
 
@@ -285,6 +285,7 @@ ___________________________________________
 <br>Hint-Note: The number of nodes with an odd-degree in the original graph should be either 0, 2, or 4. Try to work on each of these cases.
 
 40\. &ensp; Define the following Graph Terms
+
     - order of a graph
     - size of a graph
     - null graph
