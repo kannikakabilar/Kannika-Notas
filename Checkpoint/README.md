@@ -258,19 +258,17 @@ ___________________________________________
 
 27\. &ensp; LeetCode Q1026
 
-28\. &ensp; LeetCode Q894
+28\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q894</strong></mark>
 
-29\. &ensp; Balance a Binary Search Tree - LeetCode Q1382
+29\. &ensp; Balance a Binary Search Tree - LeetCode Q1382 (how do you get subarray of an arraylist?)
 
-30\. &ensp; LeetCode Q2415
+30\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q2415</strong></mark>
 
 31\. &ensp; LeetCode Q1325
 
-32\. &ensp; LeetCode Q222
+33\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q1104</strong></mark>
 
-33\. &ensp; LeetCode Q1104
-
-34\. &ensp; LeetCode Q208, Q14
+34\. &ensp; LeetCode Q208 (Trie), Q14
 
 35\. &ensp; LeetCode Q1373
 
