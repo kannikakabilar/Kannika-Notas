@@ -281,8 +281,13 @@ ___________________________________________
 
 38\. &ensp; LeetCode Q2374
 
-39\. &ensp; LeetCode Q2508
+39\. &ensp; LeetCode Q2508 (good practice Q)
 <br>Hint-Note: The number of nodes with an odd-degree in the original graph should be either 0, 2, or 4. Try to work on each of these cases.
+<br>Hint-Note: Use Pair to store hashset of edges
+
+```java
+Pair p1 = new Pair(1, 2);
+```
 
 40\. &ensp; Define the following Graph Terms
 
@@ -292,6 +297,8 @@ ___________________________________________
     - complete graph
     - adjacency matrix
     - adjacency list
+
+**Graph-Note:** When given a list of edges, it's very useful to store them in a HashMap
 
 **! Data Structures Conclusive Note:** A search in a sorted collection, think binary search. Minimum # of steps, think BFS. Min/max K elements, think heap. Optimization, think DP. Parentheses, think stacks.
 
