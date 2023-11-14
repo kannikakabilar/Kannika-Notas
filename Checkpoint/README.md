@@ -293,7 +293,7 @@ ___________________________________________
 <br>Hint-Note: Use Pair to store hashset of edges
 
 ```java
-Pair p1 = new Pair(1, 2);
+Pair p1 = new Pair(1, 2);    // I think 'Pair' in java might be pass-by-value
 ```
 
 40\. &ensp; Define the following Graph Terms
