@@ -313,8 +313,8 @@ ___________________________________________
 
 <h2 style="color:#0303ad">Algorithms</h2>
 
-**Big O**: f(n) ∈ O(g(n)) iff for some constant C and N0, f(N) <= c * g(N) for all N > N0 <br>
-**Big Ω**: f(n) ∈ Ω(g(n)) iff for some constant C and N0, f(N) >= c * g(N) for all N > N0 <br>
+Differentiate between **Big O** and **Little o** - what are constants c and N0 used for in the definition? (and you should know **Big Θ**)<br> <br>
+
 **Big Θ**: f(n) ∈ Θ(g(n)) iff f(n) ∈ Ω(g(n)) AND f(n) ∈ O(g(n)) <br> <br>
 
 **Little o**: f(n) ∈ o(g(n)) iff for some constant C and N0, f(N) < c * g(N) for all N > N0 <br>
