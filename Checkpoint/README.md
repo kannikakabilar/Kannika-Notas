@@ -267,14 +267,17 @@ ___________________________________________
 29\. &ensp; Balance a Binary Search Tree - LeetCode Q1382 (how do you get subarray of an arraylist?)
 
 30\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q2415</strong></mark>
+<br> Hint-Note: Think of the first few base cases. left-subtree needs to swap values with right subtree. After that, the left-left-subtree will swap values with right-right-subtree and the left-right-subtree will swap values with right-left-subtree. Ofcourse, pefrorm the swap only when the levels are odd.
 
 31\. &ensp; LeetCode Q1325
 
 33\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q1104</strong></mark>
+<br> Hint-Note: Try drawing a normal (non-zigzag tree) and see how you can get the value of parent given value of child node and then compare it by drawing the zigzag tree.
 
 34\. &ensp; LeetCode Q208 (Trie), Q14
 
 35\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q1373</strong></mark>
+<br> Hint-Note: Perform a variation of post-order traversal to make it time efficient
 
 <h3 style="color:#1669f0">Graphs</h3>
 
