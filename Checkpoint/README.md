@@ -361,16 +361,16 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 5\. &ensp; Lowest Common Ancester - LeetCode Q1123
 
 6\. &ensp; All paths from source to target - LeetCode Q797
-<br>Hint-Note: Sometimes integer & hashmap variables need to be declared outside functions (lie global variables to keep track of data) - (fo ex: tracking total sum of the node values for each level of a binary tree)
 
 7\. &ensp; Cousins in Binary Tree II - LeetCode Q2641
+<br>Hint-Note: Sometimes integer & hashmap variables need to be declared outside functions (lie global variables to keep track of data) - (fo ex: tracking total sum of the node values for each level of a binary tree)
 
-8\. &ensp; Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457
+8\. &ensp; <mark style="background-color:#efe3ff"><strong>Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457</strong></mark>
 <br>Hint-Note: When values are within a certain range (ie: 0 to n-1) - using an array might be faster than a hashmap
 
 9\. &ensp; Find Largest Value in Each Tree Row - LeetCode Q515
 
-10\. &ensp; Tricky One! (need to study) Distribute Coins in Binary Tree - LeetCode Q979
+10\. &ensp; <mark style="background-color:#efe3ff"><strong>Tricky One! (need to study) Distribute Coins in Binary Tree - LeetCode Q979</strong></mark>
 
 <h4 style="color:#0303ad">DFS HashMap Qs</h4>
 
