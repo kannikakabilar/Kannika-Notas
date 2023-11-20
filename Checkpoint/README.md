@@ -408,8 +408,9 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 20\. Complete Binary Tree Inserter - LeetCode Q919
 <br>Self-Note: Very good Q to test understanding of BFS
 
-21\. Qs that can also be solved with DFS - LeetCode Q865 (unusual one), LeetCode Q1625 
+21\. Qs that can also be solved with DFS - <mark style="background-color:#efe3ff"><strong>LeetCode Q865 (unusual one)</strong></mark>, LeetCode Q1625 
 <br>Notes-for-Q1625
+
     - how do you lexicographically compare strings in Java?)
     - Use HashMaps with BFS to keep track of the 'strings' that you have already visited
     - Create helper functions to perform respective modifications to string
