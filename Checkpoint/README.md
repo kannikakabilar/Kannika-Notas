@@ -415,7 +415,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
     - Use HashMaps with BFS to keep track of the 'strings' that you have already visited
     - Create helper functions to perform respective modifications to string
 
-22\. 4-Directional type of Q using BFS - LeetCode Q994, LeetCode Q1765
+22\. 4-Directional type of Q using BFS - LeetCode Q994, <mark style="background-color:#efe3ff"><strong>LeetCode Q1765</strong></mark>
 
 23\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433
 <br>Hint-Note: Use HashMaps with BFS to keep track of the 'strings' that you have already visited
