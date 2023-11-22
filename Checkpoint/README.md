@@ -427,17 +427,17 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 **Note:** A common BFS / DFS Q (that's not included here) is to check if a given graph is bipartite
 
 
-<mark style="background-color:#efe3ff"><h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
+<h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
 
-26\. LeetCode Q779 - Need to study
+26\. <mark style="background-color:#efe3ff"><strong>LeetCode Q779 - Need to study</strong></mark>
 <br>Hint-Note: Build a tree when working with binary num replacements
 
-27\. LeetCode Q390 - Don't understand - (Math related)
+27\. <mark style="background-color:#efe3ff"><strong>LeetCode Q390 - Don't understand - (Math related)</strong></mark>
 
-28\. LeetCode Q105, Q106, Q889(~slightly trickier) 
+28\. <mark style="background-color:#efe3ff"><strong>LeetCode Q105, Q106, Q889(~slightly trickier) </strong></mark>
 <br>Self-Note: If you can do Q105, then you can do Q106
 
-**Note:** A common Div&Conq Q (that's not included here) is to find the closest pair of points,given a list of points.</mark>
+**Note:** <mark style="background-color:#efe3ff"><strong>A common Div&Conq Q (that's not included here) is to find the closest pair of points,given a list of points.</strong></mark>
 
 
 <h3 style="color:#0303ad">Binary Search</h3>
@@ -479,21 +479,21 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 41\. <mark style="background-color:#efe3ff"><strong>LeetCode Q74</strong></mark>
 
-<mark style="background-color:#efe3ff"><strong><h4 style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func Qs</h4>
+<h4 style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func Qs</h4>
 
-42\. LeetCode Q2540
+42\. <mark style="background-color:#efe3ff"><strong>LeetCode Q2540</strong></mark>
 <br>Self-Note: Can also be solved in O(m+n) with merge-sort-like thinking but try doing it in n*logm
 
-43\. LeetCode Q1237
+43\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1237</strong></mark>
 
-44\. LeetCode Q1011
+44\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1011</strong></mark>
 <br>Hint-Note: Try to understand what range/values can be iterated w/ binary search
 
 <br>Hint-Note: Manually set your own 'high' value for below 2 Qs
 
-45\. LeetCode Q2517
+45\. <mark style="background-color:#efe3ff"><strong>LeetCode Q2517</strong></mark>
 
-46\. LeetCode Q1170 (can skip this one if you have a good grasp of bin search)</strong></mark>
+46\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1170 (can skip this one if you have a good grasp of bin search)</strong></mark>
 
 
 ___________________________________________
