@@ -417,17 +417,17 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 22\. 4-Directional type of Q using BFS - LeetCode Q994, <mark style="background-color:#efe3ff"><strong>LeetCode Q1765</strong></mark>
 
-23\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433
+23\. <mark style="background-color:#efe3ff"><strong>Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433</strong></mark>
 <br>Hint-Note: Use HashMaps with BFS to keep track of the 'strings' that you have already visited
 
-24\. BFS Q that tests your Sorting knowledge - LeetCode Q2471
+24\. <mark style="background-color:#efe3ff"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
 
-25\. Interesting and Unique BFS Q - (need to study) - LeetCode Q967
+25\. <mark style="background-color:#efe3ff"><strong>Interesting and Unique BFS Q - (need to study) - LeetCode Q967</strong></mark>
 
 **Note:** A common BFS / DFS Q (that's not included here) is to check if a given graph is bipartite
 
 
-<h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
+<mark style="background-color:#efe3ff"><h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
 
 26\. LeetCode Q779 - Need to study
 <br>Hint-Note: Build a tree when working with binary num replacements
@@ -437,12 +437,12 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 28\. LeetCode Q105, Q106, Q889(~slightly trickier) 
 <br>Self-Note: If you can do Q105, then you can do Q106
 
-**Note:** A common Div&Conq Q (that's not included here) is to find the closest pair of points,given a list of points.
+**Note:** A common Div&Conq Q (that's not included here) is to find the closest pair of points,given a list of points.</mark>
 
 
 <h3 style="color:#0303ad">Binary Search</h3>
 
-29\. **Note:** It is important to realize that binary search can only be performed on ------ value-set / value-range / mountain-ish values-sets
+29\. **Note:** <mark style="background-color:#efe3ff"><strong>It is important to realize that binary search can only be performed on ------ value-set / value-range / mountain-ish values-sets</strong></mark>
 
 30\. In <span style="color:#fc6b03">Java</span> sort a int \[\] arr using built-in sort. In an algorithm Q, if array sorted? => binary search. But sometimes you have to call the built-in sort on the given array.
 
@@ -450,36 +450,36 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 31\. LeetCode Q374
 
-32\. LeetCode Q744
+32\. <mark style="background-color:#efe3ff"><strong>LeetCode Q744</strong></mark>
 
-33\. LeetCode Q1385
+33\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1385</strong></mark>
 <br>Hint-Note: Subtraction in an absolute sign can result following range: |a - b| = c means b can be between a-c to a+c
 
 <h4 style="color:#0303ad">Peaks & Valleys Qs</h4>
 
 34\. LeetCode Q852
 
-35\. LeetCode Q162
+35\. <mark style="background-color:#efe3ff"><strong>LeetCode Q162</strong></mark>
 
-36\. LeetCode Q1901 (nlogm + 2D arr)
+36\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1901 (nlogm + 2D arr)</strong></mark>
 
 <h4 style="color:#0303ad">Maximize Consecutives Qs</h4>
 
-37\. LeetCode Q1004 (if you do this one, you can do the one below)
+37\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1004 (if you do this one, you can do the one below)</strong></mark>
 
 38\. LeetCode Q2024
 
 <h4 style="color:#0303ad">Search Rotated Array Qs</h4>
 
-39\. LeetCode Q153
+39\. <mark style="background-color:#efe3ff"><strong>LeetCode Q153</strong></mark>
 
-40\. LeetCode Q33
+40\. <mark style="background-color:#efe3ff"><strong>LeetCode Q33</strong></mark>
 
 <h4 style="color:#0303ad">Search 2-D Array Q (logm * logn)</h4>
 
-41\. LeetCode Q74
+41\. <mark style="background-color:#efe3ff"><strong>LeetCode Q74</strong></mark>
 
-<h4 style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func Qs</h4>
+<mark style="background-color:#efe3ff"><strong><h4 style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func Qs</h4>
 
 42\. LeetCode Q2540
 <br>Self-Note: Can also be solved in O(m+n) with merge-sort-like thinking but try doing it in n*logm
@@ -493,7 +493,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 45\. LeetCode Q2517
 
-46\. LeetCode Q1170 (can skip this one if you have a good grasp of bin search)
+46\. LeetCode Q1170 (can skip this one if you have a good grasp of bin search)</strong></mark>
 
 
 ___________________________________________
