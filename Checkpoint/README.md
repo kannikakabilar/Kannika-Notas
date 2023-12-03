@@ -526,6 +526,7 @@ ___________________________________________
 <h4 style="color:#0303ad">Topological Sort = DFS + HashMaps (sometimes BFS)</h4>
 
 (Try drawing the graph for some of these Q, it might help)
+<br> **Rule of Thumb:** Convert 2-D array or graph/edges to hashmap. Have a recursive dfs function.
 
 8\. Loud and Rich - LeetCode Q851
 
