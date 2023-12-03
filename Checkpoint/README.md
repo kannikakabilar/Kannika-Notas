@@ -529,4 +529,12 @@ ___________________________________________
 
 8\. Loud and Rich - LeetCode Q851
 
-9\. Course Schedule series - LeetCode Q207
+9\. Course Schedule series - LeetCode Q207, LeetCode Q210, LeetCode Q1462
+
+10\. Find Eventual Safe States - LeetCode Q802
+
+11\. Find All Possible Recipes from Given Supplies - LeetCode Q2115
+
+12\. Minimum Height Trees - LeetCode Q310
+
+13\. Longest Cycle in a Graph - LeetCode Q2360 **(If you can do this, you can do all above Topo Sort Qs)**
