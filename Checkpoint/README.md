@@ -526,16 +526,16 @@ ___________________________________________
 <h4 style="color:#0303ad">Topological Sort = DFS + HashMaps (sometimes BFS)</h4>
 
 (Try drawing the graph for some of these Q, it might help)
-<br> **Rule of Thumb:** Convert 2-D array or graph/edges to hashmap. Have a recursive dfs function.
+<br> **Rule of Thumb:** Convert 2-D array or graph/edges to hashmap. Have a recursive dfs function. An additional HashMap or HashSets are used to keep track of 'visited' nodes/values.
 
 8\. Loud and Rich - LeetCode Q851
 
-9\. Course Schedule series - LeetCode Q207, LeetCode Q210, LeetCode Q1462
+9\. Course Schedule series - LeetCode Q207, LeetCode Q210, LeetCode Q1462 (good one)
 
 10\. Find Eventual Safe States - LeetCode Q802
 
 11\. Find All Possible Recipes from Given Supplies - LeetCode Q2115
 
-12\. Minimum Height Trees - LeetCode Q310
+12\. Minimum Height Trees - LeetCode Q310 (via BFS ~ Need to study but doesn't seem like an important Topo Sort Q)
 
 13\. Longest Cycle in a Graph - LeetCode Q2360 **(If you can do this, you can do all above Topo Sort Qs)**
