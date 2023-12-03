@@ -499,3 +499,24 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 ___________________________________________
 
 <h2 style="color:#0303ad">Algorithms II</h2>
+
+<h3 style="color:#0303ad">Sorting</h3>
+
+1\. How do you sort int \[\] vs List\<Integer\> in Java?
+
+2\. <mark style="background-color:#efe3ff"><strong>How do you create a comparator? - LeetCode Q1636</strong></mark>
+<br>**Note:** Comparator only works with ArrayList. 
+
+3\. How can you check anagrams w/o hashmaps? - LeetCode Q2273
+<br>Hint-Note: char array => sort => toString => compare strings
+
+4\. Easy Q - LeetCode Q2037
+
+5\. How do you get the largest 2 integer of an array in O(n)? - LeetCode Q628
+
+6\. LeetCode Q1630 - &ensp; In <span style="color:#fc6b03">Java</span>:
+
+    - How do you get subarray of int[] in Java?
+    - How do you check if 2 int[] arrays are equal?
+
+7\. Good practice Qs for sorting - LeetCode Q1887, LeetCode Q49
