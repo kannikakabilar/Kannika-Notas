@@ -511,8 +511,10 @@ ___________________________________________
 <br>Hint-Note: char array => sort => toString => compare strings
 
 4\. Easy Q - LeetCode Q2037
+<br> Some-Extra: LeetCode Q1200
 
 5\. How do you get the largest 2 integer of an array in O(n)? - LeetCode Q628
+<br>Hint-Note: Get product of 3 largest ints and compare it with product of 2 smallest int and largest int
 
 6\. LeetCode Q1630 - &ensp; In <span style="color:#fc6b03">Java</span>:
 
@@ -520,3 +522,11 @@ ___________________________________________
     - How do you check if 2 int[] arrays are equal?
 
 7\. Good practice Qs for sorting - LeetCode Q1887, LeetCode Q49
+
+<h4 style="color:#0303ad">Topological Sort = DFS + HashMaps (sometimes BFS)</h4>
+
+(Try drawing the graph for some of these Q, it might help)
+
+8\. Loud and Rich - LeetCode Q851
+
+9\. Course Schedule series - LeetCode Q207
