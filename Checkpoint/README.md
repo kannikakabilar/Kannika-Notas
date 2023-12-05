@@ -85,6 +85,8 @@ ___________________________________________
 
 18\. &ensp; What are the 2 ways to check if a LL has cycle? LeetCode Q141
 
+Extra \. &ensp; LeetCode Q725 (for help, check leetcode's given hint)
+
 <h3 style="color:#5c91fa">Hash Table</h3>
 
 19\. &ensp; Define Terms: **Hash Function** ; **Collision & Chaining** ; **Open-Addressing & Linear-Probing**
@@ -437,6 +439,8 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 28\. <mark style="background-color:#efe3ff"><strong>LeetCode Q105, Q106, Q889(~slightly trickier) </strong></mark>
 <br>Self-Note: If you can do Q105, then you can do Q106
 
+Extra\. Closest Pair of Points Algorithm using DAC
+
 **Note:** <mark style="background-color:#efe3ff"><strong>A common Div&Conq Q (that's not included here) is to find the closest pair of points,given a list of points.</strong></mark>
 
 
@@ -539,3 +543,13 @@ ___________________________________________
 12\. Minimum Height Trees - LeetCode Q310 (via BFS ~ Need to study but doesn't seem like an important Topo Sort Q)
 
 13\. Longest Cycle in a Graph - LeetCode Q2360 **(If you can do this, you can do all above Topo Sort Qs)**
+
+<h4 style="color:#0303ad">Merge Sort</h4>
+
+14\. Merge k Sorted Lists - LeetCode Q23
+
+<h4 style="color:#0303ad">Other Sorting Algorithms to study</h4>
+
+- Quick Sort, Heap Sort
+- Bubble Sort, Insertion Sort, Selection Sort
+
