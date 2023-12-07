@@ -411,10 +411,10 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 <br>Self-Note: Very good Q to test understanding of BFS
 
 21\. Qs that can also be solved with DFS - <mark style="background-color:#efe3ff"><strong>LeetCode Q865 (unusual one)</strong></mark>, LeetCode Q1625 
-<br>Notes-for-Q1625
+<br>**Notes-for-Q1625**
 
-    - how do you lexicographically compare strings in Java?)
-    - Use HashMaps with BFS to keep track of the 'strings' that you have already visited
+    - how do you lexicographically compare strings in Java? (str1.compareTo(str2)<0 => str1<str2)
+    - Use HashSet with BFS to keep track of the 'strings' that you have already visited
     - Create helper functions to perform respective modifications to string
 
 22\. 4-Directional type of Q using BFS - LeetCode Q994, <mark style="background-color:#efe3ff"><strong>LeetCode Q1765</strong></mark>
