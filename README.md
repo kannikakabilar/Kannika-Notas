@@ -7,13 +7,13 @@
 <h3 style="color:#5c91fa"><a href="DataStructures/#hash-table" style="color:#5c91fa">&ensp; c. &ensp; Hash Table</a></h3>
 <h3 style="color:#5c91fa"><a href="DataStructures/#two-pointers" style="color:#5c91fa">&ensp; d. &ensp; Two Pointers</a></h3>
 <h3 style="color:#5c91fa"><a href="DataStructures/#math" style="color:#5c91fa">&ensp; e. &ensp; Math</a></h3>
-<h2 style="color:#1669f0"><a href="DataStructures2/#data-structures-ii" style="color:#1669f0">3. &ensp; Data Structures II</a></h2>
-<h3 style="color:#1669f0"><a href="DataStructures2/#stacks" style="color:#1669f0">&ensp; a. &ensp; Stacks</a></h3>
-<h3 style="color:#1669f0"><a href="DataStructures2/#queues" style="color:#1669f0">&ensp; b. &ensp; Queues</a></h3>
-<h3 style="color:#1669f0"><a href="DataStructures2/#priority-queues-or-min-max-heaps" style="color:#1669f0">&ensp; c. &ensp; Priority Queues OR Min/Max Heaps</a></h3>
-<h3 style="color:#1669f0"><a href="DataStructures2/#trees" style="color:#1669f0">&ensp; d. &ensp; Trees</a></h3>
-<h3 style="color:#1669f0"><a href="DataStructures2/#graphs" style="color:#1669f0">&ensp; e. &ensp; Graphs</a></h3>
-<h2 style="color:#0223f7"><a href="Algorithms/#algorithms" style="color:#0223f7">4. &ensp; Algorithms</a></h2>
+<h2 style="color:#00aef9"><a href="DataStructures2/#data-structures-ii" style="color:#00aef9">3. &ensp; Data Structures II</a></h2>
+<h3 style="color:#00aef9"><a href="DataStructures2/#stacks" style="color:#00aef9">&ensp; a. &ensp; Stacks</a></h3>
+<h3 style="color:#00aef9"><a href="DataStructures2/#queues" style="color:#00aef9">&ensp; b. &ensp; Queues</a></h3>
+<h3 style="color:#00aef9"><a href="DataStructures2/#priority-queues-or-min-max-heaps" style="color:#00aef9">&ensp; c. &ensp; Priority Queues OR Min/Max Heaps</a></h3>
+<h3 style="color:#00aef9"><a href="DataStructures2/#trees" style="color:#00aef9">&ensp; d. &ensp; Trees</a></h3>
+<h3 style="color:#00aef9"><a href="DataStructures2/#graphs" style="color:#00aef9">&ensp; e. &ensp; Graphs</a></h3>
+<h2 style="color:#0223f7"><a href="Algorithms/#algorithms" style="color:#0223f7">4. &ensp; Algorithms I</a></h2>
 <h3 style="color:#0223f7"><a href="Algorithms/#depth-first-search" style="color:#0223f7">&ensp; a. &ensp; Depth-First Search</a></h3>
 <h3 style="color:#0223f7"><a href="Algorithms/#breadth-first-search" style="color:#0223f7">&ensp; b. &ensp; Breadth-First Search</a></h3>
 <h3 style="color:#0223f7"><a href="Algorithms/#recursion-and-divide-conquer" style="color:#0223f7">&ensp; c. &ensp; Recursion and Divide-&-Conquer</a></h3>
