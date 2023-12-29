@@ -13,11 +13,11 @@
 <h3 style="color:#14b7fc"><a href="DataStructures2/#priority-queues-or-min-max-heaps" style="color:#14b7fc">&ensp; c. &ensp; Priority Queues OR Min/Max Heaps</a></h3>
 <h3 style="color:#14b7fc"><a href="DataStructures2/#trees" style="color:#14b7fc">&ensp; d. &ensp; Trees</a></h3>
 <h3 style="color:#14b7fc"><a href="DataStructures2/#graphs" style="color:#14b7fc">&ensp; e. &ensp; Graphs</a></h3>
-<h2 style="color:#0223f7"><a href="Algorithms/#algorithms" style="color:#0223f7">4. &ensp; Algorithms I</a></h2>
-<h3 style="color:#0223f7"><a href="Algorithms/#depth-first-search" style="color:#0223f7">&ensp; a. &ensp; Depth-First Search</a></h3>
-<h3 style="color:#0223f7"><a href="Algorithms/#breadth-first-search" style="color:#0223f7">&ensp; b. &ensp; Breadth-First Search</a></h3>
-<h3 style="color:#0223f7"><a href="Algorithms/#recursion-and-divide-conquer" style="color:#0223f7">&ensp; c. &ensp; Recursion and Divide-&-Conquer</a></h3>
-<h3 style="color:#0223f7"><a href="Algorithms/#binary-search" style="color:#0223f7">&ensp; d. &ensp; Binary Search</a></h3>
+<h2 style="color:#7482db"><a href="Algorithms/#algorithms" style="color:#7482db">4. &ensp; Algorithms I</a></h2>
+<h3 style="color:#7482db"><a href="Algorithms/#depth-first-search" style="color:#7482db">&ensp; a. &ensp; Depth-First Search</a></h3>
+<h3 style="color:#7482db"><a href="Algorithms/#breadth-first-search" style="color:#7482db">&ensp; b. &ensp; Breadth-First Search</a></h3>
+<h3 style="color:#7482db"><a href="Algorithms/#recursion-and-divide-conquer" style="color:#7482db">&ensp; c. &ensp; Recursion and Divide-&-Conquer</a></h3>
+<h3 style="color:#7482db"><a href="Algorithms/#binary-search" style="color:#7482db">&ensp; d. &ensp; Binary Search</a></h3>
 <h2 style="color:#0303ad"><a href="Algorithms2/#algorithms-ii" style="color:#0303ad">5. &ensp; Algorithms II</a></h2>
 <h3 style="color:#0303ad"><a href="Algorithms2/#sorting" style="color:#0303ad">&ensp; a. &ensp; Sorting</a></h3>
 <h3 style="color:#0303ad"><a href="Algorithms2/#dynamic-programming" style="color:#0303ad">&ensp; a. &ensp; Dynamic Programming</a></h3>
