@@ -7,12 +7,12 @@
 <h3 style="color:#5c91fa"><a href="DataStructures/#hash-table" style="color:#5c91fa">&ensp; c. &ensp; Hash Table</a></h3>
 <h3 style="color:#5c91fa"><a href="DataStructures/#two-pointers" style="color:#5c91fa">&ensp; d. &ensp; Two Pointers</a></h3>
 <h3 style="color:#5c91fa"><a href="DataStructures/#math" style="color:#5c91fa">&ensp; e. &ensp; Math</a></h3>
-<h2 style="color:#69d2ff"><a href="DataStructures2/#data-structures-ii" style="color:#69d2ff">3. &ensp; Data Structures II</a></h2>
-<h3 style="color:#69d2ff"><a href="DataStructures2/#stacks" style="color:#69d2ff">&ensp; a. &ensp; Stacks</a></h3>
-<h3 style="color:#69d2ff"><a href="DataStructures2/#queues" style="color:#69d2ff">&ensp; b. &ensp; Queues</a></h3>
-<h3 style="color:#69d2ff"><a href="DataStructures2/#priority-queues-or-min-max-heaps" style="color:#69d2ff">&ensp; c. &ensp; Priority Queues OR Min/Max Heaps</a></h3>
-<h3 style="color:#69d2ff"><a href="DataStructures2/#trees" style="color:#69d2ff">&ensp; d. &ensp; Trees</a></h3>
-<h3 style="color:#69d2ff"><a href="DataStructures2/#graphs" style="color:#69d2ff">&ensp; e. &ensp; Graphs</a></h3>
+<h2 style="color:#14b7fc"><a href="DataStructures2/#data-structures-ii" style="color:#14b7fc">3. &ensp; Data Structures II</a></h2>
+<h3 style="color:#14b7fc"><a href="DataStructures2/#stacks" style="color:#14b7fc">&ensp; a. &ensp; Stacks</a></h3>
+<h3 style="color:#14b7fc"><a href="DataStructures2/#queues" style="color:#14b7fc">&ensp; b. &ensp; Queues</a></h3>
+<h3 style="color:#14b7fc"><a href="DataStructures2/#priority-queues-or-min-max-heaps" style="color:#14b7fc">&ensp; c. &ensp; Priority Queues OR Min/Max Heaps</a></h3>
+<h3 style="color:#14b7fc"><a href="DataStructures2/#trees" style="color:#14b7fc">&ensp; d. &ensp; Trees</a></h3>
+<h3 style="color:#14b7fc"><a href="DataStructures2/#graphs" style="color:#14b7fc">&ensp; e. &ensp; Graphs</a></h3>
 <h2 style="color:#0223f7"><a href="Algorithms/#algorithms" style="color:#0223f7">4. &ensp; Algorithms I</a></h2>
 <h3 style="color:#0223f7"><a href="Algorithms/#depth-first-search" style="color:#0223f7">&ensp; a. &ensp; Depth-First Search</a></h3>
 <h3 style="color:#0223f7"><a href="Algorithms/#breadth-first-search" style="color:#0223f7">&ensp; b. &ensp; Breadth-First Search</a></h3>
