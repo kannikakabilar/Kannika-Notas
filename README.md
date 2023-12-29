@@ -18,9 +18,9 @@
 <h3 style="color:#0324fc"><a href="Algorithms/#breadth-first-search" style="color:#0303ad">&ensp; b. &ensp; Breadth-First Search</a></h3>
 <h3 style="color:#0324fc"><a href="Algorithms/#recursion-and-divide-conquer" style="color:#0303ad">&ensp; c. &ensp; Recursion and Divide-&-Conquer</a></h3>
 <h3 style="color:#0324fc"><a href="Algorithms/#binary-search" style="color:#0303ad">&ensp; d. &ensp; Binary Search</a></h3>
-<h2 style="color:#0303ad"><a href="#algorithms-ii" style="color:#0303ad">5. &ensp; Algorithms ||</a></h2>
-<h3 style="color:#0303ad"><a href="#sorting" style="color:#0303ad">&ensp; a. &ensp; Sorting</a></h3>
-<h3 style="color:#0303ad"><a href="#dynamic-programming" style="color:#0303ad">&ensp; a. &ensp; Dynamic Programming</a></h3>
+<h2 style="color:#0303ad"><a href="Algorithms2/#algorithms-ii" style="color:#0303ad">5. &ensp; Algorithms II</a></h2>
+<h3 style="color:#0303ad"><a href="Algorithms2/#sorting" style="color:#0303ad">&ensp; a. &ensp; Sorting</a></h3>
+<h3 style="color:#0303ad"><a href="Algorithms2/#dynamic-programming" style="color:#0303ad">&ensp; a. &ensp; Dynamic Programming</a></h3>
 
 [Checkpoint](https://kannikakabilar.github.io/Kannika-Notas/Checkpoint/)
 
