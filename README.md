@@ -1,6 +1,6 @@
 # [Kannika-Notas](https://kannikakabilar.github.io/Kannika-Notas/)
 
-<h2 style="color:#8096c2"><a href="/Hardware_BitLogic/#bit-logic" style="color:#8096c2">1. &ensp; Bit Logic</a></h2>
+<h2 style="color:#8096c2"><a href="Hardware_BitLogic/#bit-logic" style="color:#8096c2">1. &ensp; Bit Logic</a></h2>
 <h2 style="color:#5c91fa"><a href="#data-structures-i" style="color:#5c91fa">2. &ensp; Data Structures I</a></h2>
 <h3 style="color:#5c91fa"><a href="#arrays" style="color:#5c91fa">&ensp; a. &ensp; Arrays</a></h3>
 <h3 style="color:#5c91fa"><a href="#linked-lists" style="color:#5c91fa">&ensp; b. &ensp; Linked Lists</a></h3>
