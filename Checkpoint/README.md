@@ -1,6 +1,6 @@
 <h1 style="color:#000000">Checkpoint</h1>
 
-<a href="https://kannikakabilar.github.io/Kannika-Notas/Checkpoint/#bit-logic"><h2 style="color:#8096c2">1. &ensp; Bit Logic</h2></a>
+[<h2 style="color:#8096c2">1. &ensp; Bit Logic</h2>](https://kannikakabilar.github.io/Kannika-Notas/Checkpoint/#bit-logic)
 <h2 style="color:#5c91fa">2. &ensp; Data Structures I</h2>
 <h3 style="color:#5c91fa">&ensp; a. &ensp; Arrays</h3>
 <h3 style="color:#5c91fa">&ensp; b. &ensp; Linked Lists</h3>
