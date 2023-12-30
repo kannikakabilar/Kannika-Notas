@@ -51,3 +51,14 @@
 
 
 <h3 style="color:#0303ad">Dynamic Programming</h3>
+
+<h4 style="color:#0303ad">Fibonacci Style DP Qs</h4>
+<p style="color:#0303ad">Use variables to store values of previous state</p>
+
+1\. Climbing Stairs - LeetCode Q70
+
+2\. Flip String to Monotone Increasing - LeetCode Q926
+
+3\. <mark style="color:#red"><strong>Max Product Subarray - LeetCode Q152</strong></mark>
+
+4\. <mark style="color:#red"><strong>Count Sorted Vowel Strings - LeetCode Q1641</strong></mark>
