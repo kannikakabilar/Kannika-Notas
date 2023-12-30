@@ -59,9 +59,9 @@
 
 2\. Flip String to Monotone Increasing - LeetCode Q926
 
-3\. <strong style="color:#fa1302">Max Product Subarray - LeetCode Q152</strong>
+3\. <strong style="color:#fc425b">Max Product Subarray - LeetCode Q152</strong>
 
-4\. <strong style="color:#fa1302">Count Sorted Vowel Strings - LeetCode Q1641</strong>
+4\. <strong style="color:#fc425b">Count Sorted Vowel Strings - LeetCode Q1641</strong>
 
 <p style="color:#0303ad">Iterate through the given array to solve the bigger problem</p>
 
