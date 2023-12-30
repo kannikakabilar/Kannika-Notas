@@ -50,10 +50,9 @@
 - Bubble Sort, Insertion Sort, Selection Sort
 
 
-<h3 style="color:#0303ad">Dynamic Programming</h3>
+<h3 style="color:#0303ad">Dynamic Programming I</h3>
 
-<h4 style="color:#0303ad">Fibonacci Style DP Qs</h4>
-<p style="color:#0303ad">Use variables to store values of previous state</p>
+<p style="color:#0303ad">Fibonacci Style DP Qs - Use variables to store values of previous state</p>
 
 1\. Climbing Stairs - LeetCode Q70
 
@@ -106,3 +105,11 @@
 20\. Longest Palindrome Substring - LeetCode Q5
 
 21\. Palindromic Substrings - LeetCode Q647
+
+<h3 style="color:#0303ad">Dynamic Programming II</h3>
+
+<p style="color:#0303ad">Self-Note: For all of the 2-D DP Qs, draw out the choices in a tree or 2-D grid and it'll be easier</p>
+
+<p style="color:#0303ad">Questions that are done with a 2-D dp array but can be optimized into just a 1-D dp array</p>
+
+1\. Unique Paths - LeetCode Q62
