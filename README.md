@@ -1,4 +1,4 @@
-# <h1 style="color:#000000"><a href="https://kannikakabilar.github.io/Kannika-Notas/" style="color:#000000">Kannika DSA Checkpoint Notes</a></h1>
+# <a href="https://kannikakabilar.github.io/Kannika-Notas/" style="color:#000000">Kannika DSA Checkpoint Notes</a>
 
 <h2 style="color:#8096c2"><a href="Hardware_BitLogic/#bit-logic" style="color:#8096c2">1. &ensp; Bit Logic</a></h2>
 <h2 style="color:#5c91fa"><a href="DataStructures/#data-structures-i" style="color:#5c91fa">2. &ensp; Data Structures I</a></h2>
