@@ -62,3 +62,15 @@
 3\. <strong style="color:#fa1302">Max Product Subarray - LeetCode Q152</strong>
 
 4\. <strong style="color:#fa1302">Count Sorted Vowel Strings - LeetCode Q1641</strong>
+
+<p style="color:#0303ad">Iterate through the given array to solve the bigger problem</p>
+
+5\. Minimum Time to Make Rope Colorful - LeetCode Q1578
+
+6\. Arithmetic Slices - LeetCode Q413
+
+7\. Minimum Cost of Climbing Stairs - LeetCode Q746
+
+8\. House Robber - LeetCode Q198
+
+9\. <strong style="color:#fc425b">Count Substrings that differ by One Character - LeetCode Q1638</strong>
