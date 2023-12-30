@@ -79,32 +79,34 @@
 10\. Decode Ways - LeetCode Q91
 
 11\. Count Number of Teams - LeetCode Q1395 
-</br><a>Use two 1-D arrays => n^2</a>
+<br><a>Use two 1-D arrays => n^2</a>
+
+12\. Best Time to Buy annd Sell Stock with Cooldown - LeetCode Q309
 
 <p style="color:#0303ad">Questions that are better done with a Bottom-Up approach using a 1-D dp array</p>
 
-12\. Coin Change, Perfect Squares - LeetCode Q322, Q279
-</br><a>You can do one or the other</a>
+13\. Coin Change, Perfect Squares - LeetCode Q322, Q279
+<br><a>You can do one or the other</a>
 
-13\. Longest Increasing Subsequence - LeetCode Q300
+14\. Longest Increasing Subsequence - LeetCode Q300
 
-14\. Minimum Cost for Tickets - LeetCode Q983
+15\. Minimum Cost for Tickets - LeetCode Q983
 
-15\. Number of Good Ways to Split a String - LeetCode Q1525
+16\. Number of Good Ways to Split a String - LeetCode Q1525
 
-16\. Word Break - LeetCode Q139
+17\. Word Break - LeetCode Q139
 
-17\. Fair Distribution of Cookies - LeetCode Q2305
+18\. Fair Distribution of Cookies - LeetCode Q2305
 
-18\. <strong style="color:#fc425b">Partition Array for Max Sum - LeetCode Q1043</strong>
+19\. <strong style="color:#fc425b">Partition Array for Max Sum - LeetCode Q1043</strong>
 
-19\. <strong style="color:#fc425b">Partition Equal Subset Sum</strong>
+20\. <strong style="color:#fc425b">Partition Equal Subset Sum</strong>
 
 <p style="color:#0303ad">Palindromic Qs</p>
 
-20\. Longest Palindrome Substring - LeetCode Q5
+21\. Longest Palindrome Substring - LeetCode Q5
 
-21\. Palindromic Substrings - LeetCode Q647
+22\. Palindromic Substrings - LeetCode Q647
 
 <h3 style="color:#0303ad">Dynamic Programming II</h3>
 
