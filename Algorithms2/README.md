@@ -115,3 +115,46 @@
 <p style="color:#0303ad">Questions that are done with a 2-D dp array but can be optimized into just a 1-D dp array</p>
 
 1\. Unique Paths - LeetCode Q62
+
+2\. Coin Change II - LeetCode Q518
+
+<p style="color:#0303ad">Grid dp Qs can *sometimes be optimized into 1-D dp array</p>
+
+3\. Minimum Falling Path Sum - LeetCode Q931
+<br><strong style="color:#fc425b">Harder ver. Minimum Falling Path Sum II - LeetCode Q1289</strong>
+
+4\. Minimum Path Cost in a Grid - LeetCode Q2304 + try Q2684
+
+5\. Minimum Path Sum - LeetCode Q64 + try Q174
+
+<p style="color:#0303ad">A typical 2-D dp Q</p>
+
+6\. Interleaving String - LeetCode Q97
+
+<p style="color:#0303ad">Subsequence type of Qs are better done with Bottom-Up (Iterating from the end of the string to start)</p>
+
+7\. Longest Common Subsequence - LeetCode Q1143 (and others that are similar Q712, Q516)
+
+8\. Distinct Subsequence - LeetCode Q115 + try Q1987
+
+9\. Delete Operations for Two Strings - LeetCode Q583
+
+10\. Edit Distance - LeetCode Q72
+
+<p style="color:#0303ad">Memoization using hashmaps and strings as keys for Multi-D dp Qs</p>
+
+11\. Target Sum - LeetCode Q494
+
+12\. Number of Dice Rolls with Target Sum - LeetCode Q1155
+
+<p style="color:#0303ad">DFS + dp Qs</p>
+
+13\. Longest Increasing Path in a Matrix - LeetCode Q329 (and others that are similar Q2328, try Q2713)
+
+14\. Solving Questions with Brainpower - LeetCode Q2140
+<br><a>This Q is helpful for improving your understanding</a>
+
+15\. Burst Balloons - LeetCode Q312
+
+16\. Regex Matching, Wildcard Matching - LeetCode Q10, Q44
+
