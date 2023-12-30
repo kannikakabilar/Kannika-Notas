@@ -102,16 +102,18 @@
 35\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q1373</strong></mark>
 <br> Hint-Note: Perform a variation of post-order traversal to make it time efficient
 
+36\. &ensp; <mark style="background-color:#efe3ff"><strong>LeetCode Q687</strong></mark>
+
 <h3 style="color:#1669f0">Graphs</h3>
 
-36\. &ensp; LeetCode Q1557
+37\. &ensp; LeetCode Q1557
 <br>Hint-Note: A node that does not have any incoming edge can only be reached by itself => only count the node w/ zero incoming edges
 
-37\. &ensp; LeetCode Q1615
+38\. &ensp; LeetCode Q1615
 
-38\. &ensp; LeetCode Q2374
+39\. &ensp; LeetCode Q2374
 
-39\. &ensp; LeetCode Q2508 (good practice Q)
+40\. &ensp; LeetCode Q2508 (good practice Q)
 <br>Hint-Note: The number of nodes with an odd-degree in the original graph should be either 0, 2, or 4. Try to work on each of these cases.
 <br>Hint-Note: Use Pair to store hashset of edges
 
@@ -119,7 +121,7 @@
 Pair p1 = new Pair(1, 2);    // I think 'Pair' in java might be pass-by-value
 ```
 
-40\. &ensp; Define the following Graph Terms
+41\. &ensp; Define the following Graph Terms
 
     - order of a graph
     - size of a graph
