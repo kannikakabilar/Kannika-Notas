@@ -81,7 +81,7 @@
 11\. Count Number of Teams - LeetCode Q1395 
 <br><a>Use two 1-D arrays => n^2</a>
 
-12\. Best Time to Buy annd Sell Stock with Cooldown - LeetCode Q309
+12\. Best Time to Buy and Sell Stock with Cooldown - LeetCode Q309
 
 <p style="color:#0303ad">Questions that are better done with a Bottom-Up approach using a 1-D dp array</p>
 
