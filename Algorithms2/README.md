@@ -64,7 +64,7 @@
 
 <p style="color:#0303ad">Iterate through the given array to solve the bigger problem</p>
 
-5\. <mark style="background-color:#bbffa1"><strong>Minimum Time to Make Rope Colorful - LeetCode Q1578</strong></mark>
+5\. Minimum Time to Make Rope Colorful - LeetCode Q1578
 
 6\. Arithmetic Slices - LeetCode Q413
 
@@ -145,17 +145,17 @@
 
 11\. Target Sum - LeetCode Q494
 
-12\. Number of Dice Rolls with Target Sum - LeetCode Q1155
+12\. <mark style="background-color:#bbffa1">Number of Dice Rolls with Target Sum - LeetCode Q1155</mark>
 
 <p style="color:#0303ad">DFS + dp Qs</p>
 
 13\. Longest Increasing Path in a Matrix - LeetCode Q329 (and others that are similar Q2328, try Q2713)
 <br><a style="color:#0303ad">Kind of like <strong>memoization</strong> - solve it like how you would using recursion, but store each result in dp\[\]\[\] or hashmap</a>
 
-14\. Solving Questions with Brainpower - LeetCode Q2140
+14\. <mark style="background-color:#bbffa1"><strong>Solving Questions with Brainpower - LeetCode Q2140</strong></mark>
 <br><a>This Q is helpful for improving your understanding</a>
 
 15\. <mark style="background-color:#fffaa1"><strong>Burst Balloons - LeetCode Q312</strong></mark>
 
-16\. Regex Matching, Wildcard Matching - LeetCode Q10, Q44
+16\. <mark style="background-color:#fffbb8">Regex Matching, Wildcard Matching - LeetCode Q10, Q44
 
