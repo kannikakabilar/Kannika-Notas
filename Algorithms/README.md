@@ -52,7 +52,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 7\. &ensp; Cousins in Binary Tree II - LeetCode Q2641
 <br>Hint-Note: Sometimes integer & hashmap variables need to be declared outside functions (lie global variables to keep track of data) - (fo ex: tracking total sum of the node values for each level of a binary tree)
 
-8\. &ensp; <mark style="background-color:#efe3ff"><strong>Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457</strong></mark>
+8\. &ensp; <mark style="background-color:#bbffa1">Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457</mark>
 <br>Hint-Note: When values are within a certain range (ie: 0 to n-1) - using an array might be faster than a hashmap
 
 9\. &ensp; Find Largest Value in Each Tree Row - LeetCode Q515
@@ -73,7 +73,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 15\. &ensp; Number of Enclaves - LeetCode Q1020
 
-16\. &ensp; <mark style="background-color:#efe3ff"><strong>Classic DFS Graph Q (Need to study!) - Find if path exists in graph - LeetCode Q1971</strong></mark>
+16\. &ensp; <mark style="background-color:#bbffa1">Classic DFS Graph Q - Find if path exists in graph - LeetCode Q1971</mark>
 
 <br>
 
@@ -93,43 +93,43 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 19\. Complete Binary Tree Inserter - LeetCode Q919
 <br>Self-Note: Very good Q to test understanding of BFS
 
-20\. Qs that can also be solved with DFS - <mark style="background-color:#efe3ff"><strong>LeetCode Q865 (unusual one)</strong></mark>, LeetCode Q1625 
+20\. Qs that can also be solved with DFS - LeetCode Q865 (unusual one), LeetCode Q1625 
 <br>**Notes-for-Q1625**
 
     - how do you lexicographically compare strings in Java? (str1.compareTo(str2)<0 => str1<str2)
     - Use HashSet with BFS to keep track of the 'strings' that you have already visited
     - Create helper functions to perform respective modifications to string
 
-21\. 4-Directional type of Q using BFS - LeetCode Q994, <mark style="background-color:#efe3ff"><strong>LeetCode Q1765</strong></mark>
+21\. 4-Directional type of Q using BFS - LeetCode Q994, LeetCode Q1765
 
-22\. <mark style="background-color:#efe3ff"><strong>Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433</strong></mark>
+22\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433
 <br>Hint-Note: Use HashMaps with BFS to keep track of the 'strings' that you have already visited
 
-23\. <mark style="background-color:#efe3ff"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
+23\. BFS Q that tests your Sorting knowledge - LeetCode Q2471
 
-24\. <mark style="background-color:#efe3ff"><strong>Interesting and Unique BFS Q - (need to study) - LeetCode Q967</strong></mark>
+24\. Interesting and Unique BFS Q - (need to study) - LeetCode Q967
 
 **Note:** A common BFS / DFS Q (that's not included here) is to check if a given graph is bipartite
 
 
 <h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
 
-25\. <mark style="background-color:#efe3ff"><strong>LeetCode Q779 - Need to study</strong></mark>
+25\. LeetCode Q779 - Need to study
 <br>Hint-Note: Build a tree when working with binary num replacements
 
-26\. <mark style="background-color:#efe3ff"><strong>LeetCode Q390 - Don't understand - (Math related)</strong></mark>
+26\. LeetCode Q390 - Don't understand - (Math related)
 
-27\. <mark style="background-color:#efe3ff"><strong>LeetCode Q105, Q106, Q889(~slightly trickier) </strong></mark>
+27\. LeetCode Q105, Q106, Q889(~slightly trickier) 
 <br>Self-Note: If you can do Q105, then you can do Q106
 
 Extra\. Closest Pair of Points Algorithm using DAC
 
-**Note:** <mark style="background-color:#efe3ff"><strong>A common Div&Conq Q (that's not included here) is to find the closest pair of points,given a list of points.</strong></mark>
+**Note:** A common Div&Conq Q (that's not included here) is to find the closest pair of points,given a list of points.
 
 
 <h3 style="color:#0303ad">Binary Search</h3>
 
-28\. **Note:** <mark style="background-color:#efe3ff"><strong>It is important to realize that binary search can only be performed on ------ value-set / value-range / mountain-ish values-sets</strong></mark>
+28\. **Note:** It is important to realize that binary search can only be performed on ------ value-set / value-range / mountain-ish values-sets
 
 29\. In <span style="color:#fc6b03">Java</span> sort a int \[\] arr using built-in sort. In an algorithm Q, if array sorted? => binary search. But sometimes you have to call the built-in sort on the given array.
 
@@ -137,50 +137,50 @@ Extra\. Closest Pair of Points Algorithm using DAC
 
 30\. LeetCode Q374
 
-31\. <mark style="background-color:#efe3ff"><strong>LeetCode Q744</strong></mark>
+31\. LeetCode Q744
 
-32\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1385</strong></mark>
+32\. LeetCode Q1385
 <br>Hint-Note: Subtraction in an absolute sign can result following range: |a - b| = c means b can be between a-c to a+c
 
 <h4 style="color:#0303ad">Peaks & Valleys Qs</h4>
 
 33\. LeetCode Q852
 
-34\. <mark style="background-color:#efe3ff"><strong>LeetCode Q162</strong></mark>
+34\. LeetCode Q162
 
-35\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1901 (nlogm + 2D arr)</strong></mark>
+35\. LeetCode Q1901 (nlogm + 2D arr)
 
 <h4 style="color:#0303ad">Maximize Consecutives Qs</h4>
 
-36\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1004 (if you do this one, you can do the one below)</strong></mark>
+36\. LeetCode Q1004 (if you do this one, you can do the one below)
 
 37\. LeetCode Q2024
 
 <h4 style="color:#0303ad">Search Rotated Array Qs</h4>
 
-38\. <mark style="background-color:#efe3ff"><strong>LeetCode Q153</strong></mark>
+38\. LeetCode Q153
 
-39\. <mark style="background-color:#efe3ff"><strong>LeetCode Q33</strong></mark>
+39\. LeetCode Q33
 
 <h4 style="color:#0303ad">Search 2-D Array Q (logm * logn)</h4>
 
-40\. <mark style="background-color:#efe3ff"><strong>LeetCode Q74</strong></mark>
+40\. LeetCode Q74
 
 <h4 style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func Qs</h4>
 
-41\. <mark style="background-color:#efe3ff"><strong>LeetCode Q2540</strong></mark>
+41\. LeetCode Q2540
 <br>Self-Note: Can also be solved in O(m+n) with merge-sort-like thinking but try doing it in n*logm
 
-42\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1237</strong></mark>
+42\. LeetCode Q1237
 
-43\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1011</strong></mark>
+43\. LeetCode Q1011
 <br>Hint-Note: Try to understand what range/values can be iterated w/ binary search
 
 <br>Hint-Note: Manually set your own 'high' value for below 2 Qs
 
-44\. <mark style="background-color:#efe3ff"><strong>LeetCode Q2517</strong></mark>
+44\. LeetCode Q2517
 
-45\. <mark style="background-color:#efe3ff"><strong>LeetCode Q1170 (can skip this one if you have a good grasp of bin search)</strong></mark>
+45\. LeetCode Q1170 (can skip this one if you have a good grasp of bin search)
 
 
 ___________________________________________
