@@ -78,6 +78,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 17\. &ensp; <mark style="background-color:#fffaa1"><strong>Detect Cycles in 2D Grid - LeetCode Q1559</strong></mark>
 <br>
 
+<br>
 <h3 style="color:#0303ad">Breadth-First Search</h3>
 
 17\. &ensp; In <span style="color:#fc6b03">Java</span>:
@@ -88,8 +89,11 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
         - Get the size of the LLQ
         - Get the value of the first element but do not return it
 
-<strong style="color:#0303ad">Tree-Level Order traversals are always handled with BFS</strong><br>
-18\. LeetCode Q429, LeetCode Q958
+18\. <strong style="color:#0303ad">Tree-Level Order traversals are always handled with BFS</strong><br>
+
+> <a style="color:#000000">LeetCode Q429</a>
+> 
+> <a style="color:#000000">LeetCode Q958</a>
 
 <strong style="color:#0303ad">Very good Q to test understanding of BFS</strong><br>
 19\. <mark style="background-color:#fffaa1"><strong>Complete Binary Tree Inserter - LeetCode Q919</strong></mark>
@@ -98,16 +102,21 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 21\. <strong style="color:#0303ad">4-Directional type of Q using BFS</strong><br>
 
-> <a style="color:#000000">Rotting Oranges - LeetCode Q994</a><br><br>
-> <mark style="background-color:#fffaa1"><strong>Map of Highest Peak - LeetCode Q1765</strong></mark><br><br>
+> <a style="color:#000000">Rotting Oranges - LeetCode Q994</a>
+>
+> <mark style="background-color:#fffaa1"><strong>Map of Highest Peak - LeetCode Q1765</strong></mark>
+>
 > <a style="color:#000000">Nearest Exit from Entrance in Maze - LeetCode Q1926</a><br>
 
 22\. <strong style="color:#0303ad">HashSet (for visited values) + BFS Qs</strong><br>
 
-- Minimum Genetic Mutation - LeetCode Q433
-- Minimum Operations to Convert Number - LeetCode Q2059 
-- Lexicographically Smallest String After Applying Operations - LeetCode Q1625
-- Word Ladder - LeetCode Q127
+> <a style="color:#000000">Minimum Genetic Mutation - LeetCode Q433</a>
+>
+> <a style="color:#000000">Minimum Operations to Convert Number - LeetCode Q2059</a>
+>
+> <a style="color:#000000">Lexicographically Smallest String After Applying Operations - LeetCode Q1625</a>
+>
+> <a style="color:#000000">Word Ladder - LeetCode Q127</a>
 
 **Notes-for-Q1625 and HashSet + BFS Qs**
 
@@ -119,7 +128,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 24\. <mark style="background-color:#fffaa1"><strong>A common BFS / DFS Q - Is Graph Bipartite? - LeetCode Q785</strong></mark>
 
-
+<br>
 <h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
 
 25\. LeetCode Q779 - Need to study
