@@ -124,11 +124,13 @@
 <br>Hint-Note: The number of nodes with an odd-degree in the original graph should be either 0, 2, or 4. Try to work on each of these cases.
 <br>Hint-Note: Use Pair to store hashset of edges
 
+43\. &ensp; <mark style="background-color:#fffbb8"><strong>(Need to study) Longest Cycle in a Graph - LeetCodeQ2360</strong></mark>
+
 ```java
 Pair p1 = new Pair(1, 2);    // I think 'Pair' in java might be pass-by-value
 ```
 
-43\. &ensp; Define the following Graph Terms
+44\. &ensp; Define the following Graph Terms
 
     - order of a graph
     - size of a graph
