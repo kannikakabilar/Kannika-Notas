@@ -91,10 +91,10 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 18\. LeetCode Q429, LeetCode Q958
 <br>Hint-Note: Tree-Level Order traversals are always handled with BFS
 
-19\. Complete Binary Tree Inserter - LeetCode Q919
+19\. <mark style="background-color:#fffaa1"><strong>Complete Binary Tree Inserter - LeetCode Q919</strong></mark>
 <br>Self-Note: Very good Q to test understanding of BFS
 
-20\. Qs that can also be solved with DFS - LeetCode Q865 (unusual one), LeetCode Q1625 
+20\. <mark style="background-color:#bbffa1">Qs that can also be solved with DFS - LeetCode Q865 (unusual one), LeetCode Q1625</mark>
 <br>**Notes-for-Q1625**
 
     - how do you lexicographically compare strings in Java? (str1.compareTo(str2)<0 => str1<str2)
