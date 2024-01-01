@@ -103,8 +103,8 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 21\. 4-Directional type of Q using BFS - LeetCode Q994, LeetCode Q1765
 
-22\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433
-<br>Hint-Note: Use HashMaps with BFS to keep track of the 'strings' that you have already visited
+22\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433, LeetCode Q2059
+<br>Hint-Note: Use HashMaps with BFS to keep track of the 'strings' or other data-type values that you have already visited
 
 23\. BFS Q that tests your Sorting knowledge - LeetCode Q2471
 
