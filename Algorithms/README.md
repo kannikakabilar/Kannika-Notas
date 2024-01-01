@@ -101,14 +101,14 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
     - Use HashSet with BFS to keep track of the 'strings' that you have already visited
     - Create helper functions to perform respective modifications to string
 
-21\. 4-Directional type of Q using BFS - LeetCode Q994, LeetCode Q1765
+21\. 4-Directional type of Q using BFS - LeetCode Q994, <mark style="background-color:#bbffa1">LeetCode Q1765</mark>
 
 22\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433, LeetCode Q2059
 <br>Hint-Note: Use HashMaps with BFS to keep track of the 'strings' or other data-type values that you have already visited
 
-23\. BFS Q that tests your Sorting knowledge - LeetCode Q2471
+23\. <mark style="background-color:#fffaa1"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
 
-24\. Interesting and Unique BFS Q - (need to study) - LeetCode Q967
+24\. <mark style="background-color:#fffaa1"><strong>Interesting and Unique BFS Q - (need to study) - LeetCode Q967</strong></mark>
 
 **Note:** A common BFS / DFS Q (that's not included here) is to check if a given graph is bipartite
 
