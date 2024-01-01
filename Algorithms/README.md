@@ -32,50 +32,54 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 <h3 style="color:#0303ad">Depth-First Search</h3>
 
-<h4 style="color:#0303ad">Sample DFS Qs</h4>
+1\. <strong style="color:#0303ad">Basic DFS Qs</strong>
 
-1\. &ensp; Find all Battleships on a board (DFS on 2D array) - LeetCode Q419 & Q1992
+> - <a style="color:#000000">Find all Battleships on a board (DFS on 2D array) - LeetCode Q419 & Q1992</a>
+>
+> - <a style="color:#000000">Find all Groups of Farmland - LeetCode Q1992</a>
+>
+> - <a style="color:#000000">Where will the Ball Fall - simple DFS - LeetCode Q1706</a>
+>
+> - <a style="color:#000000">Validate Binary Search Tree - LeetCode Q98</a><br>Hint-Note: When working with extreme integer values -> you can use Long.MIN_VALUE to Long.MAX_VALUE to act as -infinity to +infinity
+&ensp; 
 
-2\. &ensp; Where will the Ball Fall - simple DFS - LeetCode Q1706
 
-3\. &ensp; Validate Binary Search Tree - LeetCode Q98
-<br>Hint-Note: When working with extreme integer values -> you can use Long.MIN_VALUE to Long.MAX_VALUE to act as -infinity to +infinity
+2\. <strong style="color:#0303ad">DFS Tree Qs</strong>
 
-<h4 style="color:#0303ad">DFS Tree Qs</h4>
+> - <a style="color:#000000">Can Flipping SubTrees make them equivalent? - LeetCode Q951</a>
+>
+> - <a style="color:#000000">Lowest Common Ancester - LeetCode Q1123</a>
+>
+> - <a style="color:#000000">All paths from source to target - LeetCode Q797</a>
+>
+> - <a style="color:#000000">Cousins in Binary Tree II - LeetCode Q2641</a><br>Hint-Note: Sometimes integer & hashmap variables need to be declared outside functions (lie global variables to keep track of data) - (for ex: tracking total sum of the node values for each level of a binary tree)
+>
+> - <a style="color:#000000">Find Largest Value in Each Tree Row - LeetCode Q515</a>
 
-4\. &ensp; Can Flipping SubTrees make them equivalent? - LeetCode Q951
-
-5\. &ensp; Lowest Common Ancester - LeetCode Q1123
-
-6\. &ensp; All paths from source to target - LeetCode Q797
-
-7\. &ensp; Cousins in Binary Tree II - LeetCode Q2641
-<br>Hint-Note: Sometimes integer & hashmap variables need to be declared outside functions (lie global variables to keep track of data) - (fo ex: tracking total sum of the node values for each level of a binary tree)
-
-8\. &ensp; <mark style="background-color:#bbffa1">Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457</mark>
+3\. <mark style="background-color:#bbffa1">Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457</mark>
 <br>Hint-Note: When values are within a certain range (ie: 0 to n-1) - using an array might be faster than a hashmap
 
-9\. &ensp; Find Largest Value in Each Tree Row - LeetCode Q515
+4\. <strong style="color:#0303ad">DFS HashMap Qs</strong>
 
-<h4 style="color:#0303ad">DFS HashMap Qs</h4>
+> - <a style="color:#000000">Keys and Rooms - LeetCode Q841</a>
+>
+> - <a style="color:#000000">Create Binary Tree from Description - (Tree Building w/ DFS) - LeetCode Q2196</a>
 
-10\. &ensp; Keys and Rooms - LeetCode Q841
 
-11\. &ensp; Create Binary Tree from Description - (Tree Building w/ DFS) - LeetCode Q2196
+5\. <strong style="color:#0303ad">DFS 4-Directional Graph-ish Qs</strong>
 
-<h4 style="color:#0303ad">DFS 4-Directional Graph-ish Qs</h4>
+> - <a style="color:#000000">Num of Islands - LeetCode Q200
+>
+> - <a style="color:#000000">Max Area of Island - LeetCode Q695
+>
+> - <a style="color:#000000">Count Sub Islands - LeetCode Q1905
+>
+> - <a style="color:#000000">Number of Enclaves - LeetCode Q1020
+>
+> - <mark style="background-color:#bbffa1">Classic DFS Graph Q - Find if path exists in graph - LeetCode Q1971</mark>
+>
+> - <mark style="background-color:#fffaa1"><strong>Detect Cycles in 2D Grid - LeetCode Q1559</strong></mark>
 
-12\. &ensp; Num of Islands - LeetCode Q200
-
-13\. &ensp; Max Area of Island - LeetCode Q695
-
-14\. &ensp; Count Sub Islands - LeetCode Q1905
-
-15\. &ensp; Number of Enclaves - LeetCode Q1020
-
-16\. &ensp; <mark style="background-color:#bbffa1">Classic DFS Graph Q - Find if path exists in graph - LeetCode Q1971</mark>
-
-17\. &ensp; <mark style="background-color:#fffaa1"><strong>Detect Cycles in 2D Grid - LeetCode Q1559</strong></mark>
 <br>
 
 <br>
