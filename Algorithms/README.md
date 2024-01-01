@@ -88,26 +88,26 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
         - Get the size of the LLQ
         - Get the value of the first element but do not return it
 
-<a style="color:#0303ad">Tree-Level Order traversals are always handled with BFS</a><br>
+<strong style="color:#0303ad">Tree-Level Order traversals are always handled with BFS</strong><br>
 18\. LeetCode Q429, LeetCode Q958
 
-<a style="color:#0303ad">Very good Q to test understanding of BFS</a><br>
+<strong style="color:#0303ad">Very good Q to test understanding of BFS</strong><br>
 19\. <mark style="background-color:#fffaa1"><strong>Complete Binary Tree Inserter - LeetCode Q919</strong></mark>
 
 20\. <mark style="background-color:#bbffa1">Qs that can also be solved with DFS - LeetCode Q865</mark>
 
-21\. <a style="color:#0303ad">4-Directional type of Q using BFS</a><br>
+21\. <strong style="color:#0303ad">4-Directional type of Q using BFS</strong><br>
 
-        - Rotting Oranges - LeetCode Q994
-        - <mark style="background-color:#bbffa1">LeetCode Q1765</mark>
-        - Nearest Exit from Entrance in Maze - LeetCode Q1926
+- Rotting Oranges - LeetCode Q994
+- <mark style="background-color:#fffaa1"><strong>Map of Highest Peak - LeetCode Q1765</strong></mark>
+- Nearest Exit from Entrance in Maze - LeetCode Q1926
 
-22\. <a style="color:#0303ad">HashSet (for visited values) + BFS Qs</a><br>
+22\. <strong style="color:#0303ad">HashSet (for visited values) + BFS Qs</strong><br>
 
-        - Minimum Genetic Mutation - LeetCode Q433
-        - Minimum Operations to Convert Number - LeetCode Q2059 
-        - Lexicographically Smallest String After Applying Operations - LeetCode Q1625
-        - Word Ladder - LeetCode Q127
+- Minimum Genetic Mutation - LeetCode Q433
+- Minimum Operations to Convert Number - LeetCode Q2059 
+- Lexicographically Smallest String After Applying Operations - LeetCode Q1625
+- Word Ladder - LeetCode Q127
 
 **Notes-for-Q1625 and HashSet + BFS Qs**
 
