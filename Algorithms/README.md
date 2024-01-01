@@ -88,29 +88,36 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
         - Get the size of the LLQ
         - Get the value of the first element but do not return it
 
+<a style="color:#0303ad">Tree-Level Order traversals are always handled with BFS</a>
 18\. LeetCode Q429, LeetCode Q958
-<br>Hint-Note: Tree-Level Order traversals are always handled with BFS
 
+<a style="color:#0303ad">Very good Q to test understanding of BFS</a>
 19\. <mark style="background-color:#fffaa1"><strong>Complete Binary Tree Inserter - LeetCode Q919</strong></mark>
-<br>Self-Note: Very good Q to test understanding of BFS
 
-20\. <mark style="background-color:#bbffa1">Qs that can also be solved with DFS - LeetCode Q865 (unusual one), LeetCode Q1625</mark>
-<br>**Notes-for-Q1625**
+20\. <mark style="background-color:#bbffa1">Qs that can also be solved with DFS - LeetCode Q865</mark>
+
+21\. <a style="color:#0303ad">4-Directional type of Q using BFS</a>
+
+        - Rotting Oranges - LeetCode Q994
+        - <mark style="background-color:#bbffa1">LeetCode Q1765</mark>
+        - Nearest Exit from Entrance in Maze - LeetCode Q1926
+
+22\. <a style="color:#0303ad">HashSet (for visited values) + BFS Qs</a>
+
+        - Minimum Genetic Mutation - LeetCode Q433
+        - Minimum Operations to Convert Number - LeetCode Q2059 
+        - Lexicographically Smallest String After Applying Operations - LeetCode Q1625
+        - Word Ladder - LeetCode Q127
+
+**Notes-for-Q1625 and HashSet + BFS Qs**
 
     - how do you lexicographically compare strings in Java? (str1.compareTo(str2)<0 => str1<str2)
     - Use HashSet with BFS to keep track of the 'strings' that you have already visited
     - Create helper functions to perform respective modifications to string
 
-21\. 4-Directional type of Q using BFS - LeetCode Q994, <mark style="background-color:#bbffa1">LeetCode Q1765</mark>
-
-22\. Trickier but follows a routine BFS Q - LeetCode Q752, LeetCode Q433, LeetCode Q2059
-<br>Hint-Note: Use HashMaps with BFS to keep track of the 'strings' or other data-type values that you have already visited
-
 23\. <mark style="background-color:#fffaa1"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
 
-24\. <mark style="background-color:#fffaa1"><strong>Interesting and Unique BFS Q - (need to study) - LeetCode Q967</strong></mark>
-
-**Note:** A common BFS / DFS Q (that's not included here) is to check if a given graph is bipartite
+24\. <mark style="background-color:#fffaa1"><strong>A common BFS / DFS Q - Is Graph Bipartite? - LeetCode Q785</strong></mark>
 
 
 <h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
