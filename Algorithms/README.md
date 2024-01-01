@@ -98,9 +98,9 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 21\. <strong style="color:#0303ad">4-Directional type of Q using BFS</strong><br>
 
-> <a style="color:#000000">Rotting Oranges - LeetCode Q994</a><br>
-> <mark style="background-color:#fffaa1"><strong>Map of Highest Peak - LeetCode Q1765</strong></mark><br>
-> Nearest Exit from Entrance in Maze - LeetCode Q1926<br>
+> <a style="color:#000000">Rotting Oranges - LeetCode Q994</a><br><br>
+> <mark style="background-color:#fffaa1"><strong>Map of Highest Peak - LeetCode Q1765</strong></mark><br><br>
+> <a style="color:#000000">Nearest Exit from Entrance in Maze - LeetCode Q1926</a><br>
 
 22\. <strong style="color:#0303ad">HashSet (for visited values) + BFS Qs</strong><br>
 
