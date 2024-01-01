@@ -89,16 +89,24 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
         - Get the size of the LLQ
         - Get the value of the first element but do not return it
 
+<br>
+
 18\. <strong style="color:#0303ad">Tree-Level Order traversals are always handled with BFS</strong><br>
 
 > <a style="color:#000000">LeetCode Q429</a>
 > 
 > <a style="color:#000000">LeetCode Q958</a>
 
+<br>
+
 <strong style="color:#0303ad">Very good Q to test understanding of BFS</strong><br>
 19\. <mark style="background-color:#fffaa1"><strong>Complete Binary Tree Inserter - LeetCode Q919</strong></mark>
 
+<br>
+
 20\. <mark style="background-color:#bbffa1">Qs that can also be solved with DFS - LeetCode Q865</mark>
+
+<br>
 
 21\. <strong style="color:#0303ad">4-Directional type of Q using BFS</strong><br>
 
@@ -107,6 +115,8 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 > <mark style="background-color:#fffaa1"><strong>Map of Highest Peak - LeetCode Q1765</strong></mark>
 >
 > <a style="color:#000000">Nearest Exit from Entrance in Maze - LeetCode Q1926</a><br>
+
+<br>
 
 22\. <strong style="color:#0303ad">HashSet (for visited values) + BFS Qs</strong><br>
 
@@ -124,11 +134,16 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
     - Use HashSet with BFS to keep track of the 'strings' that you have already visited
     - Create helper functions to perform respective modifications to string
 
+<br>
+
 23\. <mark style="background-color:#fffaa1"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
+
+<br>
 
 24\. <mark style="background-color:#fffaa1"><strong>A common BFS / DFS Q - Is Graph Bipartite? - LeetCode Q785</strong></mark>
 
 <br>
+
 <h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
 
 25\. LeetCode Q779 - Need to study
