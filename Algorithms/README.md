@@ -81,7 +81,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 <br>
 <h3 style="color:#0303ad">Breadth-First Search</h3>
 
-17\. &ensp; In <span style="color:#fc6b03">Java</span>:
+1\. &ensp; In <span style="color:#fc6b03">Java</span>:
 
         - Initialize a LinkedList Queue & just a LinkedList (built-in w/ Java)
         - Add an element to the LLQ
@@ -90,38 +90,38 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
         - Get the value of the first element but do not return it
 
 
-18\. <strong style="color:#0303ad">Tree-Level Order traversals are always handled with BFS</strong><br>
+2\. <strong style="color:#0303ad">Tree-Level Order traversals are always handled with BFS</strong><br>
 
-> <a style="color:#000000">LeetCode Q429</a>
+> - <a style="color:#000000">LeetCode Q429</a>
 > 
-> <a style="color:#000000">LeetCode Q958</a>
+> - <a style="color:#000000">LeetCode Q958</a>
 
 
 <strong style="color:#0303ad">Very good Q to test understanding of BFS</strong><br>
-19\. <mark style="background-color:#fffaa1"><strong>Complete Binary Tree Inserter - LeetCode Q919</strong></mark>
+3\. <mark style="background-color:#fffaa1"><strong>Complete Binary Tree Inserter - LeetCode Q919</strong></mark>
 
 
-20\. <mark style="background-color:#bbffa1">Qs that can also be solved with DFS - LeetCode Q865</mark>
+4\. <mark style="background-color:#bbffa1">Qs that can also be solved with DFS - LeetCode Q865</mark>
 
 
-21\. <strong style="color:#0303ad">4-Directional type of Q using BFS</strong><br>
+5\. <strong style="color:#0303ad">4-Directional type of Q using BFS</strong><br>
 
-> <a style="color:#000000">Rotting Oranges - LeetCode Q994</a>
+> - <a style="color:#000000">Rotting Oranges - LeetCode Q994</a>
 >
-> <mark style="background-color:#fffaa1"><strong>Map of Highest Peak - LeetCode Q1765</strong></mark>
+> - <mark style="background-color:#fffaa1"><strong>Map of Highest Peak - LeetCode Q1765</strong></mark>
 >
-> <a style="color:#000000">Nearest Exit from Entrance in Maze - LeetCode Q1926</a><br>
+> - <a style="color:#000000">Nearest Exit from Entrance in Maze - LeetCode Q1926</a><br>
 
 
-22\. <strong style="color:#0303ad">HashSet (for visited values) + BFS Qs</strong><br>
+6\. <strong style="color:#0303ad">HashSet (for visited values) + BFS Qs</strong><br>
 
-> <a style="color:#000000">Minimum Genetic Mutation - LeetCode Q433</a>
+> - <a style="color:#000000">Minimum Genetic Mutation - LeetCode Q433</a>
 >
-> <a style="color:#000000">Minimum Operations to Convert Number - LeetCode Q2059</a>
+> - <a style="color:#000000">Minimum Operations to Convert Number - LeetCode Q2059</a>
 >
-> <a style="color:#000000">Lexicographically Smallest String After Applying Operations - LeetCode Q1625</a>
+> - <a style="color:#000000">Lexicographically Smallest String After Applying Operations - LeetCode Q1625</a>
 >
-> <a style="color:#000000">Word Ladder - LeetCode Q127</a>
+> - <a style="color:#000000">Word Ladder - LeetCode Q127</a>
 
 **Notes-for-Q1625 and HashSet + BFS Qs**
 
@@ -130,10 +130,10 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
     - Create helper functions to perform respective modifications to string
 
 
-23\. <mark style="background-color:#fffaa1"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
+7\. <mark style="background-color:#fffaa1"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
 
 
-24\. <mark style="background-color:#fffaa1"><strong>A common BFS / DFS Q - Is Graph Bipartite? - LeetCode Q785</strong></mark>
+8\. <mark style="background-color:#fffaa1"><strong>A common BFS / DFS Q - Is Graph Bipartite? - LeetCode Q785</strong></mark>
 
 <br>
 
