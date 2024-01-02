@@ -4,28 +4,28 @@
 
 <strong style="color:#1669f0">Stacks are used for evaluating: parentheses; math expr; recursive function calls</strong>
 
-> - <a style="color:#1669f0">LeetCode Q20</a>
+> - <a style="color:#000000">LeetCode Q20</a>
 >
-> - <a style="color:#1669f0">LeetCode Q844</a>
+> - <a style="color:#000000">LeetCode Q844</a>
 >
-> - <a style="color:#1669f0">LeetCode Q1021</a>
+> - <a style="color:#000000">LeetCode Q1021</a>
 >
-> - <a style="color:#1669f0">LeetCode Q1047</a>
+> - <a style="color:#000000">LeetCode Q1047</a>
 >
-> - <a style="color:#1669f0">LeetCode Q1441</a>
+> - <a style="color:#000000">LeetCode Q1441</a>
 >
-> - <a style="color:#1669f0">LeetCode Q1598</a>
+> - <a style="color:#000000">LeetCode Q1598</a>
 >
-> - <a style="color:#1669f0">LeetCode Q1614</a>
+> - <a style="color:#000000">LeetCode Q1614</a>
 >
-> - <a style="color:#1669f0">LeetCode Q946</a>
+> - <a style="color:#000000">LeetCode Q946</a>
 >
-> - <a style="color:#1669f0">LeetCode Q1249/Q921</a>
+> - <a style="color:#000000">LeetCode Q1249/Q921</a>
 
 
 <h3 style="color:#1669f0">Queues</h3>
 
-> - <a style="color:#1669f0">Time Needed to But Tickets - LeetCode Q2073</a>
+> - <a style="color:#000000">Time Needed to But Tickets - LeetCode Q2073</a>
 >
 > - <mark style="background-color:#bbffa1">Weave pattern using queues - LeetCode Q950</mark><br>
 
@@ -74,42 +74,42 @@ In <span style="color:#fc6b03">Java</span>:
 
 7\. &ensp; Splay Trees are just like BST but perform AVL rotations each time an event occurs (what event?) and it updates the root node accordingly
 
-8\. &ensp; LeetCode Q938
+> - <a style="color:#000000">LeetCode Q938</a>
+>
+> - <a style="color:#000000">LeetCode Q590 (How do you concatenate 2 arraylists in java?)</a>
+>
+> - <a style="color:#000000">LeetCode Q226</a>
+>
+> - <a style="color:#000000">LeetCode Q1022</a>
+>
+> - <a style="color:#000000">LeetCode Q1448</a>
+>
+> - <a style="color:#000000">LeetCode Q2265 (helper functions are sometimes needed when working with trees)</a>
+>
+> - <a style="color:#000000">LeetCode Q1026</a>
 
-9\. &ensp; LeetCode Q590 (How do you concatenate 2 arraylists in java?)
-
-10\. &ensp; LeetCode Q226
-
-11\. &ensp; LeetCode Q1022
-
-12\. &ensp; LeetCode Q1448
-
-13\. &ensp; LeetCode Q2265 (helper functions are sometimes needed when working with trees)
-
-14\. &ensp; LeetCode Q1026
-
-15\. &ensp; <mark style="background-color:#bbffa1">LeetCode Q894</mark>
+8\. &ensp; <mark style="background-color:#bbffa1">LeetCode Q894</mark>
 
     Hint-Note: Think about if there are n total nodes, 1 for root and i nodes for left-subtree, how much would the right subtree have?
     -use recursion to generate subtrees with i nodes for left-subtree and for each left-subtree loop through every possible right-subtree
     -store the list of subtrees of size-n-nodes into a hashmap
 
-16\. &ensp; Balance a Binary Search Tree - LeetCode Q1382 (how do you get subarray of an arraylist?)
+9\. &ensp; Balance a Binary Search Tree - LeetCode Q1382 (how do you get subarray of an arraylist?)
 
-17\. &ensp; <mark style="background-color:#bbffa1">LeetCode Q2415</mark>
+10\. &ensp; <mark style="background-color:#bbffa1">LeetCode Q2415</mark>
 
     Hint-Note: Think of the first few base cases. left-subtree needs to swap values with right subtree. 
     After that, the left-left-subtree will swap values with right-right-subtree and the left-right-subtree will swap values with right-left-subtree. 
     Ofcourse, pefrorm the swap only when the levels are odd.
 
-18\. &ensp; LeetCode Q1325
-
-19\. &ensp; <mark style="background-color:#fffbb8"><strong>LeetCode Q1104</strong></mark>
+> - <a style="color:#000000">LeetCode Q1325</a>
+>
+> - <mark style="background-color:#fffbb8"><strong>LeetCode Q1104</strong></mark>
 
     Hint-Note: Try drawing a normal (non-zigzag tree) and see how you can get the value of parent given value of child node 
     and then compare it by drawing the zigzag tree.
-
-20\. &ensp; LeetCode Q208 (Trie), Q14
+>
+> - <a style="color:#000000">LeetCode Q208 (Trie), Q14</a>
 
 <strong style="color:#1669f0">Postorder Qs</strong>
 
