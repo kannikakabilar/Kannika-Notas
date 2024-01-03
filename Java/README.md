@@ -73,9 +73,10 @@ HashMap <Integer, Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr)); 
 
 ```
 
-<h3 style="color:#fa6339">Thread Variable: volatile</h3>
+<h3 style="color:#fa6339">Thread Variable: volatile, synchronized, Semaphore</h3>
 
 - Print in Order - LeetCode 1114
 - Print FooBar Alternately - LeetCode 1115
 - Print Zero Even Odd - LeetCode 1116
 - Fizz Buzz Multithreaded - LeetCode 1195
+- Building H2O = LeetCode 1117
