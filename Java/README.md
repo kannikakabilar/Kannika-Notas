@@ -77,3 +77,5 @@ HashMap <Integer, Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr)); 
 
 - Print in Order - LeetCode 1114
 - Print FooBar Alternately - LeetCode 1115
+- Print Zero Even Odd - LeetCode 1116
+- Fizz Buzz Multithreaded - LeetCode 1195
