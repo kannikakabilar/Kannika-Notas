@@ -169,7 +169,7 @@ Extra\. Closest Pair of Points Algorithm using DAC
 31\. Find Smallest Letter Greater Than Target - LeetCode Q744
 
 32\. <mark style="background-color:#fffaa1"><strong>Find the Distance Value Between Two Arrays - LeetCode Q1385</strong></mark>
-<br><a style="color:#fc6b03">Binary Search can also be used to find if an element in a sorted array is in a specified range (instead of looking for a target element)</a>
+<br><a style="color:#0303ad">Binary Search can also be used to find if an element in a sorted array is in a specified range (instead of looking for a target element)</a>
 
 <h4 style="color:#0303ad">Peaks & Valleys Qs</h4>
 
