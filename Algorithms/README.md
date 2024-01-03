@@ -164,52 +164,52 @@ Extra\. Closest Pair of Points Algorithm using DAC
 
 <h4 style="color:#0303ad">Simple Basic Qs</h4>
 
-30\. LeetCode Q374
+30\. Guess Number Higher or Lower - LeetCode Q374
 
-31\. LeetCode Q744
+31\. Find Smallest Letter Greater Than Target - LeetCode Q744
 
-32\. LeetCode Q1385
-<br>Hint-Note: Subtraction in an absolute sign can result following range: |a - b| = c means b can be between a-c to a+c
+32\. <mark style="background-color:#fffaa1"><strong>Find the Distance Value Between Two Arrays - LeetCode Q1385</strong></mark>
+<br><a style="color:#fc6b03">Binary Search can also be used to find if an element in a sorted array is in a specified range (instead of looking for a target element)</a>
 
 <h4 style="color:#0303ad">Peaks & Valleys Qs</h4>
 
-33\. LeetCode Q852
+33\. Peak Index in a Mountain Array - LeetCode Q852
 
-34\. LeetCode Q162
+34\. Find Peak Element - LeetCode Q162
 
-35\. LeetCode Q1901 (nlogm + 2D arr)
+35\. Find Peak Element II - LeetCode Q1901 (nlogm + 2D arr)
 
 <h4 style="color:#0303ad">Maximize Consecutives Qs</h4>
 
-36\. LeetCode Q1004 (if you do this one, you can do the one below)
+36\. Max Consecutive Ones III - LeetCode Q1004 (if you do this one, you can do the one below)
 
-37\. LeetCode Q2024
+37\. Maximize the Confusion of an Exam - LeetCode Q2024
 
 <h4 style="color:#0303ad">Search Rotated Array Qs</h4>
 
-38\. LeetCode Q153
+38\. Find Minimum in Rotated Sorted Array - LeetCode Q153
 
-39\. LeetCode Q33
+39\. Search in Rotated Sorted Array - LeetCode Q33
 
 <h4 style="color:#0303ad">Search 2-D Array Q (logm * logn)</h4>
 
-40\. LeetCode Q74
+40\. Search a 2D Matrix - LeetCode Q74
 
 <h4 style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func Qs</h4>
 
-41\. LeetCode Q2540
+41\. Minimum Common Value - LeetCode Q2540
 <br>Self-Note: Can also be solved in O(m+n) with merge-sort-like thinking but try doing it in n*logm
 
-42\. LeetCode Q1237
+42\. Find Positive Integer Solution for a Given Equation - LeetCode Q1237
 
-43\. LeetCode Q1011
+43\. Capacity to Ship Packages within D days - LeetCode Q1011
 <br>Hint-Note: Try to understand what range/values can be iterated w/ binary search
 
 <br>Hint-Note: Manually set your own 'high' value for below 2 Qs
 
-44\. LeetCode Q2517
+44\. Maximum Tastiness of Candy Basket - LeetCode Q2517
 
-45\. LeetCode Q1170 (can skip this one if you have a good grasp of bin search)
+45\. Compare Strings by Frequency of the Smallest Characters - LeetCode Q1170 (can skip this one if you have a good grasp of bin search)
 
 
 ___________________________________________
