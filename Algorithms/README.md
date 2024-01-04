@@ -173,11 +173,11 @@ Extra\. Closest Pair of Points Algorithm using DAC
 
 <h4 style="color:#0303ad">Peaks & Valleys Qs</h4>
 
-33\. Peak Index in a Mountain Array - LeetCode Q852
+33\. Peak Index in a Mountain Array - LeetCode Q852, Find in Mountain Array - LeetCode Q1095
 
 34\. Find Peak Element - LeetCode Q162
 
-35\. Find Peak Element II - LeetCode Q1901 (nlogm + 2D arr)
+35\. <mark style="background-color:#fffaa1"><strong>Find Peak Element II - LeetCode Q1901 (nlogm + 2D arr) \[so annoying!\]</strong></mark>
 
 <h4 style="color:#0303ad">Maximize Consecutives Qs</h4>
 
