@@ -177,7 +177,7 @@ Extra\. Closest Pair of Points Algorithm using DAC
 
 34\. Find Peak Element - LeetCode Q162
 
-35\. <mark style="background-color:#fffaa1"><strong>Find Peak Element II - LeetCode Q1901 (nlogm + 2D arr) \[so annoying!\]</strong></mark>
+35\. <strong>So Annoying! </strong><mark style="background-color:#fffaa1"><strong>Find Peak Element II - LeetCode Q1901 (nlogm + 2D arr)</strong></mark>
 
 <h4 style="color:#0303ad">Maximize Consecutives Qs</h4>
 
