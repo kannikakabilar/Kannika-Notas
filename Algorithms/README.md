@@ -187,9 +187,9 @@ Extra\. Closest Pair of Points Algorithm using DAC
 
 <h4 style="color:#0303ad">Search Rotated Array Qs</h4>
 
-38\. Find Minimum in Rotated Sorted Array - LeetCode Q153
+38\. Find Minimum in Rotated Sorted Array - LeetCode Q153, <mark style="background-color:#fffaa1"><strong>Find Minimum in Rotated Sorted Array II - LeetCode Q154</strong></mark>
 
-39\. Search in Rotated Sorted Array - LeetCode Q33
+39\. Search in Rotated Sorted Array - LeetCode Q33, Search in Rotated Sorted Array II - LeetCode Q81
 
 <h4 style="color:#0303ad">Search 2-D Array Q (logm * logn)</h4>
 
