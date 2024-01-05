@@ -158,9 +158,10 @@ Extra\. Closest Pair of Points Algorithm using DAC
 
 <h3 style="color:#0303ad">Binary Search</h3>
 
-28\. **Note:** It is important to realize that binary search can only be performed on ------ value-set / value-range / mountain-ish values-sets
+<strong style="color:#0303ad">Notes</strong><br>
+<strong style="color:#0303ad">O</strong> It is important to realize that binary search can only be performed on ------ value-set / value-range / mountain-ish values-sets
 
-29\. In <span style="color:#fc6b03">Java</span> sort a int \[\] arr using built-in sort. In an algorithm Q, if array sorted? => binary search. But sometimes you have to call the built-in sort on the given array.
+<strong style="color:#0303ad">O</strong> In <span style="color:#fc6b03">Java</span> sort a int \[\] arr using built-in sort. In an algorithm Q, if array sorted? => binary search. But sometimes you have to call the built-in sort on the given array.
 
 <h4 style="color:#0303ad">Simple Basic Qs</h4>
 
@@ -193,7 +194,7 @@ Extra\. Closest Pair of Points Algorithm using DAC
 
 <h4 style="color:#0303ad">Search 2-D Array Q (logm * logn)</h4>
 
-40\. Search a 2D Matrix - LeetCode Q74
+40\. Search a 2D Matrix - LeetCode Q74, Search a 2D Matrix II - LeetCode Q240
 
 <h4 style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func Qs</h4>
 
