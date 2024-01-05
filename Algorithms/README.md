@@ -211,5 +211,6 @@ Extra\. Closest Pair of Points Algorithm using DAC
 
 45\. Compare Strings by Frequency of the Smallest Characters - LeetCode Q1170 (can skip this one if you have a good grasp of bin search)
 
+46\. 1482
 
 ___________________________________________
