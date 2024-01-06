@@ -155,6 +155,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 > - <a style="color:#000000">Closest Pair of Points Algorithm using DAC</a>
 > <br> **Note:** This is a common Div&Conq Q: to find the closest pair of points, given a list of points.
 
+<br>
 
 <h3 style="color:#0303ad">Binary Search</h3>
 
@@ -195,7 +196,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 > - <a style="color:#000000">Search in Rotated Sorted Array - LeetCode Q33</a>
 > - <a style="color:#000000">Search in Rotated Sorted Array II - LeetCode Q81</a>
 
-<strong style="color:#0303ad">5. n*logm or (logm)*n where 'n' is for helper func or outer-loops</strong>
+<strong style="color:#0303ad">5. n(logm) or (logm)n where 'n' is for outer/inner-loops that perform helper func tasks</strong>
 
 > - <a style="color:#000000">Search a 2D Matrix - LeetCode Q74</a>
 > <br><a style="color:#0303ad">Exception: (logm * logn)</a>
