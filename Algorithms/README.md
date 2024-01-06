@@ -135,7 +135,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 
 **7\.** <mark style="background-color:#fffaa1"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
-
+<br><a style="color:#0303ad">Just think about how to solve this Q, no need to actually code it</a>
 
 **8\.** <mark style="background-color:#fffaa1"><strong>A common BFS / DFS Q - Is Graph Bipartite? - LeetCode Q785</strong></mark>
 
