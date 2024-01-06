@@ -194,12 +194,12 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Find Minimum in Rotated Sorted Array II - LeetCode Q154</strong></mark></a>
 >
 > - <a style="color:#000000">Search in Rotated Sorted Array - LeetCode Q33</a>
-> - <a style="color:#000000">Search in Rotated Sorted Array II - LeetCode Q81</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Search in Rotated Sorted Array II - LeetCode Q81</strong></mark></a>
 
 <strong style="color:#0303ad">5. n(logm) or (logm)n where 'n' is for outer/inner-loops that perform helper func tasks</strong>
 
 > - <a style="color:#000000">Search a 2D Matrix - LeetCode Q74</a>
-> <br><a style="color:#0303ad">Exception: (logm * logn)</a>
+> <br><a style="color:#0303ad">Exception: This Q can be done in (logm * logn)</a>
 >
 > - <a style="color:#000000">Search a 2D Matrix II - LeetCode Q240</a>
 >
@@ -208,16 +208,16 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 >
 > - <a style="color:#000000">Find Positive Integer Solution for a Given Equation - LeetCode Q1237</a>
 >
-> - <a style="color:#000000">Capacity to Ship Packages within D days - LeetCode Q1011</a>
+> - <a style="color:#000000">Compare Strings by Frequency of the Smallest Characters - LeetCode Q1170</a>
+> <br><a style="color:#0303ad">(You don't have to code this Q, just try to solve it in your head)</a>
+>
+> <br><a style="color:#0303ad">Hint-Note: These can get tricky! Try to manually set your own 'high' value</a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Capacity to Ship Packages within D days - LeetCode Q1011</strong></mark></a>
 > <br><a style="color:#0303ad">Hint-Note: Try to understand what range/values can be iterated w/ binary search</a>
 >
-> <br><a style="color:#0303ad">Hint-Note: Manually set your own 'high' value for below 2 Qs</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Maximum Tastiness of Candy Basket - LeetCode Q2517</strong></mark></a>
 >
-> - <a style="color:#000000">Maximum Tastiness of Candy Basket - LeetCode Q2517</a>
->
-> - <a style="color:#000000">Compare Strings by Frequency of the Smallest Characters - LeetCode Q1170</a>
-> <br><a style="color:#0303ad">(can skip this one if you have a good grasp of bin search)</a>
->
-> - <a style="color:#000000">LeetCode Q1482</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Minimum Number of Days to Make m Bouquets - LeetCode Q1482</strong></mark></a>
 
 ___________________________________________
