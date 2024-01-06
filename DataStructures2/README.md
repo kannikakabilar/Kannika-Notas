@@ -50,29 +50,31 @@ In <span style="color:#fc6b03">Java</span>:
 
 <h3 style="color:#1669f0">Trees</h3>
 
-1\. &ensp; Describe how these simple trees work: N-ary ; Binary ; BST
+1\. &ensp; Describe how these simple trees work: <strong style="color:#1669f0">N-ary</strong> ; <strong style="color:#1669f0">Binary</strong> ; <strong style="color:#1669f0">BST</strong>
 
-2\. &ensp; AVL Trees are better for --------- , because the height <= log2(n) <br>
+2\. &ensp; <strong style="color:#1669f0">AVL Trees</strong> are better for --------- , because the height <= log2(n) <br>
     - left-left case => ? <br>
     - left-right case => ? <br>
 
-3\. &ensp; Red-Black Trees are better for --------- and -------- <br>
+3\. &ensp; <strong style="color:#1669f0">Red-Black Trees</strong> are better for --------- and -------- <br>
     - What are the 4 rules for Red-Black Trees? <br>
 
-4\. &ensp; B-Tree <br>
+4\. &ensp; <strong style="color:#1669f0">B-Tree</strong> <br>
     - Each node can have upto (how many?) values <br>
     - Each non-leaf node must have at least (how many?) children and atmost (how many?) children <br>
     - All leaves have the same ----- <br>
 
-5\. &ensp; Heaps (Min/Max Priority Queues) <br>
+5\. &ensp; <strong style="color:#1669f0">Heaps (Min/Max Priority Queues)</strong> <br>
     - How do you insert in heaps? <br>
     - How do you delete in heaps? <br>
 
-6\. &ensp; Treaps are a mix of --- and ---- <br>
+6\. &ensp; <strong style="color:#1669f0">Treaps</strong> are a mix of --- and ---- <br>
     - Each node stores 2 values (what are they - what kind of values?) <br>
     - How do you insert? And what happens after insertion? <br>
 
-7\. &ensp; Splay Trees are just like BST but perform AVL rotations each time an event occurs (what event?) and it updates the root node accordingly
+7\. &ensp; <strong style="color:#1669f0">Splay Trees</strong> are just like BST but perform AVL rotations each time an event occurs (what event?) and it updates the root node accordingly
+
+<strong style="color:#1669f0">Practice Qs</strong>
 
 > - <a style="color:#000000">LeetCode Q938</a>
 >
@@ -143,7 +145,7 @@ In <span style="color:#fc6b03">Java</span>:
 Pair p1 = new Pair(1, 2);    // I think 'Pair' in java might be pass-by-value
 ```
 
-44\. &ensp; Define the following Graph Terms
+<strong style="color:#1669f0">Define the following Graph Terms</strong>
 
     - order of a graph
     - size of a graph
