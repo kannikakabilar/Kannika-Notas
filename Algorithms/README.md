@@ -143,17 +143,17 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 <h3 style="color:#0303ad">Recursion and Divide-&-Conquer</h3>
 
-25\. LeetCode Q779 - Need to study
-<br>Hint-Note: Build a tree when working with binary num replacements
+> - <a style="color:#000000">LeetCode Q779 - Need to study</a>
+> <br><a style="color:#0303ad">Hint-Note: Build a tree when working with binary num replacements</a>
+>
+> - <a style="color:#000000">LeetCode Q390 - Don't understand - (Math related)</a>
+>
+> - <a style="color:#000000">LeetCode Q105, Q106, Q889(~slightly trickier)</a>
+> <br><a style="color:#0303ad">Self-Note: If you can do Q105, then you can do Q106
 
-26\. LeetCode Q390 - Don't understand - (Math related)
-
-27\. LeetCode Q105, Q106, Q889(~slightly trickier) 
-<br>Self-Note: If you can do Q105, then you can do Q106
-
-Extra\. Closest Pair of Points Algorithm using DAC
-
-**Note:** A common Div&Conq Q (that's not included here) is to find the closest pair of points,given a list of points.
+<strong style="color:#0303ad">Extra Q</strong> 
+> - <a style="color:#000000">Closest Pair of Points Algorithm using DAC</a>
+> <br> **Note:** This is a common Div&Conq Q: to find the closest pair of points, given a list of points.
 
 
 <h3 style="color:#0303ad">Binary Search</h3>
@@ -163,30 +163,31 @@ Extra\. Closest Pair of Points Algorithm using DAC
 
 <strong style="color:#0303ad">*</strong> In <span style="color:#fc6b03">Java</span> sort a int \[\] arr using built-in sort. In an algorithm Q, if array sorted? => binary search. But sometimes you have to call the built-in sort on the given array.
 
-<strong style="color:#0303ad">Simple Basic Qs</strong>
+1\. <strong style="color:#0303ad">Simple Basic Qs</strong>
 
 > - <a style="color:#000000">Guess Number Higher or Lower - LeetCode Q374</a>
 >
 > - <a style="color:#000000">Find Smallest Letter Greater Than Target - LeetCode Q744</a>
 >
 > - <a><mark style="background-color:#fffaa1"><strong style="color:#000000">Find the Distance Value Between Two Arrays - LeetCode Q1385</strong></mark>
-> <a style="color:#0303ad">Binary Search can also be used to find if an element in a sorted array is in a specified range (instead of looking for a target element)</a>
+> <br><a style="color:#0303ad">Binary Search can also be used to find if an element in a sorted array is in a specified range (instead of looking for a target element)</a>
 
-<strong style="color:#0303ad">Peaks & Valleys Qs</strong>
+2\. <strong style="color:#0303ad">Peaks & Valleys Qs</strong>
 
-> - <a style="color:#000000">Peak Index in a Mountain Array - LeetCode Q852, Find in Mountain Array - LeetCode Q1095</a>
+> - <a style="color:#000000">Peak Index in a Mountain Array - LeetCode Q852</a>
+> - <a style="color:#000000">Find in Mountain Array - LeetCode Q1095</a>
 >
 > - <a style="color:#000000">Find Peak Element - LeetCode Q162</a>
 >
 > - <a style="color:#000000"><strong>So Annoying! </strong><mark style="background-color:#fffaa1"><strong>Find Peak Element II - LeetCode Q1901 (nlogm + 2D arr)</strong></mark></a>
 
-<strong style="color:#0303ad">Maximize Consecutives Qs</strong>
+3\. <strong style="color:#0303ad">Maximize Consecutives Qs</strong>
 
 > - <a style="color:#000000">Max Consecutive Ones III - LeetCode Q1004 (if you do this one, you can do the one below)</a>
 >
 > - <a style="color:#000000">Maximize the Confusion of an Exam - LeetCode Q2024</a>
 
-<strong style="color:#0303ad">Search Rotated Array Qs</strong>
+4\. <strong style="color:#0303ad">Search Rotated Array Qs</strong>
 
 > - <a style="color:#000000">Find Minimum in Rotated Sorted Array - LeetCode Q153
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Find Minimum in Rotated Sorted Array II - LeetCode Q154</strong></mark></a>
@@ -194,26 +195,28 @@ Extra\. Closest Pair of Points Algorithm using DAC
 > - <a style="color:#000000">Search in Rotated Sorted Array - LeetCode Q33</a>
 > - <a style="color:#000000">Search in Rotated Sorted Array II - LeetCode Q81</a>
 
-<h4 style="color:#0303ad">Search 2-D Array Q (logm * logn)</h4>
+5\. <strong style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func or outer-loops</strong>
 
-40\. Search a 2D Matrix - LeetCode Q74, Search a 2D Matrix II - LeetCode Q240
-
-<h4 style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func Qs</h4>
-
-41\. Minimum Common Value - LeetCode Q2540
-<br>Self-Note: Can also be solved in O(m+n) with merge-sort-like thinking but try doing it in n*logm
-
-42\. Find Positive Integer Solution for a Given Equation - LeetCode Q1237
-
-43\. Capacity to Ship Packages within D days - LeetCode Q1011
-<br>Hint-Note: Try to understand what range/values can be iterated w/ binary search
-
-<br>Hint-Note: Manually set your own 'high' value for below 2 Qs
-
-44\. Maximum Tastiness of Candy Basket - LeetCode Q2517
-
-45\. Compare Strings by Frequency of the Smallest Characters - LeetCode Q1170 (can skip this one if you have a good grasp of bin search)
-
-46\. 1482
+> - <a style="color:#000000">Search a 2D Matrix - LeetCode Q74</a>
+> <br><a style="color:#0303ad">Exception: (logm * logn)</a>
+>
+> - <a style="color:#000000">Search a 2D Matrix II - LeetCode Q240</a>
+>
+> - <a style="color:#000000">Minimum Common Value - LeetCode Q2540</a>
+> <br><a style="color:#0303ad">Self-Note: Can also be solved in O(m+n) with merge-sort-like thinking but try doing it in n*logm</a>
+>
+> - <a style="color:#000000">Find Positive Integer Solution for a Given Equation - LeetCode Q1237</a>
+>
+> - <a style="color:#000000">Capacity to Ship Packages within D days - LeetCode Q1011</a>
+> <br><a style="color:#0303ad">Hint-Note: Try to understand what range/values can be iterated w/ binary search</a>
+>
+> <br><a style="color:#0303ad">Hint-Note: Manually set your own 'high' value for below 2 Qs</a>
+>
+> - <a style="color:#000000">Maximum Tastiness of Candy Basket - LeetCode Q2517</a>
+>
+> - <a style="color:#000000">Compare Strings by Frequency of the Smallest Characters - LeetCode Q1170</a>
+> <br><a style="color:#0303ad">(can skip this one if you have a good grasp of bin search)</a>
+>
+> - <a style="color:#000000">LeetCode Q1482</a>
 
 ___________________________________________
