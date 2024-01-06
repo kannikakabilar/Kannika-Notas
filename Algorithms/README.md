@@ -159,38 +159,40 @@ Extra\. Closest Pair of Points Algorithm using DAC
 <h3 style="color:#0303ad">Binary Search</h3>
 
 <strong style="color:#0303ad">Notes</strong><br>
-<strong style="color:#0303ad">O</strong> It is important to realize that binary search can only be performed on ------ value-set / value-range / mountain-ish values-sets
+<strong style="color:#0303ad">*</strong> It is important to realize that binary search can only be performed on ------ value-set / value-range / mountain-ish values-sets
 
-<strong style="color:#0303ad">O</strong> In <span style="color:#fc6b03">Java</span> sort a int \[\] arr using built-in sort. In an algorithm Q, if array sorted? => binary search. But sometimes you have to call the built-in sort on the given array.
+<strong style="color:#0303ad">*</strong> In <span style="color:#fc6b03">Java</span> sort a int \[\] arr using built-in sort. In an algorithm Q, if array sorted? => binary search. But sometimes you have to call the built-in sort on the given array.
 
-<h4 style="color:#0303ad">Simple Basic Qs</h4>
+<strong style="color:#0303ad">Simple Basic Qs</strong>
 
-30\. Guess Number Higher or Lower - LeetCode Q374
+> - <a style="color:#000000">Guess Number Higher or Lower - LeetCode Q374</a>
+>
+> - <a style="color:#000000">Find Smallest Letter Greater Than Target - LeetCode Q744</a>
+>
+> - <a><mark style="background-color:#fffaa1"><strong style="color:#000000">Find the Distance Value Between Two Arrays - LeetCode Q1385</strong></mark>
+> <a style="color:#0303ad">Binary Search can also be used to find if an element in a sorted array is in a specified range (instead of looking for a target element)</a>
 
-31\. Find Smallest Letter Greater Than Target - LeetCode Q744
+<strong style="color:#0303ad">Peaks & Valleys Qs</strong>
 
-32\. <mark style="background-color:#fffaa1"><strong>Find the Distance Value Between Two Arrays - LeetCode Q1385</strong></mark>
-<br><a style="color:#0303ad">Binary Search can also be used to find if an element in a sorted array is in a specified range (instead of looking for a target element)</a>
+> - <a style="color:#000000">Peak Index in a Mountain Array - LeetCode Q852, Find in Mountain Array - LeetCode Q1095</a>
+>
+> - <a style="color:#000000">Find Peak Element - LeetCode Q162</a>
+>
+> - <a style="color:#000000"><strong>So Annoying! </strong><mark style="background-color:#fffaa1"><strong>Find Peak Element II - LeetCode Q1901 (nlogm + 2D arr)</strong></mark></a>
 
-<h4 style="color:#0303ad">Peaks & Valleys Qs</h4>
+<strong style="color:#0303ad">Maximize Consecutives Qs</strong>
 
-33\. Peak Index in a Mountain Array - LeetCode Q852, Find in Mountain Array - LeetCode Q1095
+> - <a style="color:#000000">Max Consecutive Ones III - LeetCode Q1004 (if you do this one, you can do the one below)</a>
+>
+> - <a style="color:#000000">Maximize the Confusion of an Exam - LeetCode Q2024</a>
 
-34\. Find Peak Element - LeetCode Q162
+<strong style="color:#0303ad">Search Rotated Array Qs</strong>
 
-35\. <strong>So Annoying! </strong><mark style="background-color:#fffaa1"><strong>Find Peak Element II - LeetCode Q1901 (nlogm + 2D arr)</strong></mark>
-
-<h4 style="color:#0303ad">Maximize Consecutives Qs</h4>
-
-36\. Max Consecutive Ones III - LeetCode Q1004 (if you do this one, you can do the one below)
-
-37\. Maximize the Confusion of an Exam - LeetCode Q2024
-
-<h4 style="color:#0303ad">Search Rotated Array Qs</h4>
-
-38\. Find Minimum in Rotated Sorted Array - LeetCode Q153, <mark style="background-color:#fffaa1"><strong>Find Minimum in Rotated Sorted Array II - LeetCode Q154</strong></mark>
-
-39\. Search in Rotated Sorted Array - LeetCode Q33, Search in Rotated Sorted Array II - LeetCode Q81
+> - <a style="color:#000000">Find Minimum in Rotated Sorted Array - LeetCode Q153
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Find Minimum in Rotated Sorted Array II - LeetCode Q154</strong></mark></a>
+>
+> - <a style="color:#000000">Search in Rotated Sorted Array - LeetCode Q33</a>
+> - <a style="color:#000000">Search in Rotated Sorted Array II - LeetCode Q81</a>
 
 <h4 style="color:#0303ad">Search 2-D Array Q (logm * logn)</h4>
 
