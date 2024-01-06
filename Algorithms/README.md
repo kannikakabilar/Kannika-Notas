@@ -32,7 +32,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 <h3 style="color:#0303ad">Depth-First Search</h3>
 
-1\. <strong style="color:#0303ad">Basic DFS Qs</strong>
+<strong style="color:#0303ad">1. Basic DFS Qs</strong>
 
 > - <a style="color:#000000">Find all Battleships on a board (DFS on 2D array) - LeetCode Q419 & Q1992</a>
 >
@@ -44,7 +44,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 &ensp; 
 
 
-2\. <strong style="color:#0303ad">DFS Tree Qs</strong>
+<strong style="color:#0303ad">2. DFS Tree Qs</strong>
 
 > - <a style="color:#000000">Can Flipping SubTrees make them equivalent? - LeetCode Q951</a>
 >
@@ -56,17 +56,17 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 >
 > - <a style="color:#000000">Find Largest Value in Each Tree Row - LeetCode Q515</a>
 
-3\. <mark style="background-color:#bbffa1">Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457</mark>
+**3\.** <mark style="background-color:#bbffa1">Back-Tracking DFS - Pseudo-Palindromic Paths in a Binary Tree - LeetCode Q1457</mark>
 <br>Hint-Note: When values are within a certain range (ie: 0 to n-1) - using an array might be faster than a hashmap
 
-4\. <strong style="color:#0303ad">DFS HashMap Qs</strong>
+<strong style="color:#0303ad">4. DFS HashMap Qs</strong>
 
 > - <a style="color:#000000">Keys and Rooms - LeetCode Q841</a>
 >
 > - <a style="color:#000000">Create Binary Tree from Description - (Tree Building w/ DFS) - LeetCode Q2196</a>
 
 
-5\. <strong style="color:#0303ad">DFS 4-Directional Graph-ish Qs</strong>
+<strong style="color:#0303ad">5. DFS 4-Directional Graph-ish Qs</strong>
 
 > - <a style="color:#000000">Num of Islands - LeetCode Q200
 >
@@ -85,7 +85,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 <br>
 <h3 style="color:#0303ad">Breadth-First Search</h3>
 
-1\. &ensp; In <span style="color:#fc6b03">Java</span>:
+**1\.** &ensp; In <span style="color:#fc6b03">Java</span>:
 
         - Initialize a LinkedList Queue & just a LinkedList (built-in w/ Java)
         - Add an element to the LLQ
@@ -94,7 +94,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
         - Get the value of the first element but do not return it
 
 
-2\. <strong style="color:#0303ad">Tree-Level Order traversals are always handled with BFS</strong><br>
+<strong style="color:#0303ad">2. Tree-Level Order traversals are always handled with BFS</strong><br>
 
 > - <a style="color:#000000">LeetCode Q429</a>
 > 
@@ -102,13 +102,13 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 
 <strong style="color:#0303ad">Very good Q to test understanding of BFS</strong><br>
-3\. <mark style="background-color:#fffaa1"><strong>Complete Binary Tree Inserter - LeetCode Q919</strong></mark>
+**3\.** <mark style="background-color:#fffaa1"><strong>Complete Binary Tree Inserter - LeetCode Q919</strong></mark>
 
 
-4\. <mark style="background-color:#bbffa1">Qs that can also be solved with DFS - LeetCode Q865</mark>
+**4\.** <mark style="background-color:#bbffa1">Qs that can also be solved with DFS - LeetCode Q865</mark>
 
 
-5\. <strong style="color:#0303ad">4-Directional type of Q using BFS</strong><br>
+<strong style="color:#0303ad">5. 4-Directional type of Q using BFS</strong><br>
 
 > - <a style="color:#000000">Rotting Oranges - LeetCode Q994</a>
 >
@@ -117,7 +117,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 > - <a style="color:#000000">Nearest Exit from Entrance in Maze - LeetCode Q1926</a><br>
 
 
-6\. <strong style="color:#0303ad">HashSet (for visited values) + BFS Qs</strong><br>
+<strong style="color:#0303ad">6. HashSet (for visited values) + BFS Qs</strong><br>
 
 > - <a style="color:#000000">Minimum Genetic Mutation - LeetCode Q433</a>
 >
@@ -134,10 +134,10 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
     - Create helper functions to perform respective modifications to string
 
 
-7\. <mark style="background-color:#fffaa1"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
+**7\.** <mark style="background-color:#fffaa1"><strong>BFS Q that tests your Sorting knowledge - LeetCode Q2471</strong></mark>
 
 
-8\. <mark style="background-color:#fffaa1"><strong>A common BFS / DFS Q - Is Graph Bipartite? - LeetCode Q785</strong></mark>
+**8\.** <mark style="background-color:#fffaa1"><strong>A common BFS / DFS Q - Is Graph Bipartite? - LeetCode Q785</strong></mark>
 
 <br>
 
@@ -163,7 +163,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 
 <strong style="color:#0303ad">*</strong> In <span style="color:#fc6b03">Java</span> sort a int \[\] arr using built-in sort. In an algorithm Q, if array sorted? => binary search. But sometimes you have to call the built-in sort on the given array.
 
-1\. <strong style="color:#0303ad">Simple Basic Qs</strong>
+<strong style="color:#0303ad">1. Simple Basic Qs</strong>
 
 > - <a style="color:#000000">Guess Number Higher or Lower - LeetCode Q374</a>
 >
@@ -172,7 +172,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 > - <a><mark style="background-color:#fffaa1"><strong style="color:#000000">Find the Distance Value Between Two Arrays - LeetCode Q1385</strong></mark>
 > <br><a style="color:#0303ad">Binary Search can also be used to find if an element in a sorted array is in a specified range (instead of looking for a target element)</a>
 
-2\. <strong style="color:#0303ad">Peaks & Valleys Qs</strong>
+<strong style="color:#0303ad">2. Peaks & Valleys Qs</strong>
 
 > - <a style="color:#000000">Peak Index in a Mountain Array - LeetCode Q852</a>
 > - <a style="color:#000000">Find in Mountain Array - LeetCode Q1095</a>
@@ -181,13 +181,13 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 >
 > - <a style="color:#000000"><strong>So Annoying! </strong><mark style="background-color:#fffaa1"><strong>Find Peak Element II - LeetCode Q1901 (nlogm + 2D arr)</strong></mark></a>
 
-3\. <strong style="color:#0303ad">Maximize Consecutives Qs</strong>
+<strong style="color:#0303ad">3. Maximize Consecutives Qs</strong>
 
 > - <a style="color:#000000">Max Consecutive Ones III - LeetCode Q1004 (if you do this one, you can do the one below)</a>
 >
 > - <a style="color:#000000">Maximize the Confusion of an Exam - LeetCode Q2024</a>
 
-4\. <strong style="color:#0303ad">Search Rotated Array Qs</strong>
+<strong style="color:#0303ad">4. Search Rotated Array Qs</strong>
 
 > - <a style="color:#000000">Find Minimum in Rotated Sorted Array - LeetCode Q153
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Find Minimum in Rotated Sorted Array II - LeetCode Q154</strong></mark></a>
@@ -195,7 +195,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 > - <a style="color:#000000">Search in Rotated Sorted Array - LeetCode Q33</a>
 > - <a style="color:#000000">Search in Rotated Sorted Array II - LeetCode Q81</a>
 
-5\. <strong style="color:#0303ad">n*logm or (logm)*n where 'n' is for helper func or outer-loops</strong>
+<strong style="color:#0303ad">5. n*logm or (logm)*n where 'n' is for helper func or outer-loops</strong>
 
 > - <a style="color:#000000">Search a 2D Matrix - LeetCode Q74</a>
 > <br><a style="color:#0303ad">Exception: (logm * logn)</a>
