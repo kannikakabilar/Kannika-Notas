@@ -211,7 +211,7 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 > - <a style="color:#000000">Compare Strings by Frequency of the Smallest Characters - LeetCode Q1170</a>
 > <br><a style="color:#0303ad">(You don't have to code this Q, just try to solve it in your head)</a>
 >
-> <br><a style="color:#0303ad">Hint-Note: These can get tricky! Try to manually set your own 'high' value</a>
+> <br><a style="color:#0303ad">Hint-Note: These can get tricky! Try to manually set your own 'low' & 'high' value and check if current 'mid' value passes the given restriction</a>
 >
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Capacity to Ship Packages within D days - LeetCode Q1011</strong></mark></a>
 >
