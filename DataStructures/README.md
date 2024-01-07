@@ -1,8 +1,8 @@
-<h2 style="color:#5c91fa">Data Structures I</h2>
+<h2 style="color:#03c2fc">Data Structures I</h2>
 
 1\. &ensp; Differentiate DS Terms: Primitive vs. Non-Primitive ; Linear vs. Non-Linear ; Static vs. Dynamic
 
-<h3 style="color:#5c91fa">Arrays</h3>
+<h3 style="color:#03c2fc">Arrays</h3>
 2\. &ensp; Arrays: indexing = O(?) and everything else = O(?)
 
 3\. &ensp; LeetCode Q108
@@ -23,7 +23,7 @@
 
 9\. &ensp; Kadane's algo LeetCode Q287
 
-<h3 style="color:#5c91fa">Linked Lists</h3>
+<h3 style="color:#03c2fc">Linked Lists</h3>
 10\. &ensp; LinkedLists: inserting = O(?) and everything else = O(?)
 
 11\. &ensp; LeetCode Q21
@@ -44,7 +44,7 @@
 
 Extra \. &ensp; LeetCode Q725 (for help, check leetcode's given hint)
 
-<h3 style="color:#5c91fa">Hash Table</h3>
+<h3 style="color:#03c2fc">Hash Table</h3>
 
 19\. &ensp; Define Terms: **Hash Function** ; **Collision & Chaining** ; **Open-Addressing & Linear-Probing**
 
@@ -92,7 +92,7 @@ ii\. &ensp; Smallest Infinite Set - LeetCode Q2336
 
 iii\. &ensp; Tricky Hashset Q - LeetCode Q888
 
-<h3 style="color:#5c91fa">Two Pointers</h3>
+<h3 style="color:#03c2fc">Two Pointers</h3>
 
 24\. &ensp; Loop through all pairs of elements - LeetCode Q2824
 
@@ -112,7 +112,7 @@ iii\. &ensp; Tricky Hashset Q - LeetCode Q888
 
 29\. &ensp; Loop through all subsets of an array
 
-<h3 style="color:#5c91fa">Math</h3>
+<h3 style="color:#03c2fc">Math</h3>
 
 30\. &ensp; How would you handle big numbers in <span style="color:#fc6b03">Java</span> and how would you handle them in <span style="color:#fcc603">JavaScript</span> - LeetCode Q2117
 
