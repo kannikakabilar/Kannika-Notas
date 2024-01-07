@@ -214,10 +214,16 @@ Differentiate between **Big O** and **Little o** - what are constants c and N0 u
 > <br><a style="color:#0303ad">Hint-Note: These can get tricky! Try to manually set your own 'high' value</a>
 >
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Capacity to Ship Packages within D days - LeetCode Q1011</strong></mark></a>
+>
+> <br><a style="color:#0303ad">If you can do the above Q, you can do Q1283, Q875, Q1482</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Find the smallest Divisor given a Threshold - LeetCode Q1283</strong></mark></a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Koko Eating Bananas - LeetCode Q875</strong></mark></a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Minimum Number of Days to Make m Bouquets - LeetCode Q1482</strong></mark></a>
+> 
 > <br><a style="color:#0303ad">Hint-Note: Try to understand what range/values can be iterated w/ binary search</a>
 >
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Maximum Tastiness of Candy Basket - LeetCode Q2517</strong></mark></a>
->
-> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong>Minimum Number of Days to Make m Bouquets - LeetCode Q1482</strong></mark></a>
+
 
 ___________________________________________
