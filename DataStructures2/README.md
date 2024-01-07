@@ -118,7 +118,7 @@ In <span style="color:#fc6b03">Java</span>:
 > - <mark style="background-color:#fffbb8"><strong>LeetCode Q1373</strong></mark>
 > <br> Hint-Note: Perform a variation of post-order traversal to make it time efficient
 >
-> - <mark style="background-color:#fffbb8"><strong>LeetCode Q687</strong></mark>
+> - <mark style="background-color:#fffbb8"><strong>Longest Univalue Path - LeetCode Q687</strong></mark>
 >
 > - <mark style="background-color:#fffbb8"><strong>Distribute Coins in Binary Tree - LeetCode Q979</strong></mark>
 >
