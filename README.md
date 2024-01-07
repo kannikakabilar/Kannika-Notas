@@ -1,11 +1,11 @@
 
 <h2 style="color:#8096c2"><a href="Hardware_BitLogic/#bit-logic" style="color:#8096c2">1. &ensp; Bit Logic</a></h2>
-<h2 style="color:#5c91fa"><a href="DataStructures/#data-structures-i" style="color:#5c91fa">2. &ensp; Data Structures I</a></h2>
-<h3 style="color:#5c91fa">&ensp; <a href="DataStructures/#arrays" style="color:#5c91fa">a. &ensp; Arrays</a></h3>
-<h3 style="color:#5c91fa">&ensp; <a href="DataStructures/#linked-lists" style="color:#5c91fa">b. &ensp; Linked Lists</a></h3>
-<h3 style="color:#5c91fa">&ensp; <a href="DataStructures/#hash-table" style="color:#5c91fa">c. &ensp; Hash Table</a></h3>
-<h3 style="color:#5c91fa">&ensp; <a href="DataStructures/#two-pointers" style="color:#5c91fa">d. &ensp; Two Pointers</a></h3>
-<h3 style="color:#5c91fa">&ensp; <a href="DataStructures/#math" style="color:#5c91fa">e. &ensp; Math</a></h3>
+<h2 style="color:#03c2fc"><a href="DataStructures/#data-structures-i" style="color:#03c2fc">2. &ensp; Data Structures I</a></h2>
+<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#arrays" style="color:#03c2fc">a. &ensp; Arrays</a></h3>
+<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#linked-lists" style="color:#03c2fc">b. &ensp; Linked Lists</a></h3>
+<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#hash-table" style="color:#03c2fc">c. &ensp; Hash Table</a></h3>
+<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#two-pointers" style="color:#03c2fc">d. &ensp; Two Pointers</a></h3>
+<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#math" style="color:#03c2fc">e. &ensp; Math</a></h3>
 <h2 style="color:#6eb5d4"><a href="DataStructures2/#data-structures-ii" style="color:#6eb5d4">3. &ensp; Data Structures II</a></h2>
 <h3 style="color:#6eb5d4">&ensp; <a href="DataStructures2/#stacks" style="color:#6eb5d4">a. &ensp; Stacks</a></h3>
 <h3 style="color:#6eb5d4">&ensp; <a href="DataStructures2/#queues" style="color:#6eb5d4">b. &ensp; Queues</a></h3>
