@@ -20,8 +20,8 @@
 <h2 style="color:#3b57b3"><a href="Algorithms2/#algorithms-ii" style="color:#3b57b3">5. &ensp; Algorithms II</a></h2>
 <h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#sorting" style="color:#3b57b3">a. &ensp; Sorting</a></h3>
 <h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#dynamic-programming" style="color:#3b57b3">b. &ensp; Dynamic Programming I</a></h3>
-<h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#dynamic-programming" style="color:#3b57b3">c. &ensp; Dynamic Programming II</a></h3>
-<h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#dynamic-programming" style="color:#3b57b3">d. &ensp; Greedy</a></h3>
+<h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#dynamic-programming-ii" style="color:#3b57b3">c. &ensp; Dynamic Programming II</a></h3>
+<h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#greedy" style="color:#3b57b3">d. &ensp; Greedy</a></h3>
 
 [Checkpoint](https://kannikakabilar.github.io/Kannika-Notas/Checkpoint/)
 
