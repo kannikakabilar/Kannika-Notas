@@ -166,3 +166,43 @@
 >
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Regex Matching, Wildcard Matching - LeetCode Q10, Q44</strong></mark></a>
 
+<br><br>
+
+<h3 style="color:#0303ad">Greedy</h3>
+
+<strong style="color:#0303ad">1. Fractional Knapsack-like Q</strong>
+
+> - <a style="color:#000000">Max. Units on a Truck - LeetCode Q1710</a>
+
+<strong style="color:#0303ad">2. CoinChange-like Qs</strong>
+
+> - <a style="color:#000000">Min. # of Ops to Convert Time - LeetCode Q2224</a>
+>
+> - <a style="color:#000000">Find the Min. # of Fibonacci Numbers whose sum is K - LeetCode Q1414</a>
+
+<strong style="color:#0303ad">3. Greedy + HashMap Qs</strong>
+
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Partition Labels - LeetCode Q763</strong></mark></a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Task Scheduler - LeetCode Q621</strong></mark></a>
+
+<strong style="color:#0303ad">4. Greedy w/ 2D Arrays</strong>
+
+> - <a style="color:#000000">Max Increase to Keep City Skyline - LeetCode Q807</a>
+>
+> - <a style="color:#000000">Find Valid Matrix Given Row and Column Sums - LeetCode Q1605</a>
+>
+> - <a style="color:#000000">Largest Submatrix w/ Rearrangements - LeetCode Q1727</a>
+
+<strong style="color:#0303ad">4. Greedy w/ 2D Arrays</strong>
+
+> <a style="color:#0303ad">Greedy Qs are generally intuitive - you either get it or you don't. There is usually no specific patterns to look for. Try to solve them by looking at the sample test cases</a>
+>
+> - <a style="color:#000000">Gas Station - LeetCode Q134</a>
+>
+> - <a style="color:#000000">Hand of Straights - LeetCode Q846</a>
+>
+> - <a style="color:#000000">Two City Scheduling - LeetCode Q1029</a>
+<br> Need to know how to use Collections.sort()
+>
+> - <a style="color:#000000">Max element after Decreasing and Rearranging - LeetCode Q1846</a>
