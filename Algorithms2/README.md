@@ -206,3 +206,7 @@
 <br> Need to know how to use Collections.sort()
 >
 > - <a style="color:#000000">Max element after Decreasing and Rearranging - LeetCode Q1846</a>
+
+<!--
+Given a 2-D array jobs where jobs[i] = [startTime_i, finishTime_i, profit_i] is the ith job containing an array of its respective info and integer t that indicates total time given. Return a 1-D array 'res' of size t indicating which job is being executed at each time slot. res[i] = 2 means it is executing jobs[2] and res[3] = -1 means it is not executing anything. The answer must execute a sequence of jobs with the highest profit where only 1 job can executed at each time slot and every started job must be completed in the given time slot.
+-->
