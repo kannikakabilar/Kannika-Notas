@@ -1,11 +1,11 @@
 
 <h2 style="color:#8096c2"><a href="Hardware_BitLogic/#bit-logic" style="color:#8096c2">1. &ensp; Bit Logic</a></h2>
-<h2 style="color:#03c2fc"><a href="DataStructures/#data-structures-i" style="color:#03c2fc">2. &ensp; Data Structures I</a></h2>
-<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#arrays" style="color:#03c2fc">a. &ensp; Arrays</a></h3>
-<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#linked-lists" style="color:#03c2fc">b. &ensp; Linked Lists</a></h3>
-<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#hash-table" style="color:#03c2fc">c. &ensp; Hash Table</a></h3>
-<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#two-pointers" style="color:#03c2fc">d. &ensp; Two Pointers</a></h3>
-<h3 style="color:#03c2fc">&ensp; <a href="DataStructures/#math" style="color:#03c2fc">e. &ensp; Math</a></h3>
+<h2 style="color:#0303ad"><a href="DataStructures/#data-structures-i" style="color:#0303ad">2. &ensp; Data Structures I</a></h2>
+<h3 style="color:#0303ad">&ensp; <a href="DataStructures/#arrays" style="color:#0303ad">a. &ensp; Arrays</a></h3>
+<h3 style="color:#0303ad">&ensp; <a href="DataStructures/#linked-lists" style="color:#0303ad">b. &ensp; Linked Lists</a></h3>
+<h3 style="color:#0303ad">&ensp; <a href="DataStructures/#hash-table" style="color:#0303ad">c. &ensp; Hash Table</a></h3>
+<h3 style="color:#0303ad">&ensp; <a href="DataStructures/#two-pointers" style="color:#0303ad">d. &ensp; Two Pointers</a></h3>
+<h3 style="color:#0303ad">&ensp; <a href="DataStructures/#math" style="color:#0303ad">e. &ensp; Math</a></h3>
 <h2 style="color:#1669f0"><a href="DataStructures2/#data-structures-ii" style="color:#1669f0">3. &ensp; Data Structures II</a></h2>
 <h3 style="color:#1669f0">&ensp; <a href="DataStructures2/#stacks" style="color:#1669f0">a. &ensp; Stacks</a></h3>
 <h3 style="color:#1669f0">&ensp; <a href="DataStructures2/#queues" style="color:#1669f0">b. &ensp; Queues</a></h3>
@@ -17,11 +17,11 @@
 <h3 style="color:#0303ad">&ensp; <a href="Algorithms/#breadth-first-search" style="color:#0303ad">b. &ensp; Breadth-First Search</a></h3>
 <h3 style="color:#0303ad">&ensp; <a href="Algorithms/#recursion-and-divide-conquer" style="color:#0303ad">c. &ensp; Recursion and Divide-&-Conquer</a></h3>
 <h3 style="color:#0303ad">&ensp; <a href="Algorithms/#binary-search" style="color:#0303ad">d. &ensp; Binary Search</a></h3>
-<h2 style="color:#3b57b3"><a href="Algorithms2/#algorithms-ii" style="color:#3b57b3">5. &ensp; Algorithms II</a></h2>
-<h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#sorting" style="color:#3b57b3">a. &ensp; Sorting</a></h3>
-<h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#dynamic-programming" style="color:#3b57b3">b. &ensp; Dynamic Programming I</a></h3>
-<h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#dynamic-programming-ii" style="color:#3b57b3">c. &ensp; Dynamic Programming II</a></h3>
-<h3 style="color:#3b57b3">&ensp; <a href="Algorithms2/#greedy" style="color:#3b57b3">d. &ensp; Greedy</a></h3>
+<h2 style="color:#1669f0"><a href="Algorithms2/#algorithms-ii" style="color:#1669f0">5. &ensp; Algorithms II</a></h2>
+<h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#sorting" style="color:#1669f0">a. &ensp; Sorting</a></h3>
+<h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#dynamic-programming" style="color:#1669f0">b. &ensp; Dynamic Programming I</a></h3>
+<h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#dynamic-programming-ii" style="color:#1669f0">c. &ensp; Dynamic Programming II</a></h3>
+<h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#greedy" style="color:#1669f0">d. &ensp; Greedy</a></h3>
 
 [Checkpoint](https://kannikakabilar.github.io/Kannika-Notas/Checkpoint/)
 
