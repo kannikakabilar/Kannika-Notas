@@ -1,8 +1,8 @@
-<h2 style="color:#3b57b3">Algorithms II</h2>
+<h2 style="color:#0303ad">Algorithms II</h2>
 
-<h3 style="color:#3b57b3">Sorting</h3>
+<h3 style="color:#0303ad">Sorting</h3>
 
-<strong style="color:#3b57b3">1. Basics in Sorting</strong>
+<strong style="color:#0303ad">1. Basics in Sorting</strong>
 
 > - <a style="color:#000000">How do you sort int \[\] vs List\<Integer\> in <span style="color:#fc6b03">Java</span>?</a>
 >
@@ -25,102 +25,104 @@
 
 > - <a style="color:#000000">Good practice Qs for sorting - LeetCode Q1887, LeetCode Q49</a>
 
-<strong style="color:#3b57b3">2. Topological Sort = DFS + HashMaps (sometimes BFS)</strong>
+<br><br>
 
-<br><a style="color:#0303ad">Note: Try drawing the graph for some of these Q, it might help)
-<br> **Rule of Thumb:** Convert 2-D array or graph/edges to hashmap. Have a recursive dfs function. An additional HashMap or HashSets are used to keep track of 'visited' nodes/values.</a>
+<strong style="color:#0303ad">2. Topological Sort = DFS + HashMaps (sometimes BFS)</strong>
 
-8\. Loud and Rich - LeetCode Q851
+<br><a style="color:#0303ad"> **Rule of Thumb:** Convert 2-D array or graph/edges to hashmap. Have a recursive dfs function. An additional HashMap or HashSets are used to keep track of 'visited' nodes/values.
+<br> **Note:** Try drawing the graph for some of these Q, it might help</a>
 
-9\. Course Schedule series - LeetCode Q207, LeetCode Q210, LeetCode Q1462 (good one)
+> - <a style="color:#000000">Loud and Rich - LeetCode Q851</a>
+>
+> - <a style="color:#000000">Course Schedule series - LeetCode Q207, LeetCode Q210, LeetCode Q1462 (good one)</a>
+>
+> - <a style="color:#000000">Find Eventual Safe States - LeetCode Q802</a>
+>
+> - <a style="color:#000000">Find All Possible Recipes from Given Supplies - LeetCode Q2115</a>
+>
+> - <a style="color:#000000">Minimum Height Trees - LeetCode Q310 (via BFS ~ Need to study but doesn't seem like an important Topo Sort Q)</a>
+>
+> - <a style="color:#000000">Longest Cycle in a Graph - LeetCode Q2360 **(If you can do this, you can do all above Topo Sort Qs)** </a>
 
-10\. Find Eventual Safe States - LeetCode Q802
+<strong style="color:#0303ad">3. Merge Sort</strong>
 
-11\. Find All Possible Recipes from Given Supplies - LeetCode Q2115
+> - <a style="color:#000000">Merge k Sorted Lists - LeetCode Q23</a>
 
-12\. Minimum Height Trees - LeetCode Q310 (via BFS ~ Need to study but doesn't seem like an important Topo Sort Q)
+<strong style="color:#0303ad">4. Other Sorting Algorithms to study</strong>
 
-13\. Longest Cycle in a Graph - LeetCode Q2360 **(If you can do this, you can do all above Topo Sort Qs)**
+> - <a style="color:#000000">Quick Sort, Heap Sort</a>
+> - <a style="color:#000000">Bubble Sort, Insertion Sort, Selection Sort</a>
 
-<h4 style="color:#3b57b3">Merge Sort</h4>
+<br><br>
+<h3 style="color:#0303ad">Dynamic Programming I</h3>
 
-14\. Merge k Sorted Lists - LeetCode Q23
+<strong style="color:#0303ad">1. Fibonacci Style DP Qs - Use variables to store values of previous state</strong>
 
-<h4 style="color:#3b57b3">Other Sorting Algorithms to study</h4>
+> - <a style="color:#000000">Climbing Stairs - LeetCode Q70</a>
+>
+> - <a style="color:#000000">Flip String to Monotone Increasing - LeetCode Q926</a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Max Product Subarray - LeetCode Q152</strong></mark></a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Count Sorted Vowel Strings - LeetCode Q1641</strong></mark></a>
 
-- Quick Sort, Heap Sort
-- Bubble Sort, Insertion Sort, Selection Sort
+<strong style="color:#0303ad">2. Iterate through the given array to solve the bigger problem</strong>
 
+> - <a style="color:#000000">Minimum Time to Make Rope Colorful - LeetCode Q1578</a>
+>
+> - <a style="color:#000000">Arithmetic Slices - LeetCode Q413</a>
+>
+> - <a style="color:#000000">Minimum Cost of Climbing Stairs - LeetCode Q746</a>
+>
+> - <a style="color:#000000">House Robber - LeetCode Q198</a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Count Substrings that differ by One Character - LeetCode Q1638</strong></mark></a>
 
-<h3 style="color:#3b57b3">Dynamic Programming I</h3>
+<strong style="color:#0303ad">3. Following Qs can be solved with 1-D dp array and then can be optimized into just using variables</strong>
 
-<p style="color:#3b57b3">Fibonacci Style DP Qs - Use variables to store values of previous state</p>
+> - <a style="color:#000000">Decode Ways - LeetCode Q91</a>
+>
+> - <a style="color:#000000">Count Number of Teams - LeetCode Q1395</a>
+<br> Use two 1-D arrays => n^2
+>
+> - <a style="color:#000000">Best Time to Buy and Sell Stock with Cooldown - LeetCode Q309</a>
 
-1\. Climbing Stairs - LeetCode Q70
+<strong style="color:#0303ad">4. Questions that are better done with a Bottom-Up approach using a 1-D dp array</strong>
 
-2\. Flip String to Monotone Increasing - LeetCode Q926
+> - <a style="color:#000000">Coin Change, Perfect Squares - LeetCode Q322, Q279</a>
+<br>You can do one or the other
+>
+> - <a style="color:#000000">Longest Increasing Subsequence - LeetCode Q300</a>
+>
+> - <a style="color:#000000">Minimum Cost for Tickets - LeetCode Q983</a>
+>
+> - <a style="color:#000000">Number of Good Ways to Split a String - LeetCode Q1525</a>
+>
+> - <a style="color:#000000">Word Break - LeetCode Q139</a>
+>
+> - <a style="color:#000000">Fair Distribution of Cookies - LeetCode Q2305</a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Partition Array for Max Sum - LeetCode Q1043</strong></mark></a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Partition Equal Subset Sum</strong></mark></a>
 
-3\. <strong style="color:#fc425b">Max Product Subarray - LeetCode Q152</strong>
-
-4\. <strong style="color:#fc425b">Count Sorted Vowel Strings - LeetCode Q1641</strong>
-
-<p style="color:#3b57b3">Iterate through the given array to solve the bigger problem</p>
-
-5\. Minimum Time to Make Rope Colorful - LeetCode Q1578
-
-6\. Arithmetic Slices - LeetCode Q413
-
-7\. Minimum Cost of Climbing Stairs - LeetCode Q746
-
-8\. House Robber - LeetCode Q198
-
-9\. <strong style="color:#fc425b">Count Substrings that differ by One Character - LeetCode Q1638</strong>
-
-<p style="color:#3b57b3">Following Qs can be solved with 1-D dp array and then can be optimized into just using variables</p>
-
-10\. Decode Ways - LeetCode Q91
-
-11\. Count Number of Teams - LeetCode Q1395 
-<br><a>Use two 1-D arrays => n^2</a>
-
-12\. Best Time to Buy and Sell Stock with Cooldown - LeetCode Q309
-
-<p style="color:#3b57b3">Questions that are better done with a Bottom-Up approach using a 1-D dp array</p>
-
-13\. Coin Change, Perfect Squares - LeetCode Q322, Q279
-<br><a>You can do one or the other</a>
-
-14\. Longest Increasing Subsequence - LeetCode Q300
-
-15\. Minimum Cost for Tickets - LeetCode Q983
-
-16\. Number of Good Ways to Split a String - LeetCode Q1525
-
-17\. Word Break - LeetCode Q139
-
-18\. Fair Distribution of Cookies - LeetCode Q2305
-
-19\. <strong style="color:#fc425b">Partition Array for Max Sum - LeetCode Q1043</strong>
-
-20\. <strong style="color:#fc425b">Partition Equal Subset Sum</strong>
-
-<p style="color:#3b57b3">Palindromic Qs</p>
+<p style="color:#0303ad">Palindromic Qs</p>
 
 21\. Longest Palindrome Substring - LeetCode Q5
 
 22\. Palindromic Substrings - LeetCode Q647
 
-<h3 style="color:#3b57b3">Dynamic Programming II</h3>
+<h3 style="color:#0303ad">Dynamic Programming II</h3>
 
-<p style="color:#3b57b3">Self-Note: For all of the 2-D DP Qs, draw out the choices in a tree or 2-D grid and it'll be easier</p>
+<p style="color:#0303ad">Self-Note: For all of the 2-D DP Qs, draw out the choices in a tree or 2-D grid and it'll be easier</p>
 
-<p style="color:#3b57b3">Questions that are done with a 2-D dp array but can be optimized into just a 1-D dp array</p>
+<p style="color:#0303ad">Questions that are done with a 2-D dp array but can be optimized into just a 1-D dp array</p>
 
 1\. Unique Paths - LeetCode Q62
 
 2\. Coin Change II - LeetCode Q518
 
-<p style="color:#3b57b3">Grid dp Qs can *sometimes be optimized into 1-D dp array</p>
+<p style="color:#0303ad">Grid dp Qs can *sometimes be optimized into 1-D dp array</p>
 
 3\. Minimum Falling Path Sum - LeetCode Q931
 <br><strong style="color:#fc425b">Harder ver. Minimum Falling Path Sum II - LeetCode Q1289</strong>
@@ -129,11 +131,11 @@
 
 5\. Minimum Path Sum - LeetCode Q64 + try Q174
 
-<p style="color:#3b57b3">A typical 2-D dp Q</p>
+<p style="color:#0303ad">A typical 2-D dp Q</p>
 
 6\. Interleaving String - LeetCode Q97
 
-<p style="color:#3b57b3">Subsequence type of Qs are better done with Bottom-Up (Iterating from the end of the string to start)</p>
+<p style="color:#0303ad">Subsequence type of Qs are better done with Bottom-Up (Iterating from the end of the string to start)</p>
 
 7\. Longest Common Subsequence - LeetCode Q1143 (and others that are similar Q712, Q516)
 
@@ -143,16 +145,16 @@
 
 10\. Edit Distance - LeetCode Q72
 
-<p style="color:#3b57b3">Memoization using hashmaps and strings as keys for Multi-D dp Qs</p>
+<p style="color:#0303ad">Memoization using hashmaps and strings as keys for Multi-D dp Qs</p>
 
 11\. Target Sum - LeetCode Q494
 
 12\. <mark style="background-color:#bbffa1">Number of Dice Rolls with Target Sum - LeetCode Q1155</mark>
 
-<p style="color:#3b57b3">DFS + dp Qs</p>
+<p style="color:#0303ad">DFS + dp Qs</p>
 
 13\. Longest Increasing Path in a Matrix - LeetCode Q329 (and others that are similar Q2328, try Q2713)
-<br><a style="color:#3b57b3">Kind of like <strong>memoization</strong> - solve it like how you would using recursion, but store each result in dp\[\]\[\] or hashmap</a>
+<br><a style="color:#0303ad">Kind of like <strong>memoization</strong> - solve it like how you would using recursion, but store each result in dp\[\]\[\] or hashmap</a>
 
 14\. <mark style="background-color:#bbffa1"><strong>Solving Questions with Brainpower - LeetCode Q2140</strong></mark>
 <br><a>This Q is helpful for improving your understanding</a>
