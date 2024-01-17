@@ -23,7 +23,7 @@
 <h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#dynamic-programming-ii" style="color:#1669f0">c. &ensp; Dynamic Programming II</a></h3>
 <h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#greedy" style="color:#1669f0">d. &ensp; Greedy</a></h3>
 
-[Checkpoint](https://kannikakabilar.github.io/Kannika-Notas/Checkpoint/)
+<br><br>
 
 [Java](https://kannikakabilar.github.io/Kannika-Notas/Java/)
 
