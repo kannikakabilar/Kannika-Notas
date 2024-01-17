@@ -25,13 +25,13 @@
 
 > - <a style="color:#000000">Good practice Qs for sorting - LeetCode Q1887, LeetCode Q49</a>
 
-<br><br>
+<br>
 
 <strong style="color:#0303ad">2. Topological Sort = DFS + HashMaps (sometimes BFS)</strong>
 
-<br><a style="color:#0303ad"> **Rule of Thumb:** Convert 2-D array or graph/edges to hashmap. Have a recursive dfs function. An additional HashMap or HashSets are used to keep track of 'visited' nodes/values.
-<br> **Note:** Try drawing the graph for some of these Q, it might help</a>
-
+> <a style="color:#0303ad"> **Rule of Thumb:** Convert 2-D array or graph/edges to hashmap. Have a recursive dfs function. An additional HashMap or HashSets are used to keep track of 'visited' nodes/values.
+> <br> **Note:** Try drawing the graph for some of these Q, it might help</a>
+>
 > - <a style="color:#000000">Loud and Rich - LeetCode Q851</a>
 >
 > - <a style="color:#000000">Course Schedule series - LeetCode Q207, LeetCode Q210, LeetCode Q1462 (good one)</a>
@@ -106,60 +106,63 @@
 >
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Partition Equal Subset Sum</strong></mark></a>
 
-<p style="color:#0303ad">Palindromic Qs</p>
+<strong style="color:#0303ad">5. Palindromic Qs</strong>
 
-21\. Longest Palindrome Substring - LeetCode Q5
+> - <a style="color:#000000">Longest Palindrome Substring - LeetCode Q5</a>
+>
+> - <a style="color:#000000">Palindromic Substrings - LeetCode Q647</a>
 
-22\. Palindromic Substrings - LeetCode Q647
+<br><br>
 
 <h3 style="color:#0303ad">Dynamic Programming II</h3>
 
-<p style="color:#0303ad">Self-Note: For all of the 2-D DP Qs, draw out the choices in a tree or 2-D grid and it'll be easier</p>
+<strong style="color:#0303ad">1. Questions that are done with a 2-D dp array but can be optimized into just a 1-D dp array</strong>
 
-<p style="color:#0303ad">Questions that are done with a 2-D dp array but can be optimized into just a 1-D dp array</p>
+> <a style="color:#0303ad">Self-Note: For all of the 2-D DP Qs, draw out the choices in a tree or 2-D grid and it'll be easier</a>
+>
+> - <a style="color:#000000">Unique Paths - LeetCode Q62</a>
+>
+> - <a style="color:#000000">Coin Change II - LeetCode Q518</a>
 
-1\. Unique Paths - LeetCode Q62
+<strong style="color:#0303ad">2. Grid dp Qs can *sometimes be optimized into 1-D dp array</strong>
 
-2\. Coin Change II - LeetCode Q518
+> - <a style="color:#000000">Minimum Falling Path Sum - LeetCode Q931</a>
+> 
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Harder ver. Minimum Falling Path Sum II - LeetCode Q1289</strong></mark></a>
+>
+> - <a style="color:#000000">Minimum Path Cost in a Grid - LeetCode Q2304 + try Q2684</a>
+>
+> - <a style="color:#000000">Minimum Path Sum - LeetCode Q64 + try Q174</a>
 
-<p style="color:#0303ad">Grid dp Qs can *sometimes be optimized into 1-D dp array</p>
+<strong style="color:#0303ad">3. A typical 2-D dp Q</strong>
 
-3\. Minimum Falling Path Sum - LeetCode Q931
-<br><strong style="color:#fc425b">Harder ver. Minimum Falling Path Sum II - LeetCode Q1289</strong>
+> - <a style="color:#000000">Interleaving String - LeetCode Q97</a>
 
-4\. Minimum Path Cost in a Grid - LeetCode Q2304 + try Q2684
+<strong style="color:#0303ad">4. Subsequence type of Qs are better done with Bottom-Up (Iterating from the end of the string to start)</strong>
 
-5\. Minimum Path Sum - LeetCode Q64 + try Q174
+> - <a style="color:#000000">Longest Common Subsequence - LeetCode Q1143 (and others that are similar Q712, Q516)</a>
+>
+> - <a style="color:#000000">Distinct Subsequence - LeetCode Q115 + try Q1987</a>
+>
+> - <a style="color:#000000">Delete Operations for Two Strings - LeetCode Q583</a>
+>
+> - <a style="color:#000000">Edit Distance - LeetCode Q72</a>
 
-<p style="color:#0303ad">A typical 2-D dp Q</p>
+<strong style="color:#0303ad">5. Memoization using hashmaps and strings as keys for Multi-D dp Qs</strong>
 
-6\. Interleaving String - LeetCode Q97
+> - <a style="color:#000000">Target Sum - LeetCode Q494</a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Number of Dice Rolls with Target Sum - LeetCode Q1155</strong></mark></a>
 
-<p style="color:#0303ad">Subsequence type of Qs are better done with Bottom-Up (Iterating from the end of the string to start)</p>
+<strong style="color:#0303ad">6. DFS + dp Qs</strong>
 
-7\. Longest Common Subsequence - LeetCode Q1143 (and others that are similar Q712, Q516)
-
-8\. Distinct Subsequence - LeetCode Q115 + try Q1987
-
-9\. Delete Operations for Two Strings - LeetCode Q583
-
-10\. Edit Distance - LeetCode Q72
-
-<p style="color:#0303ad">Memoization using hashmaps and strings as keys for Multi-D dp Qs</p>
-
-11\. Target Sum - LeetCode Q494
-
-12\. <mark style="background-color:#bbffa1">Number of Dice Rolls with Target Sum - LeetCode Q1155</mark>
-
-<p style="color:#0303ad">DFS + dp Qs</p>
-
-13\. Longest Increasing Path in a Matrix - LeetCode Q329 (and others that are similar Q2328, try Q2713)
+> - <a style="color:#000000">Longest Increasing Path in a Matrix - LeetCode Q329 (and others that are similar Q2328, try Q2713)</a>
 <br><a style="color:#0303ad">Kind of like <strong>memoization</strong> - solve it like how you would using recursion, but store each result in dp\[\]\[\] or hashmap</a>
-
-14\. <mark style="background-color:#bbffa1"><strong>Solving Questions with Brainpower - LeetCode Q2140</strong></mark>
-<br><a>This Q is helpful for improving your understanding</a>
-
-15\. <mark style="background-color:#fffaa1"><strong>Burst Balloons - LeetCode Q312</strong></mark>
-
-16\. <mark style="background-color:#fffbb8">Regex Matching, Wildcard Matching - LeetCode Q10, Q44
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Solving Questions with Brainpower - LeetCode Q2140</strong></mark></a>
+<br> This Q is helpful for improving your understanding
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Burst Balloons - LeetCode Q312</strong></mark></a>
+>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Regex Matching, Wildcard Matching - LeetCode Q10, Q44</strong></mark></a>
 
