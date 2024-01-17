@@ -2,31 +2,33 @@
 
 <h3 style="color:#3b57b3">Sorting</h3>
 
-1\. How do you sort int \[\] vs List\<Integer\> in Java?
+<strong style="color:#3b57b3">1. Basics in Sorting</strong>
 
-2\. <mark style="background-color:#efe3ff"><strong>How do you create a comparator? - LeetCode Q1636</strong></mark>
+> - <a style="color:#000000">How do you sort int \[\] vs List\<Integer\> in <span style="color:#fc6b03">Java</span>?</a>
+>
+> - <a style="color:#000000">How do you create a comparator? - LeetCode Q1636</a>
 <br>**Note:** Comparator only works with ArrayList. 
-
-3\. How can you check anagrams w/o hashmaps? - LeetCode Q2273
+>
+> - <a style="color:#000000">How can you check anagrams w/o hashmaps? - LeetCode Q2273</a>
 <br>Hint-Note: char array => sort => toString => compare strings
-
-4\. Easy Q - LeetCode Q2037
+>
+> - <a style="color:#000000">Easy Q - LeetCode Q2037</a>
 <br> Some-Extra: LeetCode Q1200
-
-5\. How do you get the largest 2 integer of an array in O(n)? - LeetCode Q628
+>
+> - <a style="color:#000000">How do you get the largest 2 integer of an array in O(n)? - LeetCode Q628</a>
 <br>Hint-Note: Get product of 3 largest ints and compare it with product of 2 smallest int and largest int
-
-6\. LeetCode Q1630 - &ensp; In <span style="color:#fc6b03">Java</span>:
+>
+> - <a style="color:#000000">LeetCode Q1630 - &ensp; In <span style="color:#fc6b03">Java</span>:</a>
 
     - How do you get subarray of int[] in Java?
     - How do you check if 2 int[] arrays are equal?
 
-7\. Good practice Qs for sorting - LeetCode Q1887, LeetCode Q49
+> - <a style="color:#000000">Good practice Qs for sorting - LeetCode Q1887, LeetCode Q49</a>
 
-<h4 style="color:#3b57b3">Topological Sort = DFS + HashMaps (sometimes BFS)</h4>
+<strong style="color:#3b57b3">2. Topological Sort = DFS + HashMaps (sometimes BFS)</strong>
 
-(Try drawing the graph for some of these Q, it might help)
-<br> **Rule of Thumb:** Convert 2-D array or graph/edges to hashmap. Have a recursive dfs function. An additional HashMap or HashSets are used to keep track of 'visited' nodes/values.
+<br><a style="color:#0303ad">Note: Try drawing the graph for some of these Q, it might help)
+<br> **Rule of Thumb:** Convert 2-D array or graph/edges to hashmap. Have a recursive dfs function. An additional HashMap or HashSets are used to keep track of 'visited' nodes/values.</a>
 
 8\. Loud and Rich - LeetCode Q851
 
