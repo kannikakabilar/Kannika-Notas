@@ -194,7 +194,7 @@
 >
 > - <a style="color:#000000">Largest Submatrix w/ Rearrangements - LeetCode Q1727</a>
 
-<strong style="color:#0303ad">4. Greedy w/ 2D Arrays</strong>
+<strong style="color:#0303ad">5. Intuitive Greedy Qs</strong>
 
 > <a style="color:#0303ad">Greedy Qs are generally intuitive - you either get it or you don't. There is usually no specific patterns to look for. Try to solve them by looking at the sample test cases</a>
 >
