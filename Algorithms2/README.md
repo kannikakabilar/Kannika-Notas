@@ -209,6 +209,7 @@
 
 <strong style="color:#1669f0">6. Classic Greedy</strong>
 
-> - <a style="color:#000000" href="https://kannikalibreta.weebly.com/algorithms-ii.html#JobSequencing">Job Sequencing</a>
+> - <a style="color:#1669f0" href="https://kannikalibreta.weebly.com/algorithms-ii.html#JobSequencing">Job Sequencing</a>
 >
-> 
+> - <a style="color:#1669f0" href="https://kannikalibreta.weebly.com/algorithms-ii.html#ActivitySelection">Activity Selection</a>
+>
