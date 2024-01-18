@@ -213,3 +213,4 @@
 >
 > - <a style="color:#1669f0" href="https://kannikalibreta.weebly.com/algorithms-ii.html#ActivitySelection">Activity Selection</a>
 >
+> - <a style="color:#1669f0" href="https://kannikalibreta.weebly.com/algorithms-ii.html#VertexCover">Vertex Cover</a>
