@@ -220,3 +220,4 @@
 <br> A Typical Dijkstra problem but it just has a tiny twist to test your understanding
 >
 > - <a style="color:#1669f0" href="https://kannikalibreta.weebly.com/algorithms-ii.html#Prim">Prim's Algo to Find MST</a>
+> - <a style="color:#000000">Min Cost to Connect All Points - LeetCode Q1584</a>
