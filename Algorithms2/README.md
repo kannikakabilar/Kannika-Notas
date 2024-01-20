@@ -218,3 +218,5 @@
 > - <a style="color:#1669f0" href="https://kannikalibreta.weebly.com/algorithms-ii.html#Dijkstra">Dijkstra</a>
 > - <a style="color:#000000">Design Graph with Shortest Path - LeetCode Q2642</a>
 <br> A Typical Dijkstra problem but it just has a tiny twist to test your understanding
+>
+> - <a style="color:#1669f0" href="https://kannikalibreta.weebly.com/algorithms-ii.html#Prim">Prim's Algo to Find MST</a>
