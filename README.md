@@ -1,6 +1,5 @@
 
-<h2 style="color:#1669f0">&#10687;&ensp; Languages Trivia</h2>
-<h3 style="color:#000000">&ensp; ○<a href="Java" style="color:#fc6b03">&ensp; Java</a></h2>
+<h2 style="color:#000000">&#10687;<a href="Java" style="color:#fc6b03">&ensp; Java</a></h2>
 
 <br>
 
@@ -44,6 +43,8 @@
 [Data Structures 2](https://kannikakabilar.github.io/Kannika-Notas/DataStructures2/)
 
 [Algorithms](https://kannikakabilar.github.io/Kannika-Notas/Algorithms/)
+
+<h3 style="color:#000000">&ensp; ○<a href="Java" style="color:#fc6b03">&ensp; Java</a></h3>
 -->
 
 
