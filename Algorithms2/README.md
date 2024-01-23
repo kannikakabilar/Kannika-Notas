@@ -47,6 +47,8 @@
 <strong style="color:#1669f0">3. Merge Sort</strong>
 
 > - <a style="color:#000000">Merge k Sorted Lists - LeetCode Q23</a>
+>
+> - <a style="color:#000000">Interval List Intersections - LeetCode Q986</a>
 
 <strong style="color:#1669f0">4. Other Sorting Algorithms to study</strong>
 
