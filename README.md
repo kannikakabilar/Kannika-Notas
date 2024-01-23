@@ -1,4 +1,9 @@
 
+<h2 style="color:#1669f0">&#10687;&ensp; Languages Trivia</h2>
+<h3 style="color:#000000">&ensp; ○<a href="Java" style="color:#fc6b03">&ensp; Java</a></h2>
+
+<br>
+
 <h2 style="color:#8096c2"><a href="Hardware_BitLogic/#bit-logic" style="color:#8096c2">1. &ensp; Bit Logic</a></h2>
 <h2 style="color:#0303ad"><a href="DataStructures/#data-structures-i" style="color:#0303ad">2. &ensp; Data Structures I</a></h2>
 <h3 style="color:#0303ad">&ensp; <a href="DataStructures/#arrays" style="color:#0303ad">a. &ensp; Arrays</a></h3>
@@ -25,15 +30,13 @@
 
 <br><br>
 
-[Java](https://kannikakabilar.github.io/Kannika-Notas/Java/)
-
 [JavaScript](https://kannikakabilar.github.io/Kannika-Notas/JavaScript/)
 
 [C#](https://kannikakabilar.github.io/Kannika-Notas/C%23/)
 
 <!--
 # [Kannika DSA Checkpoint Notes](https://kannikakabilar.github.io/Kannika-Notas/)
-
+#fc6b03
 [Hardware_BitLogic](https://kannikakabilar.github.io/Kannika-Notas/Hardware_BitLogic/)
 
 [Data Structures](https://kannikakabilar.github.io/Kannika-Notas/DataStructures/)
