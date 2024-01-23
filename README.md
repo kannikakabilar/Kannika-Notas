@@ -1,5 +1,5 @@
 
-<h2 style="color:#000000">&#10687;<a href="Java" style="color:#fc6b03">&ensp; Java</a></h2>
+<h2 style="color:#000000">&#10687; &ensp;<a href="Java" style="color:#fc6b03">Java</a></h2>
 
 <br>
 
