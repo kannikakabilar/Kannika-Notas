@@ -10,6 +10,21 @@
 >
 > - <a style="color:#000000">What method needs to be in a Java program in order to execute?</a>
 
+<h3 style="color:#fa6339">Varaibles</h3>
+
+> - <a style="color:#000000">Initialize a float variable with value: 19.989 and print upto 2 decimal digits using formatting</a>
+>
+> - <a style="color:#000000">What does it mean if a variable is initialized as a 'final' variable?</a>
+>
+
+```java
+float myFloat = 19.989f;
+System.out.printf("myFloat is: %.2f", myFloat);
+
+​final int myNum = 15;
+myNum = 20;  // error: cannot re-assign value to final variable
+```
+
 <h3 style="color:#fa6339">Arrays</h3>
 
 ```java
