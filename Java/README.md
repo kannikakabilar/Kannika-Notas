@@ -1,5 +1,15 @@
 <h1 style="color:#fa6339">Java</h1>
 
+<h3 style="color:#fa6339">Setup</h3>
+
+> - <a style="color:#000000">How do you check if Java is installed in a machine?</a>
+>
+> - <a style="color:#000000">What needs to be done after installing Java and before running a Java program?</a>
+>
+> - <a style="color:#000000">What should the name of the Java file match?</a>
+>
+> - <a style="color:#000000">What method needs to be in a Java program in order to execute?</a>
+
 <h3 style="color:#fa6339">Arrays</h3>
 
 ```java
