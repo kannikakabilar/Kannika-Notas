@@ -16,6 +16,9 @@
 >
 > - <a style="color:#000000">What does it mean if a variable is initialized as a 'final' variable?</a>
 >
+> - <a style="color:#000000">What is a Wrapper class for a primitive data type in Java?</a>
+>
+> - <a style="color:#000000">How do you cast a double data type to an int?</a>
 
 ```java
 float myFloat = 19.989f;
@@ -23,6 +26,12 @@ System.out.printf("myFloat is: %.2f", myFloat);
 
 ​final int myNum = 15;
 myNum = 20;  // error: cannot re-assign value to final variable
+
+int prim = 5;
+Integer wrap = 5;
+
+double myDouble = 19.99d;
+int myInt = (int)myDouble;
 ```
 
 <h3 style="color:#fa6339">Arrays</h3>
