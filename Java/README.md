@@ -168,3 +168,15 @@ public class JavaFile {
   }
 }
 ```
+
+<h3 style="color:#fa6339">Java Classes</h3>
+
+> - <a style="color:#000000">What's the difference between Prodecedural-Programming vs Object-Oriented-Programming ?</a>
+>
+> - <a style="color:#000000">What's the difference between static methods and public method in a class?</a>
+>
+> - <a style="color:#000000">What is a constructor used for?</a>
+>
+> - <a style="color:#000000">What must a constructor not mention and it cannot have?</a>
+>
+> - <a style="color:#000000">What are the 4 access modifiers? and what permissions do they allow?</a>
