@@ -19,6 +19,8 @@
 > - <a style="color:#000000">What is a Wrapper class for a primitive data type in Java?</a>
 >
 > - <a style="color:#000000">How do you cast a double data type to an int?</a>
+>
+> - <a style="color:#000000">Print a number between 0 to 100 inclusive</a>
 
 ```java
 float myFloat = 19.989f;
@@ -32,6 +34,7 @@ Integer wrap = 5;
 
 double myDouble = 19.99d;
 int myInt = (int)myDouble;
+
 ```
 
 <h3 style="color:#fa6339">Arrays</h3>
@@ -68,6 +71,13 @@ String arrToStr = new String(merge);    // combines the char array into a string
 char [] arr1 = str1.toCharArray();    // converts the string into a char array
 
 String str3 = str1.replace("k", "c);    // replace all occurrence of 'k' with 'c'
+
+String str = "HelloWorld";
+System.out.println(str.toLowerCase());
+
+String str1 = "Kannika";
+String str2 = "nn";
+System.out.println(str1.indexOf(str2));    // outputs 2
 ```
 
 <h3 style="color:#fa6339">Hash Sets</h3>
