@@ -180,3 +180,5 @@ public class JavaFile {
 > - <a style="color:#000000">What must a constructor not mention and it cannot have?</a>
 >
 > - <a style="color:#000000">What are the 4 access modifiers? and what permissions do they allow?</a>
+>
+> - <a style="color:#000000">Define what these key words mean in Java: final, static, abstract, transient,
