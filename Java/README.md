@@ -70,7 +70,7 @@ String arrToStr = new String(merge);    // combines the char array into a string
 
 char [] arr1 = str1.toCharArray();    // converts the string into a char array
 
-String str3 = str1.replace("k", "c);    // replace all occurrence of 'k' with 'c'
+String str3 = str1.replace("k", "c");    // replace all occurrence of 'k' with 'c'
 
 String str = "HelloWorld";
 System.out.println(str.toLowerCase());
@@ -124,3 +124,47 @@ HashMap <Integer, Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr)); 
 - Print Zero Even Odd - LeetCode 1116
 - Fizz Buzz Multithreaded - LeetCode 1195
 - Building H2O = LeetCode 1117
+
+<h3 style="color:#fa6339">File Handling</h3>
+
+> - <a style="color:#000000">What needs to be imported when handling files in Java?</a>
+>
+> - <a style="color:#000000">When writing code to handle files, what block must it be in?</a>
+>
+> - <a style="color:#000000">How do you create a new file? ~2 lines</a>
+>
+> - <a style="color:#000000">How do you write to a file? ~3 lines</a>
+>
+> - <a style="color:#000000">How do you read a file? ~3 lines + while-loop</a>
+
+```java
+import java.io.*;
+
+public class JavaFile {
+  public static void main(String[] args) {
+    
+    try {
+        // Create a new file
+        File myObj = new File("C:\\Users\\MyName\\filename.txt");    // double backslash only for windows
+        myObj.createNewFile();    // System.out.println("File created: " + myObj.getName());
+
+        // Write to a file
+        FileWriter myWriter = new FileWriter("filename.txt");
+        myWriter.write("Files in Java might be tricky, but it is fun enough!");
+        myWriter.close();
+
+        // Read a file
+        File myObj = new File("filename.txt");
+        Scanner myReader = new Scanner(myObj);
+        while (myReader.hasNextLine()) {
+            String data = myReader.nextLine();
+            System.out.println(data);
+        }
+        myReader.close();
+    }catch(Exception e){
+        System.out.println("An error occurred.");
+    }
+
+  }
+}
+```
