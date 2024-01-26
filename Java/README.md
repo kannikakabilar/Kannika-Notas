@@ -181,4 +181,34 @@ public class JavaFile {
 >
 > - <a style="color:#000000">What are the 4 access modifiers? and what permissions do they allow?</a>
 >
-> - <a style="color:#000000">Define what these key words mean in Java: final, static, abstract, transient,
+> - <a style="color:#000000">Define what these key words mean in Java: final, static, abstract, transient, synchronized, volatile</a>
+>
+> - <a style="color:#000000">How do you import a built-in package and how do you create a user-defined package and import it to another file? Also, how do you compile the package?</a>
+>
+> - <a style="color:#000000">How do you inherit from a parent class? How do you use the parent class' variables and methods?</a>
+>
+> - <a style="color:#000000">What is Polymorphism and 'instanceof' method in Java?</a>
+>
+> - <a style="color:#000000">How do you create an object of an inner/nested class in Java?</a>
+>
+> - <a style="color:#000000">How do you initialize an abstract class in Java and what is it used for?</a>
+>
+> - <a style="color:#000000">How is an interface different from abstract class?(2 points) How do you implement an inteface?</a>
+>
+> - <a style="color:#000000">How do you take in a user input? - 2 lines</a>
+
+```java
+```
+
+<h3 style="color:#fa6339">Java Threads</h3>
+
+> - <a style="color:#000000">What are the 2 ways to create a thread and show how to implement them?</a>
+
+
+<h3 style="color:#fa6339">Java Serialization</h3>
+
+> - <a style="color:#000000">What is serialization?</a>
+>
+> - <a style="color:#000000">Show how you serialize and deserialize an object</a>
+
+<h3 style="color:#fa6339" href="https://kannikalibreta.weebly.com/java.html#InterviewNotes">Java Interview Notes</h3>
