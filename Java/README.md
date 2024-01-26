@@ -35,6 +35,8 @@ Integer wrap = 5;
 double myDouble = 19.99d;
 int myInt = (int)myDouble;
 
+int randomNum = (int)(Math.random() * 101); ​// 0 to 100
+
 ```
 
 <h3 style="color:#fa6339">Arrays</h3>
@@ -94,6 +96,11 @@ uniqueNums.contains(9);    // returns true if the hash set contains 9
 uniqueNums.remove(3);    // removes element 3 from hash set
 
 uniqueNums.clear();    // deletes everything in set
+
+Integer [] myArr = new Integer[10];
+
+HashSet <Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr));    // change an array into a hash set
+
 ```
 
 <h3 style="color:#fa6339">Hash Maps</h3>
@@ -111,11 +118,11 @@ freq.keySet();
 
 freq.values();    // returns a list of values
 
-Integer [] myArr = new Integer[10];
-
-HashMap <Integer, Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr));    // change an array into a hash set
-
 ```
+
+<h3 style="color:#fa6339">Java Threads</h3>
+
+> - <a style="color:#000000">What are the 2 ways to create a thread and show how to implement them?</a>
 
 <h3 style="color:#fa6339">Thread Variable: volatile, synchronized, Semaphore</h3>
 
@@ -199,11 +206,6 @@ public class JavaFile {
 
 ```java
 ```
-
-<h3 style="color:#fa6339">Java Threads</h3>
-
-> - <a style="color:#000000">What are the 2 ways to create a thread and show how to implement them?</a>
-
 
 <h3 style="color:#fa6339">Java Serialization</h3>
 
