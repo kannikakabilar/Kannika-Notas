@@ -103,22 +103,6 @@ HashSet <Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr));    // cha
 
 ```
 
-<h3 style="color:#fa6339">Hash Maps</h3>
-
-- HashMaps in java are pass by reference (if hashmap is changed in function, the changes can be seen outside the function too)
-
-```java
-HashMap <Integer, Integer> freq = new HashMap <Integer, Integer>();
-
-freq.containsKey(2);    // Checks if the hashmap has key=2
-
-freq.put(2, freq.get(2)+1);   // updating value of a key in hash map
-
-freq.keySet();
-
-freq.values();    // returns a list of values
-
-```
 
 <h3 style="color:#fa6339">Java Threads</h3>
 
