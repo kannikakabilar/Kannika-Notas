@@ -216,15 +216,158 @@ public class JavaFile {
 > - <a style="color:#000000">How do you take in a user input? - 2 lines</a>
 
 ```java
+/* Packages */
+//  MyPackageClass.java
+package mypack;    //  package name should be written in lower case
+class MyPackageClass {
+  public static void main(String[] args) {
+    System.out.println("This is my package!");
+  }
+}
+
+// Above package can be imported like this
+import mypack.MyPackageClass;    // or import mypack.*;
+
+>javac -d . MyPackageClass.java
+//  The -d keyword specifies the destination for where to save the class file/create the package ( '.' is current dir)
+
+/* Inheritance */
+class Vehicle {
+  protected String brand = "McLaren";        // Vehicle attribute
+  protected String color = "White";        // Default vehicle color
+  public void honk() {                    // Vehicle method
+    System.out.println("Tuut, tuut!");
+  }
+}
+
+class Car extends Vehicle {
+  private String modelName = "650s Spider";    // Car attribute
+  private String color = "Blue";                       // New Car Color
+  public static void main(String[] args) {
+
+    // Create a myCar object
+    
+
+    // Call the honk() method (from the Vehicle class) on the myCar object
+    
+
+    // What does this print?
+    System.out.println(myCar.brand + " " + myCar.modelName);
+
+   //  Differentiating between parent and child attributes using 'super'
+
+   // parent constructors can be called using super()
+   // only use super when method/attribute names are identical in parent & child
+
+   System.out.println(myCar instanceof Vehicle);   // What does this output?
+  }
+}
+
+/* Nested Class */
+class OuterClass {
+  int x = 10;
+
+  class InnerClass {
+    int y = 5;
+    //  InnerClass can access any attribute/methods from outer class
+    public void getParentAttribute(){
+        // print the value of x here
+    }
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    OuterClass myOuter = new OuterClass();
+    OuterClass.InnerClass myInner = myOuter.new InnerClass();
+    System.out.println(myInner.y + myOuter.x);    // Outputs 15 (5 + 10)
+    myInner.getParentAttribute();    //  Outputs: Getting parent attribute: 10
+  }
+}
+
+/* Abstract Classes */
+abstract class Animal {    // abstract classes can contain abstract methods and regular methods
+  // Abstract method (does not have a body) and can only exist in abstract classes - must be overriden in child class
+  public abstract void animalSound();
+  // Regular method
+  public void sleep() {
+    System.out.println("Zzz");
+  }
+}
+
+// Subclass (inherit from Animal)
+class Pig extends Animal {
+  public void animalSound() {
+    // The body of animalSound() is provided here
+    System.out.println("The pig says: oink oink!");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Pig myPig = new Pig();    // Create a Pig object because abstract classes cannot be used to create objects
+    myPig.animalSound();
+    myPig.sleep();
+  }
+}
+
+/* Interfaces */
+interface Animal {
+  // interface methods cannot contain a body
+  public void animalSound(); 
+  public void sleep();
+  // Interface methods can be: public, abstract
+  // Interface attributes can be: public, static, final
+}
+
+class Pig implements Animal {
+  public void animalSound() {
+    // The body of animalSound() and sleep() is provided here and all child classes must override them
+    System.out.println("Piggy says: Oink Oink!");
+  }
+  public void sleep() {
+    // The body of sleep() is provided here
+    System.out.println("Piggy is asleep: Zzz...");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    // Create a Pig object because interface cannot be used to create objects and interface don't/can't have constructors
+    Pig myPig = new Pig();  
+    myPig.animalSound();
+    myPig.sleep();
+  }
+}
+
+/* Getting User Input */
+import java.util.Scanner;  // Import the Scanner class
+
+class Main {
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+    System.out.println("Enter username");
+
+    String userName = myObj.nextLine();  // Read user input
+    System.out.println("Username is: " + userName);  // Output user input
+  }
+}
+/*   
+    nextLine()    reads a string from user
+    nextInt()       reads an int from user
+    Similarly:    nextBoolean(), nextByte(), nextDouble(), nextFloat(), nextLong(), nextShort()
+​*/
 ```
 
-<h3 style="color:#fa6339">Java Serialization</h3>
+<h3 style="color:#fa6339"><a style="color:#fa6339" href="https://kannikalibreta.weebly.com/java.html#Serialization">Java Serialization</a>a></h3>
 
 > - <a style="color:#000000">What is serialization?</a>
 >
+> - <a style="color:#000000">What 2 conditions need to be for a class to be successfully serializable?</a>
+>
+> - <a style="color:#000000">What file extension is used for a serialized Java object to be stored in?</a>
+>
 > - <a style="color:#000000">Show how you serialize and deserialize an object</a>
 
-```java
-```
 
 <h3 style="color:#fa6339"><a style="color:#fa6339" href="https://kannikalibreta.weebly.com/java.html#InterviewNotes">Java Interview Notes</a></h3>
