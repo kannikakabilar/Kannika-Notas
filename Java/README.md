@@ -106,15 +106,42 @@ HashSet <Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr));    // cha
 
 <h3 style="color:#fa6339">Java Threads</h3>
 
-> - <a style="color:#000000">What are the 2 ways to create a thread and show how to implement them?</a>
-
-<h3 style="color:#fa6339">Thread Variable: volatile, synchronized, Semaphore</h3>
+<h4 style="color:#fa6339">Thread Variable: volatile, synchronized, Semaphore</h4>
 
 - Print in Order - LeetCode 1114
 - Print FooBar Alternately - LeetCode 1115
 - Print Zero Even Odd - LeetCode 1116
 - Fizz Buzz Multithreaded - LeetCode 1195
 - Building H2O = LeetCode 1117
+
+> - <a style="color:#000000">What are the 2 ways to create a thread and show how to implement them?</a>
+
+```java
+/* Extend Thread class, create an instance, and override its run method */
+​public class Main extends Thread {
+  public static void main(String[] args) {
+    Main thread = new Main();
+    thread.start();
+    System.out.println("This code is outside of the thread");
+  }
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+}
+
+/* Implement the Runnable Interface, create an instance, and override its run method */
+public class Main implements Runnable {
+  public static void main(String[] args) {
+    Main obj = new Main();
+    Thread thread = new Thread(obj);
+    thread.start();
+    System.out.println("This code is outside of the thread");
+  }
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+}
+```
 
 <h3 style="color:#fa6339">File Handling</h3>
 
@@ -196,5 +223,8 @@ public class JavaFile {
 > - <a style="color:#000000">What is serialization?</a>
 >
 > - <a style="color:#000000">Show how you serialize and deserialize an object</a>
+
+```java
+```
 
 <h3 style="color:#fa6339"><a style="color:#fa6339" href="https://kannikalibreta.weebly.com/java.html#InterviewNotes">Java Interview Notes</a></h3>
