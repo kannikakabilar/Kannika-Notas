@@ -29,13 +29,14 @@
 
 <br><br>
 
-[JavaScript](https://kannikakabilar.github.io/Kannika-Notas/JavaScript/)
 
 [C#](https://kannikakabilar.github.io/Kannika-Notas/C%23/)
 
 <!--
 # [Kannika DSA Checkpoint Notes](https://kannikakabilar.github.io/Kannika-Notas/)
-#fc6b03
+
+[JavaScript](https://kannikakabilar.github.io/Kannika-Notas/JavaScript/)
+
 [Hardware_BitLogic](https://kannikakabilar.github.io/Kannika-Notas/Hardware_BitLogic/)
 
 [Data Structures](https://kannikakabilar.github.io/Kannika-Notas/DataStructures/)
