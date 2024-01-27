@@ -359,7 +359,7 @@ class Main {
 ​*/
 ```
 
-<h3 style="color:#fa6339"><a style="color:#fa6339" href="https://kannikalibreta.weebly.com/java.html#Serialization">Java Serialization</a>a></h3>
+<h3 style="color:#fa6339"><a style="color:#fa6339" href="https://kannikalibreta.weebly.com/java.html#Serialization">Java Serialization</a></h3>
 
 > - <a style="color:#000000">What is serialization?</a>
 >
