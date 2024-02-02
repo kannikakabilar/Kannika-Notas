@@ -6,6 +6,8 @@
 >
 > - <a style="color:#000000">What needs to be done after installing Java and before running a Java program?</a>
 >
+> - <a style="color:#000000">How many classes can a Java file have?</a>
+>
 > - <a style="color:#000000">What should the name of the Java file match?</a>
 >
 > - <a style="color:#000000">What method needs to be in a Java program in order to execute?</a>
@@ -122,6 +124,7 @@ HashSet <Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr));    // cha
   public static void main(String[] args) {
     Main thread = new Main();
     thread.start();
+    thread.join();    // Waits for thread to finish executing before continuing
     System.out.println("This code is outside of the thread");
   }
   public void run() {
@@ -175,7 +178,7 @@ public class JavaFile {
         File myObj = new File("filename.txt");
         Scanner myReader = new Scanner(myObj);
         while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
+            String data = myReader.nextLine();    // use myReader.nextInt() if you want to read an integer
             System.out.println(data);
         }
         myReader.close();
