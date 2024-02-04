@@ -210,7 +210,7 @@ public class JavaFile {
 >
 > - <a style="color:#000000">What is Polymorphism and 'instanceof' method in Java?</a>
 >
-> - <a style="color:#000000">How do you create an object of an inner/nested class in Java?</a>
+> - <a style="color:#000000">How do you create an object of an inner/nested class and an object of a static-nested class in Java?</a>
 >
 > - <a style="color:#000000">How do you initialize an abstract class in Java and what is it used for?</a>
 >
