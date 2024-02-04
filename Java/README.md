@@ -370,12 +370,14 @@ class Main {
 >
 > - <a style="color:#000000">What file extension is used for a serialized Java object to be stored in?</a>
 >
-> - <a style="color:#000000">Show how you serialize and deserialize an object - What block should the following statements be located in?</a>
-> &emsp; - <a style="color:#000000">What are the 2 starting statements in writing an object (serializing) and reading an object (deserializing)?</a>
+> - <a style="color:#000000">Show how you serialize and deserialize an object</a>
+>     - <a style="color:#000000">What block should the following statements be located in?</a>
 >
-> &emsp; - <a style="color:#000000">What is the statement that is used to write the object to the file and to read the object from a file?</a>
+>     - <a style="color:#000000">What are the 2 starting statements in writing an object (serializing) and reading an object (deserializing)?</a>
 >
-> &emsp; - <a style="color:#000000">What are the 2 final closing statements after writing/reading a statement?</a>
+>     - <a style="color:#000000">What is the statement that is used to write the object to the file and to read the object from a file?</a>
+>
+>     - <a style="color:#000000">What are the 2 final closing statements after writing/reading a statement?</a>
 
 
 <h3 style="color:#fa6339"><a style="color:#fa6339" href="https://kannikalibreta.weebly.com/java.html#InterviewNotes">Java Interview Notes</a></h3>
