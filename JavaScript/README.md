@@ -1,23 +1,18 @@
 <h1 style="color:#fcc603">JavaScript</h1>
 
-JavaScript's \<script> tag should be placed before the closing \<body> tag to reduce page loading time.
+<h3 style="color:#fcc603">Intro</h3>
 
-<h3 style="color:#fcc603">Variables</h3>
-
-- Variables declared without a keyword become **global variables**, irrespective of where they are declared (ie: in a function)
-- Variables declared with **let** & **const**
-    - must be declared before use
-    - cannot be redeclared
-    - can only be used within block scope that it was declared
-    - cannot bind with this (for objects)
-    - cannot be hoisted
-
-\* **let** allows to change values of variables while **const** <span style="color:red">does not</span>!
-
-- **var** is used for supporting old browsers, allows hoisting, and binds to this
-
-\* **Hoisting** is JavaScript's default behavior of moving all declarations (not initialization) to the top of the current scope
+> - <a style="color:#000000">Why should JS's \<script> tag be placed at the end before the closing \<body> tag instead of the start?</a>
+>
+> - <a style="color:#000000">What are the 4 ways to declare a variable in JS?</a>
+>
+> - <a style="color:#000000">What is the main difference between let and const?</a>
+>
+> - <a style="color:#000000">What is Hoisting?</a>
+> <br> **Hoisting** is JavaScript's default behavior of moving all declarations (not initialization) to the top of the current scope
 (var variables can be used first and then declared after)
+>
+
 
 ```javascript
 myGlobalVar = 9;    // variable w/o keyword => global variable
