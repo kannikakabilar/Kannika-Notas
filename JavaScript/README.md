@@ -70,6 +70,10 @@ arr.reduce((partialSum, a) => partialSum + a, 0);    // returns the sum of all e
 
 Math.max(...arr);    // returns the max element of the array
 
+var argumentsLength = function(...args) {
+	return [...args].length;    // return length of arguments passed to function - LeetCode Q2703
+};
+
 arr.reverse();
 
 const planets = ["Mercury", "Venus", "Neptune"];
