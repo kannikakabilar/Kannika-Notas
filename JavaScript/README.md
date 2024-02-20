@@ -28,7 +28,10 @@ var myFuncName = function(p1, p2) {
 ```
 
 <h3 style="color:#fcc603">Strings</h3>
-
+> - <a style="color:#000000">Is a string created with double quotes or single quotes?</a>
+>
+> - <a style="color:#000000">Are strings mutable or immutable in JS and what happens when you modify an already created string?</a>
+>
 > - <a style="color:#000000">How would you loop through the characters of a String and access a character at the specific index in JS?</a>
 >
 > - <a style="color:#000000">How do you compare two strings?</a>
@@ -43,6 +46,8 @@ var myFuncName = function(p1, p2) {
 > - <a style="color:#000000">How can you format a string to embed code variables?</a>
 >
 > - <a style="color:#000000">What is returned when you execute the following statement: i\) Number('    -12.34    ');  ii\) Number(1,2);</a>
+>
+> - <a style="color:#000000">Notable string functions: toUpperCase, trim, includes, startsWith, endsWith, slice</a>
 
 ```javascript
 for(let i=0; i<{arr/str}.length; i++){
@@ -52,6 +57,7 @@ for(let i=0; i<{arr/str}.length; i++){
 }
 
 str1 === str2    // returns true if both strings are equal
+str1 < str2    // returns true if str1 comes before str2 in a dictionary
 str1.localeCompare(str2)==-1     // returns true if str1 before str2 and returns 1 for vice versa and 0 if equal
 
 parseInt("1999");    // returns 1999 Number
@@ -67,8 +73,23 @@ let str = arr.join('');    // combine elements of arr with empty string and retu
 let grade = 99;
 console.log(`You have ${grade > 90 ? 'passed' : 'failed'} the exam.`);
 
-Number('    -12.34    ');    // returns -12.34 from trimming begining and ending white spaces
-Number('1,2');    // returns NaN (Not a Number)
+Number('    -12.34    ');                                  // returns -12.34 from trimming begining and ending white spaces
+Number('1,2');                                             // returns NaN (Not a Number)
+
+let text = "Hello World!";
+let result = text.toUpperCase();                           // "HELLO WORLD!"
+
+let text = "       Hello World!        ";
+let result = text.trim();                                  // "Hello World!"
+
+let text = "Hello world, welcome to the universe.";
+let result = text.includes("world");                       // true
+text.startsWith("Hello");                                  // true
+text.endsWith("universe.");                                // true
+
+let text = "Hello world!";
+let result1 = text.slice(0, 5);                            // from position 0 to 5
+let result2 = text.slice(3)                                // from position 3 to end
 ```
 
 - Get parts of a string/Array: **slice(start, end)**
