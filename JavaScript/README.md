@@ -36,8 +36,13 @@ var myFuncName = function(p1, p2) {
 > - <a style="color:#000000">How do you change a String into a Number in JS?</a>
 > - <a style="color:#000000">How do you change a Number into a String and how do you change it into a binary string?</a>
 >
-> - <a style="color:#000000">How do you replace a part of a string with another string?</a>
+> - <a style="color:#000000">How do you replace all occurence of a particular string with another string or an empty string?</a>
 >
+> - <a style="color:#000000">How can you convert and merge array elements into a string?</a>
+>
+> - <a style="color:#000000">How can you format a string to embed code variables?</a>
+>
+> - <a style="color:#000000">What is returned when you execute the following statement: i\) Number('    -12.34    ');  ii\) Number(1,2);</a>
 
 ```javascript
 for(let i=0; i<{arr/str}.length; i++){
@@ -58,6 +63,12 @@ str.replaceAll("Canada", "USA");    // replace all instances of "Canada" with "U
 str.replaceAll("c", "");    // removes all instances of c in str
 
 let str = arr.join('');    // combine elements of arr with empty string and return string
+
+let grade = 99;
+console.log(`You have ${grade > 90 ? 'passed' : 'failed'} the exam.`);
+
+Number('    -12.34    ');    // returns -12.34 from trimming begining and ending white spaces
+Number('1,2');    // returns NaN (Not a Number)
 ```
 
 - Get parts of a string/Array: **slice(start, end)**
