@@ -28,6 +28,7 @@ var myFuncName = function(p1, p2) {
 ```
 
 <h3 style="color:#fcc603">Strings</h3>
+
 > - <a style="color:#000000">Is a string created with double quotes or single quotes?</a>
 >
 > - <a style="color:#000000">Are strings mutable or immutable in JS and what happens when you modify an already created string?</a>
@@ -56,19 +57,19 @@ for(let i=0; i<{arr/str}.length; i++){
     }
 }
 
-str1 === str2    // returns true if both strings are equal
-str1 < str2    // returns true if str1 comes before str2 in a dictionary
-str1.localeCompare(str2)==-1     // returns true if str1 before str2 and returns 1 for vice versa and 0 if equal
+str1 === str2                                              // returns true if both strings are equal
+str1 < str2                                                // returns true if str1 comes before str2 in a dictionary
+str1.localeCompare(str2)==-1                               // returns true if str1 before str2 and returns 1 for vice versa and 0 if equal
 
-parseInt("1999");    // returns 1999 Number
+parseInt("1999");                                          // returns 1999 Number
 
-num.toString();    // returns number stored in num to a string
-num.toString(2);    // returns number stored in num to a binary string
+num.toString();                                            // returns number stored in num to a string
+num.toString(2);                                           // returns number stored in num to a binary string
 
-str.replaceAll("Canada", "USA");    // replace all instances of "Canada" with "USA" in str
-str.replaceAll("c", "");    // removes all instances of c in str
+str.replaceAll("Canada", "USA");                           // replace all instances of "Canada" with "USA" in str
+str.replaceAll("c", "");                                   // removes all instances of c in str
 
-let str = arr.join('');    // combine elements of arr with empty string and return string
+let str = arr.join('');                                    // combine elements of arr with empty string and return string
 
 let grade = 99;
 console.log(`You have ${grade > 90 ? 'passed' : 'failed'} the exam.`);
