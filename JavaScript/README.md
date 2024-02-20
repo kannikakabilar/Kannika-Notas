@@ -29,6 +29,16 @@ var myFuncName = function(p1, p2) {
 
 <h3 style="color:#fcc603">Strings</h3>
 
+> - <a style="color:#000000">How would you loop through the characters of a String and access a character at the specific index in JS?</a>
+>
+> - <a style="color:#000000">How do you compare two strings?</a>
+>
+> - <a style="color:#000000">How do you change a String into a Number in JS?</a>
+> - <a style="color:#000000">How do you change a Number into a String and how do you change it into a binary string?</a>
+>
+> - <a style="color:#000000">How do you replace a part of a string with another string?</a>
+>
+
 ```javascript
 for(let i=0; i<{arr/str}.length; i++){
     if({arr/str}[i] == ...){
@@ -36,7 +46,8 @@ for(let i=0; i<{arr/str}.length; i++){
     }
 }
 
-str1.localeCompare(str2)==0     // returns true if both strs are exactly equal
+str1 === str2    // returns true if both strings are equal
+str1.localeCompare(str2)==-1     // returns true if str1 before str2 and returns 1 for vice versa and 0 if equal
 
 parseInt("1999");    // returns 1999 Number
 
