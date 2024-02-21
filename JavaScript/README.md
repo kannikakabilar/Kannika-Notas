@@ -105,7 +105,7 @@ let result2 = text.slice(3)                                // from position 3 to
 >
 > - <a style="color:#000000">If an array has 3 elements, what gets returned when you access its 6th element?</a>
 >
-> **The following functions modify the original array**
+> *Note: The following functions modify the original array
 > - <a style="color:#000000">How do you use the built-in function sort to sort an array of Numbers?</a>
 >
 > - <a style="color:#000000">What do these following functions do?
@@ -115,7 +115,7 @@ let result2 = text.slice(3)                                // from position 3 to
 > 	- iv\) fruits.splice(2, 2, "Lemon", "Kiwi");</a>
 > --------------------------------------------------------------------------------------------
 > 
-> **The following functions make changes and return a new array**
+> *Note: The following functions make changes and return a new array
 > - <a style="color:#000000">How do you combine two different arrays into one?</a>
 >
 > - <a style="color:#000000">How does the filter function work?</a>
