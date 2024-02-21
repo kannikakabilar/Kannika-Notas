@@ -103,8 +103,6 @@ let result2 = text.slice(3)                                // from position 3 to
 >
 > - <a style="color:#000000">How do you combine two different arrays into one?</a>
 >
-> - <a style="color:#000000">How do you use reduce to sum all elements in the array to get the total?</a>
->
 > - <a style="color:#000000">How do you get the maximum element of an array?</a>
 >
 > - <a style="color:#000000">How do you get the length of the arguments passed when it is defined like this? function(...args) { ... }</a>
@@ -116,6 +114,8 @@ let result2 = text.slice(3)                                // from position 3 to
 >  	- ii\) arr.pop();
 > 	- iii\) arr.unshift(9);
 > 	- iv\) fruits.splice(2, 2, "Lemon", "Kiwi");</a>
+>
+> - <a style="color:#000000">How do you use reduce to sum all elements in the array to get the total?</a>
 >
 > - <a style="color:#000000">How does the filter function work?</a>
 >
@@ -150,8 +150,6 @@ arr.slice(0, i);    // return arr[0:i]
 arr = str.split("");    // returns array of char from str
 arr.reverse();
 
-arr.reduce((partialSum, a) => partialSum + a, 0);    // returns the sum of all elements in the array
-
 Math.max(...arr);    // returns the max element of the array
 
 var argumentsLength = function(...args) {
@@ -171,6 +169,8 @@ const fruits = ["Banana", "Orange", "Apple", "Mango"];
 let removed = fruits.splice(2, 2, "Lemon", "Kiwi");
 
 fruits.includes("Mango"); // is true
+
+let total = arr.reduce((partialSum, a) => partialSum + a, 0);    // returns the sum of all elements in the array
 
 /* Filtering an array */
 const numbers = [45, 4, 9, 16, 25];
