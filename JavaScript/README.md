@@ -261,6 +261,22 @@ if(equalsCheck(arr1, arr2)){
 }
 ```
 
+<h3 style="color:#fcc603">Null, Undefined, and Falsy values</h3>
+
+> - <a style="color:#000000">What is null used for?</a>
+> <br> A: It is used as an intentional "empty value" for variable of any type
+>
+> - <a style="color:#000000">When does undefined value occur?</a>
+> <br> A: A variable that has not been assigned a value yet; or if there is no return value for a function it returns undefined; or if you access a non-existing key form an object.
+>
+> - <a style="color:#000000">What is Nullish Coalescing and '??' (double question mark) operator?</a>
+>
+> - <a style="color:#000000">What are the 6 falsy values that when placed in a condition if-statement will equate to false?</a>
+> <br> A: 0, false, NaN, null, undefined, ''
+
+```javascript
+```
+
 <h3 style="color:#fcc603">Functions</h3>
 
 > - <a style="color:#000000">Does the original value of a parameter get affected by what happens inside a function?</a>
