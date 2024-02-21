@@ -122,6 +122,7 @@ let result2 = text.slice(3)                                // from position 3 to
 > - <a style="color:#000000">How does the filter function work?</a>
 >
 > - <a style="color:#000000">How does the map function work?</a>
+>
 > ---------------------------------------------------------------------------------------------
 > - <a style="color:#000000">How do you use reduce to sum all elements in the array to get the total?</a>
 >
