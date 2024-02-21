@@ -264,13 +264,29 @@ if(equalsCheck(arr1, arr2)){
 <h3 style="color:#fcc603">Functions</h3>
 
 > - <a style="color:#000000">Does the original value of a parameter get affected by what happens inside a function?</a>
-> A: Primitive data types are immutable and it will never get affected by what happens inside the function.
-> A: For parameters that are arrays, objects, or functions - reassignment will not affect it but modification such as adding a key will.
+> <br> A: Primitive data types are immutable and it will never get affected by what happens inside the function.
+> <br> A: For parameters that are arrays, objects, or functions - reassignment will not affect it but modification such as adding a key will.
 >
 > - <a style="color:#000000">What are the 3 things that can get assigned to a param value if the function is called with missing args?</a>
-> A: null, undefined, or default value
+> <br> A: null, undefined, or default value
+>
+> - <a style="color:#000000">What are Callback functions?</a>
+> <br> A: functions passed as an argument which the receiving will decide when to call it
+>
+> - <a style="color:#000000">How do you create function using a function constructor?</a>
+> <br> *Creating a function using a function constructor is only used for very small functions
+>
+> - <a style="color:#000000">Create an Anonymous Self-Invoking function</a>
+>
+> - <a style="color:#000000">Create an Arrow function</a>
 
 ```javascript
+
+const addNums = function(x=0, y=0){
+	console.log(x+y);
+}
+
+setTimeout(addNums(5, 4), 2);    // addNums(4, 5) function will be called after 2 seconds
 
 // Creating a function using a Function constructor
 const sum = new Function('a', 'b', 'return a + b');
@@ -279,23 +295,34 @@ console.log(sum(2, 7));    // Expected output: 9
 // Anonymous Self-Invoking Function
 (function () {
   let x = "Hello!!";  // I will invoke myself
+  console.log(x);
 })();
 
-// With call(), an object can use a method belonging to another object.
-const person = {
-  fullName: function(city, country) {
-    return this.firstName + " " + this.lastName + "," + city + "," + country;
-  }
-}
-const person1 = {
-  firstName:"Kannika",
-  lastName: "Kabilar"
-}
-person.fullName.call(person1, "Toronto", "Canada");
-// Same as call() but => The apply() method takes args an array instead of separately
-person.fullName.apply(person1, ["Toronto", "Canada"]);
+// Arrow Function
+const arwFunc = (x, y) => { x * y };    // if there is just one statement in the curly brackets, then automatically return the value from that statement
+
+```
+
+<h3 style="color:#fcc603">Closure</h3>
+
+> - <a style="color:#000000">Write a function that returns a function that returns "Hello World"</a>
+>
+> - <a style="color:#000000">Create a closure function called add which returns a value when it is called but it increments the returned value each time it is called</a>
+>
+> - <a style="color:#000000">What is a Closure?</a>
+> <br> A: Referencing an outer-variable inside a function-scope or a block-scope is called a Closure
+>
+> - <a style="color:#000000">Write a function that returns an object w/ 2 methods</a>
+
+```javascript
 
 /* Closure */
+const f1 = function(){
+	return function(){
+		return "Hello World!";
+	};
+}
+
 const add = (function () {
   let counter = 0;
   return function () {counter += 1; return counter}
@@ -304,7 +331,22 @@ const add = (function () {
 add();
 add();
 add();
-// the counter is now 3  
+// the counter is now 3
+
+const greeter = function(name){
+	return {
+		greetAM: function(){
+			return "Good Morning! " + name;
+		},
+		greetPM: function(){
+			return "Good Evening! " + name;
+		},
+	};
+}
+
+let obj = greeter("Jack");
+obj.greetAM();    // returns "Good Morning! Jack"
+obj.greetPM();    // returns "Good Evening! Jack"
 ```
 
 **Arguments are Passed by Value** and **Objects are Passed by Reference**
@@ -312,7 +354,7 @@ add();
 <h3 style="color:#fcc603">Objects</h3>
 
 ```javascript
-// Creating an object
+// Creating an object - key-value pairs of an object is known as its properties which can include key and function as its value where the property is known as method
 const person = {
   firstName: "Kannika",
   lastName : "Kabilar",
@@ -341,6 +383,21 @@ const person = {
 let myString = JSON.stringify(person);
 document.getElementById("demo").innerHTML = myString;   
 // The result will be a string following the JSON notation: {"name":"Kannika", "age":23, "city":"Toronto"}
+
+// With call(), an object can use a method belonging to another object.
+const person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+const person1 = {
+  firstName:"Kannika",
+  lastName: "Kabilar"
+}
+person.fullName.call(person1, "Toronto", "Canada");
+// Same as call() but => The apply() method takes args an array instead of separately
+person.fullName.apply(person1, ["Toronto", "Canada"]);
+
 ```
 
 <h3 style="color:#fcc603">Regex</h3>
