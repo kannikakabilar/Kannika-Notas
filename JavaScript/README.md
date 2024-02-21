@@ -113,6 +113,7 @@ let result2 = text.slice(3)                                // from position 3 to
 >  	- ii\) arr.pop();
 > 	- iii\) arr.unshift(9);
 > 	- iv\) fruits.splice(2, 2, "Lemon", "Kiwi");</a>
+>
 > --------------------------------------------------------------------------------------------
 > 
 > *Note: The following functions make changes and return a new array
