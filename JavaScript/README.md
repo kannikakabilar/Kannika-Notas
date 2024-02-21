@@ -245,6 +245,8 @@ for(let key in freq){    // loop through key of map
 
 <h3 style="color:#fcc603">Checking Equality in JS</h3>
 
+> - <a style="color:#000000">How do you check if 2 objects or arrays are equal in JS?</a>
+
 ```javascript
 // Check if any 2 javascript objects are equal
 const equalsCheck = (a, b) => {
@@ -260,15 +262,23 @@ if(equalsCheck(arr1, arr2)){
 
 <h3 style="color:#fcc603">Functions</h3>
 
+> - <a style="color:#000000">Does the original value of a parameter get affected by what happens inside a function?</a>
+> A: Primitive data types are immutable and it will never get affected by what happens inside the function.
+> A: For parameters that are arrays, objects, or functions - reassignment will not affect it but modification such as adding a key will.
+>
+> - <a style="color:#000000">What are the 3 things that can get assigned to a param value if the function is called with missing args?</a>
+> A: null, undefined, or default value
+
 ```javascript
-// Anonymous Self-Invoking Function
-(function () {
-  let x = "Hello!!";  // I will invoke myself
-})();
 
 // Creating a function using a Function constructor
 const sum = new Function('a', 'b', 'return a + b');
 console.log(sum(2, 7));    // Expected output: 9
+
+// Anonymous Self-Invoking Function
+(function () {
+  let x = "Hello!!";  // I will invoke myself
+})();
 
 // With call(), an object can use a method belonging to another object.
 const person = {
