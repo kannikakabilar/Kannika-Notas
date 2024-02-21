@@ -99,27 +99,30 @@ let result2 = text.slice(3)                                // from position 3 to
 
 > - <a style="color:#000000">How do you convert a set to an array?</a>
 >
-> - <a style="color:#000000">How do you use the built-in function sort to sort an array of Numbers?</a>
->
-> - <a style="color:#000000">How do you combine two different arrays into one?</a>
->
 > - <a style="color:#000000">How do you get the maximum element of an array?</a>
 >
 > - <a style="color:#000000">How do you get the length of the arguments passed when it is defined like this? function(...args) { ... }</a>
 >
 > - <a style="color:#000000">If an array has 3 elements, what gets returned when you access its 6th element?</a>
 >
+> **The following functions modify the original array**
+> - <a style="color:#000000">How do you use the built-in function sort to sort an array of Numbers?</a>
+>
 > - <a style="color:#000000">What do these following functions do?
 > 	- i\) arr.shift();
 >  	- ii\) arr.pop();
 > 	- iii\) arr.unshift(9);
 > 	- iv\) fruits.splice(2, 2, "Lemon", "Kiwi");</a>
->
-> - <a style="color:#000000">How do you use reduce to sum all elements in the array to get the total?</a>
+> --------------------------------------------------------------------------------------------
+> 
+> **The following functions make changes and return a new array**
+> - <a style="color:#000000">How do you combine two different arrays into one?</a>
 >
 > - <a style="color:#000000">How does the filter function work?</a>
 >
 > - <a style="color:#000000">How does the map function work?</a>
+> ---------------------------------------------------------------------------------------------
+> - <a style="color:#000000">How do you use reduce to sum all elements in the array to get the total?</a>
 >
 > - <a style="color:#000000">How do you destructure an array to assign the values stored in the array to separate variables?</a>
 >
@@ -140,12 +143,6 @@ let result2 = text.slice(3)                                // from position 3 to
 ```javascript
 arr = Array.from(mySet);    // set to array
 
-arr.sort(function(a, b) {return a-b;});    // by default js sorts as strings to sort numbers input this function
-
-arr.push(9);    // append number 9 to arr
-
-arr1.concat(arr2)    // arr1+arr2 returns concatenation of 2 arrays
-
 arr.slice(0, i);    // return arr[0:i]
 arr = str.split("");    // returns array of char from str
 arr.reverse();
@@ -159,6 +156,9 @@ var argumentsLength = function(...args) {
 const planets = ["Mercury", "Venus", "Neptune"];
 planets[6] = "Jupiter";  // Creates undefined "holes" in planets
 
+arr.sort(function(a, b) {return a-b;});    // by default js sorts as strings to sort numbers input this function
+arr.push(9);    // append number 9 to arr
+
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 let fruit = fruits.pop();    // removes and returns the last element | fruit = Mango
 let fruit = fruits.shift();    // removes and returns the first element | fruit = Banana
@@ -170,7 +170,7 @@ let removed = fruits.splice(2, 2, "Lemon", "Kiwi");
 
 fruits.includes("Mango"); // is true
 
-let total = arr.reduce((partialSum, a) => partialSum + a, 0);    // returns the sum of all elements in the array
+arr1.concat(arr2)    // arr1+arr2 returns concatenation of 2 arrays
 
 /* Filtering an array */
 const numbers = [45, 4, 9, 16, 25];
@@ -182,6 +182,8 @@ function myFunction(value, index, array) {
 /* Mapping in an array */
 let arr = [1, 2, 3, 4]
 const newArr = arr.map((x) => x-1);    // newArr = [0, 1, 2, 3]
+
+let total = arr.reduce((partialSum, a) => partialSum + a, 0);    // returns the sum of all elements in the array
 
 const numOfMoons = [0, 2, 14];
 const [venus, mars, neptune] = numOfMoons;
