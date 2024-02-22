@@ -439,6 +439,20 @@ person.fullName.apply(person1, ["Toronto", "Canada"]);
 
 ```
 
+<h3 style="color:#fcc603">Errors</h3>
+
+> - <a style="color:#000000">Errors is a type of JS object</a>
+>
+> - <a style="color:#000000">In a try block throw a new error with a custom message and in the catch block, catch the error and output the error's message in console</a>
+
+```javascript
+try{
+	throw new Error('Oops, something went wrong');
+}catch(err){
+	console.log(err.message);    // 'Oops, something went wrong' gets outputted in the console
+}
+```
+
 <h3 style="color:#fcc603">Regex</h3>
 
 ```javascript
