@@ -272,9 +272,32 @@ if(equalsCheck(arr1, arr2)){
 > - <a style="color:#000000">What is Nullish Coalescing and '??' (double question mark) operator?</a>
 >
 > - <a style="color:#000000">What are the 6 falsy values that when placed in a condition if-statement will equate to false?</a>
-> <br> A: 0, false, NaN, null, undefined, ''
+> <br> A: 0, false, NaN, null, undefined, ''(empty string)
 
 ```javascript
+
+// checking for null value
+let name = null;
+name === null;    // returns true
+
+let count;
+count === undefined;    // returns true
+
+// Nullish Coalescing
+let amount = null;
+let total = amount ?? 1;    // Assign total = amount but if amount is null or undefined assign it 1
+
+const obj = {
+	address : {
+		street : 'confederation',
+		city : 'mississauga',
+	}
+}
+
+console.log(obj.address.zipCode);    // undefined
+console.log(obj.residence.street);    // type error
+console.log(obj.residence?.street);    // undefined
+
 ```
 
 <h3 style="color:#fcc603">Functions</h3>
