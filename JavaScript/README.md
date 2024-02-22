@@ -479,7 +479,27 @@ try{
 
 <h3 style="color:#fcc603">Regex</h3>
 
+> - <a style="color:#000000">What are 2 ways to create a regex pattern?</a>
+>
+> - <a style="color:#000000">What are these 3 flags used for: &nbsp; i) /g &nbsp; ii) /i &nbsp; iii) /m </a>
+>
+> - <a style="color:#000000">Create a regex pattern that looks for ALL 'home' case insensitive and run it in this string: 'Home, sweet home.' to make it return list of matches</a>
+>
+> - <a style="color:#000000">
+
 ```javascript
+// Creating a new regex patern
+const rgx1 = /[a-z]/;
+const rgx2 = new RegExp('[a-z]');
+
+const re = /home/gi;                    // look for ALL matches of case insensitive 'home'
+const str = 'Home, sweet home.';
+const arr = str.match(re);
+console.log(arr);                       // outputs ["Home", "home"]
+// The regex pattern can also be created using regex constructor
+// let re1 = new RegExp('home', 'gi');
+// let re2 = new RegExp(/home/, 'gi');
+
 let text = "Visit Canada!";
 let n = text.search("Canada");    // n = 6
 let result = text.replace(/canada/i, "USA");    // Search for 'canada' (case insensitive) and replace it; result = "Visit USA!"
