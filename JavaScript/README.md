@@ -392,10 +392,22 @@ obj.greetPM();    // returns "Good Evening! Jack"
 
 <h3 style="color:#fcc603">Objects</h3>
 
+> - <a style="color:#000000">Create an object with data properties and function properties</a>
+>
+> - <a style="color:#000000">What are the two ways to access a property of an object and how do you delete a property?</a>
+>
+> - <a style="color:#000000">How do you check if an object has a particular property?</a>
+>
+> - <a style="color:#000000">How do you loop through all properties of an object?</a>
+>
+> - <a style="color:#000000">What happens when access a property whose value is a function and you don't use circle brackets?</a>
+>
+> - <a style="color:#000000">How can an object use a method belonging to another object? - show an example with call()</a>
+
 ```javascript
 // Creating an object - key-value pairs of an object is known as its properties which can include key and function as its value where the property is known as method
 const person = {
-  firstName: "Kannika",
+  firstName: "Kannika",           // the key (firstName, id, ...) do not need to be in quotes unless it has special characters
   lastName : "Kabilar",
   id       : 1999,
   fullName : function() {
@@ -407,6 +419,18 @@ const person = {
 objectName.property      // person.age
 objectName["property"]   // person["age"]
 objectName[expression]   // x = "age"; person[x]
+
+// Deleting a property
+delete obj.key;
+delete obj['key'];
+
+// Check if Object has a particular property
+obj.hasOwnProperty('key');    // returns true if the object has the mentioned property
+
+// Looping through properties of an object
+for(let k in obj){
+	console.log(k, obj[k]);
+}
 
 // Methods of an object
 name = person.fullName();    
