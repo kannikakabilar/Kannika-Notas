@@ -532,6 +532,12 @@ delete x;    // This will cause an error because deleting is not allowed
 
 <h3 style="color:#fcc603">Modules: Imports & Exports</h3>
 
+> - <a style="color:#000000">How do you allow variables with values to be accessed from another .js file?</a>
+>
+> - <a style="color:#000000">How do you use variables from another file into your current file?</a>
+>
+> - <a style="color:#000000">How do you export and import a function?</a>
+
 ```javascript
 // Example 1
 /* person.js */
@@ -544,7 +550,7 @@ import { name, age } from "./person.js";
 // Example 2
 /* message.js */
 const message = () => {
-const name = "Jesse";
+const name = "Jun";
 const age = 40;
 return name + ' is ' + age + 'years old.';
 };
@@ -571,6 +577,18 @@ document.getElementById("demo").innerHTML = x;
 - Classes are like a blueprint of an object that allows to create multiple instances (multiple objects with same state and behaviour)
 
 <h3 style="color:#fcc603">Classes</h3>
+
+> - <a style="color:#000000">Create a class with a constructor that takes in some params and write a method for this class</a>
+>
+> - <a style="color:#000000">Create a child class that also takes in same params as parent class and some extra => call parent's constructor from child's constructor</a>
+>
+> - <a style="color:#000000">Create a static variable called counter that counts the number of instances created</a>
+>
+> - <a style="color:#000000">Create a static method that returns the static variable created above</a>
+>
+> - <a style="color:#000000"> Create a method in child class that acesses and uses the parent's method</a>
+>
+> - <a style="color:#000000">Create a getter and a setter method for the child class</a>
 
 ```javascript
 class Person {    // Every class must have a method called constructor
