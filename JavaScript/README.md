@@ -587,6 +587,37 @@ myCar.moving;                       // returns true
 
 ```
 
+<h3 style="color:#fcc603">Inheritance</h3>
+
+> - <a style="color:#000000">How do you check if an obj is an instance of a class?</a>
+>
+> - <a style="color:#000000">How do you check if an obj is an instance of a parent class?</a>
+>
+> - <a style="color:#000000">How do you check if a class has a particular property (method or field)?</a>
+
+```javascript
+
+class Pet{
+	constructor(name){
+		this.name = name;
+	}
+	introduce(){
+		console.log(`My pet is ${this.name}`);
+	}
+}
+class Dog extends Pet { }
+
+const doggy = new Dog('Fluffy');
+Dog.prototype.isPrototypeOf(doggy);            // true
+Pet.prototype.isPrototypeOf(doggy);            // true
+Pet.prototype.isPrototypeOf(Dog.prototype);    // true
+
+Pet.protoype.hasOwnProperty('introduce');      // true
+Dog.protoype.hasOwnProperty('introduce');      // false
+doggy.protoype.hasOwnProperty('introduce');    // false
+
+```
+
 <h3 style="color:#fcc603">JSON</h3>
 
 Stores JS objects or JS arrays as text
