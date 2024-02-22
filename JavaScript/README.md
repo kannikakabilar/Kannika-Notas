@@ -721,6 +721,33 @@ obj.employees[1].firstName + " " + obj.employees[1].lastName;
 </script>
 ```
 
+<h3 style="color:#fcc603">Promises, Async, & Await</h3>
+
+> - <a style="color:#000000">What is a promise?</a>
+> <br> A: The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+>
+> - <a style="color:#000000">What is the .then() and what 2 args does it take in?</a>
+>
+> - <a style="color:#000000">What is a .catch() and .finally() method used for?</a>
+>
+> - <a style="color:#000000">Write a function that returns a new promise</a>
+>
+> - <a style="color:#000000">Call that function and use .then(), .catch(), and .finally() methods after calling that function</a>
+>
+> - <a style="color:#000000">What is 'await' and it can only be used in what kind of function?</a>
+>
+> - <a style="color:#000000">Write an async function using await in a try-catch-finally block that performs the same functionality as the promise-returning function above</a>
+>
+> - <a style="color:#000000">Multiple .then() and .catch() can be chained to gether like this: prom.then(...).then(...).catch(...).catch(...) Why?</a>
+> <br> A: Because then() and catch return promises
+>
+> - <a style="color:#000000">Solve this LeetCode 2721 using Promise.all and also without Promise.all</a>
+>
+> - <a style="color:#000000">Show an example of using Promise.race(\[p1, p2, p3\])</a>
+
+```javascript
+```
+
 <h3 style="color:#fcc603">AJAX</h3>
 
 - allows the feature of not collecting all data from server when loading the webpage only when it is requested
