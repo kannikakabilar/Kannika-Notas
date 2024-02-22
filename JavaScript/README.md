@@ -558,6 +558,35 @@ document.getElementById("demo").innerHTML=​ "Hi, I am " + kan.age(year) + " ye
 document.getElementById("demo2").innerHTML=​ Student.getTotal();
 ```
 
+<h3 style="color:#fcc603">Prototypes</h3>
+
+> - <a style="color:#000000">A template function used as a constructor to act as a class. Classes in JS were only introduced in 2015, but even now they are a form of prototype</a>
+>
+> - <a style="color:#000000">How do you create a template function constructor?</a>
+>
+> - <a style="color:#000000">How do you create a method for this prototype class?</a>
+>
+> - <a style="color:#000000">How do you create an instance of the prototype class and access its properties (fields and methods)?</a>
+
+```javascript
+
+function Car (color){             // prototype function constructor name must start with Capital letter
+	this.color = color;
+	this._mileage = 0;        // use underscore to treat field as a private variable
+	this.moving = false;
+}
+
+Car.prototype.start = function(){      // ClassName.prototype.methodName
+	this.moving = true;
+}
+
+const myCar = Car('blue');          // creating an instance
+myCar.color;                        // returns 'blue'
+myCar.start();
+myCar.moving;                       // returns true
+
+```
+
 <h3 style="color:#fcc603">JSON</h3>
 
 Stores JS objects or JS arrays as text
