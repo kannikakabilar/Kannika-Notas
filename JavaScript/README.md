@@ -532,6 +532,7 @@ document.getElementById("demo").innerHTML = x;
 ```
 
 <h3 style="color:#fcc603">Objects vs. Classes</h3>
+
 - Objects are used for creating a single entity with their own state & behaviour (almost like a specific instance of a class with its own unique property values)
 - Classes are like a blueprint of an object that allows to create multiple instances (multiple objects with same state and behaviour)
 
