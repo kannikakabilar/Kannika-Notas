@@ -485,7 +485,11 @@ try{
 >
 > - <a style="color:#000000">Create a regex pattern that looks for ALL 'home' case insensitive and run it in this string: 'Home, sweet home.' to make it return list of matches</a>
 >
-> - <a style="color:#000000">
+> - <a style="color:#000000">Replace the first occurrence of 'Canada' with 'USA' in this sting: 'Visit Canada!'</a>
+>
+> - <a style="color:#000000">Use replace method to replace ALL occurrences of 'chatbot' or 'hello' with the word all capitalized (ie: 'chatbot' => 'CHATBOT')</a>
+>
+> - <a style="color:#000000">Given this string: 'hello,user.how are.you' Split it for every comma, period, and space</a>
 
 ```javascript
 // Creating a new regex patern
@@ -503,6 +507,16 @@ console.log(arr);                       // outputs ["Home", "home"]
 let text = "Visit Canada!";
 let n = text.search("Canada");    // n = 6
 let result = text.replace(/canada/i, "USA");    // Search for 'canada' (case insensitive) and replace it; result = "Visit USA!"
+
+let txt = 'Say hello to the chabot.';
+let res = txt.replace(/chatbot|hello/gi, function(wrd){
+	return wrd.toUpperCase();
+}
+console.log(res);     // 'Say HELLO to the CHATBOT'
+
+const str = 'hello,user.how are.you';
+const res2 = str.split(/[,.\s]/g);
+console.log(res2);                          // should output: ['hello', 'user', 'how', 'are', 'you']
 ```
 
 <h3 style="color:#fcc603">Strict Mode</h3>
