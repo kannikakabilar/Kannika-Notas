@@ -726,7 +726,10 @@ obj.employees[1].firstName + " " + obj.employees[1].lastName;
 > - <a style="color:#000000">What is a promise?</a>
 > <br> A: The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
 >
-> - <a style="color:#000000">What is the .then() and what 2 args does it take in?</a>
+> - <a style="color:#000000">When creating a new Promise, it takes a function in as its arg and this function takes in 2 args, what are they?</a>
+> <br> A: The 2 args are resolve and reject and they represent a function. When resolve is called, it executes the function defined in .then() and when reject is called, it executes the function in .catch(). The resolve function can take in args and reject function conventionally takes in an error data-type.
+>
+> - <a style="color:#000000">What is the .then() method used for?</a>
 >
 > - <a style="color:#000000">What is a .catch() and .finally() method used for?</a>
 >
@@ -746,6 +749,27 @@ obj.employees[1].firstName + " " + obj.employees[1].lastName;
 > - <a style="color:#000000">Show an example of using Promise.race(\[p1, p2, p3\])</a>
 
 ```javascript
+function findDataById(id){
+	return new Promise(function (resolve, reject){
+		let sampleData = [1, 2, 3, 4, 5];
+		if(sampleData[id]){
+			resolve(sampleData[id]);    // execute .then()'s function with sampleData[id] as its arg
+		}else{
+			reject(new Error('Invalid'));     // execute .catch()'s function with error-type data as its arg
+		}
+	});
+}
+
+findDataById(4)
+	.then(function(response){                           // This function gets executed when resolve is called
+		console.log(response);
+	})
+	.catch(function(err){                               // This function gets executed when reject is called
+		console.log(err.message);
+	})
+	.finally(function(){                                // The finally function will always get called and executed at the end
+		console.log('Promise completed');
+	});
 ```
 
 <h3 style="color:#fcc603">AJAX</h3>
