@@ -15,12 +15,12 @@
 
 
 ```javascript
-myGlobalVar = 9;    // variable w/o keyword => global variable
+myGlobalVar = 9;                 // variable w/o keyword => global variable
 var count = 99;
-var count;        // can be re-declared and it would still have value 99
+var count;                       // can be re-declared and it would still have value 99
 let count = 0;
-const count = 0;    // const won't allow you to change its value
-console.log("hello kan");    // print
+const count = 0;                 // const won't allow you to change its value
+console.log("hello kan");        // print
 
 var myFuncName = function(p1, p2) {
     ...
@@ -143,28 +143,28 @@ let result2 = text.slice(3)                                // from position 3 to
 > - <a style="color:#000000">What is the difference between the rest operator and the spread operator?</a>
 
 ```javascript
-arr = Array.from(mySet);    // set to array
+arr = Array.from(mySet);                                         // set to array
 
-arr.slice(0, i);    // return arr[0:i]
-arr = str.split("");    // returns array of char from str
+arr.slice(0, i);                                                 // return arr[0:i]
+arr = str.split("");                                             // returns array of char from str
 arr.reverse();
 
-Math.max(...arr);    // returns the max element of the array
+Math.max(...arr);                                                // returns the max element of the array
 
 var argumentsLength = function(...args) {
-	return [...args].length;    // return length of arguments passed to function - LeetCode Q2703
+	return [...args].length;                                 // return length of arguments passed to function - LeetCode Q2703
 };
 
 const planets = ["Mercury", "Venus", "Neptune"];
-planets[6] = "Jupiter";  // Creates undefined "holes" in planets
+planets[6] = "Jupiter";                                          // Creates undefined "holes" in planets
 
-arr.sort(function(a, b) {return a-b;});    // by default js sorts as strings to sort numbers input this function
-arr.push(9);    // append number 9 to arr
+arr.sort(function(a, b) {return a-b;});                          // by default js sorts as strings to sort numbers input this function
+arr.push(9);                                                     // append number 9 to arr
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
-let fruit = fruits.pop();    // removes and returns the last element | fruit = Mango
-let fruit = fruits.shift();    // removes and returns the first element | fruit = Banana
-fruits.unshift("Lemon");    // adds new element to the beginning of the array and returns array length
+let fruit = fruits.pop();                                        // removes and returns the last element | fruit = Mango
+let fruit = fruits.shift();                                      // removes and returns the first element | fruit = Banana
+fruits.unshift("Lemon");                                         // adds new element to the beginning of the array and returns array length
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 /* new elements are added at index 2, 2 elements from index 2 and 3 are removed and returned from og array, "Lemon" and "Kiwi" are  the new elements added to the array */
@@ -172,7 +172,7 @@ let removed = fruits.splice(2, 2, "Lemon", "Kiwi");
 
 fruits.includes("Mango"); // is true
 
-arr1.concat(arr2)    // arr1+arr2 returns concatenation of 2 arrays
+arr1.concat(arr2)                                                // arr1+arr2 returns concatenation of 2 arrays
 
 /* Filtering an array */
 const numbers = [45, 4, 9, 16, 25];
@@ -183,32 +183,32 @@ function myFunction(value, index, array) {
 
 /* Mapping in an array */
 let arr = [1, 2, 3, 4]
-const newArr = arr.map((x) => x-1);    // newArr = [0, 1, 2, 3]
+const newArr = arr.map((x) => x-1);                              // newArr = [0, 1, 2, 3]
 
 let total = arr.reduce((partialSum, a) => partialSum + a, 0);    // returns the sum of all elements in the array
 
 const numOfMoons = [0, 2, 14];
 const [venus, mars, neptune] = numOfMoons;
-console.log(neptune);    // outputs 14
+console.log(neptune);                                            // outputs 14
 
 const nums = [1, 'two', 3, 'four'];
-nums.indexOf('two');    // returns 1
-nums.includes(1);       // returns true
+nums.indexOf('two');                                             // returns 1
+nums.includes(1);                                                // returns true
 
 const nums2 = [1, 3, 5, 7, 9];
-nums2.every((n) => n%2 !== 0);    // returns true since every element passes the condition
-nums2.some((n) => n%2 !== 0);    // returns true since some element passes the condition
-nums2.find((n) => n>5);          // returns 7 (the first value that passes the condition)
-nums2.findIndex((n) => n>9);     // returns -1 (same as above but returns the index)
+nums2.every((n) => n%2 !== 0);                                   // returns true since every element passes the condition
+nums2.some((n) => n%2 !== 0);                                    // returns true since some element passes the condition
+nums2.find((n) => n>5);                                          // returns 7 (the first value that passes the condition)
+nums2.findIndex((n) => n>9);                                     // returns -1 (same as above but returns the index)
 
-// Rest operator appears on the left-side of the assignment operator and it can only be placed as the last element in the list
+/* Rest operator appears on the left-side of the assignment operator and it can only be placed as the last element in the list */
 const [a, b, ...everythingElse] = [0, 1, 1, 2, 3, 5, 8];
-everythingElse    // returns [1, 2, 3, 5, 8]
+everythingElse                                                   // returns [1, 2, 3, 5, 8]
 
-// Spread operator appears on the rigth-side of the assignment operator and it can appear anywhere & any # of times in the array
+/* Spread operator appears on the rigth-side of the assignment operator and it can appear anywhere & any # of times in the array */
 const oneToFive = [1, 2, 3, 4, 5];
 const oneToTen = [...oneToFive, 6, 7, 8, 9, 10];
-oneToTen    // returns [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+oneToTen                                                         // returns [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 <h3 style="color:#fcc603">Hash Sets</h3>
@@ -218,28 +218,28 @@ let mySet = new Set();
 
 let mySet = new Set(arr);    // array to set
 
-mySet.has(num);    // returns true if the set contains num
+mySet.has(num);              // returns true if the set contains num
 
-mySet.add(new_num);   // add new_num to set
+mySet.add(new_num);          // add new_num to set
 
-mySet.size    // return size of set
+mySet.size                   // return size of set
 
-mySet.delete(0);    // delete zero from set
+mySet.delete(0);             // delete zero from set
 
 ```
 
 <h3 style="color:#fcc603">Hash Maps</h3>
 
 ```javascript
-let freq = new Map();    // freq = {}; also works
+let freq = new Map();                   // freq = {}; also works
 freq.has(num);
 freq.set(arr[i], freq.get(arr[i])+1);
 
-for(let [key, value] of freq){    // loop through keys and values of map
+for(let [key, value] of freq){          // loop through keys and values of map
     if(key == .. && value == ...) ...
 }
 
-for(let key in freq){    // loop through key of map
+for(let key in freq){                   // loop through key of map
     if(freq[key] == ...) { ... }
 }
 ```
