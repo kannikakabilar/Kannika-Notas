@@ -15,12 +15,12 @@
 
 
 ```javascript
-myGlobalVar = 9;                 // variable w/o keyword => global variable
+myGlobalVar = 9;                       // variable w/o keyword => global variable
 var count = 99;
-var count;                       // can be re-declared and it would still have value 99
+var count;                             // can be re-declared and it would still have value 99
 let count = 0;
-const count = 0;                 // const won't allow you to change its value
-console.log("hello kan");        // print
+const count = 0;                       // const won't allow you to change its value
+console.log("hello kan");              // print
 
 var myFuncName = function(p1, p2) {
     ...
@@ -249,13 +249,13 @@ for(let key in freq){                   // loop through key of map
 > - <a style="color:#000000">How do you check if 2 objects or arrays are equal in JS?</a>
 
 ```javascript
-// Check if any 2 javascript objects are equal
+/* Check if any 2 javascript objects are equal */
 const equalsCheck = (a, b) => {
     return JSON.stringify(a) === JSON.stringify(b);
 }
 
 if(equalsCheck(arr1, arr2)){
-    return true;    // return true if arr1 and arr2 are equal
+    return true;                                        // return true if arr1 and arr2 are equal
 }else{
     return false;
 }
@@ -276,16 +276,16 @@ if(equalsCheck(arr1, arr2)){
 
 ```javascript
 
-// checking for null value
+/* checking for null value */
 let name = null;
-name === null;    // returns true
+name === null;                                   // returns true
 
 let count;
-count === undefined;    // returns true
+count === undefined;                             // returns true
 
-// Nullish Coalescing
+/* Nullish Coalescing */
 let amount = null;
-let total = amount ?? 1;    // Assign total = amount but if amount is null or undefined assign it 1
+let total = amount ?? 1;                         // Assign total = amount but if amount is null or undefined assign it 1
 
 const obj = {
 	address : {
@@ -294,9 +294,9 @@ const obj = {
 	}
 }
 
-console.log(obj.address.zipCode);    // undefined
-console.log(obj.residence.street);    // type error
-console.log(obj.residence?.street);    // undefined
+console.log(obj.address.zipCode);                // undefined
+console.log(obj.residence.street);               // type error
+console.log(obj.residence?.street);              // undefined
 
 ```
 
@@ -325,20 +325,20 @@ const addNums = function(x=0, y=0){
 	console.log(x+y);
 }
 
-setTimeout(addNums(5, 4), 2);    // addNums(4, 5) function will be called after 2 seconds
+setTimeout(addNums(5, 4), 2);                               // addNums(4, 5) function will be called after 2 seconds
 
-// Creating a function using a Function constructor
+/* Creating a function using a Function constructor */
 const sum = new Function('a', 'b', 'return a + b');
-console.log(sum(2, 7));    // Expected output: 9
+console.log(sum(2, 7));                                     // Expected output: 9
 
-// Anonymous Self-Invoking Function
+/* Anonymous Self-Invoking Function */
 (function () {
-  let x = "Hello!!";  // I will invoke myself
+  let x = "Hello!!";                                        // I will invoke myself
   console.log(x);
 })();
 
-// Arrow Function
-const arwFunc = (x, y) => { x * y };    // if there is just one statement in the curly brackets, then automatically return the value from that statement
+/* Arrow Function */
+const arwFunc = (x, y) => { x * y };                        // if there is just one statement in the curly brackets, then automatically return the value from that statement
 
 ```
 
@@ -365,12 +365,11 @@ const f1 = function(){
 const add = (function () {
   let counter = 0;
   return function () {counter += 1; return counter}
-})();    // Calls itself and returns a function which is stored in add - this allows the function to have 'counter' as a private variable
+})();                                                     // Calls itself and returns a function which is stored in add - this allows the function to have 'counter' as a private variable
 
-add();
-add();
-add();
-// the counter is now 3
+add();                                                    // 1
+add();                                                    // 2
+add();                                                    // 3 - the counter is now 3
 
 const greeter = function(name){
 	return {
@@ -384,8 +383,8 @@ const greeter = function(name){
 }
 
 let obj = greeter("Jack");
-obj.greetAM();    // returns "Good Morning! Jack"
-obj.greetPM();    // returns "Good Evening! Jack"
+obj.greetAM();                                            // returns "Good Morning! Jack"
+obj.greetPM();                                            // returns "Good Evening! Jack"
 ```
 
 **Arguments are Passed by Value** and **Objects are Passed by Reference**
@@ -473,7 +472,7 @@ person.fullName.apply(person1, ["Toronto", "Canada"]);
 try{
 	throw new Error('Oops, something went wrong');
 }catch(err){
-	console.log(err.message);    // 'Oops, something went wrong' gets outputted in the console
+	console.log(err.message);                         // 'Oops, something went wrong' gets outputted in the console
 }
 ```
 
@@ -492,42 +491,42 @@ try{
 > - <a style="color:#000000">Given this string: 'hello,user.how are.you' Split it for every comma, period, and space</a>
 
 ```javascript
-// Creating a new regex patern
+/* Creating a new regex patern */
 const rgx1 = /[a-z]/;
 const rgx2 = new RegExp('[a-z]');
 
-const re = /home/gi;                    // look for ALL matches of case insensitive 'home'
+const re = /home/gi;                                          // look for ALL matches of case insensitive 'home'
 const str = 'Home, sweet home.';
 const arr = str.match(re);
-console.log(arr);                       // outputs ["Home", "home"]
-// The regex pattern can also be created using regex constructor
-// let re1 = new RegExp('home', 'gi');
-// let re2 = new RegExp(/home/, 'gi');
+console.log(arr);                                             // outputs ["Home", "home"]
+/* The regex pattern can also be created using regex constructor
+* let re1 = new RegExp('home', 'gi');
+* let re2 = new RegExp(/home/, 'gi'); */
 
 let text = "Visit Canada!";
-let n = text.search("Canada");    // n = 6
-let result = text.replace(/canada/i, "USA");    // Search for 'canada' (case insensitive) and replace it; result = "Visit USA!"
+let n = text.search("Canada");                                // n = 6
+let result = text.replace(/canada/i, "USA");                  // Search for 'canada' (case insensitive) and replace it; result = "Visit USA!"
 
 let txt = 'Say hello to the chabot.';
 let res = txt.replace(/chatbot|hello/gi, function(wrd){
 	return wrd.toUpperCase();
 }
-console.log(res);     // 'Say HELLO to the CHATBOT'
+console.log(res);                                             // 'Say HELLO to the CHATBOT'
 
 const str = 'hello,user.how are.you';
 const res2 = str.split(/[,.\s]/g);
-console.log(res2);                          // should output: ['hello', 'user', 'how', 'are', 'you']
+console.log(res2);                                            // should output: ['hello', 'user', 'how', 'are', 'you']
 ```
 
 <h3 style="color:#fcc603">Strict Mode</h3>
 
 ```javascript
-x = 3.14;       // This will not cause an error
+x = 3.14;         // This will not cause an error
 myFunction();
 
 "use strict";
 let x = 3.14;
-delete x;    // This will cause an error because deleting is not allowed
+delete x;         // This will cause an error because deleting is not allowed
 ```
 
 <h3 style="color:#fcc603">Modules: Imports & Exports</h3>
@@ -591,7 +590,7 @@ document.getElementById("demo").innerHTML = x;
 > - <a style="color:#000000">Create a getter and a setter method for the child class</a>
 
 ```javascript
-class Person {    // Every class must have a method called constructor
+class Person {                       // Every class must have a method called constructor
   constructor(name, birthYear) {
     this.name = name;
     this.birthYear = birthYear;
