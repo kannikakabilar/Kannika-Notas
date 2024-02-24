@@ -737,11 +737,12 @@ obj.employees[1].firstName + " " + obj.employees[1].lastName;
 > - <a style="color:#000000">Call that function and use .then(), .catch(), and .finally() methods after calling that function</a>
 >
 > - <a style="color:#000000">What is 'await' and it can only be used in what kind of function?</a>
+> <br> A: await waits for a promise. It can only be used inside an async function.
 >
-> - <a style="color:#000000">Write an async function using await in a try-catch-finally block that performs the same functionality as the promise-returning function above</a>
+> - <a style="color:#000000">Write an async function using await in a try-catch-finally block that performs the same functionality as axiosRequest promise-statement provided below</a>
 >
 > - <a style="color:#000000">Multiple .then() and .catch() can be chained to gether like this: prom.then(...).then(...).catch(...).catch(...) Why?</a>
-> <br> A: Because then() and catch return promises
+> <br> A: Because then() and catch() return promises.
 >
 > - <a style="color:#000000">Solve this LeetCode 2721 using Promise.all and also without Promise.all</a>
 >
@@ -769,6 +770,50 @@ findDataById(4)
 	.finally(function(){                                // The finally function will always get called and executed at the end
 		console.log('Promise completed');
 	});
+
+const axiosRequest = require('axios');
+axiosRequest.get('https://www.boredapi.com/api/activity')   // returns a promise which might take awhile to finish executing
+	    .then(response => {
+		console.log(`You could ${response.data.activity}`);
+	    })
+	    .catch(err => {
+		console.log(`ERROR! ${err}`);
+	    });
+
+/* Same as above statement but uses async and await */
+async function getActivity(){
+	try{
+		let response = await axiosRequest.get('https://www.boredapi.com/api/activity');    // waits until promise object is returned with response
+		console.log(`You could ${response.data.activity}`);
+	}catch(err){
+		console.log(`ERROR! ${err}`);
+	}finally{
+		console.log('Async Await Function completed');
+	}
+}
+
+new Promise(function(resolve, reject) {
+
+  setTimeout(() => resolve(1), 1000);
+
+}).then(function(result) {
+
+  alert(result); // 1
+  return result * 2;
+
+}).then(function(result) {
+
+  alert(result); // 2
+  return result * 2;
+
+}).then(function(result) {
+
+  alert(result); // 4
+  return result * 2;
+
+});
+
+
 ```
 
 <h3 style="color:#fcc603">AJAX</h3>
