@@ -746,7 +746,8 @@ obj.employees[1].firstName + " " + obj.employees[1].lastName;
 >
 > - <a style="color:#000000">Solve this LeetCode 2721 using Promise.all and also without Promise.all</a>
 >
-> - <a style="color:#000000">Show an example of using Promise.race(\[p1, p2, p3\])</a>
+> - <a style="color:#000000">What is Promise.race(\[p1, p2, p3\])</a>
+> <br> A: Promise.race takes in a list of promises and execute .then or .catch based on the first resolved or rejected value and ignore the rest of the promises.
 
 ```javascript
 function findDataById(id){
@@ -813,6 +814,21 @@ new Promise(function(resolve, reject) {
 
 });
 
+/* Promise.race() */
+const promise1 = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('succes'), 2000);
+});
+
+const promise2 = new Promise((resolve, reject) => {
+    setTimeout(() => reject('err'), 1000);             // since promise2 gets rejected faster, catch block is executed and promise1 is ignored
+});
+
+Promise.race([promise1, promise2])
+  .then((value) => {
+  console.log(value);
+}).catch((value) => {
+  console.log('error: ' + value);
+});
 
 ```
 
