@@ -137,3 +137,26 @@ import Car from './Car.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Car />); 
 ```
+
+<h3 style="color:#fc0303">Advanced Props</h3>
+
+> - <a style="color:#000000">Props are arguments passed into React components. They are passed to components via HTML attributes. React Props are read-only! You will get an error if you try to change their value.</a>a>
+>
+> - <a style="color:#000000">Render a React Function-Element (React component) and pass in a object as one of its 'attribute' values</a>
+
+```html
+function Car(props) {
+  return <h2>I am a { props.brand.model }!</h2>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const carInfo = { name: "Ferrari", model: "Spider" };
+root.render(<Car brand={ carInfo } />);                                //passing in objects are allowed and they must accessed properly in the function
+```
+
+<h3 style="color:#fc0303">Events</h3>
+
+> - <a style="color:#000000">What is being referred to when React Events are mentioned?</a>
+> <br> A: React has the same events as HTML: click, change, mouseover etc.
+>
+> - <a style="color:#000000"></a>
