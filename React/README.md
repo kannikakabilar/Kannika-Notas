@@ -53,7 +53,7 @@
 In browser, go to: http://localhost:3000/
 ```
 
-```javascript
+```JSX
 /* index.js */
 
 // JSX allows us to write HTML directly in a JavaScript file
@@ -91,7 +91,7 @@ root.render(myElement1);
 >
 > - <a style="color:#000000">Write a React Component in Car.js and export it. In index.js, import the component and render it.</a>
 
-```javascript
+```JSX
 /* React Component - Simple Example */
 function Fruit() {
   return <h2>Hi, I am a Fruit!</h2>;
@@ -144,7 +144,7 @@ root.render(<Car />);
 >
 > - <a style="color:#000000">Render a React Function-Element (React component) and pass in a object as one of its 'attribute' values</a>
 
-```html
+```JSX
 function Car(props) {
   return <h2>I am a { props.brand.model }!</h2>;
 }
@@ -159,4 +159,8 @@ root.render(<Car brand={ carInfo } />);                                //passing
 > - <a style="color:#000000">What is being referred to when React Events are mentioned?</a>
 > <br> A: React has the same events as HTML: click, change, mouseover etc.
 >
-> - <a style="color:#000000"></a>
+> - <a style="color:#000000">How is a React Event written differently compared to a HTML DOM event? Also, how is the event handler different in a Ract Event compared to a HTML DOM event?</a>
+> <br> A: React events are written in camelCase syntax: onClick instead of onclick. React event handlers are written inside curly braces: onClick={shoot}  instead of onClick="shoot()".
+
+```JSX
+```
