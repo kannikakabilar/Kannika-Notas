@@ -79,3 +79,61 @@ const myElement3 = (
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(myElement1);
 ```
+
+<h3 style="color:#fc0303">Components</h3>
+
+> - <a style="color:#000000">What is a React Component? Component name must start with a ? Show what it is using a simple example.</a>
+> <br> A: A React Component is a JavaScript function that returns a html element. Component/function name must start with a Captial Letter.
+>
+> - <a style="color:#000000">What are props in a React Component? Show an example that demonstrates the use of props.</a>
+>
+> - <a style="color:#000000">Write a React Component that calls another React Component</a>
+>
+> - <a style="color:#000000">Write a React Component in Car.js and export it. In index.js, import the component and render it.</a>
+
+```javascript
+/* React Component - Simple Example */
+function Fruit() {
+  return <h2>Hi, I am a Fruit!</h2>;
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Fruit />);
+
+/* React Component - Props Example */
+function Car(props) {
+  return <h2>I am a {props.color} Car!</h2>;
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car color="blue"/>);
+
+/* Componet inside of a Component */
+function Car() {
+  return <h2>I am a Car!</h2>;
+}
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my Garage?</h1>
+      <Car />
+    </>
+  );
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
+
+/* Exporting and Importing Example */
+
+/* src/Car.js */
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+export default Car;
+
+/* src/index.js */
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Car from './Car.js';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+```
