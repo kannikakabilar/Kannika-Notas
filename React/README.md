@@ -52,3 +52,30 @@
 > npm start
 In browser, go to: http://localhost:3000/
 ```
+
+```javascript
+/* index.js */
+
+// JSX allows us to write HTML directly in a JavaScript file
+
+const myElement1 = <h1>React is {5 + 5} times better with JSX</h1>;
+
+const myElement2 = (
+  <ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Cherries</li>
+  </ul>
+);
+
+const myElement3 = (
+  <>
+    <p>I am a paragraph, but these paragraphs need to be one html element</p>
+    <p>I am a paragraph too, which is within a fragment which look like empty html elements</p>
+  </>
+);
+
+// Another way to perform the render
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement1);
+```
