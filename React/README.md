@@ -187,3 +187,7 @@ function Football() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Football />);
 ```
+
+<h3 style="color:#fc0303">Rendering Lists</h3>
+
+> - <a style="color:#000000"></a>
