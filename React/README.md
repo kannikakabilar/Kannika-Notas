@@ -190,4 +190,42 @@ root.render(<Football />);
 
 <h3 style="color:#fc0303">Rendering Lists</h3>
 
+> - <a style="color:#000000">Say you have a JS list filled with names. If you want to render a list of items using li tag in ul onto the webpage, you cannot write a for-loop inside {} (curly brackets), what method do you use in the curly bracket?</a>
+>
+> - <a style="color:#000000">When you are rendering the same React Component function-element multiple times, you need to pass-in a specific attribute, that can only be passed-in and not accessed, what is it? and why do you need to pass it in?</a>
+> <br> A: Keys allow React to keep track of elements. This way, if an item is updated or removed, only that item will be re-rendered instead of the entire list. Generally, the key should be a unique ID assigned to each item.
+
+```jsx
+function Car(props){
+  return <li>I am a { props.brand }</li>        // props.key cannot be accessed here, if id is needed => pass it in as a separate prop
+}
+
+function Garage() {
+  const cars = [                   // it is a convention to use id as keys in the data type
+    {id: 1, brand: 'Lambo'},
+    {id: 2, brand: 'BMW'},
+    {id: 3, brand: 'Audi'}
+  ];
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <ul>
+        {
+          cars.map((car) => <Car key={car.id} brand={car.brand} />)    // key prop needs to be passed-in to differentiate between multiple Car React-Components
+        }
+      </ul>
+    </>
+  );
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
+```
+
+<h3 style="color:#fc0303">Hooks</h3>
+
+> - <a style="color:#000000">Before using Hooks, what needs to be done first?</a>
+> <br> A: You must first import each specific hook before using it.
+
+<h4 style="color:#fc0303">UseState Hooks</h4>
+
 > - <a style="color:#000000"></a>
