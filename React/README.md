@@ -140,7 +140,7 @@ root.render(<Car />);
 
 <h3 style="color:#fc0303">Advanced Props</h3>
 
-> - <a style="color:#000000">Props are arguments passed into React components. They are passed to components via HTML attributes. React Props are read-only! You will get an error if you try to change their value.</a>a>
+> - <a style="color:#000000">Props are arguments passed into React components. They are passed to components via HTML attributes. React Props are read-only! You will get an error if you try to change their value.</a>
 >
 > - <a style="color:#000000">Render a React Function-Element (React component) and pass in a object as one of its 'attribute' values</a>
 
@@ -162,14 +162,14 @@ root.render(<Car brand={ carInfo } />);                                //passing
 > - <a style="color:#000000">How is a React Event written differently compared to a HTML DOM event? Also, how is the event handler different in a Ract Event compared to a HTML DOM event?</a>
 > <br> A: React events are written in camelCase syntax: onClick instead of onclick. React event handlers are written inside curly braces: onClick={shoot}  instead of onClick="shoot()".
 >
-> - <a style="color:#000000">Task: Write a React Event </a>
->             - Create a React Component function called Football (it doesn't take any args)
->             - Inside the Football function, create an arrow function called 'shoot', that takes in two args.
->             - Inside the arrow function, it should alert a message that displays the value of both the args.
->             - Return a button element in the Footbal function React Component.
->             - This button should have an event called 'onClick' and its event handler is an arrow function that takes in 'e' representing event
->             - In the body of the arrow function inside the event handler of the button, call shoot and send in args: "Goal!" and the event type (how do you send in even type?)
->             - Render the Football function-ReactComponent
+> - <a style="color:#000000">Task: Write a React Event </a> <br>
+>             - Create a React Component function called Football (it doesn't take any args) <br>
+>             - Inside the Football function, create an arrow function called 'shoot', that takes in two args. <br>
+>             - Inside the arrow function, it should alert a message that displays the value of both the args. <br>
+>             - Return a button element in the Footbal function React Component. <br>
+>             - This button should have an event called 'onClick' and its event handler is an arrow function that takes in 'e' representing event <br>
+>             - In the body of the arrow function inside the event handler of the button, call shoot and send in args: "Goal!" and the event type (how do you send in even type?) <br>
+>             - Render the Football function-ReactComponent <br>
 
 ```jsx
 function Football() {
