@@ -93,6 +93,8 @@ root.render(myElement1);
 >
 > - <a style="color:#000000">What is meant by composability in React?</a>
 > <br> A: React components can be separated into different files (ie: Header of webpage can be store in Header.js and imported into App.js, Footer of webpage can be stored in Footer.js and imported and same for Navbar and MainContent and so on) and they can all be imported and rendered toether in App.js
+>
+> - <a style="color:#000000">How do you import a .css file in React (ie: Try to import App.css)</a>
 
 ```jsx
 /* React Component - Simple Example */
@@ -136,6 +138,7 @@ export default Car;
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Car from './Car.js';
+import "./App.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Car />); 
