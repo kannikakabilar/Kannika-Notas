@@ -90,6 +90,9 @@ root.render(myElement1);
 > - <a style="color:#000000">Write a React Component that calls another React Component</a>
 >
 > - <a style="color:#000000">Write a React Component in Car.js and export it. In index.js, import the component and render it.</a>
+>
+> - <a style="color:#000000">What is meant by composability in React?</a>
+> <br> A: React components can be separated into different files (ie: Header of webpage can be store in Header.js and imported into App.js, Footer of webpage can be stored in Footer.js and imported and same for Navbar and MainContent and so on) and they can all be imported and rendered toether in App.js
 
 ```jsx
 /* React Component - Simple Example */
