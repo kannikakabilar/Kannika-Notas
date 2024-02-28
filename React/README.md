@@ -83,7 +83,7 @@ root.render(myElement1);
 <h3 style="color:#fc0303">Components</h3>
 
 > - <a style="color:#000000">What is a React Component? Component name must start with a ? Show what it is using a simple example.</a>
-> <br> A: A React Component is a JavaScript function that returns a html element. Component/function name must start with a Captial Letter.
+> <br> A: A React Component is a JavaScript function that returns a JSX element (which is like a html element but can contain some embedded JS code). Component/function name must start with a Captial Letter.
 >
 > - <a style="color:#000000">What are props in a React Component? Show an example that demonstrates the use of props.</a>
 >
