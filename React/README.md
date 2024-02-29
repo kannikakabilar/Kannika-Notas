@@ -234,4 +234,62 @@ root.render(<Garage />);
 
 <h4 style="color:#fc0303">UseState Hooks</h4>
 
-> - <a style="color:#000000"></a>
+> - <a style="color:#000000">What is the useState used for?</a>
+> <br> A: useState Hook allows us to track state (of a property) in a function component.
+>
+> - <a style="color:#000000">What 1 value is inputted into the useState function and what 2 values are outputted? Show an example using useState.</a>
+> <br> A: The 1 input value is the inital value that is set for the prop and it returns a variable containing the current value and a fucntion that takes in new value to update the current value stored in the variable returned as first result. (check example for clarity)
+>
+> - <a style="color:#000000">useState can be used to track a combination of values. Explain how and if you only want to change one value from an object show how that's done</a>
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { useState } from "react";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("red");    //This is called Destructuring: assigning the return values to 2 different vars
+
+  return (
+    <>
+      <h1>My favorite color is {color}!</h1>
+      <button
+        type="button"
+        onClick={() => setColor("blue")}    // using the setColor funtion returned from useState to update the value of color
+      >Blue</button>
+    </>
+  )
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FavoriteColor />);
+
+function Car() {
+  const [car, setCar] = useState({    // using useState to track an object
+    brand: "Lambo",
+    model: "Aventador",
+    year: "2017",
+    color: "white"
+  });
+
+  const updateColor = () => {
+    setCar(previousState => {    // using setCar function to only change the color - making use of JS spread operator
+      return { ...previousState, color: "blue" }
+    });
+  }
+
+  return (
+    <>
+      <h1>My {car.brand}</h1>
+      <p>
+        It is a {car.color} {car.model} from {car.year}.
+      </p>
+      <button
+        type="button"
+        onClick={updateColor}
+      >Blue</button>
+    </>
+  )
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+```
