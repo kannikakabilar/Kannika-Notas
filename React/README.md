@@ -241,6 +241,9 @@ root.render(<Garage />);
 > <br> A: The 1 input value is the inital value that is set for the prop and it returns a variable containing the current value and a fucntion that takes in new value to update the current value stored in the variable returned as first result. (check example for clarity)
 >
 > - <a style="color:#000000">useState can be used to track a combination of values. Explain how and if you only want to change one value from an object show how that's done</a>
+>
+> - <a style="color:#000000">You have 2 options for what you can pass in to a state setter function (e.g. `setCount`). What are they?</a>
+> <br> A: The new value of state (ie: count) or a function that is executed with previous state value as its arg and the return value is stored as the new value of state.
 
 ```jsx
 import React from "react";
