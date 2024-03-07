@@ -296,3 +296,13 @@ function Car() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Car />);
 ```
+
+<h4 style="color:#fc0303">UseEffect Hooks</h4>
+
+> - <a style="color:#000000">What is useEffect used for?</a>
+> <br> A: Syncing 2 different internal states, though specific states get update when its value changes, some state values must be synced and need to get updated together. Also when props or local variable changes sometimes the page needs to get re-rendered. => useEffect can be used for this.
+>
+> - <a style="color:#000000">Fetching data from API  and setting the result to a state value needs to be placed where in a react code?</a>
+> <br> A: Inside the useEffect function with an empty array as its second arg so that it doesn't infinitely keep rendering it self.
+>
+> 
