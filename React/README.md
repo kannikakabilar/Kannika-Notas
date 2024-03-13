@@ -306,6 +306,6 @@ root.render(<Car />);
 > <br> A: Inside the useEffect function with an empty array as its second arg so that it doesn't infinitely keep rendering it self.
 >
 > - <a style="color:#000000">The function in useEffect will get executed AT LEAST how many times?</a>
-> <br> A: It will get executed at least once during the first initial render (regardles of the 2nd arg), and the number of times it renders after that depends on the 2nd arg.
+> <br> A: It will get executed at least once during the first initial render (regardless of the 2nd arg), and the number of times it renders after that depends on the 2nd arg.
 >
-> - <a style="color:#000000">
+> - <a style="color:#000000"></a>
