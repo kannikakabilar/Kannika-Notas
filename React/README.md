@@ -332,5 +332,54 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Timer />);
 ```
 
-> - <a style="color:#000000">
-> 
+> - <a style="color:#000000">Example 2: Douubler - Create a useEffect that will set the 'calculation' value as twice the count value everytime the value of 'count' changes</a>
+
+```jsx
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  const [calculation, setCalculation] = useState(0);
+
+  // create a useEffect here that will set the 'calculation' value as twice the count value everytime the value of 'count' changes
+
+  return (
+    <>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount((c) => c + 1)}>+</button>
+      <p>Calculation: {calculation}</p>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Counter />);
+```
+
+> - <a style="color:#000000">Example 3: Make a fetch request in useEffect to this api: 'https://www.boredapi.com/api/activity' and set the result to 'activity' state. The fetch request should only be executed once</a>
+
+```jsx
+import React from "react"
+
+export default function App() {
+    const [activity, setActivity] = React.useState("")
+    
+    
+    // This useEffect handles the promise resulted from fetch request and assigns it to 'activity' state
+    React.useEffect(function() {
+        fetch("https://www.boredapi.com/api/activity")
+            .then(res => res.json())
+            .then(data => setActivity(data.activity))
+    }, [])
+
+    // The fetch request (1st arg function of useEffect) is executed only once
+    // If the fetch request was placed outside the useEffect, it would cause infinite rendering
+    
+    return (
+        <div>
+            <pre>You should: {JSON.stringify(activity)}</pre>
+        </div>
+    )
+}
+```
