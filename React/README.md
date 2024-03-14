@@ -308,4 +308,29 @@ root.render(<Car />);
 > - <a style="color:#000000">The function in useEffect will get executed AT LEAST how many times?</a>
 > <br> A: It will get executed at least once during the first initial render (regardless of the 2nd arg), and the number of times it renders after that depends on the 2nd arg.
 >
-> - <a style="color:#000000"></a>
+> - <a style="color:#000000">What are the 3 different values you can pass-in for the 2nd arg for useEffect? and how do they work?</a><br>
+>     - No (2nd arg) dependency passed: useEffect(() => { //Runs on every render (a render occurs everytime any state value changes) }); <br>
+>     - Empty array (as 2nd arg) passed: useEffect(() => { //Runs only on the first render }, []); <br>
+>     - Props passed (for 2nd arg): useEffect(() => { //Runs on the 1st render and any time a dependency value stated in the 2nd arg's array changes }, \[prop, state\]); <br>
+>
+> - <a style="color:#000000">Create a state value called 'count' and set its initial value to 0. Now, create a useEffect where its 1st arg function executes during every render. For the 1st arg, create an arrow function whose body calls setTimeout. The 1st arg of the setTimeout function should be executed every 1000ms. Create another arrow function for the 1st arg of the setTimeout which calls for 'setCount' and increments previous count value by 1.</a>
+
+```jsx
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  // write the useEffect here
+
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Timer />);
+```
+
+> - <a style="color:#000000">
+> 
