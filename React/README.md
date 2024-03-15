@@ -516,8 +516,6 @@ export default function App() {
 
 <h3 style="color:#fc0303">Handling Forms in React</h3>
 
-> - <a style="color:#000000"></a>
-
 ```jsx
 import React from "react"
 
@@ -662,3 +660,41 @@ export default function Form() {
     )
 }
 ```
+
+<h3 style="color:#fc0303">UseContext Hook</h3>
+
+> - <a style="color:#000000">What is useContext hook used for in react?</a>
+> <br> Context provides a way to share data to child/grand-child/..so-on components without having to pass props down manually at every level.
+>
+> - <a style="color:#000000">How do you pass a value to child/grand-child components using useContext?</a>
+
+```jsx
+import React, { useContext, createContext } from 'react';
+
+// Create a context with a default value
+const ThemeContext = createContext('light');
+
+function App() {
+  // Use the context provider to set the value of the context and this value can be accessed by any of its descendant components
+  return (
+    <ThemeContext.Provider value="dark">
+      <Toolbar />
+    </ThemeContext.Provider>
+  );
+}
+
+// This Toolbar function can be placed in another file for organization and be exported from there and imported into here
+function Toolbar() {
+  // Use the useContext hook to access the value of the context
+  const theme = useContext(ThemeContext);
+  return (
+    <div>
+      <p>The theme is: {theme}</p>
+    </div>
+  );
+}
+```
+
+> In this example, we create a ThemeContext using the createContext function and provide a default value of 'light'. <br>
+> In the App component, we use the ThemeContext.Provider component to set the value of the context to 'dark'. <br>
+> In the Toolbar component, we use the useContext hook to access the value of the ThemeContext and display it to the user. <br>
