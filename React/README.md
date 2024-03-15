@@ -383,3 +383,34 @@ export default function App() {
     )
 }
 ```
+
+> - <a style="color:#000000">Example 4: EventListeners and Cleanup useEffect</a>
+
+```jsx
+import React from "react"
+
+export default function WindowTracker() {
+    
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+    
+    React.useEffect(() => {
+        function watchWidth() {
+            console.log("Setting up...")
+            setWindowWidth(window.innerWidth)
+        }
+
+        // It doesn't matter about the 2nd arg of useEffect and the # of times this gets rendered but
+        window.addEventListener("resize", watchWidth)    // Everytime the window is resized, it calls watchWidth function
+
+        // We always want to remove the eventListener by returning this cleanup function that calls removeEventListener
+        return function() {
+            console.log("Cleaning up...")
+            window.removeEventListener("resize", watchWidth)
+        }
+    }, [])
+    
+    return (
+        <h1>Window width: {windowWidth}</h1>
+    )
+}
+```
