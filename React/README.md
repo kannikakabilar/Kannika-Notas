@@ -302,9 +302,6 @@ root.render(<Car />);
 > - <a style="color:#000000">What is useEffect used for?</a>
 > <br> A: Syncing 2 different internal states, though specific states get update when its value changes, some state values must be synced and need to get updated together. Also when props or local variable changes sometimes the page needs to get re-rendered. => useEffect can be used for this.
 >
-> - <a style="color:#000000">Fetching data from API  and setting the result to a state value needs to be placed where in a react code?</a>
-> <br> A: Inside the useEffect function with an empty array as its second arg so that it doesn't infinitely keep rendering it self.
->
 > - <a style="color:#000000">The function in useEffect will get executed AT LEAST how many times?</a>
 > <br> A: It will get executed at least once during the first initial render (regardless of the 2nd arg), and the number of times it renders after that depends on the 2nd arg.
 >
@@ -332,7 +329,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Timer />);
 ```
 
-> - <a style="color:#000000">Example 2: Douubler - Create a useEffect that will set the 'calculation' value as twice the count value everytime the value of 'count' changes</a>
+> - <a style="color:#000000">Example 2: Doubler - Create a useEffect that will set the 'calculation' value as twice the count value everytime the value of 'count' changes</a>
 
 ```jsx
 import { useState, useEffect } from "react";
@@ -357,6 +354,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Counter />);
 ```
 
+> - <a style="color:#000000">Fetching data from API  and setting the result to a state value needs to be placed where in a react code?</a>
+> <br> A: Inside the useEffect function with an empty array as its second arg so that it doesn't infinitely keep rendering itself.
+>
 > - <a style="color:#000000">Example 3: Make a fetch request in useEffect to this api: 'https://www.boredapi.com/api/activity' and set the result to 'activity' state. The fetch request should only be executed once</a>
 
 ```jsx
@@ -373,7 +373,7 @@ export default function App() {
             .then(data => setActivity(data.activity))
     }, [])
 
-    // The fetch request (1st arg function of useEffect) is executed only once
+    // The fetch request (that is inside the 1st arg function of useEffect) is executed only once
     // If the fetch request was placed outside the useEffect, it would cause infinite rendering
     
     return (
@@ -394,12 +394,14 @@ export default function WindowTracker() {
     const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
     
     React.useEffect(() => {
+
+        // The 'watchWidth' function and the eventlistener statement doesn't necessarily need to be in the useEffect but it is better for cleanup purposes
         function watchWidth() {
             console.log("Setting up...")
             setWindowWidth(window.innerWidth)
         }
 
-        // It doesn't matter about the 2nd arg of useEffect and the # of times this gets rendered but
+        // It doesn't matter about the dependencies in the 2nd arg of useEffect and the # of times this gets rendered but
         window.addEventListener("resize", watchWidth)    // Everytime the window is resized, it calls watchWidth function
 
         // We always want to remove the eventListener by returning this cleanup function that calls removeEventListener
@@ -410,6 +412,7 @@ export default function WindowTracker() {
     }, [])
     
     return (
+        // As you resize the window, the window width gets displayed here in real-time
         <h1>Window width: {windowWidth}</h1>
     )
 }
