@@ -443,7 +443,7 @@ root.render(<Welcome />);
 
 <h3 style="color:#fc0303">CSS in React</h3>
 
-> - <a style="color:#000000">For setting css in html, we use a string like style="...", in react what is is used instead?</a>
+> - <a style="color:#000000">For setting css in html, we use a string like style="...", in react what is used instead?</a>
 >
 > - <a style="color:#000000">What is the difference in convention for a css attribute in html vs in react?</a>
 > - <a style="color:#000000">For ex: In html, style="background-color:blue;" , how would you do this in react?</a>
@@ -533,9 +533,10 @@ export default function Form() {
             favColor: ""
         }
     )
-    
+
+    // Only one handleChange function is needed to handle any change of a field in the form and store the updated input into formData state object
     function handleChange(event) {
-        // event.target is the object and we are destructuring
+        // event.target is the object and we are destructuring it
         const {name, value, type, checked} = event.target
         setFormData(prevFormData => {
             return {
@@ -551,7 +552,11 @@ export default function Form() {
         console.log(formData)
     }
 
-    // onChange calls the function everytime we type on the input field, and the handleChange updates the specific form object and the value field uses the form object's value that we just stored to display it back into the text field
+    // onChange calls the function everytime we type on the input field,
+    // and the handleChange updates the specific form object and
+    // the value field uses the form object's value that we just stored to display it back into the text field
+
+    // The name field must match with one of our object's key so that we can handle it easier in the handleChange function
     return (
         <form onSubmit={handleSubmit}>
             <input
@@ -588,12 +593,16 @@ export default function Form() {
                 onChange={handleChange}
                 name="isFriendly"
             />
+            { // htmlFor is to indicate which input field its associated to (in this case, it is a label for the checkbox because it matches the id and htmlFor) }
             <label htmlFor="isFriendly">Are you friendly?</label>
             <br />
             <br />
             
             <fieldset>
                 <legend>Current employment status</legend>
+                { // for radio buttons, we manually send in the value instead of fetching it from formData object
+                  // however, the boolean value for checked is set based on the respective formData object
+                  // 'name' is employment which matches the key in our formData object }
                 <input 
                     type="radio"
                     id="unemployed"
@@ -631,6 +640,7 @@ export default function Form() {
             
             <label htmlFor="favColor">What is your favorite color?</label>
             <br />
+            { // dropdown option works like this }
             <select 
                 id="favColor" 
                 value={formData.favColor}
