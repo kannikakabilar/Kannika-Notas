@@ -698,3 +698,14 @@ function Toolbar() {
 > In this example, we create a ThemeContext using the createContext function and provide a default value of 'light'. <br>
 > In the App component, we use the ThemeContext.Provider component to set the value of the context to 'dark'. <br>
 > In the Toolbar component, we use the useContext hook to access the value of the ThemeContext and display it to the user. <br>
+
+<h3 style="color:#fc0303">Other Hooks</h3>
+
+> Here are some other hooks that are not as important? <br>
+> useReducer: allows you to manage complex state logic in functional components. <br>
+> useCallback: returns a memoized callback. <br>
+> useMemo: returns a memoized value. <br>
+> useRef: allows you to access the instance of a DOM element or a function component. <br>
+> useImperativeHandle: allows you to customize the instance value that is exposed to parent components when using ref. <br>
+> useLayoutEffect: allows you to read layout from the DOM and synchronously re-render. <br>
+> useDebugValue: allows you to display a label for custom hooks in React DevTools. <br>
