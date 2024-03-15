@@ -462,11 +462,54 @@ function Welcome() {
   // style={{}} outer-curly-brackets is to "go-into" javascript, inner-curly-brackets is to provide JS object of attributes
   return (
     <>
-      <h1 style={design}>Hi! I'm Kannika</h1>
+      <h1 style={design} className="title">Hi! I'm Kannika</h1>
     </>
   );
+  // you can also give className (in camelCase) and provide the design like normal in .css file
+  // in html, it would've been class="title"
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Welcome />);
+```
+
+<h3 style="color:#fc0303">Passing values to Child Components</h3>
+
+> - <a style="color:#000000">How do you pass a value to a child component and how will the child component receive it?</a>
+
+```jsx
+import React from "react"
+
+export default function App() {
+    const [count, setCount] = React.useState(0)
+    
+    function add() {
+        setCount(prevCount => prevCount + 1)
+    }
+    
+    function subtract() {
+        setCount(prevCount => prevCount - 1)
+    }
+
+    // you can pass in values to a child component like function args (which are actually accessed like objects)
+    // state values and state-setter-functions can also be passed into child components, which will execute & update in real-time
+    function Count(props){
+        return (
+            <div>
+                <button className="counter--minus" onClick={props.decr}>–</button>
+                <div className="counter--count">
+                    <h1>{props.number}</h1>
+                </div>
+                <button className="counter--plus" onClick={props.incr}>+</button>
+            </div>      
+        )
+    }
+    // the above function can also be placed in a different file for organization
+
+    return (
+        <div className="counter">
+            <Count number={count} decr={subtract} incr={add}/>
+        </div>
+    )
+}
 ```
