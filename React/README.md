@@ -232,7 +232,7 @@ root.render(<Garage />);
 > - <a style="color:#000000">Before using Hooks, what needs to be done first?</a>
 > <br> A: You must first import each specific hook before using it.
 
-<h4 style="color:#fc0303">UseState Hooks</h4>
+<h3 style="color:#fc0303">UseState Hooks</h3>
 
 > - <a style="color:#000000">What is the useState used for?</a>
 > <br> A: useState Hook allows us to track state (of a property) in a function component.
@@ -297,7 +297,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Car />);
 ```
 
-<h4 style="color:#fc0303">UseEffect Hooks</h4>
+<h3 style="color:#fc0303">UseEffect Hooks</h3>
 
 > - <a style="color:#000000">What is useEffect used for?</a>
 > <br> A: Syncing 2 different internal states, though specific states get update when its value changes, some state values must be synced and need to get updated together. Also when props or local variable changes sometimes the page needs to get re-rendered. => useEffect can be used for this.
@@ -416,4 +416,57 @@ export default function WindowTracker() {
         <h1>Window width: {windowWidth}</h1>
     )
 }
+```
+
+<h3 style="color:#fc0303">Conditional Rendering</h3>
+
+> - <a style="color:#000000">How would you make an html element appear only when the value of a particular variable is true?</a>
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Welcome() {
+  let show = true;
+
+  // The h1 tag wouldn't be displayed if show is false
+  return (
+    <>
+      {show && <h1>Hi! I'm Kannika</h1>}
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Welcome />);
+```
+
+<h3 style="color:#fc0303">CSS in React</h3>
+
+> - <a style="color:#000000">For setting css in html, we use a string like style="...", in react what is is used instead?</a>
+>
+> - <a style="color:#000000">What is the difference in convention for a css attribute in html vs in react?</a>
+> - <a style="color:#000000">For ex: In html, style="background-color:blue;" , how would you do this in react?</a>
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+function Welcome() {
+  // unlike css attributes in html, in React JS => Use camelCase for CSS property names
+  let design = {
+    color: "#ffffff",
+    backgroundColor: "#cccccc"
+  };
+
+  // style={{}} outer-curly-brackets is to "go-into" javascript, inner-curly-brackets is to provide JS object of attributes
+  return (
+    <>
+      <h1 style={design}>Hi! I'm Kannika</h1>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Welcome />);
 ```
