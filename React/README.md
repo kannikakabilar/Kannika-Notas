@@ -418,6 +418,8 @@ export default function WindowTracker() {
 }
 ```
 
+> - <a style="color:#000000">Sometimes, const tId = setTimeout(...) function is called in useEffect and () => clearTimeout(tId) function needs to returned</a>
+
 <h3 style="color:#fc0303">Conditional Rendering</h3>
 
 > - <a style="color:#000000">How would you make an html element appear only when the value of a particular variable is true?</a>
