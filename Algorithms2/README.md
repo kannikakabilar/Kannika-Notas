@@ -60,7 +60,7 @@
 
 <strong style="color:#1669f0">1. Fibonacci Style DP Qs - Use variables to store values of previous state</strong>
 
-> - <a style="color:#000000">Climbing Stairs - LeetCode Q70</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Climbing Stairs - LeetCode Q70</strong></mark></a>
 >
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Flip String to Monotone Increasing - LeetCode Q926</strong></mark></a>
 >
@@ -72,7 +72,7 @@
 
 > - <a style="color:#000000">Minimum Time to Make Rope Colorful - LeetCode Q1578</a>
 >
-> - <a style="color:#000000">Arithmetic Slices - LeetCode Q413</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Arithmetic Slices - LeetCode Q413</strong></mark></a>
 >
 > - <a style="color:#000000">Minimum Cost of Climbing Stairs - LeetCode Q746</a>
 >
