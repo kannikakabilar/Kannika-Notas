@@ -24,7 +24,7 @@
 <h3 style="color:#0303ad">&ensp; <a href="Algorithms/#binary-search" style="color:#0303ad">d. &ensp; Binary Search</a></h3>
 <h2 style="color:#1669f0"><a href="Algorithms2/#algorithms-ii" style="color:#1669f0">5. &ensp; Algorithms II</a></h2>
 <h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#sorting" style="color:#1669f0">a. &ensp; Sorting</a></h3>
-<h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#dynamic-programming" style="color:#1669f0">b. &ensp; Dynamic Programming I</a></h3>
+<h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#dynamic-programming-i" style="color:#1669f0">b. &ensp; Dynamic Programming I</a></h3>
 <h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#dynamic-programming-ii" style="color:#1669f0">c. &ensp; Dynamic Programming II</a></h3>
 <h3 style="color:#1669f0">&ensp; <a href="Algorithms2/#greedy" style="color:#1669f0">d. &ensp; Greedy</a></h3>
 
