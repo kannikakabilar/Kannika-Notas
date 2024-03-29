@@ -107,7 +107,7 @@
 >
 > - <a style="color:#000000"><mark style="background-color:#ff6373"><strong style="color:#000000">Partition Array for Max Sum - LeetCode Q1043</strong></mark></a>
 >
-> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Partition Equal Subset Sum</strong></mark></a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Partition Equal Subset Sum - LeetCode Q416</strong></mark></a>
 
 <strong style="color:#1669f0">5. Palindromic Qs</strong>
 
