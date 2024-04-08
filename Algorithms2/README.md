@@ -131,9 +131,9 @@
 
 > - <a style="color:#000000">Minimum Falling Path Sum - LeetCode Q931</a>
 > 
-> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Harder ver. Minimum Falling Path Sum II - LeetCode Q1289</strong></mark></a>
+> - <a style="color:#000000">Minimum Falling Path Sum II - LeetCode Q1289</a>
 >
-> - <a style="color:#000000">Minimum Path Cost in a Grid - LeetCode Q2304 + try Q2684</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Minimum Path Cost in a Grid - LeetCode Q2304 + try Q2684</strong></mark></a>
 >
 > - <a style="color:#000000">Minimum Path Sum - LeetCode Q64 + try Q174</a>
 
@@ -145,15 +145,15 @@
 
 > - <a style="color:#000000">Longest Common Subsequence - LeetCode Q1143 (and others that are similar Q712, Q516)</a>
 >
-> - <a style="color:#000000">Distinct Subsequence - LeetCode Q115 + try Q1987</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Distinct Subsequence - LeetCode Q115 + try Q1987</strong></mark></a>
 >
 > - <a style="color:#000000">Delete Operations for Two Strings - LeetCode Q583</a>
 >
-> - <a style="color:#000000">Edit Distance - LeetCode Q72</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Edit Distance - LeetCode Q72</strong></mark></a>
 
 <strong style="color:#1669f0">5. Memoization using hashmaps and strings as keys for Multi-D dp Qs</strong>
 
-> - <a style="color:#000000">Target Sum - LeetCode Q494</a>
+> - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Target Sum - LeetCode Q494</strong></mark></a>
 >
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Number of Dice Rolls with Target Sum - LeetCode Q1155</strong></mark></a>
 
