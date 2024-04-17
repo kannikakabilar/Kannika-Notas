@@ -132,6 +132,38 @@ public class Main {
 
 ```
 
+<h4 style="color:#fa6339">&lt;T&gt; Placeholder for Parameter Type</h4>
+ It allows you to define classes, interfaces, or methods that can operate on any data type without specifying the actual data type until the class, interface, or method is instantiated or invoked.
+
+- &lt;T&gt; is a type parameter declaration where T can be any identifier. It's a convention to use T to represent "type", but you can use any letter.
+- The actual type used when invoking replaces T throughout the generic class, interface, or method.
+
+```java
+// For classes that use Generic type, <T> must be mentioned right beside class name like below line
+public class Box<T> {
+    private T value;
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
+        return value;
+    }
+}
+
+```
+
+```java
+Box<Integer> intBox = new Box<>();
+intBox.setValue(10);
+int value = intBox.getValue(); // No need to cast, value is automatically of type Integer
+
+Box<String> strBox = new Box<>();
+strBox.setValue("Hello");
+String message = strBox.getValue(); // No need to cast, message is automatically of type String
+```
+
 <h3 style="color:#fa6339">Java Threads</h3>
 
 <h4 style="color:#fa6339">Thread Variable: volatile, synchronized, Semaphore</h4>
