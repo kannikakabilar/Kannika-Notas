@@ -105,6 +105,32 @@ HashSet <Integer> mySet = new HashSet <Integer>(Arrays.asList(myArr));    // cha
 
 ```
 
+<h3 style="color:#fa6339">Java Generics</h3>
+Generics provide type safety by allowing you to specify the types that a class or method operates on at compile time. Below is an example of not using Generics. Note that the list only stores object types so they must be type casted when using a specific element.
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        // Define a list that stores objects
+        List stringList = new ArrayList();
+
+        // Add elements to the list
+        stringList.add("Java");
+        stringList.add("Python");
+        stringList.add("C++");
+
+        // Iterate over the list which stores only of type objects
+        for (Object obj : stringList) {
+            String str = (String) obj; // Type casting to String must be done
+            System.out.println(str);
+        }
+    }
+}
+
+```
 
 <h3 style="color:#fa6339">Java Threads</h3>
 
