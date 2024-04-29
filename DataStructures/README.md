@@ -21,7 +21,7 @@
     - LeetCode Q41 (Need to learn the trick!)
     - LeetCode Q1608
 
-9\. &ensp; Kadane's algo LeetCode Q287
+9\. &ensp; Kadane's algo LeetCode Q53
 
 <h3 style="color:#0303ad">Linked Lists</h3>
 10\. &ensp; LinkedLists: inserting = O(?) and everything else = O(?)
