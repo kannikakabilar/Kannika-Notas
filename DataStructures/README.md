@@ -3,6 +3,7 @@
 1\. &ensp; Differentiate DS Terms: Primitive vs. Non-Primitive ; Linear vs. Non-Linear ; Static vs. Dynamic
 
 <h3 style="color:#0303ad">Arrays</h3>
+
 2\. &ensp; Arrays: indexing = O(?) and everything else = O(?)
 
 3\. &ensp; LeetCode Q108
@@ -17,13 +18,14 @@
 
 8\. &ensp; If elements of an array are from 1 to n => then how can you approach it? 
 
-    - LeetCode Q287
-    - LeetCode Q41 (Need to learn the trick!)
-    - LeetCode Q1608
+- LeetCode Q287
+- <mark style="background-color:#fffaa1"><strong style="color:#000000">LeetCode Q41</strong></mark>
+- LeetCode Q1608
 
 9\. &ensp; Kadane's algo LeetCode Q53
 
 <h3 style="color:#0303ad">Linked Lists</h3>
+
 10\. &ensp; LinkedLists: inserting = O(?) and everything else = O(?)
 
 11\. &ensp; LeetCode Q21
