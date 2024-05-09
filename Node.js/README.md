@@ -341,6 +341,31 @@ Network Interfaces: {
 
 <h3 style="color:#a2ff00">Streams</h3>
 
+> - <a style="color:#000000">Streams are objects that let you read data from a source or write data to a destination in a continuous fashion. They're particularly useful for handling large amounts of data efficiently.</a>
+
+```javascript
+const fs = require('fs');
+
+// Creating a readable stream
+const readableStream = fs.createReadStream('input.txt');
+
+// Creating a writable stream
+const writableStream = fs.createWriteStream('output.txt');
+
+// Piping data from readable to writable stream
+readableStream.pipe(writableStream);
+
+// Handling 'end' event
+readableStream.on('end', () => {
+    console.log('File reading complete.');
+});
+
+// Handling 'error' event
+readableStream.on('error', (err) => {
+    console.error('Error:', err);
+});
+
+```
 
 
 
