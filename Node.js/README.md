@@ -231,6 +231,31 @@ server.listen(3000, () => {
 
 ```
 
+> - <a style="color:#000000">Not sure where this below code would be placed in an application?</a>
+
+```javascript
+// What http client side might look like
+const http = require('http');
+
+const options = {
+    hostname: 'www.example.com',
+    port: 80,
+    path: '/',
+    method: 'GET'
+};
+
+const req = http.request(options, (res) => {
+    console.log(`Status Code: ${res.statusCode}`);
+    
+    res.on('data', (chunk) => {
+        console.log(chunk.toString());
+    });
+});
+
+req.end();
+
+```
+
 <h4 style="color:#a2ff00">Paths - Handling file paths in a cross-platform way</h4>
 
 > - <a style="color:#000000">Joining and Normalizing file paths</a>
@@ -290,6 +315,9 @@ console.log('Total memory:', os.totalmem());
 // Retrieving Network Interfaces
 console.log('Network Interfaces:', os.networkInterfaces());
 
+// Some others
+// console.log(os.freemem());         // Free system memory
+// console.log(os.cpus());            // Information about CPUs
 ```
 
 > Here's a sample output
