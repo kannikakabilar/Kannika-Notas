@@ -442,6 +442,67 @@ app.delete('/users/:id', (req, res) => {
 ```
 
 
+<h3 style="color:#a2ff00">Middleware</h3>
+
+> - <a style="color:#000000">Purpose of Middleware</a>
+>    - <a style="color:#000000">Pre-processing Requests & Error Handling of incoming requests</a>
+>    <br> Can preprocess incoming HTTP requests before they reach the route handlers. This preprocessing might include parsing request bodies, validating authentication tokens, or logging request details.
+>    - <a style="color:#000000">Post-processing Responses</a>
+>    <br> Can post-process outgoing HTTP responses before they are sent back to the client. This post-processing might include adding headers, compressing response bodies, or formatting data.
+>    - <a style="color:#000000">Chain of Responsibility</a>
+>    <br> If a middleware function doesn't complete the handling, it can pass control to the next middleware function in the stack.
+
+```javascript
+const express = require('express');
+const app = express();
+
+// Request Processing Middleware
+/* When a request comes in, it first encounters the request processing middleware defined using app.use() */
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+    next(); // Call the next middleware function in the stack
+});
+
+// Response Processing Middleware
+/* After the request processing middleware, the request encounters the response processing middleware defined using app.use() */
+app.use((req, res, next) => {
+    // The response processing middleware adds a custom header (X-Custom-Header) to the outgoing response
+    res.setHeader('X-Custom-Header', 'Hello from Express');
+    next(); // Call the next middleware function in the stack
+});
+
+// Chained Middleware Functions
+/* Depending on the route specified in the request, the request is then routed to the corresponding middleware function. */
+
+app.get('/', (req, res, next) => {
+    // This middleware function handles the '/' route
+    res.send('Welcome to the homepage!');
+});
+
+app.get('/about', (req, res, next) => {
+    // This middleware function handles the '/about' route
+    res.send('About Us');
+});
+
+/* After the middleware functions have executed, the response is sent back to the client with any modifications made by the middleware.
+For example, the response might include the custom header added by the response processing middleware. */
+
+// Error Handling Middleware
+/* If an error occurs during the request processing, it can be handled by an error handling middleware defined using app.use() with four parameters (err, req, res, next) */
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Internal Server Error');
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+
+
 
 
 
