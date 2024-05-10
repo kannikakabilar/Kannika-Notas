@@ -395,7 +395,51 @@ readableStream.on('error', (err) => {
 
 ```
 
+<h3 style="color:#a2ff00">Basics of Express.js</h3>
 
+> - <a style="color:#000000">Install Express</a>
+
+```javascript
+npm install express
+```
+
+> - <a style="color:#000000">Basic Express.js setup</a>
+
+```javascript
+const express = require('express');
+const app = express();
+
+// Define routes and middleware here
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+> - <a style="color:#000000">Routing</a>
+> Express allows you to define routes to handle different HTTP methods and URL paths.
+
+```javascript
+// Example of handling request for http methods
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+app.post('/users', (req, res) => {
+    // Handle POST request to create a new user
+});
+
+app.put('/users/:id', (req, res) => {
+    // Handle PUT request to update a user by ID
+});
+
+app.delete('/users/:id', (req, res) => {
+    // Handle DELETE request to delete a user by ID
+});
+
+```
 
 
 
