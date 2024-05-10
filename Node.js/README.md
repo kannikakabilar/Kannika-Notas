@@ -397,6 +397,9 @@ readableStream.on('error', (err) => {
 
 <h3 style="color:#a2ff00">Basics of Express.js</h3>
 
+> Use Express.js when building web applications or APIs with Node.js
+<br>
+
 > - <a style="color:#000000">Install Express</a>
 
 ```javascript
@@ -501,6 +504,17 @@ app.listen(PORT, () => {
 
 ```
 
+> - <a style="color:#000000">Request and Response Handling</a>
+
+```javascript
+app.get('/users/:id', (req, res) => {
+    const userId = req.params.id; // Get parameter from URL
+    const queryParams = req.query; // Get query parameters
+    const userAgent = req.headers['user-agent']; // Get request header
+    // Handle request and send response
+});
+
+```
 
 
 
