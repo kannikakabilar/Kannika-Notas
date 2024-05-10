@@ -1,13 +1,13 @@
-<h1 style="color:#b2d4b3">Node.js</h1>
+<h1 style="color:#99bf9a">Node.js</h1>
 
 > - <a style="color:#000000">Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows you to run JavaScript code on the server-side.</a>
 
-<h3 style="color:#b2d4b3">Installation</h3>
+<h3 style="color:#99bf9a">Installation</h3>
 
 > - <a style="color:#000000">Download from official website and check if node and npm are installed with what commands?</a>
 > <br> A: node -v ; npm -v
 
-<h3 style="color:#b2d4b3">Basic Node.js App</h3>
+<h3 style="color:#99bf9a">Basic Node.js App</h3>
 
 > - <a style="color:#000000">Create a project directory</a>
 
@@ -64,9 +64,9 @@ app.listen(3000, () => {
 // you should see the message: 'Hello, Express!'
 ```
 
-<h3 style="color:#b2d4b3">Core Node.js Modules</h3>
+<h3 style="color:#99bf9a">Core Node.js Modules</h3>
 
-<h4 style="color:#b2d4b3">File System (fs) - Interacting with file system on your computer</h4>
+<h4 style="color:#99bf9a">File System (fs) - Interacting with file system on your computer</h4>
 
 > - <a style="color:#000000">Reading and writing to files</a>
 
@@ -170,7 +170,7 @@ fs.chmod(filePath, newPermissions, (err) => {
 
 ```
 
-<h4 style="color:#b2d4b3">HTTP - To create HTTP servers and make HTTP requests</h4>
+<h4 style="color:#99bf9a">HTTP - To create HTTP servers and make HTTP requests</h4>
 
 > - <a style="color:#000000">Create an HTTP server and handle requests and responses</a>
 
@@ -256,7 +256,7 @@ req.end();
 
 ```
 
-<h4 style="color:#b2d4b3">Paths - Handling file paths in a cross-platform way</h4>
+<h4 style="color:#99bf9a">Paths - Handling file paths in a cross-platform way</h4>
 
 > - <a style="color:#000000">Joining and Normalizing file paths</a>
 
@@ -296,7 +296,7 @@ Output:
 
 ```
 
-<h4 style="color:#b2d4b3">Operating System - To gather information about the operating system</h4>
+<h4 style="color:#99bf9a">Operating System - To gather information about the operating system</h4>
 
 > - <a style="color:#000000">Retrieve information such as CPU architecture, total memory, platform, and network interfaces</a>
 
@@ -367,7 +367,7 @@ Network Interfaces: {
 
 ```
 
-<h3 style="color:#b2d4b3">Streams</h3>
+<h3 style="color:#99bf9a">Streams</h3>
 
 > - <a style="color:#000000">Streams are objects that let you read data from a source or write data to a destination in a continuous fashion. They're particularly useful for handling large amounts of data efficiently.</a>
 
@@ -395,7 +395,7 @@ readableStream.on('error', (err) => {
 
 ```
 
-<h3 style="color:#b2d4b3">Basics of Express.js</h3>
+<h3 style="color:#99bf9a">Basics of Express.js</h3>
 
 > Use Express.js when building web applications or APIs with Node.js
 <br>
@@ -445,7 +445,7 @@ app.delete('/users/:id', (req, res) => {
 ```
 
 
-<h3 style="color:#b2d4b3">Middleware</h3>
+<h3 style="color:#99bf9a">Middleware</h3>
 
 > - <a style="color:#000000">Purpose of Middleware</a>
 >    - <a style="color:#000000">Pre-processing Requests & Error Handling of incoming requests</a>
