@@ -516,6 +516,48 @@ app.get('/users/:id', (req, res) => {
 
 ```
 
+<h3 style="color:#99bf9a">RESTful API</h3>
+
+> - <a style="color:#000000">RESTful APIs are stateless. This means each request from a user contains all the information needed for the server to fulfill it. The server doesn't keep track of previous requests or interactions.</a>
+>
+> Imagine you have a friend who wants to borrow a toy from your toy box (resource / database). They ask nicely (a request) for a toy by its name (URI), you decide if they can borrow it (server processes the request), and you give them the toy (server sends a response). This back-and-forth interaction between your friend (client) and you (server) is similar to how RESTful APIs work.
+>
+> <br> Actions: You can do different things with toys, like play, share, or organize them. Similarly, in a RESTful API, we can perform actions on resources using HTTP methods: GET, PUT, PATCH, POST, DELETE. The HTTP method is sent in part with the request, not in URI.
+>
+
+<br>
+
+> - <a style="color:#000000">Status Codes</a>
+> <br> HTTP methods define the actions that clients can perform on resources, while status codes indicate the outcome of a request.
+>
+>     - <a style="color:#000000">2xx: Success codes indicating that the request was successful</a>
+>         - <a style="color:#000000">200 OK: Successful GET request</a>
+>         - <a style="color:#000000">201 Created: Successful POST request resulting in the creation of a new resource</a>
+>
+>     - <a style="color:#000000">3xx: Redirection codes indicating that further action is required to complete the request</a>
+>
+>     - <a style="color:#000000">4xx: Client error codes indicating that the client's request cannot be fulfilled</a>
+>         - <a style="color:#000000">400 Bad Request: Malformed request syntax or invalid request message</a>
+>         - <a style="color:#000000">404 Not Found: Resource not found on the server</a>
+>
+>     - <a style="color:#000000">5xx: Server error codes indicating that the server failed to fulfill a valid request</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
