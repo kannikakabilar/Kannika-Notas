@@ -543,6 +543,48 @@ app.get('/users/:id', (req, res) => {
 >     - <a style="color:#000000">5xx: Server error codes indicating that the server failed to fulfill a valid request</a>
 
 
+```javascript
+const express = require('express');
+const app = express();
+
+/* Each route corresponds to a specific HTTP method and performs the necessary logic (e.g., database operations) */
+
+// Define route for retrieving all users
+app.get('/users', (req, res) => {
+    // Logic to retrieve all users from the database
+    res.json({ users: [...] }); // Send JSON response with users
+});
+
+// Define route for creating a new user
+app.post('/users', (req, res) => {
+    // Logic to create a new user in the database
+    res.status(201).json({ message: 'User created successfully' });
+});
+
+// Define route for updating a user
+app.put('/users/:id', (req, res) => {
+    const userId = req.params.id;
+    // Logic to update the user with the specified ID in the database
+
+    /* We use res.json() to send JSON responses and res.status() to set the HTTP status code */
+    res.json({ message: `User with ID ${userId} updated successfully` });
+});
+
+// Define route for deleting a user
+app.delete('/users/:id', (req, res) => {
+    const userId = req.params.id;
+    // Logic to delete the user with the specified ID from the database
+    res.json({ message: `User with ID ${userId} deleted successfully` });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+
 
 
 
