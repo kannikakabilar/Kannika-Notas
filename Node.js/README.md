@@ -504,6 +504,16 @@ app.listen(PORT, () => {
 
 ```
 
+> - <a style="color:#000000">Middleware functions are executed sequentially in the order they are defined. When a request is made to your Express.js application, it passes through each middleware function in the stack, allowing each function to perform its designated tasks.</a>
+>
+> - <a style="color:#000000">Middleware functions can choose to:</a>
+>     - Modify the request (req) object
+>     - Modify the response (res) object
+>     - End the request-response cycle by sending a request back to the client
+>     - Call the next middleware function in the stack using next()
+
+<br>
+
 > - <a style="color:#000000">Request and Response Handling</a>
 
 ```javascript
@@ -512,6 +522,83 @@ app.get('/users/:id', (req, res) => {
     const queryParams = req.query; // Get query parameters
     const userAgent = req.headers['user-agent']; // Get request header
     // Handle request and send response
+});
+
+```
+
+> - <a style="color:#000000">Some examples of built-in Middleware</a>
+
+```javascript
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const app = express();
+
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
+// Access static files using their relative path from the 'public' directory
+// For example, if there's a file named 'styles.css' in 'public/css' directory,
+// it can be accessed at '/css/styles.css'
+
+// Parse JSON-encoded request bodies
+// JSON data can be sent as the body of a POST request, for example, when submitting a form on a website
+app.use(express.json());
+
+// example of json encoded request body: { "name": "John Doe", "age": 30, "email": "john@example.com" }
+
+// Route to handle POST requests
+app.post('/api/data', (req, res) => {
+    console.log(req.body); // Access parsed JSON data from request body
+    res.send('Data received successfully');
+});
+
+// Parse URL-encoded request bodies
+app.use(express.urlencoded({ extended: true }));
+// example of url encoded request body: name=John+Doe&age=30&email=john%40example.com
+
+// Route to handle POST requests
+app.post('/submit-form', (req, res) => {
+    // Access parsed URL-encoded data from request body
+    const name = req.body.name;
+    const age = req.body.age;
+    const email = req.body.email;
+
+    // Perform actions with the parsed data
+    console.log('Name:', name);
+    console.log('Age:', age);
+    console.log('Email:', email);
+
+    // Send response back to the client
+    res.send('Form submitted successfully');
+});
+
+// Parse cookies attached to the request
+app.use(cookieParser());
+
+/* When a client sends an HTTP request to a server,
+it includes any relevant cookies in the request headers.
+The server can then access and process these cookies to maintain session state,
+personalize content, or perform other tasks as needed. */
+
+// Route to handle incoming requests
+app.get('/', (req, res) => {
+    // Access parsed cookies from the request object
+    const name = req.cookies.name;
+    const age = req.cookies.age;
+    const sessionID = req.cookies.sessionID;
+
+    // Perform actions with the parsed cookies
+    console.log('Name:', name);
+    console.log('Age:', age);
+    console.log('Session ID:', sessionID);
+
+    // Send response back to the client
+    res.send('Cookies parsed successfully');
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
 
 ```
