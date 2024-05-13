@@ -603,6 +603,10 @@ app.listen(PORT, () => {
 
 ```
 
+> Express.js uses a middleware architecture that allows you to modularize your application's functionality into small, reusable components called middleware functions. These functions can be added to the request-response pipeline to perform tasks such as logging, authentication, authorization, request parsing, error handling, and more.
+
+<br>
+
 <h3 style="color:#99bf9a">RESTful API</h3>
 
 > - <a style="color:#000000">RESTful APIs are stateless. This means each request from a user contains all the information needed for the server to fulfill it. The server doesn't keep track of previous requests or interactions.</a>
@@ -671,11 +675,101 @@ app.listen(PORT, () => {
 
 ```
 
+<br>
 
+<h3 style="color:#99bf9a">Data Validation & Sanitization</h3>
 
+> - <a style="color:#000000">Validation</a>
+> <br> Validation involves ensuring that input data meets specific criteria or constraints. For example, validating that an email address is in the correct format, or that a password meets certain complexity requirements.
+>
+> - <a style="color:#000000">Sanitization</a>
+> <br> Sanitization involves cleaning or filtering input data to remove potentially harmful or unwanted content. For example, removing HTML tags from user input to prevent cross-site scripting (XSS) attacks, or trimming whitespace from strings.
 
+<br>
 
+> Utilizing validation libraries like Joi or express-validator can streamline the validation process by providing a robust set of validation rules and functions.
 
+<h4 style="color:#99bf9a">Joi</h4>
+
+```javascript
+const express = require('express');
+const Joi = require('joi');
+
+const app = express();
+
+// Middleware for parsing JSON request bodies
+app.use(express.json());
+
+// Validation schema using Joi
+const userSchema = Joi.object({
+    username: Joi.string().alphanum().min(3).max(30).required(),
+    email: Joi.string().email().required(),
+    password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
+});
+
+// Route for handling POST requests to '/signup'
+app.post('/signup', (req, res) => {
+    // Validate request body against schema
+    const { error, value } = userSchema.validate(req.body);
+
+    // Check for validation errors
+    if (error) {
+        return res.status(400).json({ error: error.details[0].message });
+    }
+
+    // If validation passes, process the data
+    const { username, email, password } = value;
+    // Further processing logic...
+    
+    res.send('User registered successfully');
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+<h4 style="color:#99bf9a">express-validator</h4>
+
+```javascript
+const express = require('express');
+const { body, validationResult } = require('express-validator');
+
+const app = express();
+
+// Middleware for parsing JSON request bodies
+app.use(express.json());
+
+// Route for handling POST requests to '/signup'
+app.post('/signup', [
+    // Validate email field
+    body('email').isEmail().normalizeEmail(),
+    // Validate password field
+    body('password').isLength({ min: 6 }),
+], (req, res) => {
+    // Check for validation errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    // If validation passes, process the data
+    const { email, password } = req.body;
+    // Further processing logic...
+    
+    res.send('User registered successfully');
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
 
 
 
