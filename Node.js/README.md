@@ -772,12 +772,414 @@ app.listen(PORT, () => {
 ```
 
 
+<h3 style="color:#99bf9a">Database Integration</h3>
+
+> - <a style="color:#000000">MongoDB</a>
+> npm install mongodb
+
+```javascript
+const { MongoClient } = require('mongodb');
+
+// Connect to MongoDB
+const client = new MongoClient('mongodb://localhost:27017', { useNewUrlParser: true });
+client.connect();
+
+// Perform CRUD operations
+const db = client.db('mydatabase');
+const collection = db.collection('mycollection');
+
+// Insert document
+await collection.insertOne({ name: 'John Doe' });
+
+// Find documents
+const result = await collection.find({ name: 'John Doe' }).toArray();
+
+// Update document
+await collection.updateOne({ name: 'John Doe' }, { $set: { age: 30 } });
+
+// Delete document
+await collection.deleteOne({ name: 'John Doe' });
+
+```
+
+> - <a style="color:#000000">MySQL</a>
+> npm install mysql
+
+```javascript
+// app.js
+
+const express = require('express');
+const mysql = require('mysql');
+
+const app = express();
+
+// Create a connection to MySQL
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'mydatabase'
+});
+
+// Connect to MySQL
+connection.connect((error) => {
+    if (error) {
+        console.error('Error connecting to MySQL:', error);
+        return;
+    }
+    console.log('Connected to MySQL');
+});
+
+// Middleware for parsing JSON request bodies
+app.use(express.json());
+
+// Route for creating a new user
+app.post('/users', (req, res) => {
+    const { username, email } = req.body;
+    // Insert new user into the database
+    connection.query('INSERT INTO users (username, email) VALUES (?, ?)', [username, email], (error, results) => {
+        if (error) {
+            console.error('Error creating user:', error);
+            res.status(500).json({ message: 'Error creating user' });
+            return;
+        }
+        res.status(201).json({ message: 'User created successfully', userId: results.insertId });
+    });
+});
+
+// Route for fetching all users
+app.get('/users', (req, res) => {
+    // Fetch all users from the database
+    connection.query('SELECT * FROM users', (error, results) => {
+        if (error) {
+            console.error('Error fetching users:', error);
+            res.status(500).json({ message: 'Error fetching users' });
+            return;
+        }
+        res.json(results);
+    });
+});
+
+// Route for updating a user
+app.put('/users/:userId', (req, res) => {
+    const userId = req.params.userId;
+    const { username, email } = req.body;
+    // Update user in the database
+    connection.query('UPDATE users SET username = ?, email = ? WHERE id = ?', [username, email, userId], (error, results) => {
+        if (error) {
+            console.error('Error updating user:', error);
+            res.status(500).json({ message: 'Error updating user' });
+            return;
+        }
+        res.json({ message: 'User updated successfully' });
+    });
+});
+
+// Route for deleting a user
+app.delete('/users/:userId', (req, res) => {
+    const userId = req.params.userId;
+    // Delete user from the database
+    connection.query('DELETE FROM users WHERE id = ?', [userId], (error, results) => {
+        if (error) {
+            console.error('Error deleting user:', error);
+            res.status(500).json({ message: 'Error deleting user' });
+            return;
+        }
+        res.json({ message: 'User deleted successfully' });
+    });
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+> - <a style="color:#000000">PostgreSQL</a>
+> npm install pg
+
+```javascript
+const express = require('express');
+const { Pool } = require('pg');
+
+const app = express();
+
+// Create a connection pool to PostgreSQL
+const pool = new Pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'mydatabase',
+    password: 'password',
+    port: 5432,
+});
+
+// Middleware for parsing JSON request bodies
+app.use(express.json());
+
+// Route for creating a new user
+app.post('/users', async (req, res) => {
+    const { username, email } = req.body;
+    try {
+        // Insert new user into the database
+        const result = await pool.query('INSERT INTO users (username, email) VALUES ($1, $2) RETURNING id', [username, email]);
+        res.status(201).json({ message: 'User created successfully', userId: result.rows[0].id });
+    } catch (error) {
+        console.error('Error creating user:', error);
+        res.status(500).json({ message: 'Error creating user' });
+    }
+});
+
+// Route for fetching all users
+app.get('/users', async (req, res) => {
+    try {
+        // Fetch all users from the database
+        const result = await pool.query('SELECT * FROM users');
+        res.json(result.rows);
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        res.status(500).json({ message: 'Error fetching users' });
+    }
+});
+
+// Route for updating a user
+app.put('/users/:userId', async (req, res) => {
+    const userId = req.params.userId;
+    const { username, email } = req.body;
+    try {
+        // Update user in the database
+        await pool.query('UPDATE users SET username = $1, email = $2 WHERE id = $3', [username, email, userId]);
+        res.json({ message: 'User updated successfully' });
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).json({ message: 'Error updating user' });
+    }
+});
+
+// Route for deleting a user
+app.delete('/users/:userId', async (req, res) => {
+    const userId = req.params.userId;
+    try {
+        // Delete user from the database
+        await pool.query('DELETE FROM users WHERE id = $1', [userId]);
+        res.json({ message: 'User deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        res.status(500).json({ message: 'Error deleting user' });
+    }
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+<h4 style="color:#99bf9a">ORM/ODM Libraries</h4>
+
+> - <a style="color:#000000">ORM (Object-Relational Mapping) and ODM (Object-Document Mapping) libraries provide a higher-level abstraction over database operations, allowing you to work with JavaScript objects instead of raw database queries. Popular libraries include Mongoose for MongoDB and Sequelize for SQL databases.</a>
+
+<br>
+
+> Mongoose is an ODM library for MongoDB that provides a schema-based solution for modeling application data. It simplifies CRUD operations and provides features like schema validation, middleware, and query builders.
+>
+> npm install mongoose
 
 
+```javascript
+// models/user.js
 
+const mongoose = require('mongoose');
 
+// Define a user schema
+const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    age: {
+        type: Number,
+        required: true
+    }
+});
 
+// Create a User model based on the schema
+const User = mongoose.model('User', userSchema);
 
+// Export the User model
+module.exports = User;
+```
+
+```javascript
+// app.js
+
+const express = require('express');
+const mongoose = require('mongoose');
+const User = require('./models/user');
+
+const app = express();
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/mydatabase', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+})
+.then(() => {
+    console.log('Connected to MongoDB');
+})
+.catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+});
+
+// Middleware for parsing JSON request bodies
+app.use(express.json());
+
+// Route for creating a new user
+app.post('/users', async (req, res) => {
+    try {
+        // Create a new user document
+        const user = new User(req.body);
+        // Save the user document to the database
+        await user.save();
+        res.status(201).json(user);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
+// Route for fetching all users
+app.get('/users', async (req, res) => {
+    try {
+        // Find all users in the database
+        const users = await User.find();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+> Sequelize is an ORM library for SQL databases like MySQL, PostgreSQL, and SQLite. It supports various database dialects, provides a powerful query interface, and offers features like migrations, associations, and transactions.
+>
+> npm install sequelize pg pg-hstore
+
+```javascript
+// models/user.js
+
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+
+const User = sequelize.define('User', {
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    }
+});
+
+module.exports = User;
+```
+
+```javascript
+// app.js
+
+const express = require('express');
+const User = require('./models/user');
+
+const app = express();
+
+const { Sequelize } = require('sequelize');
+
+// Create a new Sequelize instance
+const sequelize = new Sequelize('mydatabase', 'postgres', 'password', {
+    host: 'localhost',
+    dialect: 'postgres',
+    port: 5432,
+    logging: false
+});
+
+// Middleware for parsing JSON request bodies
+app.use(express.json());
+
+// Route for creating a new user
+app.post('/users', async (req, res) => {
+    const { username, email } = req.body;
+    try {
+        // Create a new user
+        const user = await User.create({ username, email });
+        res.status(201).json(user);
+    } catch (error) {
+        console.error('Error creating user:', error);
+        res.status(500).json({ message: 'Error creating user' });
+    }
+});
+
+// Route for fetching all users
+app.get('/users', async (req, res) => {
+    try {
+        // Find all users
+        const users = await User.findAll();
+        res.json(users);
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        res.status(500).json({ message: 'Error fetching users' });
+    }
+});
+
+// Route for updating a user
+app.put('/users/:userId', async (req, res) => {
+    const userId = req.params.userId;
+    const { username, email } = req.body;
+    try {
+        // Update user
+        await User.update({ username, email }, { where: { id: userId } });
+        res.json({ message: 'User updated successfully' });
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).json({ message: 'Error updating user' });
+    }
+});
+
+// Route for deleting a user
+app.delete('/users/:userId', async (req, res) => {
+    const userId = req.params.userId;
+    try {
+        // Delete user
+        await User.destroy({ where: { id: userId } });
+        res.json({ message: 'User deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        res.status(500).json({ message: 'Error deleting user' });
+    }
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
 
 
 
