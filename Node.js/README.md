@@ -774,7 +774,7 @@ app.listen(PORT, () => {
 
 <h3 style="color:#99bf9a">Database Integration</h3>
 
-> - <a style="color:#000000">MongoDB</a>
+> - <a style="color:#000000">MongoDB</a> <br>
 > npm install mongodb
 
 ```javascript
@@ -802,7 +802,7 @@ await collection.deleteOne({ name: 'John Doe' });
 
 ```
 
-> - <a style="color:#000000">MySQL</a>
+> - <a style="color:#000000">MySQL</a> <br>
 > npm install mysql
 
 ```javascript
@@ -897,7 +897,7 @@ app.listen(PORT, () => {
 
 ```
 
-> - <a style="color:#000000">PostgreSQL</a>
+> - <a style="color:#000000">PostgreSQL</a> <br>
 > npm install pg
 
 ```javascript
@@ -985,7 +985,7 @@ app.listen(PORT, () => {
 <br>
 
 > Mongoose is an ODM library for MongoDB that provides a schema-based solution for modeling application data. It simplifies CRUD operations and provides features like schema validation, middleware, and query builders.
->
+> 
 > npm install mongoose
 
 
@@ -1082,8 +1082,15 @@ app.listen(PORT, () => {
 ```javascript
 // models/user.js
 
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const { DataTypes, Sequelize } = require('sequelize');
+
+// Create a new Sequelize instance
+const sequelize = new Sequelize('mydatabase', 'postgres', 'password', {
+    host: 'localhost',
+    dialect: 'postgres',
+    port: 5432,
+    logging: false
+});
 
 const User = sequelize.define('User', {
     username: {
@@ -1107,16 +1114,6 @@ const express = require('express');
 const User = require('./models/user');
 
 const app = express();
-
-const { Sequelize } = require('sequelize');
-
-// Create a new Sequelize instance
-const sequelize = new Sequelize('mydatabase', 'postgres', 'password', {
-    host: 'localhost',
-    dialect: 'postgres',
-    port: 5432,
-    logging: false
-});
 
 // Middleware for parsing JSON request bodies
 app.use(express.json());
