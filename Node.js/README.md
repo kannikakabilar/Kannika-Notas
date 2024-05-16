@@ -1178,6 +1178,15 @@ app.listen(PORT, () => {
 
 ```
 
+<h3 style="color:#99bf9a">Authentic and Authorization</h3>
+
+> - <a style="color:#000000">Authentication</a>
+> <br> Authentication is the process of verifying the identity of a user. It ensures that the user is who they claim to be. In web applications, authentication typically involves validating user credentials, such as username and password, before granting access to protected resources.
+
+<br>
+
+> - <a style="color:#000000">Authorization</a>
+> <br> Authorization, on the other hand, determines what actions a user is allowed to perform within the application after they have been authenticated. It defines the permissions and access rights of authenticated users based on their roles or other attributes.
 
 
 
