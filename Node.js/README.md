@@ -1386,11 +1386,50 @@ app.listen(PORT, () => {
 > Once authorized, you'll be redirected back to the profile page
 > After successful authentication, you can view the profile page (of the app running in localhost:3000) with the username retrieved from GitHub
 
+<br>
+
+<h3 style="color:#99bf9a">Debugging other than console.log()</h3>
+
+> - HTTP Request Logging: Use morgan for logging HTTP requests.
+> 
+> - Advanced Logging: Use winston for comprehensive logging with support for different transports and formats.
 
 
+<h3 style="color:#99bf9a">Basic Workflow in Postman</h3>
+
+- <a style="color:#000000">Basic Workflow in Postman</a>
+
+>     1) Create a Request: Choose the HTTP method and enter the URL.
+>     2) Set Parameters: Add query parameters, headers, body data, etc.
+>     3) Send the Request: Click the "Send" button to make the request.
+>     4) View the Response: Examine the status code, headers, and body of the response.
+>     5) Write Tests: Add test scripts to validate the response.
+>     6) Save the Request: Save the request in a collection for future use
 
 
+<h3 style="color:#99bf9a">Security</h3>
 
+> - <a style="color:#000000">Cross-Site Scripting (XSS) - where an attacker injects malicious scripts into content that gets executed in a user's browser</a>
+> <br> A: Input Sanitization, Output Encoding
+>
+> - <a style="color:#000000">Cross-Site Request Forgery - where an attacker tricks another user into performing actions on a web application where they are authenticated</a>
+> <br> A: Use tokens to ensure requests are genuine, Use SameSite attribute for cookies to prevent them from being sent with cross-site requests
+> 
+> - <a style="color:#000000">SQL Injection - when an attacker can manipulate SQL queries by injecting malicious SQL code</a>
+> <br> A: Parameterized Queries, use ORMs/ODMs
+>
+> - <a style="color:#000000">Security Headers: Use security headers to protect your application</a>
+>
+> - <a style="color:#000000">Rate Limiting: Prevent brute-force attacks by limiting repeated requests</a>
+
+
+<h3 style="color:#99bf9a">Event-Driven Architecture</h3>
+
+> - <a style="color:#000000">Node.js's event-driven architecture and the event loop allow it to handle asynchronous operations efficiently. By understanding these concepts, you can build scalable, high-performance applications. </a>
+
+<br>
+
+> - <a style="color:#000000">The EventEmitter class lets you work with custom events, and the event loop ensures that your application can perform non-blocking I/O operations, enabling Node.js to manage a large number of concurrent connections with ease.</a>
 
 
 
