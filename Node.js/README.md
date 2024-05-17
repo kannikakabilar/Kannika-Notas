@@ -1178,15 +1178,213 @@ app.listen(PORT, () => {
 
 ```
 
-<h3 style="color:#99bf9a">Authentic and Authorization</h3>
+<h3 style="color:#99bf9a">Authorization and Authentication</h3>
+
+> - <a style="color:#000000">Authorization</a>
+> <br> Authorization, on the other hand, determines what actions a user is allowed to perform within the application after they have been authenticated. It defines the permissions and access rights of authenticated users based on their roles or other attributes.
+
+> Database Integration: Integrate authentication-related functionality with your database to store user credentials, session data, and authorization information securely.
+>
+> Error Handling: Implement error handling mechanisms to handle authentication failures, unauthorized access attempts, and other security-related issues gracefully.
+
+<br>
 
 > - <a style="color:#000000">Authentication</a>
 > <br> Authentication is the process of verifying the identity of a user. It ensures that the user is who they claim to be. In web applications, authentication typically involves validating user credentials, such as username and password, before granting access to protected resources.
 
-<br>
+<h4 style="color:#99bf9a">JWT (JSON Web Tokens)</h4>
 
-> - <a style="color:#000000">Authorization</a>
-> <br> Authorization, on the other hand, determines what actions a user is allowed to perform within the application after they have been authenticated. It defines the permissions and access rights of authenticated users based on their roles or other attributes.
+> npm install express jsonwebtoken bcryptjs body-parser
+
+```javascript
+// app.js
+
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const bodyParser = require('body-parser');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+const SECRET_KEY = 'your_secret_key'; // Use an environment variable in a real application
+
+app.use(bodyParser.json());
+
+const users = []; // In-memory user store for demonstration purposes (Should be database for real apps)
+
+// Route for user registration
+app.post('/register', async (req, res) => {
+    const { username, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 8);
+    users.push({ username, password: hashedPassword });
+    res.status(201).send('User registered successfully');
+});
+
+// Route for user login
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    const user = users.find(u => u.username === username);
+    if (!user || !(await bcrypt.compare(password, user.password))) {
+        return res.status(401).send('Invalid credentials');
+    }
+    const token = jwt.sign({ username: user.username }, SECRET_KEY, { expiresIn: '1h' });
+    res.json({ token });
+});
+
+// Middleware to protect routes
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    if (!token) return res.sendStatus(401);
+
+    jwt.verify(token, SECRET_KEY, (err, user) => {
+        if (err) return res.sendStatus(403);
+        req.user = user;
+        next();
+    });
+}
+/* This middleware function checks for the presence of a JWT in the Authorization header.
+If a token is found, it is verified using the secret key.
+If the token is valid, the request proceeds; otherwise, a 401 or 403 status is sent. */
+
+// Protected route - Only requests with a valid JWT can access this route.
+app.get('/protected', authenticateToken, (req, res) => {
+    res.send(`Hello, ${req.user.username}. This is a protected route.`);
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+> - Register a user
+> curl -X POST -H "Content-Type: application/json" -d '{"username":"john","password":"secret"}' http://localhost:3000/register
+>
+> - Log in a user
+> curl -X POST -H "Content-Type: application/json" -d '{"username":"john","password":"secret"}' http://localhost:3000/login
+>
+> - Response
+
+```json
+{
+  "token": "your_jwt_token_here"
+}
+```
+
+> - Access a protected route
+> curl -H "Authorization: Bearer your_jwt_token_here" http://localhost:3000/protected
+
+
+<h4 style="color:#99bf9a">OAuth</h4>
+
+> npm install express passport passport-github2 express-session body-parser
+
+> - <a style="color:#000000">Step 1: Create a GitHub OAuth App</a>
+>     - Go to GitHub Developer Settings[https://github.com/settings/developers]
+>     - Click on "New OAuth App".
+>     - Fill in the application details. For the callback URL, use http://localhost:3000/auth/github/callback.
+>     Once the app is created, you'll get a Client ID and Client Secret.
+
+
+```javascript
+// app.js
+
+const express = require('express');
+const passport = require('passport');
+const GitHubStrategy = require('passport-github2').Strategy;
+const session = require('express-session');
+const bodyParser = require('body-parser');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Replace these with your GitHub OAuth app credentials
+const GITHUB_CLIENT_ID = 'your_client_id';
+const GITHUB_CLIENT_SECRET = 'your_client_secret';
+
+// User storage
+const users = [];
+
+// Passport configuration
+passport.use(new GitHubStrategy({
+    clientID: GITHUB_CLIENT_ID,
+    clientSecret: GITHUB_CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/github/callback"
+},
+function(accessToken, refreshToken, profile, done) {
+    let user = users.find(user => user.id === profile.id);
+    if (!user) {
+        user = { id: profile.id, username: profile.username };
+        users.push(user);
+    }
+    return done(null, user);
+}));
+/* Define a callback function to handle the OAuth flow,
+where you find or create a user based on their GitHub profile. */
+
+
+// Configure Passport to serialize and deserialize user information for session management.
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+    const user = users.find(user => user.id === id);
+    done(null, user);
+});
+
+app.use(bodyParser.json());
+app.use(session({ secret: 'secret', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Routes
+app.get('/', (req, res) => {
+    res.send('<h1>Home</h1><a href="/auth/github">Login with GitHub</a>');
+});
+
+// Initiates the GitHub authentication process.
+app.get('/auth/github',
+    passport.authenticate('github', { scope: [ 'user:email' ] })
+);
+
+// Handles the callback from GitHub after user authorization, and redirects to the profile page if successful.
+app.get('/auth/github/callback', 
+    passport.authenticate('github', { failureRedirect: '/' }),
+    (req, res) => {
+        res.redirect('/profile');
+    }
+);
+
+// A protected route that displays the user's profile information. Users must be authenticated to access this route.
+app.get('/profile', (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/');
+    }
+    res.send(`<h1>Profile</h1><p>Username: ${req.user.username}</p><a href="/logout">Logout</a>`);
+});
+
+// Logs out the user and destroys the session.
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+```
+
+> - Start the Server
+> node app.js
+>
+> - Go to http://localhost:3000
+> Click on "Login with GitHub" to initiate the OAuth flow
+>
+> Once authorized, you'll be redirected back to the profile page
+> After successful authentication, you can view the profile page (of the app running in localhost:3000) with the username retrieved from GitHub
 
 
 
