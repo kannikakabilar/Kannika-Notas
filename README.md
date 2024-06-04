@@ -1,7 +1,6 @@
 <style>
 .js{
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: black;
+  text-shadow: 0px 0px 1.5px #000000;
 }
 </style>
 <h2 style="color:#000000">&#10687; &ensp;<a href="Java" style="color:#fc6b03">Java</a></h2>
