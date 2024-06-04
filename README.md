@@ -1,5 +1,4 @@
 
-</style>
 <h2 style="color:#000000">&#10687; &ensp;<a href="Java" style="color:#fc6b03">Java</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="JavaScript" class="js" style="color:#ebfa46; text-shadow: 0px 0px 1.5px #000000; 	
 font-size: 1.1em">JavaScript</a></h2>
