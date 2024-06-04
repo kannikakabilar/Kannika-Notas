@@ -1,10 +1,6 @@
-<style>
-.js{
-  text-shadow: 0px 0px 1.5px #000000;
-}
-</style>
+
 <h2 style="color:#000000">&#10687; &ensp;<a href="Java" style="color:#fc6b03">Java</a></h2>
-<h2 style="color:#000000">&#10687; &ensp;<a href="JavaScript" class="js" style="color:#ecff1c">JavaScript</a></h2>
+<h2 style="color:#000000">&#10687; &ensp;<a href="JavaScript" class="js" style="color:#ecff1c; text-shadow: 0px 0px 1.5px #000000;">JavaScript</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="React" style="color:#fc0303">React</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="Node.js" style="color:#b2d4b3">Node.js & Express.js</a></h2>
 <br>
