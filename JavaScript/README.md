@@ -1,6 +1,6 @@
-<h1 style="color:#ebfa46;">JavaScript</h1>
+<h1 style="color:#d7eb02;">JavaScript</h1>
 
-<h3 style="color:#ebfa46;">Intro</h3>
+<h3 style="color:#d7eb02;">Intro</h3>
 
 > - <a style="color:#000000">Why should JS's \<script> tag be placed at the end before the closing \<body> tag instead of the start?</a>
 >
@@ -27,7 +27,7 @@ var myFuncName = function(p1, p2) {
 }
 ```
 
-<h3 style="color:#ebfa46;">Strings</h3>
+<h3 style="color:#d7eb02;">Strings</h3>
 
 > - <a style="color:#000000">Is a string created with double quotes or single quotes?</a>
 >
@@ -95,7 +95,7 @@ let result2 = text.slice(3)                                // from position 3 to
 
 - Get parts of a string/Array: **slice(start, end)**
 
-<h3 style="color:#ebfa46;">Arrays</h3>
+<h3 style="color:#d7eb02;">Arrays</h3>
 
 > - <a style="color:#000000">How do you convert a set to an array?</a>
 >
@@ -211,7 +211,7 @@ const oneToTen = [...oneToFive, 6, 7, 8, 9, 10];
 oneToTen                                                         // returns [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-<h3 style="color:#ebfa46;">Hash Sets</h3>
+<h3 style="color:#d7eb02;">Hash Sets</h3>
 
 ```javascript
 let mySet = new Set();
@@ -228,7 +228,7 @@ mySet.delete(0);             // delete zero from set
 
 ```
 
-<h3 style="color:#ebfa46;">Hash Maps</h3>
+<h3 style="color:#d7eb02;">Hash Maps</h3>
 
 ```javascript
 let freq = new Map();                   // freq = {}; also works
@@ -244,7 +244,7 @@ for(let key in freq){                   // loop through key of map
 }
 ```
 
-<h3 style="color:#ebfa46;">Checking Equality in JS</h3>
+<h3 style="color:#d7eb02;">Checking Equality in JS</h3>
 
 > - <a style="color:#000000">How do you check if 2 objects or arrays are equal in JS?</a>
 
@@ -261,7 +261,7 @@ if(equalsCheck(arr1, arr2)){
 }
 ```
 
-<h3 style="color:#ebfa46;">Null, Undefined, and Falsy values</h3>
+<h3 style="color:#d7eb02;">Null, Undefined, and Falsy values</h3>
 
 > - <a style="color:#000000">What is null used for?</a>
 > <br> A: It is used as an intentional "empty value" for variable of any type
@@ -300,7 +300,7 @@ console.log(obj.residence?.street);              // undefined
 
 ```
 
-<h3 style="color:#ebfa46;">Functions</h3>
+<h3 style="color:#d7eb02;">Functions</h3>
 
 > - <a style="color:#000000">Does the original value of a parameter get affected by what happens inside a function?</a>
 > <br> A: Primitive data types are immutable and it will never get affected by what happens inside the function.
@@ -342,7 +342,7 @@ const arwFunc = (x, y) => { x * y };                        // if there is just 
 
 ```
 
-<h3 style="color:#ebfa46;">Closure</h3>
+<h3 style="color:#d7eb02;">Closure</h3>
 
 > - <a style="color:#000000">Write a function that returns a function that returns "Hello World"</a>
 >
@@ -389,7 +389,7 @@ obj.greetPM();                                            // returns "Good Eveni
 
 **Arguments are Passed by Value** and **Objects are Passed by Reference**
 
-<h3 style="color:#ebfa46;">Objects</h3>
+<h3 style="color:#d7eb02;">Objects</h3>
 
 > - <a style="color:#000000">Create an object with data properties and function properties</a>
 >
@@ -462,7 +462,7 @@ person.fullName.apply(person1, ["Toronto", "Canada"]);
 
 ```
 
-<h3 style="color:#ebfa46;">Errors</h3>
+<h3 style="color:#d7eb02;">Errors</h3>
 
 > - <a style="color:#000000">Errors is a type of JS object</a>
 >
@@ -476,7 +476,7 @@ try{
 }
 ```
 
-<h3 style="color:#ebfa46;">Regex</h3>
+<h3 style="color:#d7eb02;">Regex</h3>
 
 > - <a style="color:#000000">What are 2 ways to create a regex pattern?</a>
 >
@@ -518,7 +518,7 @@ const res2 = str.split(/[,.\s]/g);
 console.log(res2);                                            // should output: ['hello', 'user', 'how', 'are', 'you']
 ```
 
-<h3 style="color:#ebfa46;">Strict Mode</h3>
+<h3 style="color:#d7eb02;">Strict Mode</h3>
 
 ```javascript
 x = 3.14;         // This will not cause an error
@@ -529,7 +529,7 @@ let x = 3.14;
 delete x;         // This will cause an error because deleting is not allowed
 ```
 
-<h3 style="color:#ebfa46;">Modules: Imports & Exports</h3>
+<h3 style="color:#d7eb02;">Modules: Imports & Exports</h3>
 
 > - <a style="color:#000000">How do you allow variables with values to be accessed from another .js file?</a>
 >
@@ -559,7 +559,7 @@ export default message;
 import message from "./message.js";
 ```
 
-<h3 style="color:#ebfa46;">Debugger</h3>
+<h3 style="color:#d7eb02;">Debugger</h3>
 
 The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function.
 With the debugger turned on, this code will stop executing before it executes the third line.
@@ -570,12 +570,12 @@ debugger;
 document.getElementById("demo").innerHTML = x;
 ```
 
-<h3 style="color:#ebfa46;">Objects vs. Classes</h3>
+<h3 style="color:#d7eb02;">Objects vs. Classes</h3>
 
 - Objects are used for creating a single entity with their own state & behaviour (almost like a specific instance of a class with its own unique property values)
 - Classes are like a blueprint of an object that allows to create multiple instances (multiple objects with same state and behaviour)
 
-<h3 style="color:#ebfa46;">Classes</h3>
+<h3 style="color:#d7eb02;">Classes</h3>
 
 > - <a style="color:#000000">Create a class with a constructor that takes in some params and write a method for this class</a>
 >
@@ -634,7 +634,7 @@ document.getElementById("demo").innerHTML=​ "Hi, I am " + kan.age(year) + " ye
 document.getElementById("demo2").innerHTML=​ Student.getTotal();
 ```
 
-<h3 style="color:#ebfa46;">Prototypes</h3>
+<h3 style="color:#d7eb02;">Prototypes</h3>
 
 > - <a style="color:#000000">A template function used as a constructor to act as a class. Classes in JS were only introduced in 2015, but even now they are a form of prototype</a>
 >
@@ -663,7 +663,7 @@ myCar.moving;                       // returns true
 
 ```
 
-<h3 style="color:#ebfa46;">Inheritance</h3>
+<h3 style="color:#d7eb02;">Inheritance</h3>
 
 > - <a style="color:#000000">How do you check if an obj is an instance of a class?</a>
 >
@@ -694,7 +694,7 @@ doggy.protoype.hasOwnProperty('introduce');    // false
 
 ```
 
-<h3 style="color:#ebfa46;">JSON</h3>
+<h3 style="color:#d7eb02;">JSON</h3>
 
 Stores JS objects or JS arrays as text
 
@@ -720,7 +720,7 @@ obj.employees[1].firstName + " " + obj.employees[1].lastName;
 </script>
 ```
 
-<h3 style="color:#ebfa46;">Promises, Async, & Await</h3>
+<h3 style="color:#d7eb02;">Promises, Async, & Await</h3>
 
 > - <a style="color:#000000">What is a promise?</a>
 > <br> A: The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
@@ -832,7 +832,7 @@ Promise.race([promise1, promise2])
 
 ```
 
-<h3 style="color:#ebfa46;">AJAX</h3>
+<h3 style="color:#d7eb02;">AJAX</h3>
 
 - allows the feature of not collecting all data from server when loading the webpage only when it is requested
 
@@ -856,7 +856,7 @@ xhttp.send();
 // If 'POST': xhttp.send("fname=Kannika&lname=Kabilar");
 ```
 
-<h3 style="color:#ebfa46;">jQuery</h3>
+<h3 style="color:#d7eb02;">jQuery</h3>
 
 - It can be used for: animation, event handling, html element manipulation, and
     - traversing & filtering through html elems => useful for searching through text in webpage
