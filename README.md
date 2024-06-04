@@ -4,6 +4,7 @@
 font-size: 1.1em">JavaScript</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="React" style="color:#fc0303">React</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="Node.js" style="color:#b2d4b3">Node.js & Express.js</a></h2>
+<h2 style="color:#000000">&#10687; &ensp;<a href="AWS" style="color:#fcc603; text-shadow: 0px 0px 1.5px #2c4070; font-size: 1.1em">AWS</a></h2>
 <br>
 
 <h2 style="color:#8096c2"><a href="Hardware_BitLogic/#bit-logic" style="color:#8096c2">1. &ensp; Bit Logic</a></h2>
