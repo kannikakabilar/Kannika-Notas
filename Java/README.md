@@ -46,6 +46,7 @@ int randomNum = (int)(Math.random() * 101); ​// 0 to 100
 ```java
 int[] data = new int[3];
 int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+System.out.println(nums.length);            // 9
 
 // Looping through elements of an array
 for(int n : nums){    /* This looping method can be used to loop through a hash set as well */
