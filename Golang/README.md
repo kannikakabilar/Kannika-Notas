@@ -59,6 +59,14 @@ fmt.Printf("f is of type: %s\n", reflect.TypeOf(f))
 import "strings"
 
 strings.ToUpper("test") // => "TEST"
+
+food := "taco"
+fmt.Sprintf("Bring me a %s", food)
+// Returns: Bring me a taco
+
+number := 4.3242
+fmt.Sprintf("%.2f", number)
+// Returns: 4.32
 ```
 
 > - <a style="color:#000000">ifs</a>
