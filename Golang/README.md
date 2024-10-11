@@ -60,3 +60,18 @@ import "strings"
 
 strings.ToUpper("test") // => "TEST"
 ```
+
+> - <a style="color:#000000">ifs</a>
+
+```go
+num := 7
+// no brackets for if statement
+if v := 2 * num; v > 10 {
+    fmt.Println(v)
+} else if v == num {
+    fmt.Println("equal 0?")
+} else {
+    fmt.Println(num)
+}
+// Output: 14
+```
