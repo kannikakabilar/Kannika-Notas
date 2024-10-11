@@ -83,3 +83,82 @@ if v := 2 * num; v > 10 {
 }
 // Output: 14
 ```
+
+> - <a style="color:#000000">Slices (Arrays)</a>
+> <br> Slices in Go are based on arrays. Arrays have a fixed size. A slice, on the other hand, is a dynamically-sized, flexible view of the elements of an array.
+
+```go
+var empty []int                 // an empty slice
+withData := []int{0,1,2,3,4,5}  // a slice pre-filled with some data
+
+withData[1] = 5
+x := withData[1] // x is now 5
+
+newSlice := withData[2:4]
+// => []int{2,3}
+newSlice := withData[:2]
+// => []int{0,1}
+newSlice := withData[2:]
+// => []int{2,3,4,5}
+newSlice := withData[:]
+// => []int{0,1,2,3,4,5}
+
+a := []int{1, 3}
+a = append(a, 4, 2)
+// => []int{1,3,4,2}
+
+nextSlice := []int{100,101,102}
+newSlice  := append(withData, nextSlice...)
+// => []int{0,1,2,3,4,5,100,101,102}
+```
+
+```go
+package cards
+
+// FavoriteCards returns a slice with the cards 2, 6 and 9 in that order.
+func FavoriteCards() []int {
+    res := []int{2, 6, 9}
+    return res;
+	//panic("Please implement the FavoriteCards function")
+}
+
+// GetItem retrieves an item from a slice at given position.
+// If the index is out of range, we want it to return -1.
+func GetItem(slice []int, index int) int {
+    if(len(slice)>index && index>=0){
+        return slice[index];
+    }else{
+        return -1;
+    }
+	//panic("Please implement the GetItem function")
+}
+
+// SetItem writes an item to a slice at given position overwriting an existing value.
+// If the index is out of range the value needs to be appended.
+func SetItem(slice []int, index, value int) []int {
+    if(len(slice)>index && index>=0){
+        slice[index] = value;
+        return slice;
+    }else{
+        return append(slice, value);
+    }
+	//panic("Please implement the SetItem function")
+}
+
+// PrependItems adds an arbitrary number of values at the front of a slice.
+func PrependItems(slice []int, values ...int) []int {
+    return append(values, slice...);
+	// panic("Please implement the PrependItems function")
+}
+
+// RemoveItem removes an item from a slice by modifying the existing slice.
+func RemoveItem(slice []int, index int) []int {
+    if(index<len(slice) && index>=0){
+        res := slice[:index];
+        return append(res, slice[index+1:]...);
+    }else{
+        return slice;
+    }
+	//panic("Please implement the RemoveItem function")
+}
+```
