@@ -39,3 +39,16 @@ func hi (name string) string {
     return "hi " + name
 }
 ```
+
+> - <a style="color:#000000">Numbers</a>
+
+```go
+var x int = 42
+f := float64(x)
+
+fmt.Printf("x is of type: %s\n", reflect.TypeOf(x))
+// Output: x is of type: int
+
+fmt.Printf("f is of type: %s\n", reflect.TypeOf(f))
+// Output: f is of type: float64
+```
