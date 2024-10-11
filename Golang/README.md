@@ -52,3 +52,11 @@ fmt.Printf("x is of type: %s\n", reflect.TypeOf(x))
 fmt.Printf("f is of type: %s\n", reflect.TypeOf(f))
 // Output: f is of type: float64
 ```
+
+> - <a style="color:#000000">Strings</a>
+
+```go
+import "strings"
+
+strings.ToUpper("test") // => "TEST"
+```
