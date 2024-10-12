@@ -179,3 +179,39 @@ default:
     // do something if the operating system is none of the above
 }
 ```
+
+> - <a style="color:#000000">Structs</a>
+
+```go
+type Shape struct {
+    name string
+    size int
+}
+
+s := Shape {
+    name: "Square",
+    size: 25,
+}
+
+// Update the name and the size
+s.name = "Circle"
+s.size = 35
+fmt.Printf("name: %s size: %d\n", s.name, s.size)
+// Output: name: Circle size: 35
+
+
+func NewShape(name string) Shape {
+	return Shape{
+		name: name,
+		size: 100, //default-value for size is 100
+	}
+}
+
+NewShape("Triangle")
+// => Shape { name: "Triangle", size: 100 }
+
+// Another way of creating a new instance of a struct is by using the new built-in
+s := new(Shape) // s will be of type *Shape (pointer to shape)
+fmt.Printf("name: %s size: %d\n", s.name, s.size)
+// Output: name:  size: 0
+```
