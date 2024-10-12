@@ -162,3 +162,20 @@ func RemoveItem(slice []int, index int) []int {
 	//panic("Please implement the RemoveItem function")
 }
 ```
+
+> - <a style="color:#000000">Switch...case</a>
+
+```go
+operatingSystem := "windows"
+
+switch operatingSystem {
+case "windows":
+    // do something if the operating system is windows
+case "linux":
+    // do something if the operating system is linux
+case "macos":
+    // do something if the operating system is macos
+default:
+    // do something if the operating system is none of the above
+}
+```
