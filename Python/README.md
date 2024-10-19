@@ -147,3 +147,69 @@ print(x)
 username = input("Enter username:")
 print("Username is: " + username)
 ```
+
+> - <a style="color:#000000">Formatting Strings</a>
+
+```python
+quantity = 3
+itemno = 567
+price = 49
+myorder = "I want {0} pieces of item number {1} for {2:.2f} dollars."
+print(myorder.format(quantity, itemno, price))
+# I want 3 pieces of item number 567 for 49.00 dollars.
+
+myorder = "I want {0} pieces of item number {1} for {1:.2f} dollars."
+print(myorder.format(quantity, itemno, price))
+# I want 3 pieces of item number 567 for 567.00 dollars.
+```
+
+> - <a style="color:#000000">Files</a>
+
+```python
+f = open("D:\\pathto\demofile.txt", "rt")  #  file is opened to read text (rt is default)
+
+print(f.read())  # reads the whole text in the file
+
+print(f.read(5))  # reads first 5 characters from file
+
+print(f.readline())  # reads one line from file
+
+for x in f:  # loop through file line by line
+  print(x)
+
+f = open("demofile3.txt", "w")
+f.write("Woops! I have deleted the content, I need to use a to append content")
+
+f.close()
+
+f = open("demofile2.txt", "a")
+f.write("Now the file has more content!")
+f.close()
+
+# deleting a file
+import os
+if os.path.exists("demofile.txt"):
+  os.remove("demofile.txt")
+else:
+  print("The file does not exist")
+
+# deleting a directory
+os.rmdir("myfolder")
+```
+
+> - <a style="color:#000000">Lambda</a>
+
+```python
+
+x = lambda a, b, c : a + b + c
+print(x(5, 6, 2))
+
+def myfunc(n):
+  return lambda a : a * n
+
+mydoubler = myfunc(2)
+mytripler = myfunc(3)
+
+print(mydoubler(11)) 
+print(mytripler(11))
+```
