@@ -68,6 +68,66 @@
 >
 > - <a style="color:#000000"><mark style="background-color:#fffaa1"><strong style="color:#000000">Count Sorted Vowel Strings - LeetCode Q1641</strong></mark></a>
 
+```python
+class Solution:
+
+    def climbStairs(self, n: int) -> int:
+        step1 = 1
+        step2 = 2
+        if(n<=2):
+            return n
+        for i in range(2, n):
+            tmp = step1 + step2
+            step1 = step2
+            step2 = tmp
+        return step2
+
+    def minFlipsMonoIncr(self, s: str) -> int:
+        totalZeros = 0
+        for c in s:
+            if c == '0':
+                totalZeros += 1
+
+        zeroSoFar = 0
+        oneSoFar = 0
+        res = float('inf')
+        for c in s:
+            res = min(res, oneSoFar + totalZeros-zeroSoFar)
+            if c == '0':
+                zeroSoFar += 1
+            else:
+                oneSoFar += 1
+
+        return min(res, oneSoFar + totalZeros-zeroSoFar)
+
+    def maxProduct(self, nums: List[int]) -> int:
+        res = max(nums)
+        maxi = 1
+        mini = 1
+        for n in nums:
+            tmp = maxi
+            maxi = max(n, maxi*n, mini*n)
+            mini = min(n, tmp*n, mini*n)
+            res = max(res, maxi)
+        return res
+
+    def countVowelStrings(self, n: int) -> int:
+        a = 1
+        e = 1
+        i = 1
+        o = 1
+        u = 1
+        while n>1:
+            a = a + e + i + o + u
+            e = e + i + o + u
+            i = i + o + u
+            o = o + u
+            u = u
+            n-=1
+        return a + e + i + o + u
+
+```
+
 <strong style="color:#1669f0">2. Iterate through the given array to solve the bigger problem</strong>
 
 > - <a style="color:#000000">Minimum Time to Make Rope Colorful - LeetCode Q1578</a>
