@@ -6,6 +6,7 @@ font-size: 1.1em">JavaScript</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="Node.js" style="color:#b2d4b3">Node.js & Express.js</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="AWS" class="aws" style="color:#fcc603">AWS</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="Golang" style="color:#0ed5eb">Golang</a></h2>
+<h2 style="color:#000000">&#10687; &ensp;<a href="Python" style="color:#a9cf04">Python</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="Bash" style="color:#4b04c7">Bash</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="C++" style="color:#fc036b">C++</a></h2>
 <br>
