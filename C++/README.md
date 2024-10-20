@@ -261,4 +261,25 @@ cout << min(5, 10);    // doesn't need the math library
 cout << sqrt(64);
 cout << round(2.6);
 cout << log(2);
+
+cout << (10 > 9); // returns 1 (true), because 10 is higher than 9
+
+int myNumbers[5] = {10, 20, 30, 40, 50};
+for (int i : myNumbers) {
+  cout << i << "\n";
+}
+
+int myNumbers[5] = {10, 20, 30, 40, 50};
+cout << sizeof(myNumbers);    // outputs: 20
+
+// A vector with 3 elements
+vector<string> cars = {"Volvo", "BMW", "Ford"};
+
+// Adding another element to the vector
+cars.push_back("Tesla");
+
+string letters[2][4] = {
+  { "A", "B", "C", "D" },
+  { "E", "F", "G", "H" }
+};
 ```
