@@ -52,7 +52,7 @@ int main() {
 # below is always the first line: cmake should be installed and must have a minimum version of 3.10
 cmake_minimum_required(VERSION 3.10)
 
-# Set the project name - there could be multiple projects in 1 CMakeLists.txt file
+# Set the project_name - there could be multiple projects in 1 CMakeLists.txt file
 project(HelloWorld VERSION 1.0)
 
 # Specify the C++ standard
@@ -61,6 +61,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add an executable target
 add_executable(HelloWorld main.cpp)
+# 1st arg is project_name and 2nd arg is source_file
 
 ```
 
@@ -80,6 +81,17 @@ Output: "Hello, World!"
 
 ```
 
+<h3 style="color:#fc036b">*.cmake</h3>
+
+> - <a style="color:#000000">Used as configurations and module files</a>
+>     - <a style="color:#000000">project specific setting</a>
+>     - <a style="color:#000000">functions reused across multiple CMake projects or modules</a>
+>     - <a style="color:#000000">find and configure 3rd party libs</a>
+>        - <a style="color:#000000">ex: findXYZ.cmake might define how to locate and use a lib named XYZ setting necessary variables linke include directories and linkerflags</a>
+
+<h3 style="color:#fc036b">include(...)</h3>
+
+> - <a style="color:#000000">include command is used to include another CMake script/module</a>
 
 <h1 style="color:#fc036b">C++</h1>
 
