@@ -49,9 +49,10 @@ int main() {
 > - <a style="color:#000000">CMakeLists.txt</a>
 
 ```
+# below is always the first line: cmake should be installed and must have a minimum version of 3.10
 cmake_minimum_required(VERSION 3.10)
 
-# Set the project name
+# Set the project name - there could be multiple projects in 1 CMakeLists.txt file
 project(HelloWorld VERSION 1.0)
 
 # Specify the C++ standard
