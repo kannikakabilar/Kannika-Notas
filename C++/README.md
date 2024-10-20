@@ -93,6 +93,29 @@ Output: "Hello, World!"
 
 > - <a style="color:#000000">include command is used to include another CMake script/module</a>
 
+<h3 style="color:#fc036b">function(func_name ARG1 ARG2) ... endfunction()</h3>
+
+```cpp
+function(FIND_AND_SET_CLANG17)
+    find_program(CLANGPP_17 clang++-17)
+    find_program(CLANG_17 clang-17)
+
+    if(NOT CLANGPP_17 OR NOT CLANG_17)
+        message(FATAL_ERROR "Clang-17 not found. Make sure you have clang-17 and clang++-17 installed and in your PATH")
+    endif()
+
+    set(CMAKE_CXX_COMPILER "${CLANGPP_17}" PARENT_SCOPE)
+    set(CMAKE_C_COMPILER "${CLANG_17}" PARENT_SCOPE)
+endfunction()
+
+# in another file
+# Include the CMake file where the function is defined
+include(path/to/the/file_with_function.cmake)
+
+# Call the function to find and set Clang 17
+FIND_AND_SET_CLANG17()
+```
+
 <h1 style="color:#fc036b">C++</h1>
 
 <h3 style="color:#fc036b">Intro</h3>
