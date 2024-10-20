@@ -116,6 +116,12 @@ include(path/to/the/file_with_function.cmake)
 FIND_AND_SET_CLANG17()
 ```
 
+<h3 style="color:#fc036b">Setting Variables</h3>
+
+```cpp
+set(MY_VARIABLE "Hello, World!")
+```
+
 <h1 style="color:#fc036b">C++</h1>
 
 <h3 style="color:#fc036b">Intro</h3>
@@ -165,3 +171,94 @@ std::string hello();
 > - <a>Guard Against Multiple Inclusions: Header files often use include guards (#ifndef, #define, #endif) or #pragma once to prevent multiple inclusions of the same header file in a single compilation unit, which can cause redefinition errors.</a>
 >
 > - <a>Code reusability, Separation of Interface and Implementation, Organizes code into modules</a>
+
+```cpp
+// Both below chunks of code function the same
+
+// without namespace
+#include <iostream>
+
+int main() {
+  std::cout << "Hello World!";
+  return 0;
+}
+
+// with namespace
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!";
+  return 0;
+}
+```
+
+<h3 style="color:#fc036b">Variables</h3>
+
+```cpp
+int myNum = 5;               // Integer (whole number without decimals)
+double myFloatNum = 5.99;    // Floating point number (with decimals)
+char myLetter = 'D';         // Character
+string myText = "Hello";     // String (text)
+bool myBoolean = true;       // Boolean (true or false)
+
+int myAge = 25;
+cout << "I am " << myAge << " years old.";
+
+const int myNum = 15;  // myNum will always be 15
+myNum = 10;  // error: assignment of read-only variable 'myNum'
+
+float f1 = 35e3;    // indicates 10 to the power of 3
+double d1 = 12E4;
+
+// Include the string library
+#include <string>
+
+// Create a string variable
+string greeting = "Hello";
+
+// Output string value
+cout << greeting;
+
+string myString = "Hello";
+cout << myString[0];    // Outputs H
+cout << myString[myString.length() - 1];    // Outputs o
+myString[0] = 'J';
+cout << myString;    // Outputs Jello instead of Hello
+```
+
+<h3 style="color:#fc036b">Input</h3>
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+  int x;
+  cout << "Type a number: "; // Type a number and press enter
+  cin >> x; // Get user input from the keyboard
+  cout << "Your number is: " << x;
+  return 0;
+}
+
+string fullName;
+cout << "Type your full name: ";
+getline (cin, fullName);    // used for reading input w/ an entire line with space
+cout << "Your name is: " << fullName;
+
+// Type your full name: Kan Kab
+// Your name is: Kan Kab
+```
+
+<h3 style="color:#fc036b">Math</h3>
+
+```cpp
+// Include the cmath library
+#include <cmath>
+
+cout << min(5, 10);    // doesn't need the math library
+
+cout << sqrt(64);
+cout << round(2.6);
+cout << log(2);
+```
