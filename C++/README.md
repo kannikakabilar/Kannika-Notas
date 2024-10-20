@@ -16,7 +16,68 @@
 >
 > - <a style="color:#000000"><strong>Modular:</strong> It allows you to break large projects into smaller components that can be developed, built, and tested independently</a>
 >
-> - <a style="color:#000000"><strong>Customization & Flexibility:</strong> You can define custom targets, add pre-/post-build commands, and configure build options
+> - <a style="color:#000000"><strong>Customization & Flexibility:</strong> You can define custom targets, add pre-/post-build commands, and configure build options</a>
+
+<h3 style="color:#fc036b">Workflow</h3>
+
+> - <a style="color:#000000">File structure</a>
+
+```
+/HelloWorldProject
+| - CMakeLists.txt
+| - main.cpp
+| _ build/
+    | - CMakeCache.txt
+    | - Makefile
+    | _ CMakeFiles/
+        | _ (various files)
+    | - HelloWorld (executable)
+    | _ main.o
+```
+
+> - <a style="color:#000000">main.cpp</a>
+
+```cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+```
+
+> - <a style="color:#000000">CMakeLists.txt</a>
+
+```
+cmake_minimum_required(VERSION 3.10)
+
+# Set the project name
+project(HelloWorld VERSION 1.0)
+
+# Specify the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Add an executable target
+add_executable(HelloWorld main.cpp)
+
+```
+
+> - <a style="color:#000000">In Bash terminal, execute following: </a>
+
+```
+> mkdir build    // Creating a build directory in the root of the project repo
+> cd build
+
+> cmake ..       // '..' refers to the parent directory where CMakeLists.txt is located
+                 // cmake command generates Makefile (or .sln in Windows), CMakeCache.txt, CMakeFiles directory with various configuration files
+> make           // maybe creates lib files *.a, *.so -> unix or *.dll -> windows | .o or .obj compiled version of source code files in CMakeFiles dir
+                 // maybe generates log files
+> ./HelloWorld
+
+Output: "Hello, World!"
+
+```
 
 
 <h1 style="color:#fc036b">C++</h1>
