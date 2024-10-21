@@ -283,3 +283,100 @@ string letters[2][4] = {
   { "E", "F", "G", "H" }
 };
 ```
+
+<h3 style="color:#fc036b">Structs</h3>
+
+```cpp
+// Create a structure variable called myStructure
+struct {
+  int myNum;
+  string myString;
+} myStructure;
+
+// Assign values to members of myStructure
+myStructure.myNum = 1;
+myStructure.myString = "Hello World!";
+
+// Print members of myStructure
+cout << myStructure.myNum << "\n";
+cout << myStructure.myString << "\n";
+
+// Declare a structure named "car"
+struct car {
+  string brand;
+  string model;
+  int year;
+};
+
+int main() {
+  // Create a car structure and store it in myCar1;
+  car myCar1;
+  myCar1.brand = "BMW";
+  myCar1.model = "X5";
+  myCar1.year = 1999;
+
+  // Create another car structure and store it in myCar2;
+  car myCar2;
+  myCar2.brand = "Ford";
+  myCar2.model = "Mustang";
+  myCar2.year = 1969;
+ 
+  // Print the structure members
+  cout << myCar1.brand << " " << myCar1.model << " " << myCar1.year << "\n";
+  cout << myCar2.brand << " " << myCar2.model << " " << myCar2.year << "\n";
+ 
+  return 0;
+}
+```
+
+<h3 style="color:#fc036b">References</h3>
+
+```cpp
+string food = "Pizza";
+
+cout << &food; // Outputs 0x6dfed4
+
+string food = "Pizza";
+string &meal = food;
+
+cout << food << "\n";  // Outputs Pizza
+cout << meal << "\n";  // Outputs Pizza
+
+string food = "Pizza";  // Variable declaration
+string* ptr = &food;    // Pointer declaration
+
+// Reference: Output the memory address of food with the pointer (0x6dfed4)
+cout << ptr << "\n";
+
+// Dereference: Output the value of food with the pointer (Pizza)
+cout << *ptr << "\n";
+```
+
+<h3 style="color:#fc036b">Functions</h3>
+
+```cpp
+// pass by reference
+#include <iostream>
+using namespace std;
+
+void swapNums(int &x, int &y) {
+  int z = x;
+  x = y;
+  y = z;
+}
+
+int main() {
+  int firstNum = 10;
+  int secondNum = 20;
+
+  cout << "Before swap: " << "\n";
+  cout << firstNum << secondNum << "\n";    \\ 1020
+
+  swapNums(firstNum, secondNum);
+
+  cout << "After swap: " << "\n";
+  cout << firstNum << secondNum << "\n";    \\ 2010
+
+  return 0;
+}
+```
