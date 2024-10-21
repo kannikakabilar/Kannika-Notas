@@ -1,5 +1,7 @@
 **What is Docker?**
 
+Docker is the client-server type of application which means we have clients who relay to the server. So the Docker daemon called: dockerd is the Docker engine which represents the server, can run on any OS
+
 A tool that helps developers create, deploy, and run applications inside "containers." It's like a lightweight process, that holds everything an application needs to run, including code, libraries, and system tools independent of environment.
 
 **Pros:**
@@ -19,8 +21,10 @@ Components of Docker:
 
 **Registry**
 Docker’s public registry is called Docker hub, which allows you to store images privately. In Docker hub, you can store millions of images.
+Inside a registry, you can have a repository for each application, and inside each repository you can have multiple images (for each version of the application) => collection of related images
 - docker push myorg/img
 - docker pull myorg/img
+
 
 - Docker Compose: helps manage multi-container docker image with docker-compose.yml
 Services: Each container that your application needs (like a web server, database, etc.).
@@ -40,9 +44,10 @@ States of a Docker Container:
 
 When container is deleted, data is lost => **Docker volumes** to save the data
 
-CMD vs ENTRYPOINT
-- CMD: used for executing commands before the build inside the container environment
-- ENTRYPOINT: initiate the build commandand make the container into an executable
+RUN vs CMD vs ENTRYPOINT
+- RUN: Executes commands during the image build process
+- CMD: Specifies the default command to run inside the container environment
+- ENTRYPOINT: Defines the main command that will always run when the container starts
 
 docker run: run the docker image as a docker container.
 docker ps: list all the running container
@@ -93,3 +98,50 @@ docker-compose up
 Docker Trusted Registry is the enterprise-grade image storage toll for Docker
 
 **Docker-Host:** It contains container, images, and Docker daemon. It offers a complete environment to execute and run your application.
+
+ARG UBUNTU_VERSION=20.04
+ARG: This keyword declares a variable that can be passed to the Docker build process. It’s used for parameters that you might want to change when building the image without modifying the Dockerfile itself.
+
+**ARG vs ENV**
+- ARG defines a variable that is only available during the image build process. It cannot be accessed by the running container.
+- ENV sets environment variables that are available both during the build process and in the running container.
+
+**Docker Commands**
+- :$ docker inspect <repository_name> will provide detailed info of the mentioned image
+- :$ docker log <containerID> displays terminal output
+
+**Container Linking**
+
+You must first name the containers before linking
+- :$ docker run -it --name container1 -d ubuntu
+Now we name container 2 and link it with the named container1
+- :$ docker run -it --name container2 --link container1 -d ubuntu
+
+Try this task
+
+- :$ docker run -it --name container1 -d ubuntu
+Output = container1_ID
+- :$ docker run -it --name container2 --link container1 -d ubuntu
+Output = container2_ID
+
+Go inside container2 
+- :$ docker exec -ti container2_ID bash
+Now we are inside container2
+- :$ cat /etc/hosts
+Output will give container1's IP addr
+
+Now we will try pinging container1 from container2
+- :$ apt-get update
+- :$ apt-get install inputils-ping
+- :$ ping container1
+
+Essentially, we are establishing a network connection from container2 to container1 so they can communicate. This communication is not possible without linking.
+
+**Docker in the Big Picture of Deployment**
+
+Developer codes JS app files with MongoDB container
+
+- Commits the JS code files in Git
+- The Git commit triggers Jenkins which builds the docker image    [CI/CD process initiates]
+- The resulting image is pushed into the company/organization's private registry repository
+- The deployment server pulls our applications image from private registry's repo and pulls MongoDB image from the public registry - Both our container and MongoDB container will talk with each other based on our Dockerfile configuration
