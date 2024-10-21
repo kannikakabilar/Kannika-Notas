@@ -49,6 +49,7 @@ setAge() {
 }
 AGE=40
 setAge
+# call a function with all passed args: main "$@"
 echo "Script Age: $tmp"
 
 # Output
@@ -219,6 +220,7 @@ echo "Please input a number:"
 read number
 
 # Checking if the input is a valid number
+# =~ is used for regex matching
 if [[ ! "$number" =~ ^[0-9]+$ ]]; then
     echo "Invalid input. Please enter a valid number."
     exit 1
@@ -273,4 +275,90 @@ if [ -n "$logged_in_user" ]; then
 else
     echo "User is not logged in"
 fi
+```
+
+<h3 style="color:#4b04c7">FizzBuzz</h3>
+
+```bash
+#!/bin/bash
+
+main () {
+    num=$1
+    res=""
+    if (( num % 3 == 0 )); then
+        res+="Pling"
+    fi
+    if (( num % 5 == 0 )); then
+        res+="Plang"
+    fi
+    if (( num % 7 == 0)); then
+        res+="Plong"
+    fi
+    if [ -z "$res" ]; then
+        res+="$1"
+    fi
+    echo "$res"
+}
+main "$@"
+```
+
+<h3 style="color:#4b04c7">Check 2 strands of DNA string to see if they are equal</h3>
+
+```bash
+#!/bin/bash
+
+main () {
+    str1=$1
+    str2=$2
+    if (( $# != 2 )); then
+        echo "Usage: hamming.sh <string1> <string2>"
+        exit 1
+    fi
+    if (( ${#str1} != ${#str2})); then
+        echo "strands must be of equal length"
+        exit 2
+    fi
+    res=0
+    # check if the char at i for each string is equal
+    for (( i=0; i<${#str1}; i++ )); do
+        if [ "${str1:$i:1}" != "${str2:$i:1}" ]; then
+            res=$((res+1))
+        fi
+    done
+    echo "$res"
+}
+
+main "$@"
+```
+
+<h3 style="color:#4b04c7">Get the first letter of each word in a string and capitalize it</h3>
+
+```bash
+#!/bin/bash
+
+main(){
+    given="${1^^}"
+    res=""
+    getNext=1
+    for (( i=0; i<${#given}; i++ )); do
+        
+        if [ "${given:$i:1}" == " " ]; then
+            getNext=1
+        elif [ "${given:$i:1}" == "-" ]; then
+            getNext=1
+        elif [ "${given:$i:1}" == "_" ]; then
+            getNext=1
+        elif [ "${given:$i:1}" == "*" ]; then
+            getNext=1
+        elif [[ "$getNext" == 1 && "${given:$i:1}" != " " && "${given:$i:1}" != "-" ]]; then
+            res+="${given:i:1}"
+            getNext=0
+        fi
+        
+    done
+    echo "$res"
+    
+}
+
+main "$@"
 ```
