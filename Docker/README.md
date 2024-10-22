@@ -75,25 +75,25 @@ The creation of snapshots of a running container’s state , including its file 
 Docker secrets are used mostly to securely store sensitive information, such as passwords or API keys in Docker swarm
 
 Docker in production
-Prometheus for real-time insights retriving for container performance
-Docker states and Docker Events are used to monitoring docker in the production environment.
+- Prometheus for real-time insights retriving for container performance
+- Docker states and Docker Events are used to monitoring docker in the production environment.
 
 Explain Implementation method of Continuous Integration(CI) and Continues Development (CD) in Docker?
 You need to do the following things:
 - Runs Jenkins on docker
 - You can run integration tests in Jenkins using docker-compose
 
-A project has a Dockerfile ...
-cd to project directory
-docker build -t container_name .
-docker run -p port contianer_name
+**A project has a Dockerfile ...**
+- cd to project directory
+- docker build -t container_name .
+- docker run -p port contianer_name
 
 or for docker-compose
-docker-compose up
+- docker-compose up
 
-docker run: run the docker image as a docker container.
-docker ps: list all the running container
-docker exec: execute commands in a running container.
+- docker run: run the docker image as a docker container.
+- docker ps: list all the running container
+- docker exec: execute commands in a running container.
 
 Docker Trusted Registry is the enterprise-grade image storage toll for Docker
 
