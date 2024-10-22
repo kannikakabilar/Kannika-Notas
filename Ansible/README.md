@@ -27,6 +27,7 @@ module = one small specific task (ie:
 	- install/start nginx server)
 On using Python programing, Ansible helps in allowing users to create their own custom modules.
 
+```
 - hosts: database
   remote_user: root
 
@@ -35,11 +36,13 @@ On using Python programing, Ansible helps in allowing users to create their own 
       base_module:
 	arg1: val1
 	arg2: val2
+```
 
 Play = which task should be executed on which host using which user
 
 Playbook = 1 or more plays - you can have multiple plays in 1 *.yaml file
 
+```
 - name: Add container to networks
     docker_container:
         name: sleepy
@@ -50,6 +53,7 @@ Playbook = 1 or more plays - you can have multiple plays in 1 *.yaml file
                   - sleeper
             - name: TestingNet2
               ipv4_address: 172.1.10.20
+```
 
 Ansible inventory list contains the ip_addresses/hostname of the host where the tasks get executed - this is located in Hosts file
 
@@ -86,25 +90,32 @@ Ansible Tower
 **Shell Environment Variables**
 
 - you can lookup
-
+- 
+```
 - name: Get an environment variable
   debug:
     msg: "The value of MY_VAR is {{ lookup('env', 'MY_VAR') }}"
+```
 
 - using ansible_env
 Ansible automatically populates the ansible_env variable with all the environment variables available to the Ansible process
 
+```
 - name: Print a specific environment variable
   debug:
     msg: "The value of MY_VAR is {{ ansible_env.MY_VAR }}"
+```
 
 - can access it in the bash shell with base shell module
 
+```
 - name: Run a shell command that uses an environment variable
   shell: "echo $MY_VAR"
+```
 
 **Accessing a Variable**
 
+```
 ---
 - hosts: localhost
   vars:
@@ -120,9 +131,11 @@ Ansible automatically populates the ansible_env variable with all the environmen
     - name: Print a dictionary variable
       debug:
         msg: "The value is {{ my_dict.key_name }}"
+```
 
 **Copying files recursively in Ansible**
 
+```
 - hosts: target_host
   tasks:
     - name: Copy files recursively to target host
@@ -130,6 +143,7 @@ Ansible automatically populates the ansible_env variable with all the environmen
         src: /path/to/source/directory/  # Trailing slash indicates contents - tells Ansible to copy the contents of the directory rather than the directory itself
         dest: /path/to/destination/directory/
         recursive: yes
+```
 
 comments: copy module is idempotent, meaning that running the same playbook multiple times will not result in additional copies unless there are changes in the source files
 
@@ -150,6 +164,7 @@ Accessing Facts: Facts can be accessed using the ansible_facts variable. For exa
 
 Custom Facts: You can define custom facts by placing scripts in specific directories on the target host, such as /etc/ansible/facts.d/. These scripts should return JSON data and can be used to extend the default facts collected by Ansible.
 
+```
 ---
 - hosts: all
   tasks:
@@ -167,6 +182,7 @@ Custom Facts: You can define custom facts by placing scripts in specific directo
     - name: Print network interfaces
       debug:
         msg: "Network interfaces: {{ ansible_facts['interfaces'] }}"
+```
 
 ansible_facts['distribution']: The name of the Linux distribution (e.g., Ubuntu, CentOS).
 ansible_facts['os_family']: The family of the operating system (e.g., Debian, RedHat).
@@ -181,21 +197,25 @@ ansible -m debug -a "var=hostvars[inventory_hostname]"
 
 **Create Empty file in hosts module**
 
+```
 ---
 - hosts: all
   tasks:
     - name: Create an empty file using the command module
       command: touch /path/to/your/file.txt
+```
 
 **Ansible Galaxy** is a platform providing the features of sharing and downloading Ansible roles.
 
 **plugins** are reusable components that extend Ansible's functionality. They allow users to customize and enhance how Ansible operates without modifying the core code.
 
+```
 - hosts: localhost
   tasks:
     - name: Read a password from a file
       debug:
         msg: "The password is {{ lookup('file', 'path/to/password.txt') }}"
+```
 
 **Callback plugins** are used for logging, notifications, or any post-playbook actions.
 
@@ -203,6 +223,7 @@ ansible -m debug -a "var=hostvars[inventory_hostname]"
 
 Handlers in Ansible are tasks that are triggered by other tasks, usually used to respond for the changes that require start , stop , reload or restart the service actions. They are defined in the playbook and executed as per need.
 
+```
 ---
 - hosts: webservers
   tasks:
@@ -223,6 +244,7 @@ Handlers in Ansible are tasks that are triggered by other tasks, usually used to
       service:
         name: nginx
         state: restarted
+```
 
 
 **Ansible Vault** provides a secured way for encrypting sensitive data such as passwords, so that they can be stored safely for usage in your playbooks
@@ -231,6 +253,7 @@ ansible-vault encrypt_string --vault-id @prompt --name 'ansible_become_pass' 'my
 
 **Installing something using Ansible**
 
+```
 - name: Install Nginx
    hosts: web_servers
    become: true  # To execute tasks with sudo privileges
@@ -247,11 +270,13 @@ ansible-vault encrypt_string --vault-id @prompt --name 'ansible_become_pass' 'my
         name: nginx
         state: started
         enabled: yes  # Ensures Nginx starts on boot
+```
 
 **Looping over a list of Hosts**
 
 In Ansible playbooks, you can implement looping over a list of hosts in a group using the with_items directive or the loop keyword in tasks. This is useful for performing actions on multiple hosts within a specific group.
 
+```
 ---
 - hosts: webservers
   tasks:
@@ -263,6 +288,8 @@ In Ansible playbooks, you can implement looping over a list of hosts in a group 
         - nginx
         - git
         - curl
+```
+
 loop/with_items: This keyword is used to iterate over the list of packages. Ansible will execute the task for each item in the list.
 
 **Ansible registry** is a mechanism to store variables persistently, enabling data to be passed between different parts of a playbook or even between plays.
