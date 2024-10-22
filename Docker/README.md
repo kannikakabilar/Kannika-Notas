@@ -27,9 +27,9 @@ Inside a registry, you can have a repository for each application, and inside ea
 
 
 - Docker Compose: helps manage multi-container docker image with docker-compose.yml
-Services: Each container that your application needs (like a web server, database, etc.).
-Networks: How the containers communicate with each other.
-Volumes: Where data is stored and how it's shared between containers.
+  - Services: Each container that your application needs (like a web server, database, etc.).
+  - Networks: How the containers communicate with each other.
+  - Volumes: Where data is stored and how it's shared between containers.
 
 States of a Docker Container:
 - docker ps // shows all running containers
