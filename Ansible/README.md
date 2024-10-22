@@ -40,6 +40,17 @@ Play = which task should be executed on which host using which user
 
 Playbook = 1 or more plays - you can have multiple plays in 1 *.yaml file
 
+- name: Add container to networks
+    docker_container:
+        name: sleepy
+        networks:
+            - name: TestingNet
+              ipv4_address: 172.1.1.18
+              links:
+                  - sleeper
+            - name: TestingNet2
+              ipv4_address: 172.1.10.20
+
 Ansible inventory list contains the ip_addresses/hostname of the host where the tasks get executed - this is located in Hosts file
 
 By default, Ansible looks for an inventory file at /etc/ansible/hosts
