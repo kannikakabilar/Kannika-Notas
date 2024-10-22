@@ -49,10 +49,6 @@ RUN vs CMD vs ENTRYPOINT
 - CMD: Specifies the default command to run inside the container environment
 - ENTRYPOINT: Defines the main command that will always run when the container starts
 
-docker run: run the docker image as a docker container.
-docker ps: list all the running container
-docker exec: execute commands in a running container.
-
 **docker system prune**
 - removes unused data of stopped containers, docker networks, and dangling images. 
 
@@ -94,6 +90,10 @@ docker run -p port contianer_name
 
 or for docker-compose
 docker-compose up
+
+docker run: run the docker image as a docker container.
+docker ps: list all the running container
+docker exec: execute commands in a running container.
 
 Docker Trusted Registry is the enterprise-grade image storage toll for Docker
 
