@@ -10,6 +10,7 @@ font-size: 1.1em">JavaScript</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="Bash" style="color:#4b04c7">Bash</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="C++" style="color:#fc036b">C++</a></h2>
 <h2 style="color:#000000">&#10687; &ensp;<a href="Docker" style="color:#78d2ff">Docker</a></h2>
+<h2 style="color:#000000">&#10687; &ensp;<a href="Ansible" style="color:#000000">Ansible</a></h2>
 <br>
 
 <h2 style="color:#8096c2"><a href="Hardware_BitLogic/#bit-logic" style="color:#8096c2">1. &ensp; Bit Logic</a></h2>
