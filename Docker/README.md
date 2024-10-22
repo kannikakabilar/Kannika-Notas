@@ -145,3 +145,55 @@ Developer codes JS app files with MongoDB container
 - The Git commit triggers Jenkins which builds the docker image    [CI/CD process initiates]
 - The resulting image is pushed into the company/organization's private registry repository
 - The deployment server pulls our applications image from private registry's repo and pulls MongoDB image from the public registry - Both our container and MongoDB container will talk with each other based on our Dockerfile configuration
+
+**Top 15 Commands**
+
+Sure! Here are the top 15 commands commonly used in a Dockerfile:
+
+1. **FROM**: Specifies the base image for the Docker image.
+2. **RUN**: Executes commands in a new layer on top of the current image and commits the results.
+3. **CMD**: Provides defaults for an executing container, specifying the command to run.
+4. **ENTRYPOINT**: Configures a container to run as an executable.
+5. **COPY**: Copies files and directories from the host filesystem into the image.
+6. **ADD**: Similar to COPY, but also supports remote URLs and automatic extraction of compressed files.
+7. **ENV**: Sets environment variables in the container.
+8. **EXPOSE**: Informs Docker that the container listens on the specified network ports at runtime.
+9. **VOLUME**: Creates a mount point with the specified path and marks it as holding externally mounted volumes from native host or other containers.
+10. **WORKDIR**: Sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions.
+11. **USER**: Sets the username or UID to use when running the image.
+12. **ARG**: Defines a variable that users can pass at build-time to the Dockerfile with the `docker build` command.
+13. **LABEL**: Adds metadata to an image, which can include version, description, and maintainer information.
+14. **HEALTHCHECK**: Tells Docker how to test a container to check that it is still working.
+15. **SHELL**: Allows the default shell used for the shell form of commands to be overridden.
+
+```dockerfile
+FROM ubuntu:20.04
+
+RUN apt-get update && apt-get install -y python3
+
+CMD ["python3", "app.py"]
+
+ENTRYPOINT ["python3", "app.py"]
+
+COPY . /app
+
+ADD http://example.com/file.tar.gz /app/
+
+ENV APP_ENV=production
+
+EXPOSE 80
+
+VOLUME ["/data"]
+
+WORKDIR /app
+
+USER appuser
+
+ARG VERSION=1.0
+
+LABEL maintainer="you@example.com" version="1.0"
+
+HEALTHCHECK CMD curl --fail http://localhost/ || exit 1
+
+SHELL ["powershell", "-Command"]
+```
