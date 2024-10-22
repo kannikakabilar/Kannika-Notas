@@ -298,23 +298,23 @@ Management inside EC2 can be accelerated by leveraging dynamic EC2 inventory scr
 
 **Top 20 commonly used modules**
 
-apt - Manages packages for Debian-based systems.
-yum - Manages packages for Red Hat-based systems.
-copy - Copies files from the control machine to the target hosts.
-template - Jinja2 template processing for files.
-file - Manages file attributes (permissions, ownership, etc.).
-service - Manages services (start, stop, restart, enable).
-command - Executes commands on remote hosts.
-shell - Executes shell commands on remote hosts.
-git - Manages git repositories.
-user - Manages user accounts and groups.
-group - Manages groups on the target hosts.
-lineinfile - Manages lines in text files.
-cron - Manages cron jobs.
-wait_for - Waits for a condition before proceeding.
-synchronize - Synchronizes files between the control machine and remote hosts.
-blockinfile - Manages block of multi-line text in files.
-get_url - Downloads files from URLs to remote machines.
-fetch - Retrieves files from remote machines to the control machine.
-debug - Prints statements during playbook execution for debugging.
-setup - Gathers facts about remote hosts.
+- apt - Manages packages for Debian-based systems.
+- yum - Manages packages for Red Hat-based systems.
+- copy - Copies files from the control machine to the target hosts.
+- template - Jinja2 template processing for files.
+- file - Manages file attributes (permissions, ownership, etc.).
+- service - Manages services (start, stop, restart, enable).
+- command - Executes commands on remote hosts.
+- shell - Executes shell commands on remote hosts.
+- git - Manages git repositories.
+- user - Manages user accounts and groups.
+- group - Manages groups on the target hosts.
+- lineinfile - Manages lines in text files.
+- cron - Manages cron jobs.
+- wait_for - Waits for a condition before proceeding.
+- synchronize - Synchronizes files between the control machine and remote hosts.
+- blockinfile - Manages block of multi-line text in files.
+- get_url - Downloads files from URLs to remote machines.
+- fetch - Retrieves files from remote machines to the control machine.
+- debug - Prints statements during playbook execution for debugging.
+- setup - Gathers facts about remote hosts.
