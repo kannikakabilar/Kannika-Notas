@@ -94,7 +94,7 @@ Ansible Tower
 ```yml
 - name: Get an environment variable
   debug:
-    msg: "The value of MY_VAR is {{ lookup('env', 'MY_VAR') }}"
+    msg: "The value of MY_VAR is \{\{ lookup('env', 'MY_VAR') \}\}"
 ```
 
 - using ansible_env
