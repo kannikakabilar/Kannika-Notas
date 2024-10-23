@@ -198,3 +198,12 @@ An artifact is a file or collection of files produced during a workflow run. You
 - git stash pop: Restores the most recent stashed changes.
 - git rebase <branch>: Reapplies commits on top of another base branch.
 - git tag <tag-name>: Creates a tag for a specific commit.
+
+
+**Cherry-pick Commit**
+
+The git cherry-pick command uses exact commits from one branch to another, allowing selective merging of changes without merging entire branches.
+
+**Large Files in Git**
+
+To handle large files in Git, use Git LFS (Large File Storage). It tracks large files severally from your repository, storing them on a remote server. This prevents bloating your repository size and secures improved performance while operations like cloning and fetching.
