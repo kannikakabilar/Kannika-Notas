@@ -39,7 +39,7 @@ Secrets Management: You can store sensitive information, like API keys and token
 
 ```yaml
 
-password: ${{ secrets.secret_name }}
+password: $\{\{ secrets.secret_name \}\}
 
 ```
 
