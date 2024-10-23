@@ -160,3 +160,41 @@ jobs:
           docker push myusername/myimage:latest
 
 ```
+
+**Artifacts**
+
+An artifact is a file or collection of files produced during a workflow run. You can use actions such as actions/upload-artifact and actions/download-artifact to share artifacts between jobs or store them for use after workflows complete.
+
+**Troubleshooting GitHub Actions Workflow**
+
+- Check the workflow logs: The workflow logs can provide you with information about the execution of your workflow.
+
+- Use the GitHub Actions debug runner: The GitHub Actions debug runner allows you to run your workflow step by step and to inspect the environment variables and output of each step.
+
+**Top 25 GitHub Commands**
+
+- git init: Initializes a new Git repository.
+- git clone <repo>: Clones a remote repository to your local machine.
+- git add <file>: Stages changes for the next commit.
+- git add .: Stages all changes in the current directory.
+- git commit -m "<message>": Commits staged changes with a message.
+- git status: Displays the status of your working directory and staging area.
+- git log: Shows the commit history for the repository.
+- git diff: Shows changes between commits, working directory, etc.
+- git branch: Lists all branches in the repository.
+- git branch <branch-name>: Creates a new branch.
+- git checkout <branch-name>: Switches to a specified branch.
+- git checkout -b <branch-name>: Creates and switches to a new branch.
+- git merge <branch-name>: Merges the specified branch into the current branch.
+- git pull: Fetches changes from the remote repository and merges them.
+- git push: Pushes local changes to the remote repository.
+- git remote add <name> <url>: Adds a new remote repository.
+- git remote -v: Lists the remote repositories.
+- git fetch: Fetches changes from the remote repository without merging.
+- git reset <file>: Unstages a file from the staging area.
+- git reset --hard: Resets the working directory to match the latest commit (warning: this will discard changes).
+- git cherry-pick <commit>: Applies the changes from a specific commit to the current branch.
+- git stash: Temporarily saves changes that are not ready to be committed.
+- git stash pop: Restores the most recent stashed changes.
+- git rebase <branch>: Reapplies commits on top of another base branch.
+- git tag <tag-name>: Creates a tag for a specific commit.
