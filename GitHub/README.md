@@ -161,6 +161,43 @@ jobs:
 
 ```
 
+**Defining your own Action**
+
+```yaml
+# .github/actions/my-action/new-action1.yaml
+name: 'My Custom Action'
+description: 'A brief description of what your action does.'
+inputs:
+  input1:
+    description: 'Description of input1'
+    required: true
+    default: 'default-value'
+outputs:
+  output1:
+    description: 'Description of output1'
+runs:
+  using: 'node12' # or 'docker' if you're using a Docker container
+  steps:
+    - name: "Invoke command with retries"
+      shell: bash
+      run: |
+        set +e
+
+        max_retries="${{ inputs.max-retries }}"
+        count=0
+
+        while (( count < max_retries )); do
+          echo "Attempt $((count + 1)) of $max_retries..."
+...
+
+# .github/workflows/cicd.yml
+
+uses: username/repo-name@branch
+with:
+  input1: 'value'
+
+```
+
 **Artifacts**
 
 An artifact is a file or collection of files produced during a workflow run. You can use actions such as actions/upload-artifact and actions/download-artifact to share artifacts between jobs or store them for use after workflows complete.
