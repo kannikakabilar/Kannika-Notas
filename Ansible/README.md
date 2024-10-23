@@ -103,7 +103,7 @@ Ansible automatically populates the ansible_env variable with all the environmen
 ```yml
 - name: Print a specific environment variable
   debug:
-    msg: "The value of MY_VAR is {{ ansible_env.MY_VAR }}"
+    msg: "The value of MY_VAR is \{\{ ansible_env.MY_VAR \}\}"
 ```
 
 - can access it in the bash shell with base shell module
@@ -126,11 +126,11 @@ Ansible automatically populates the ansible_env variable with all the environmen
   tasks:
     - name: Print a simple variable
       debug:
-        msg: "The value of my_variable is {{ my_variable }}"
+        msg: "The value of my_variable is \{\{ my_variable \}\}"
 
     - name: Print a dictionary variable
       debug:
-        msg: "The value is {{ my_dict.key_name }}"
+        msg: "The value is \{\{ my_dict.key_name \}\}"
 ```
 
 **Copying files recursively in Ansible**
@@ -153,10 +153,10 @@ In Ansible, ad-hoc commands are one-off commands that allow you to perform simpl
 
 ansible [host-pattern] -m [module] -a "[module options]"
 
-ping hosts: ansible all -m ping
-run shell cmd: ansible webservers -m shell -a "uname -a"
-copy a file: ansible appservers -m copy -a "src=/local/path/file.txt dest=/remote/path/"
-install a pkg: ansible all -m yum -a "name=httpd state=present"
+- ping hosts: ansible all -m ping
+- run shell cmd: ansible webservers -m shell -a "uname -a"
+- copy a file: ansible appservers -m copy -a "src=/local/path/file.txt dest=/remote/path/"
+- install a pkg: ansible all -m yum -a "name=httpd state=present"
 
 **Ansible Facts**
 
@@ -173,15 +173,15 @@ Custom Facts: You can define custom facts by placing scripts in specific directo
 
     - name: Print the operating system
       debug:
-        msg: "The operating system is {{ ansible_facts['os'] }}"
+        msg: "The operating system is \{\{ ansible_facts['os'] \}\}"
 
     - name: Print memory information
       debug:
-        msg: "Total RAM: {{ ansible_facts['memtotal_mb'] }} MB"
+        msg: "Total RAM: \{\{ ansible_facts['memtotal_mb'] \}\} MB"
 
     - name: Print network interfaces
       debug:
-        msg: "Network interfaces: {{ ansible_facts['interfaces'] }}"
+        msg: "Network interfaces: \{\{ ansible_facts['interfaces'] \}\}"
 ```
 
 ansible_facts['distribution']: The name of the Linux distribution (e.g., Ubuntu, CentOS).
@@ -214,7 +214,7 @@ ansible -m debug -a "var=hostvars[inventory_hostname]"
   tasks:
     - name: Read a password from a file
       debug:
-        msg: "The password is {{ lookup('file', 'path/to/password.txt') }}"
+        msg: "The password is \{\{ lookup('file', 'path/to/password.txt') \}\}"
 ```
 
 **Callback plugins** are used for logging, notifications, or any post-playbook actions.
@@ -282,7 +282,7 @@ In Ansible playbooks, you can implement looping over a list of hosts in a group 
   tasks:
     - name: Ensure a package is installed
       apt:
-        name: "{{ item }}"
+        name: "\{\{ item \}\}"
         state: present
       loop:
         - nginx
