@@ -27,7 +27,7 @@ module = one small specific task (ie:
 	- install/start nginx server)
 On using Python programing, Ansible helps in allowing users to create their own custom modules.
 
-```
+```yml
 - hosts: database
   remote_user: root
 
@@ -42,7 +42,7 @@ Play = which task should be executed on which host using which user
 
 Playbook = 1 or more plays - you can have multiple plays in 1 *.yaml file
 
-```
+```yml
 - name: Add container to networks
     docker_container:
         name: sleepy
@@ -90,8 +90,8 @@ Ansible Tower
 **Shell Environment Variables**
 
 - you can lookup
-- 
-```
+
+```yml
 - name: Get an environment variable
   debug:
     msg: "The value of MY_VAR is {{ lookup('env', 'MY_VAR') }}"
@@ -100,7 +100,7 @@ Ansible Tower
 - using ansible_env
 Ansible automatically populates the ansible_env variable with all the environment variables available to the Ansible process
 
-```
+```yml
 - name: Print a specific environment variable
   debug:
     msg: "The value of MY_VAR is {{ ansible_env.MY_VAR }}"
@@ -108,14 +108,14 @@ Ansible automatically populates the ansible_env variable with all the environmen
 
 - can access it in the bash shell with base shell module
 
-```
+```yml
 - name: Run a shell command that uses an environment variable
   shell: "echo $MY_VAR"
 ```
 
 **Accessing a Variable**
 
-```
+```yml
 ---
 - hosts: localhost
   vars:
@@ -135,7 +135,7 @@ Ansible automatically populates the ansible_env variable with all the environmen
 
 **Copying files recursively in Ansible**
 
-```
+```yml
 - hosts: target_host
   tasks:
     - name: Copy files recursively to target host
@@ -164,7 +164,7 @@ Accessing Facts: Facts can be accessed using the ansible_facts variable. For exa
 
 Custom Facts: You can define custom facts by placing scripts in specific directories on the target host, such as /etc/ansible/facts.d/. These scripts should return JSON data and can be used to extend the default facts collected by Ansible.
 
-```
+```yml
 ---
 - hosts: all
   tasks:
@@ -197,7 +197,7 @@ ansible -m debug -a "var=hostvars[inventory_hostname]"
 
 **Create Empty file in hosts module**
 
-```
+```yml
 ---
 - hosts: all
   tasks:
@@ -209,7 +209,7 @@ ansible -m debug -a "var=hostvars[inventory_hostname]"
 
 **plugins** are reusable components that extend Ansible's functionality. They allow users to customize and enhance how Ansible operates without modifying the core code.
 
-```
+```yml
 - hosts: localhost
   tasks:
     - name: Read a password from a file
@@ -223,7 +223,7 @@ ansible -m debug -a "var=hostvars[inventory_hostname]"
 
 Handlers in Ansible are tasks that are triggered by other tasks, usually used to respond for the changes that require start , stop , reload or restart the service actions. They are defined in the playbook and executed as per need.
 
-```
+```yml
 ---
 - hosts: webservers
   tasks:
@@ -253,7 +253,7 @@ ansible-vault encrypt_string --vault-id @prompt --name 'ansible_become_pass' 'my
 
 **Installing something using Ansible**
 
-```
+```yml
 - name: Install Nginx
    hosts: web_servers
    become: true  # To execute tasks with sudo privileges
@@ -276,7 +276,7 @@ ansible-vault encrypt_string --vault-id @prompt --name 'ansible_become_pass' 'my
 
 In Ansible playbooks, you can implement looping over a list of hosts in a group using the with_items directive or the loop keyword in tasks. This is useful for performing actions on multiple hosts within a specific group.
 
-```
+```yml
 ---
 - hosts: webservers
   tasks:
