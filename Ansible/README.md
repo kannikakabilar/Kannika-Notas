@@ -1,8 +1,9 @@
-What is Ansible?
+<h1 style="color:#000000">Ansible</h1>
 
 A tool that automates IT tasks - configuration management system. It allows to execute tasks from your own machine instead of ssh'ing into each remote servers to perform the same tasks
 
-Tasks that can automated using Ansible
+<h3 style="color:#000000">Tasks that can automated using Ansible</h3>
+
 - create user
 - assign groups, update persmissions
 - system reboots
@@ -10,24 +11,25 @@ Tasks that can automated using Ansible
 - Configuration/Installation/Deployment steps can be setup in a single YAML file instead of shell script, and terminal commands performed manually
 - Re-use same files for different environments 
 
-Support
+**Supports**
 - os level updates
 - cloud level updates (AWS, Azure)
 
-Ansible is agentless
+<h3 style="color:#000000">Ansible is agentless</h3>
+
 - You just need ssh access to all the remote servers and have Ansible installed in your local machine, which will act as the control machine. [no need to install Ansible in the remote servers] => no update or deployment of ansible versions need to be concerned
 
-Ansible Architecture
-modules (small tasks) get pushed to the remote servers - they do their specified task and then gets removed
+<h3 style="color:#000000">Ansible Architecture</h3>
 
 module = one small specific task (ie: 
 	- create a file
 	- rename db table name
 	- start docker container
 	- install/start nginx server)
-On using Python programing, Ansible helps in allowing users to create their own custom modules.
 
-```yml
+With the use of Python programing, Ansible helps in allowing users to create their own custom modules.
+
+```yaml
 - hosts: database
   remote_user: root
 
