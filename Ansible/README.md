@@ -105,12 +105,12 @@ ansible-playbook -i my_inventory_file hosts playbook.yml
 ```
 
 - using ansible_env
-Ansible automatically populates the ansible_env variable with all the environment variables available to the Ansible process
+<br> Ansible automatically populates the ansible_env variable with all the environment variables available to the Ansible process
 
 ```yaml
 - name: Print a specific environment variable
   debug:
-    msg: "The value of MY_VAR is {{ ansible_env.MY_VAR }}"
+    msg: "The value of MY_VAR is \{\{ ansible_env.MY_VAR \}\}"
 ```
 
 - can access it in the bash shell with base shell module
@@ -122,7 +122,7 @@ Ansible automatically populates the ansible_env variable with all the environmen
 
 **Accessing a Variable**
 
-```yml
+```yaml
 ---
 - hosts: localhost
   vars:
@@ -152,7 +152,7 @@ Ansible automatically populates the ansible_env variable with all the environmen
         recursive: yes
 ```
 
-comments: copy module is idempotent, meaning that running the same playbook multiple times will not result in additional copies unless there are changes in the source files
+comments: copy module is **idempotent**, meaning that running the same playbook multiple times will not result in additional copies unless there are changes in the source files
 
 **Adhoc Commands**
 
