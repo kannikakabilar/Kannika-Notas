@@ -110,7 +110,7 @@ ansible-playbook -i my_inventory_file hosts playbook.yml
 ```yaml
 - name: Print a specific environment variable
   debug:
-    msg: "The value of MY_VAR is <code>{{ ansible_env.MY_VAR }}</code>"
+    msg: "The value of MY_VAR is \{\{ ansible_env.MY_VAR \}\}"
 ```
 
 - can access it in the bash shell with base shell module
