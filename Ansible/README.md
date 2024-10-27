@@ -107,10 +107,10 @@ ansible-playbook -i my_inventory_file hosts playbook.yml
 - using ansible_env
 <br> Ansible automatically populates the ansible_env variable with all the environment variables available to the Ansible process
 
-```yaml
+```
 - name: Print a specific environment variable
   debug:
-    msg: "The value of MY_VAR is \{\{ ansible_env.MY_VAR \}\}"
+    msg: "The value of MY_VAR is {{ ansible_env.MY_VAR }}"
 ```
 
 - can access it in the bash shell with base shell module
@@ -152,13 +152,15 @@ ansible-playbook -i my_inventory_file hosts playbook.yml
         recursive: yes
 ```
 
-comments: copy module is **idempotent**, meaning that running the same playbook multiple times will not result in additional copies unless there are changes in the source files
+- comments: copy module is **idempotent**, meaning that running the same playbook multiple times will not result in additional copies unless there are changes in the source files
 
 **Adhoc Commands**
 
 In Ansible, ad-hoc commands are one-off commands that allow you to perform simple tasks on remote hosts without the need to write a full playbook.
 
+```bash
 ansible [host-pattern] -m [module] -a "[module options]"
+```
 
 - ping hosts: ansible all -m ping
 - run shell cmd: ansible webservers -m shell -a "uname -a"
@@ -191,16 +193,18 @@ Custom Facts: You can define custom facts by placing scripts in specific directo
         msg: "Network interfaces: \{\{ ansible_facts['interfaces'] \}\}"
 ```
 
-ansible_facts['distribution']: The name of the Linux distribution (e.g., Ubuntu, CentOS).
-ansible_facts['os_family']: The family of the operating system (e.g., Debian, RedHat).
-ansible_facts['architecture']: The system architecture (e.g., x86_64).
-ansible_facts['hostname']: The hostname of the target machine.
-ansible_facts['ip_addresses']: List of IP addresses assigned to the host.
-ansible_facts['memtotal_mb']: Total memory in megabytes.
+- ansible_facts['distribution']: The name of the Linux distribution (e.g., Ubuntu, CentOS).
+- ansible_facts['os_family']: The family of the operating system (e.g., Debian, RedHat).
+- ansible_facts['architecture']: The system architecture (e.g., x86_64).
+- ansible_facts['hostname']: The hostname of the target machine.
+- ansible_facts['ip_addresses']: List of IP addresses assigned to the host.
+- ansible_facts['memtotal_mb']: Total memory in megabytes.
 
 **How to see all variables for a host**
 
+```bash
 ansible -m debug -a "var=hostvars[inventory_hostname]"
+```
 
 **Create Empty file in hosts module**
 
