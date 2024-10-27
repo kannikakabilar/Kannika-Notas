@@ -27,6 +27,9 @@ const Age = 25 // Defines a numeric constant 'Age' with the value of 25 and its 
 > - <a style="color:#000000">Functions</a>
 
 ```go
+// Function arguments are the concrete values passed to the function
+// Function parameters are the names defined in the function's signature
+
 package greeting
 
 // Hello is a public function.
@@ -38,6 +41,33 @@ func Hello (name string) string {
 func hi (name string) string {
     return "hi " + name
 }
+
+// Multiple parameters, multiple return values
+func SumAndMultiply(a, b int) (int, int) {
+    return a+b, a*b
+}
+// Called like this:
+aplusb, atimesb := SumAndMultiply(a, b)
+
+/* As well as parameters, return values can optionally be named. If named return values are used, a return statement without arguments will return those values. This is known as a 'naked' return. */
+func SumAndMultiplyThenMinus(a, b, c int) (sum, mult int) {
+    sum, mult = a+b, a*b
+    sum -= c
+    mult -= c
+    return
+}
+
+// Pass by Value vs. Pass by Reference
+val := 2
+func MultiplyByTwo(v int) int {
+    v = v * 2
+    return v
+}
+newVal := MultiplyByTwo(val)
+// newval is 4, val is still 2 because only a copy of its value was passed into the function
+
+// all arguments (except slices and maps) are passed by value in Go, i.e. a copy is made of the value or data provided to the function.
+// If you want to change the data in the function, then you should use pointers as argument
 ```
 
 > - <a style="color:#000000">Numbers</a>
@@ -214,4 +244,49 @@ NewShape("Triangle")
 s := new(Shape) // s will be of type *Shape (pointer to shape)
 fmt.Printf("name: %s size: %d\n", s.name, s.size)
 // Output: name:  size: 0
+```
+
+> - <a style="color:#000000">For...Loop</a>
+
+```go
+// FixBirdCountLog returns the bird counts after correcting
+// the bird counts for alternate days.
+func FixBirdCountLog(birdsPerDay []int) []int {
+    for i := 0; i<len(birdsPerDay); i+=2 {
+        birdsPerDay[i] += 1;
+    }
+    return birdsPerDay;
+	//panic("Please implement the FixBirdCountLog() function")
+}
+
+func Quantities(layers []string) (int, float64) {
+    n := 0
+    s := 0
+    // index is the index where we are
+    // element is the element from someSlice for where we are
+    for _, element := range layers {
+        if element == "noodles" {
+            n += 1
+        }
+        if element == "sauce" {
+            s += 1
+        }
+        
+    }
+    return n*50, 0.2*float64(s)
+}
+```
+
+> - <a style="color:#000000">Randomizing</a>
+
+```go
+import "math/rand"
+
+n := rand.Intn(100) // n is a random int, 0 <= n < 100
+
+x := []string{"a", "b", "c", "d", "e"}
+// shuffling the slice put its elements into a random order
+rand.Shuffle(len(x), func(i, j int) {
+	x[i], x[j] = x[j], x[i]
+})
 ```
