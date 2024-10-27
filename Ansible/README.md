@@ -110,7 +110,7 @@ ansible-playbook -i my_inventory_file hosts playbook.yml
 ```
 - name: Print a specific environment variable
   debug:
-    msg: "The value of MY_VAR is {{ ansible_env.MY_VAR }}"
+    msg: "The value of MY_VAR is &#123;&#123; ansible_env.MY_VAR &#125;&#125;"
 ```
 
 - can access it in the bash shell with base shell module
@@ -230,7 +230,7 @@ ansible -m debug -a "var=hostvars[inventory_hostname]"
 
 **Callback plugins** are used for logging, notifications, or any post-playbook actions.
 
-**Handlers**
+<h3 style="color:#000000">Handlers</h3>
 
 Handlers in Ansible are tasks that are triggered by other tasks, usually used to respond for the changes that require start , stop , reload or restart the service actions. They are defined in the playbook and executed as per need.
 
