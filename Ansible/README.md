@@ -63,6 +63,7 @@ Ansible inventory list contains the ip_addresses/hostname of the host where the 
 
 By default, Ansible looks for an inventory file at /etc/ansible/hosts
 
+```
 [database]
 10.24.0.1
 10.24.0.2
@@ -74,19 +75,21 @@ By default, Ansible looks for an inventory file at /etc/ansible/hosts
 [webservers2]
 web1.myserver.com
 web2.myserver.com
+```
 
-Grouping multiple servers here like this can help execute the same tasks in many servers at the same time
+- Grouping multiple servers here like this can help execute the same tasks in many servers at the same time
 
-Usage in Playbooks: When you run a playbook, you specify the inventory file (if it’s not the default) and the playbook file. For example:
+**Associating an Inventory file with a Playbook**: When you run a playbook, you specify the inventory file (if it’s not the default) and the playbook file. 
+For example: [in command line or bash]
 
-[command line or bash]
-
+```bash
 ansible-playbook -i my_inventory_file hosts playbook.yml
+```
 
+- Ansible playbook can be used to manage the storage of the host as well as the Docker container which docker alone cannot do
 
-Ansible playbook can be used to manage the storeage of the host as well as the Docker container which docker alone cannot do
+<h3 style="color:#000000">Ansible Tower</h3>
 
-Ansible Tower
 - An UI dashboard from RedHat
 - A place to centrally store automation tasks across teams
 - Configure permissions and manage inventory
@@ -104,10 +107,10 @@ Ansible Tower
 - using ansible_env
 Ansible automatically populates the ansible_env variable with all the environment variables available to the Ansible process
 
-```yml
+```yaml
 - name: Print a specific environment variable
   debug:
-    msg: "The value of MY_VAR is \{\{ ansible_env.MY_VAR \}\}"
+    msg: "The value of MY_VAR is {{ ansible_env.MY_VAR }}"
 ```
 
 - can access it in the bash shell with base shell module
