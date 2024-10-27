@@ -8,6 +8,8 @@ A tool that automates IT tasks - configuration management system. It allows to e
 - assign groups, update persmissions
 - system reboots
 
+<br>
+
 - Configuration/Installation/Deployment steps can be setup in a single YAML file instead of shell script, and terminal commands performed manually
 - Re-use same files for different environments 
 
@@ -40,7 +42,7 @@ With the use of Python programing, Ansible helps in allowing users to create the
 	arg2: val2
 ```
 
-Play = which task should be executed on which host using which user
+Play = a particular set of tasks that should be executed on specific set of hosts using a specific user
 
 Playbook = 1 or more plays - you can have multiple plays in 1 *.yaml file
 
