@@ -1,4 +1,4 @@
-**What is Docker?**
+<h1 style="color:#78d2ff">What is Docker?</h1>
 
 Docker is the client-server type of application which means we have clients who relay to the server. So the Docker daemon called: dockerd is the Docker engine which represents the server, can run on any OS
 
@@ -14,45 +14,50 @@ A tool that helps developers create, deploy, and run applications inside "contai
 - storage for data
 - monitoring status
 
-Components of Docker:
+<h3 style="color:#78d2ff">Components of Docker:</h3>
+
 - Docker Enginer: it is the interface that allows you to create, run, manage containers - main software to use for running docker containers
 - Docker Images: a light-weight package that contains everything needed to run an application - the code, dependencies - built using the Dockerfile
 - Docker Container: when you run an image, you create an instance of the image which is the docker container, it runs the executed application
 
-**Registry**
+<h3 style="color:#78d2ff">Registry</h3>
 Docker’s public registry is called Docker hub, which allows you to store images privately. In Docker hub, you can store millions of images.
 Inside a registry, you can have a repository for each application, and inside each repository you can have multiple images (for each version of the application) => collection of related images
 - docker push myorg/img
 - docker pull myorg/img
 
+<h3 style="color:#78d2ff">Docker Compose</h3>
 
 - Docker Compose: helps manage multi-container docker image with docker-compose.yml
   - Services: Each container that your application needs (like a web server, database, etc.).
   - Networks: How the containers communicate with each other.
   - Volumes: Where data is stored and how it's shared between containers.
 
-States of a Docker Container:
+<h3 style="color:#78d2ff">States of a Docker Container:</h3>
+
 - docker ps // shows all running containers
 - running, paused (temporarily halted), stopped
 - docker start <container_name>
 - docker stop <container_name>
 - docker kill <container_name>
-
+<br>
 - sudo docker run -i -t alpine /bin/bash // run image as container
 
 **Hypervisor** is like vmware that allows to run other OS while while docker uses Docker engine
 
-When container is deleted, data is lost => **Docker volumes** to save the data
+When container is deleted, data is lost => <h4 style="color:#78d2ff">Docker volumes</h4> to save the data
 
-RUN vs CMD vs ENTRYPOINT
+<h3 style="color:#78d2ff">RUN vs CMD vs ENTRYPOINT</h3>
+
 - RUN: Executes commands during the image build process
 - CMD: Specifies the default command to run inside the container environment
 - ENTRYPOINT: Defines the main command that will always run when the container starts
 
-**docker system prune**
+<h3 style="color:#78d2ff">docker system prune</h3>
 - removes unused data of stopped containers, docker networks, and dangling images. 
 
-**Docker Swarm**
+<h3 style="color:#78d2ff">Docker Swarm</h3>
+
 Docker Swarm is a tool for managing a group of Docker containers that work together as a single unit, called a "swarm." It allows you to deploy and manage your applications across multiple machines, making them more resilient and scalable.
 - a group of Docker hosts into a single and virtual docker host
 
@@ -68,13 +73,14 @@ Here’s how it works in simple terms:
 
 Overall, Docker Swarm helps you run your applications smoothly across multiple machines while ensuring they stay available and responsive.
 
-**Docker Checkpoint**
+<h3 style="color:#78d2ff">Docker Checkpoint</h3>
 The creation of snapshots of a running container’s state , including its file system and the memory. It is useful for experimental mode of scenarios such as debugging or migration.
 
-**Docker Secrets**
+<h3 style="color:#78d2ff">Docker Secrets</h3>
+
 Docker secrets are used mostly to securely store sensitive information, such as passwords or API keys in Docker swarm
 
-Docker in production
+**Docker in production**
 - Prometheus for real-time insights retriving for container performance
 - Docker states and Docker Events are used to monitoring docker in the production environment.
 
@@ -83,7 +89,8 @@ You need to do the following things:
 - Runs Jenkins on docker
 - You can run integration tests in Jenkins using docker-compose
 
-**A project has a Dockerfile ...**
+<h3 style="color:#78d2ff">A project has a Dockerfile ...</h3>
+
 - cd to project directory
 - docker build -t container_name .
 - docker run -p port contianer_name
@@ -97,20 +104,24 @@ or for docker-compose
 
 Docker Trusted Registry is the enterprise-grade image storage toll for Docker
 
-**Docker-Host:** It contains container, images, and Docker daemon. It offers a complete environment to execute and run your application.
+<h3 style="color:#78d2ff">Docker-Host:</h3>
+
+It contains container, images, and Docker daemon. It offers a complete environment to execute and run your application.
 
 ARG UBUNTU_VERSION=20.04
 ARG: This keyword declares a variable that can be passed to the Docker build process. It’s used for parameters that you might want to change when building the image without modifying the Dockerfile itself.
 
-**ARG vs ENV**
+<h3 style="color:#78d2ff">ARG vs ENV</h3>
+
 - ARG defines a variable that is only available during the image build process. It cannot be accessed by the running container.
 - ENV sets environment variables that are available both during the build process and in the running container.
 
-**Docker Commands**
+<h3 style="color:#78d2ff">Docker Commands</h3>
+
 - :$ docker inspect <repository_name> will provide detailed info of the mentioned image
 - :$ docker log <containerID> displays terminal output
 
-**Container Linking**
+<h3 style="color:#78d2ff">Container Linking</h3>
 
 You must first name the containers before linking
 - :$ docker run -it --name container1 -d ubuntu
@@ -137,7 +148,7 @@ Now we will try pinging container1 from container2
 
 Essentially, we are establishing a network connection from container2 to container1 so they can communicate. This communication is not possible without linking.
 
-**Docker in the Big Picture of Deployment**
+<h3 style="color:#78d2ff">Docker in the Big Picture of Deployment</h3>
 
 Developer codes JS app files with MongoDB container
 
