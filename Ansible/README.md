@@ -107,10 +107,10 @@ ansible-playbook -i my_inventory_file hosts playbook.yml
 - using ansible_env
 <br> Ansible automatically populates the ansible_env variable with all the environment variables available to the Ansible process
 
-```html
+```yaml
 - name: Print a specific environment variable
   debug:
-    msg: "The value of MY_VAR is &#123;&#123; ansible_env.MY_VAR &#125;&#125;"
+    msg: "The value of MY_VAR is <code>{{ ansible_env.MY_VAR }}</code>"
 ```
 
 - can access it in the bash shell with base shell module
