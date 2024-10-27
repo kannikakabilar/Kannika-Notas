@@ -107,7 +107,7 @@ ansible-playbook -i my_inventory_file hosts playbook.yml
 - using ansible_env
 <br> Ansible automatically populates the ansible_env variable with all the environment variables available to the Ansible process
 
-```
+```html
 - name: Print a specific environment variable
   debug:
     msg: "The value of MY_VAR is &#123;&#123; ansible_env.MY_VAR &#125;&#125;"
@@ -260,9 +260,11 @@ Handlers in Ansible are tasks that are triggered by other tasks, usually used to
 
 **Ansible Vault** provides a secured way for encrypting sensitive data such as passwords, so that they can be stored safely for usage in your playbooks
 
+```bash
 ansible-vault encrypt_string --vault-id @prompt --name 'ansible_become_pass' 'mypassword'
+```
 
-**Installing something using Ansible**
+<h3 style="color:#000000">Installing something using Ansible</h3>
 
 ```yml
 - name: Install Nginx
@@ -283,7 +285,7 @@ ansible-vault encrypt_string --vault-id @prompt --name 'ansible_become_pass' 'my
         enabled: yes  # Ensures Nginx starts on boot
 ```
 
-**Looping over a list of Hosts**
+<h3 style="color:#000000">Looping</h3>
 
 In Ansible playbooks, you can implement looping over a list of hosts in a group using the with_items directive or the loop keyword in tasks. This is useful for performing actions on multiple hosts within a specific group.
 
@@ -301,13 +303,13 @@ In Ansible playbooks, you can implement looping over a list of hosts in a group 
         - curl
 ```
 
-loop/with_items: This keyword is used to iterate over the list of packages. Ansible will execute the task for each item in the list.
+- loop/with_items: This keyword is used to iterate over the list of packages. Ansible will execute the task for each item in the list.
 
 **Ansible registry** is a mechanism to store variables persistently, enabling data to be passed between different parts of a playbook or even between plays.
 
 Management inside EC2 can be accelerated by leveraging dynamic EC2 inventory scripts. These scripts automatically fetch information about EC2 instances, ensuring dynamic and efficient management of hosts in an Ansible environment.
 
-**Top 20 commonly used modules**
+<h3 style="color:#000000">Top 20 commonly used modules</h3>
 
 - apt - Manages packages for Debian-based systems.
 - yum - Manages packages for Red Hat-based systems.
