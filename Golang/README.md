@@ -140,6 +140,15 @@ a = append(a, 4, 2)
 nextSlice := []int{100,101,102}
 newSlice  := append(withData, nextSlice...)
 // => []int{0,1,2,3,4,5,100,101,102}
+
+
+func ScaleRecipe(v1 []float64, v2 int) ([]float64) {
+    res := make([]float64, len(v1))
+    for index, _ := range v1 {
+        res[index] = (v1[index]/2.0) * float64(v2)
+    }
+    return res
+}
 ```
 
 ```go
@@ -274,6 +283,21 @@ func Quantities(layers []string) (int, float64) {
         
     }
     return n*50, 0.2*float64(s)
+}
+```
+
+> - <a style="color:#000000">For...is also Go's while loop</a>
+
+```go
+// YearsBeforeDesiredBalance calculates the minimum number of years required to reach the desired balance.
+func YearsBeforeDesiredBalance(balance, targetBalance float64) int {
+	myBalance := balance
+    years := 0
+    for myBalance < targetBalance {
+        myBalance = AnnualBalanceUpdate(myBalance)
+        years += 1
+    }
+    return years
 }
 ```
 
