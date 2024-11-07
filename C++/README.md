@@ -196,6 +196,9 @@ int main() {
 <h3 style="color:#fc036b">Variables</h3>
 
 ```cpp
+int potatoes = 40;           // Variables can be defined like this
+int tomatoes{80};            // or like this (this is a more modern c++ way
+
 int myNum = 5;               // Integer (whole number without decimals)
 double myFloatNum = 5.99;    // Floating point number (with decimals)
 char myLetter = 'D';         // Character
