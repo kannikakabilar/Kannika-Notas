@@ -208,7 +208,7 @@ print("Last time step output shape:", last_output.shape)  # [3, 20]
 ```python
 from torchvision import models
 
-model = models.resnet18(pretrained=True)
+model = models.resnet50(pretrained=True)
 ```
 Now your model already knows about 1000 everyday objects (like dogs, cars, etc.). 🚗🐶
 </br>
