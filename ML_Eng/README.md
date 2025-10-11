@@ -68,6 +68,85 @@ df = pd.read_csv('data.csv') # Read CSV
 tensor_data = torch.tensor(df.values, dtype=torch.float32) # Turn into tensor
 ```
 
+# PyTorch Interview Questions
+
+## How is PyTorch different from TensorFlow?
+```
+- PyTorch is eagerly executed (runs line by line) → easier debugging.
+- TensorFlow (before v2) used static graphs → less intuitive.
+```
+
+## Tensors
+
+Tensors: (like NumPy arrays but faster and can run on both CPU and GPU)
+```
+import torch
+x = torch.tensor([[1, 2], [3, 4]])
+print(x.shape)      # torch.Size([2, 2])
+print(x.device)     # cpu
+
+x = torch.rand(2, 3)  # random 2x3 matrix
+print(x.size(), x.dtype)  # torch.Size([2, 3]) torch.float32
+```
+
+## How do you move a tensor to GPU?
+
+```
+x = x.to('cuda')
+```
+
+## AutoGrad
+
+Engine in PyTorch that automatically computes gradients for your model’s parameters when training using backpropagation. (.backward())
+It tracks operations on tensors with requires_grad=True
+
+```python
+x = torch.tensor(2.0, requires_grad=True)
+y = x**2 + 3*x + 1
+
+# in .backward() It computes gradients using the chain rule and stores them in x.grad.
+y.backward()    # computes dy/dx and stores it in x.grad
+print(x.grad)   # prints tensor(7.)
+```
+
+## Neural Networks
+What are the 3 main ways to define a model?
+
+```python
+import torch.nn as nn
+
+# Linear
+model = torch.nn.Linear(1, 1)
+
+# Sequential
+model = nn.Sequential(
+    nn.Linear(1, 10),
+    nn.ReLU(),
+    nn.Linear(10, 1)
+)
+
+# Custom
+class MyModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layer1 = nn.Linear(1, 10)
+        self.relu = nn.ReLU()
+        self.layer2 = nn.Linear(10, 1)
+    def forward(self, x):
+        return self.layer2(self.relu(self.layer1(x)))
+
+model = MyModel()
+# Why use a cutom model?
+# It gives you flexibility to define complex logic (e.g., skip connections, multiple inputs).
+```
+
+nn module (for neural networks): It’s made up of layers of interconnected neurons (also called nodes or units)
+that can learn patterns from data.
+
+Optimizers (for training): they adjust the model's weights so it can learn from data.
+
+# Advanced PyTorch
+
 ## (Step 3) Other ways to make a Model
 
 ```
