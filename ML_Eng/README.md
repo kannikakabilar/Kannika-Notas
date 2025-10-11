@@ -71,11 +71,15 @@ tensor_data = torch.tensor(df.values, dtype=torch.float32) # Turn into tensor
 ## (Step 3) Other ways to make a Model
 
 ```
+# deep learning
 import torch.nn as nn
 model = nn.Sequential(
     nn.Linear(1, 10),   # first layer: 1 input → 10 neurons 
-    nn.ReLU(),          # activation function (adds "thinking" power)
+    nn.ReLU(),          # activation function (adds "thinking" power) (lets it learn curves, not just straight lines)
     nn.Linear(10, 1)    # second layer: 10 → 1 output
 )
+
+# Create your own model
+
 ```
 
