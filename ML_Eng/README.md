@@ -39,3 +39,31 @@ for epoch in range(1000):  # practice 1000 times
 # Step 7: Test it
 print(model(torch.tensor([[4.0]])))  # Output should be 8.0
 ```
+
+## (Step 2) Other ways to create Data
+```
+# Random numbers between 0 and 1
+data2 = torch.rand(2, 3) # 2 rows, 3 columns
+print(data2)
+# output: tensor([[0.5312, 0.9627, 0.7485],
+#        [0.4146, 0.3350, 0.5945]])
+
+data3 = torch.arange(0, 10, 2)  # start=0, end=10, step=2
+print(data3)
+# output: tensor([0, 2, 4, 6, 8])
+
+zeros = torch.zeros(3, 3) # 3 rows, 3 columns filled with zeros
+ones = torch.ones(2, 4) # 2 rows, 4 columns filled with ones
+print(zeros)
+print(ones)
+
+import numpy as np
+np_array = np.array([[1, 2, 3], [4, 5, 6]])
+tensor_from_np = torch.from_numpy(np_array)
+print(tensor_from_np)
+
+# Loading from csv using pandas
+import pandas as pd
+df = pd.read_csv('data.csv') # Read CSV
+tensor_data = torch.tensor(df.values, dtype=torch.float32) # Turn into tensor
+```
