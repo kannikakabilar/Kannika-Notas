@@ -44,7 +44,7 @@ print(model(torch.tensor([[4.0]])))  # Output should be 8.0
 ```
 
 ## (Step 2) Other ways to create Data
-```
+```python
 # Random numbers between 0 and 1
 data2 = torch.rand(2, 3) # 2 rows, 3 columns
 print(data2)
