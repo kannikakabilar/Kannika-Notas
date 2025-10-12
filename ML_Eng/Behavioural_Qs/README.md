@@ -15,3 +15,14 @@
 3. I also use tools like Copilot and ChatGPT which helps me learn concepts a lot faster
 4. For deeper insights, I would ask colleagues and discuss in slack-channels
 
+</br> (maybe think of an example)
+
+## How would you handle a crash in the systems during non-working hours?
+
+- Check logs to identify issue
+- Take immediate action to prevent the situation from getting worse (ie: reverting a change or restarting)
+- Contact stakeholders or key team members
+- Document the incident
+
+
+
