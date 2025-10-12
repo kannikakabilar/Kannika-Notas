@@ -36,6 +36,9 @@ for epoch in range(1000):  # practice 1000 times
     loss.backward()              # 4️⃣ Learn from mistakes
     optimizer.step()             # 5️⃣ Update brain
 
+# Why call optimizer.zero_grad()?
+# Because gradients accumulate by default in PyTorch.
+
 # Step 7: Test it
 print(model(torch.tensor([[4.0]])))  # Output should be 8.0
 ```
@@ -72,8 +75,8 @@ tensor_data = torch.tensor(df.values, dtype=torch.float32) # Turn into tensor
 
 ## How is PyTorch different from TensorFlow?
 ```
-- PyTorch is eagerly executed (runs line by line) → easier debugging.
-- TensorFlow (before v2) used static graphs → less intuitive.
+PyTorch is more dynamic (define-by-run), used more in research and easier for debugging.
+TensorFlow is more for production, with tools for deployment like TensorFlow Serving and TensorFlow Lite.
 ```
 
 ## Tensors
@@ -109,23 +112,35 @@ y.backward()    # computes dy/dx and stores it in x.grad
 print(x.grad)   # prints tensor(7.)
 ```
 
+## Other Terms
+
+- nn module (for neural networks): It’s made up of layers of interconnected neurons (also called nodes or units)
+that can learn patterns from data.
+
+- Optimizers (for training): they adjust the model's weights so it can learn from data.
+
 ## Neural Networks
 What are the 3 main ways to define a model?
 
 ```python
 import torch.nn as nn
 
-# Linear
+# 1. Linear
 model = torch.nn.Linear(1, 1)
 
-# Sequential
+# 2. Sequential
 model = nn.Sequential(
     nn.Linear(1, 10),
     nn.ReLU(),
     nn.Linear(10, 1)
 )
+```
+## When is a Sequential model used over a linear model in PyTorch
+- Use a Sequential model when you want to stack multiple layers (e.g., Linear → ReLU → Linear) in a specific order.
+- Use a Linear model when you only need a single linear transformation without any activation or additional layers.
 
-# Custom
+```python
+# 3. Custom
 class MyModel(nn.Module):
     def __init__(self):
         super().__init__()
@@ -136,14 +151,18 @@ class MyModel(nn.Module):
         return self.layer2(self.relu(self.layer1(x)))
 
 model = MyModel()
-# Why use a cutom model?
-# It gives you flexibility to define complex logic (e.g., skip connections, multiple inputs).
 ```
+## Why use a custom model?
+It gives you flexibility to define complex logic (e.g., skip connections, multiple inputs).
 
-nn module (for neural networks): It’s made up of layers of interconnected neurons (also called nodes or units)
-that can learn patterns from data.
+## What are the steps to train a PyTorch model?
+1. Prepare Data
+2. Define Model
+3. Define Loss Function
+4. Define Optimizer
+5. Training loop (forward → loss → backward → step)
 
-Optimizers (for training): they adjust the model's weights so it can learn from data.
+
 
 # Advanced PyTorch
 
