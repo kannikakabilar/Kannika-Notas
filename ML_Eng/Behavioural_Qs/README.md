@@ -23,7 +23,7 @@
 - Contact stakeholders or key team members
 - Document the incident
 
-# Resume Qs
+# Resume Qs - Education
 
 ## Can you explain more about what you did for the following points?
 
@@ -33,6 +33,8 @@
 3. Scikit-learn's KMeans implementation
 4. UIUC Big Data 2025 Conference
 5. showcasing insights into user engagement patterns
+
+For the UIUC Big Data 2025 Conference, I presented a machine learning project where I ...
 
 > Achieved the highest grade in courses Data Mining (with 97%) and Data Cleaning (with 109%) among all enrolled students, excelling in data transformation, outlier detection, feature engineering, and clustering.
 1. data transformation
@@ -55,4 +57,4 @@ In my master's program, I learned more advanced concepts in Machine Learning
 4. Stochastic optimization techniques (SGD variants, momentum)
 5. Model evaluation, cross-validation, hyperparameter tuning
 
-
+# Resume Qs - Oracle
