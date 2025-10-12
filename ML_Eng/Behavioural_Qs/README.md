@@ -23,5 +23,36 @@
 - Contact stakeholders or key team members
 - Document the incident
 
+# Resume Qs
+
+## Can you explain more about what you did for the following points?
+
+> Presented a machine learning project on predictive modeling using Scikit-learn's KMeans implementation at the UIUC Big Data 2025 Conference, showcasing insights into user engagement patterns.
+1. Presented a machine learning project
+2. predictive modeling
+3. Scikit-learn's KMeans implementation
+4. UIUC Big Data 2025 Conference
+5. showcasing insights into user engagement patterns
+
+> Achieved the highest grade in courses Data Mining (with 97%) and Data Cleaning (with 109%) among all enrolled students, excelling in data transformation, outlier detection, feature engineering, and clustering.
+1. data transformation
+2. outlier detection
+3. feature engineering
+4. clustering
+
+## Can you explain what you learnt about Machine Learning either in your undergrad and/or your master's program?
+
+During my undergrad, I gained a strong understanding of the foundational concepts
+1. supervised, unsupervised, and reinforcement learning
+2. Different types of models from linear methods to neural networks
+3. loss functions, optimization technique: gradient descent
+4. bias-variance tradeoff
+
+In my master's program, I learned more advanced concepts in Machine Learning
+1. Decision Trees
+2. Naive Bayes' probabilistic models
+3. Neural networks in depth: backpropagation, architectures and deep learning: CNNs, RNNs, LSTMs
+4. Stochastic optimization techniques (SGD variants, momentum)
+5. Model evaluation, cross-validation, hyperparameter tuning
 
 
