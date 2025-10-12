@@ -212,6 +212,7 @@ TensorBoard, torchsummary, matplotlib for loss plots
 Dropout, weight decay, data augmentation
 
 # 3. Advanced PyTorch
+### (You probably won't get asked about this but it's nice if you recognize / kinda understand what it does)
 
 ## Implementation of Sequential and Custom models
 
