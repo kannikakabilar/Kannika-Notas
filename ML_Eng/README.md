@@ -113,11 +113,9 @@ print(x.grad)   # prints tensor(7.)
 ```
 
 ## Other Terms
-
+- Optimizers (for training): they adjust the model's weights so it can learn from data.
 - nn module (for neural networks): It’s made up of layers of interconnected neurons (also called nodes or units)
 that can learn patterns from data.
-
-- Optimizers (for training): they adjust the model's weights so it can learn from data.
 
 ## Neural Networks
 What are the 3 main ways to define a model?
