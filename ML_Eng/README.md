@@ -1,4 +1,4 @@
-# PyTorch
+# 1. PyTorch
 - PyTorch is a **machine learning and deep learning library** for Python.
 - It helps computers learn from data — just like humans learn from experience.
 
@@ -71,7 +71,7 @@ df = pd.read_csv('data.csv') # Read CSV
 tensor_data = torch.tensor(df.values, dtype=torch.float32) # Turn into tensor
 ```
 
-# PyTorch Interview Questions
+# 2. PyTorch Interview Questions
 
 ## How is PyTorch different from TensorFlow?
 ```
@@ -162,11 +162,60 @@ It gives you flexibility to define complex logic (e.g., skip connections, multip
 4. Define Optimizer
 5. Training loop (forward → loss → backward → step)
 
+## What is a Dataset and DataLoader?
+Used to handle large datasets efficiently.
+**DataLoader** allows batching, shuffling, and parallel loading for performance.
+```python
+from torch.utils.data import Dataset, DataLoader
 
+class MyDataset(Dataset):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __len__(self):
+        return len(self.x)
+    def __getitem__(self, idx):
+        return self.x[idx], self.y[idx]
 
-# Advanced PyTorch
+dataset = MyDataset(torch.arange(10), torch.arange(10)*2)
+loader = DataLoader(dataset, batch_size=2, shuffle=True)
+```
+## What’s the difference between .item() and .detach()?
+.item() → get Python number, .detach() → stop tracking gradients.
 
-## (Step 3) Other ways to make a Model
+## What’s the use of with torch.no_grad()?
+Disables gradient tracking (used during evaluation).
+
+## How to save and load a model?
+```python
+torch.save(model.state_dict(), 'model.pth')
+model.load_state_dict(torch.load('model.pth'))
+```
+
+## What’s the role of requires_grad?
+Tells PyTorch to track computations for backprop.
+
+## How to freeze layers in transfer learning?
+Set param.requires_grad = False for specific layers.
+
+## Uses of common Deep Learning Architectures
+Be ready to discuss common ones:
+- CNN (Convolutional Neural Networks) → images
+- RNN / LSTM → sequences
+- Transformers → text, NLP, vision
+- GANs → image generation
+
+You don’t need to code them all — just know what each is used for.
+
+## What debugging tools or visualization tools do you use?
+TensorBoard, torchsummary, matplotlib for loss plots
+
+## How do you handle overfitting?
+Dropout, weight decay, data augmentation
+
+# 3. Advanced PyTorch
+
+## Implementation of Sequential and Custom models
 
 ```
 # deep learning
