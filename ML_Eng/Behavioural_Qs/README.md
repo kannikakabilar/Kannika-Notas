@@ -14,7 +14,6 @@
 2. I apply what I learnt on a small project or an example
 3. I also use tools like Copilot and ChatGPT which helps me learn concepts a lot faster
 4. For deeper insights, I would ask colleagues and discuss in slack-channels
-
 </br> (maybe think of an example)
 
 ## How would you handle a crash in the systems during non-working hours?
