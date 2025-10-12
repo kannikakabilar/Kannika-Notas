@@ -133,7 +133,7 @@ model = nn.Sequential(
     nn.Linear(10, 1)
 )
 ```
-## When is a Sequential model used over a linear model in PyTorch
+### When is a Sequential model used over a linear model in PyTorch
 - Use a Sequential model when you want to stack multiple layers (e.g., Linear → ReLU → Linear) in a specific order.
 - Use a Linear model when you only need a single linear transformation without any activation or additional layers.
 
@@ -150,7 +150,7 @@ class MyModel(nn.Module):
 
 model = MyModel()
 ```
-## Why use a custom model?
+### Why use a custom model?
 It gives you flexibility to define complex logic (e.g., skip connections, multiple inputs).
 
 ## What are the steps to train a PyTorch model?
