@@ -42,6 +42,8 @@ For the UIUC Big Data 2025 Conference, I presented a machine learning project wh
 3. feature engineering
 4. clustering
 
+Talk about your work in courses ...
+
 ## Can you explain what you learnt about Machine Learning either in your undergrad and/or your master's program?
 
 During my undergrad, I gained a strong understanding of the foundational concepts
@@ -58,3 +60,35 @@ In my master's program, I learned more advanced concepts in Machine Learning
 5. Model evaluation, cross-validation, hyperparameter tuning
 
 # Resume Qs - Oracle
+
+> Recognized for displaying business and system insights on a Tableau dashboard for stakeholders to grasp key metrics at a glance by streamlining data retrieval from Oracle’s database using Python and Shell Scripting.
+1. Worked on building a Tableau dashboard to display business metrics and system insights
+2. Streamlined data retrieval from Oracle's database using Python scripting
+
+> Optimized and wrote over 80 SQL queries for data extraction workflows using the Oracle Data Integrator API resulting in 35% runtime reduction of the data pipelines and implemented parameterized-interfaces for scalability.
+1. Wrote many SQL queries for data extraction workflows
+2. implemented parameterized interfaces to adjust for scalability
+
+> Automated business processes by developing SuiteScripts
+
+> Developed REST and SOAP API web services to external Power BI, Boomi, and Snowflake systems - to facilitate data exchange
+
+# Resume Qs - CLEO
+
+> Eliminated post-release issues completely through extensive testing of CLEO's legal documentation software and from collaborative discussions with developers, using Python and Selenium for automating quality assurance.
+1. Used Python and Selenium to automate browser actions to test CLEO's software
+
+> Coordinated the structure of CI/CD pipelines in GitHub Actions to include integration and regression testing of applications improving the release and developer feedback process by 70%.
+1. Organized the structure of GitHub Actions yaml file to indicate integration/regression test results
+
+> Designed and executed stress load tests using AWS CloudWatch and AWS Load Balancer by analyzing the system's performance under high traffic conditions to reduce latency by 40% under peak workloads.
+1. AWS CloudWatch for ...
+2. AWS Load Balancer for ...
+
+> Implemented test data management using Docker for isolated test environments and Kubernetes for orchestrating on-demand test data services, allowing consistent datasets to be used across pipelines eliminating flakiness.
+1. Setup isolated docker container with data needed for testing
+2. Use consistent datasets with Kubernetes (package seeded database in pods) to prevent random test failures
+
+# Resume Qs - ICUBE
+
+> -
