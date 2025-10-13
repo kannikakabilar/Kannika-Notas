@@ -44,7 +44,7 @@ For the UIUC Big Data 2025 Conference, I presented a machine learning project wh
 3. feature engineering
 4. clustering
 
-Talk about your work in courses ...
+Talk about your work in courses ... Too bad we didn't include Machine Learning here but you should bring it up, like below
 
 ## Can you explain what you learnt about Machine Learning either in your undergrad and/or your master's program?
 
@@ -99,4 +99,10 @@ In my master's program, I learned more advanced concepts in Machine Learning
 
 # Resume Qs - ICUBE
 
-> -
+> Applied Apache Hadoop’s MapReduce framework to parallelize the processing of 8 terabytes of academic data which reduced job completion times by 46% and it significantly improved data accessibility for research teams.
+
+1. Used Apache Hadoop's map reduce to go through large amounts of academic data to make research easier and faster
+
+> Developed C++ algorithms using cached memory pools for specific data transformation tasks, significantly minimizing computational overhead and reducing memory bottlenecks which was causing performance regressions.
+
+1. Used a type of malloc/custom-memory-pool-allocator to update data
