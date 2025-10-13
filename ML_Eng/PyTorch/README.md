@@ -76,7 +76,7 @@ tensor_data = torch.tensor(df.values, dtype=torch.float32) # Turn into tensor
 ## How is PyTorch different from TensorFlow?
 ```
 PyTorch is more dynamic (define-by-run), used more in research and easier for debugging.
-TensorFlow is more for production, with tools for deployment like TensorFlow Serving and TensorFlow Lite.
+TensorFlow is more for production, easy for deployment w/ tools like TensorFlow Serving and TensorFlow Lite.
 ```
 
 ## Tensors
