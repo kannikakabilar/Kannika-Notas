@@ -70,12 +70,16 @@ In my master's program, I learned more advanced concepts in Machine Learning
 
 > Optimized and wrote over 80 SQL queries for data extraction workflows using the Oracle Data Integrator API resulting in 35% runtime reduction of the data pipelines and implemented parameterized-interfaces for scalability.
 
-1. Wrote many SQL queries for data extraction workflows
+1. Wrote many SQL queries for data extraction workflows (in simple terms data extraction workflow ~= any file python or sql to update database table)
 2. implemented parameterized interfaces to adjust for scalability
 
 > Automated business processes by developing SuiteScripts
 
+- you can mention this but don't get too carried away
+
 > Developed REST and SOAP API web services to external Power BI, Boomi, and Snowflake systems - to facilitate data exchange
+
+- I think you already have the explanation for this at the top of your head
 
 # Resume Qs - CLEO
 
@@ -85,17 +89,18 @@ In my master's program, I learned more advanced concepts in Machine Learning
 
 > Coordinated the structure of CI/CD pipelines in GitHub Actions to include integration and regression testing of applications improving the release and developer feedback process by 70%.
 
-1. Organized the structure of GitHub Actions yaml file to indicate integration/regression test results
+1. Organized the structure of GitHub Actions yaml file to indicate outcome of test results
 
 > Designed and executed stress load tests using AWS CloudWatch and AWS Load Balancer by analyzing the system's performance under high traffic conditions to reduce latency by 40% under peak workloads.
 
 1. AWS CloudWatch for ...
 2. AWS Load Balancer for ...
+3. I think you can come up with an explanation for this better than me
 
 > Implemented test data management using Docker for isolated test environments and Kubernetes for orchestrating on-demand test data services, allowing consistent datasets to be used across pipelines eliminating flakiness.
 
 1. Setup isolated docker container with data needed for testing
-2. Use consistent datasets with Kubernetes (package seeded database in pods) to prevent random test failures
+2. Used consistent datasets with Kubernetes (package seeded database in pods) to prevent random test failures
 
 # Resume Qs - ICUBE
 
