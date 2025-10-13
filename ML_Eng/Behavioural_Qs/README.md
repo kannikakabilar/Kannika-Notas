@@ -23,6 +23,10 @@
 - Contact stakeholders or key team members
 - Document the incident
 
+## How good are you with C++?
+
+- I haven't used it recently but I have used it in my previous experience and I'm confident that I can quickly regain proficiency.
+
 # Resume Qs - Education
 
 ## Can you explain more about what you did for the following points?
@@ -111,3 +115,22 @@ In my master's program, I learned more advanced concepts in Machine Learning
 > Developed C++ algorithms using cached memory pools for specific data transformation tasks, significantly minimizing computational overhead and reducing memory bottlenecks which was causing performance regressions.
 
 1. Used a type of malloc/custom-memory-pool-allocator to update data
+
+# Intro Qs
+
+- Hi, I'm Kesavar Kabilar.
+
+1. I completed my Bachelor's degree in Computer Science from the University of Toronto, and I'm currently pursuing a Master's in Data Science at the University of Illinois.
+2. I’ve gained about five years of software engineering experience during and between my academic terms.
+3. Most recently, I worked at Oracle as a Software Engineer in Data Analytics, where I built Tableau dashboards to display business and infrastructure metrics.
+4. I'm now looking for a role to strengthen my knowledge and experience in Machine Learning.
+
+## Why did you leave Oracle?
+
+- I’m looking to deepen my knowledge in machine learning
+
+## Why do you want to work at Tenstorrent?
+
+1.  innovative and unique high-performing RISC-V cpu design
+2.  focus on building support for newer AI models
+3.  Open-source code invites collaboration and diverse ideas
