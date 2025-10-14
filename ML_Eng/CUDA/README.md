@@ -92,5 +92,5 @@ c = a + b
 
 # Copy result back to CPU for printing
 print("Result:", c.get())
-Result: [11. 22. 33. 44. 55.]
+# Result: [11. 22. 33. 44. 55.]
 ```
