@@ -94,3 +94,23 @@ c = a + b
 print("Result:", c.get())
 # Result: [11. 22. 33. 44. 55.]
 ```
+
+## Matrix multiplication using CuPy
+
+``python
+import cupy as cp
+
+# 🧮 Step 1: Create random matrices directly on GPU
+A = cp.random.rand(4, 3, dtype=cp.float32)
+B = cp.random.rand(3, 5, dtype=cp.float32)
+
+# 🧠 Step 2: Multiply on GPU
+C = cp.dot(A, B)  # or A @ B
+
+# 🖨️ Step 3: Move result back to CPU for viewing
+print("Result (A x B):\n", C.get())
+# Result (A x B):
+# [[0.613 0.475 0.552 0.437 0.677]
+#  [0.254 0.366 0.444 0.293 0.589]
+#  ...]
+```
