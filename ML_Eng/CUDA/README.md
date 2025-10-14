@@ -97,7 +97,7 @@ print("Result:", c.get())
 
 ## Matrix multiplication using CuPy
 
-``python
+```python
 import cupy as cp
 
 # 🧮 Step 1: Create random matrices directly on GPU
