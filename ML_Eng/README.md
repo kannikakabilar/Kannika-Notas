@@ -6,4 +6,4 @@
 
 [CUDA](https://kannikakabilar.github.io/Kannika-Notas/ML_Eng/CUDA/)
 
-[Other Good Technical Explanation Qs](https://kannikakabilar.github.io/Kannika-Notas/ML_Eng/Other/)
+[Some More Good Technical Explanation Qs](https://kannikakabilar.github.io/Kannika-Notas/ML_Eng/Other/)
