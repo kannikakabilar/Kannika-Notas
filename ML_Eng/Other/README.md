@@ -32,15 +32,15 @@ which fuses operations and generates efficient GPU code.
 - PyTorch: TorchDynamo, FX Graph, Profiler, torch.compile(explain=True)
 
 ## How do you run experiments to evaluate and improve performance across devices?
-1.Set Up Reproducible Environment
-  -Keep:
-    -Fixed random seeds
-    -Same batch sizes, data loaders, and hyperparameters
-2.Benchmark Execution Time and Throughput
-  -Measure how long each device takes to train or infer.
-3.Profile Performance
-  -Identify which layers or operations are slow.
-4.Optimize Performance
-  -Reduce latency, increase throughput, and optimize memory usage
-5.Validate Accuracy and Stability
-  -Check if model accuracy is unchanged; Confirm improvements don’t harm model quality.
+1. Set Up Reproducible Environment
+  - Keep:
+    - Fixed random seeds
+    - Same batch sizes, data loaders, and hyperparameters
+2. Benchmark Execution Time and Throughput
+  - Measure how long each device takes to train or infer.
+3. Profile Performance
+  - Identify which layers or operations are slow.
+4. Optimize Performance
+  - Reduce latency, increase throughput, and optimize memory usage
+5. Validate Accuracy and Stability
+  - Check if model accuracy is unchanged; Confirm improvements don’t harm model quality.
