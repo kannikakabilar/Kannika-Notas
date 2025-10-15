@@ -5,3 +5,5 @@
 [TensorFlow](https://kannikakabilar.github.io/Kannika-Notas/ML_Eng/TensorFlow/)
 
 [CUDA](https://kannikakabilar.github.io/Kannika-Notas/ML_Eng/CUDA/)
+
+[Other Technical Explanation Qs](https://kannikakabilar.github.io/Kannika-Notas/ML_Eng/Other/)
