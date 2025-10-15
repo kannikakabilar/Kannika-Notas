@@ -1,9 +1,5 @@
 # Other ML stuff that were mentioned in the JD
 
-## Tell us about a time you solved a performance issue
-
-## Why are you interested in this role?
-
 ## Analyze how ML models compile
 Compiling an ML model = building and optimizing the computational graph that defines how your model runs
 
@@ -44,3 +40,23 @@ which fuses operations and generates efficient GPU code.
   - Reduce latency, increase throughput, and optimize memory usage
 5. Validate Accuracy and Stability
   - Check if model accuracy is unchanged; Confirm improvements don’t harm model quality.
+
+## How do you Improve kernels for computation and data movement?
+- To improve kernels for computation and data movement, I start by profiling the workload using **PyTorch Profiler** to identify hotspots.
+1. For computation efficiency, I apply techniques like kernel fusion, tiling, and mixed precision to fully utilize GPU cores and reduce kernel launch overhead.
+2. For data movement, I focus on memory coalescing, shared memory reuse, and overlapping compute with data transfers using CUDA streams.
+- Together, these techniques improve arithmetic intensity and minimize bandwidth bottlenecks, leading to faster execution and better hardware utilization.
+
+# Other Generic Qs
+
+## Tell us about a time you solved a performance issue
+I think you can come up with better examples for this Q - just be prepared
+
+## Why are you applying for a ML intern when you're enrolled in Data Science?
+- I've been interested in ML for a very long time and I always follow-up with the newest ML technologies ...
+- I have worked on many ML projects ...
+- I have taken a lot of ML courses throughout my Bachelor's and Master's program. There's a lot of overlap between Data Science and ML.
+
+## Why are you interested in this role?
+Answer this Q by a combination of your interest in ML (the above Q) and why you want to work at Tenstorrent.
+
