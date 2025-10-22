@@ -119,3 +119,209 @@ try:
 except ImportError:
     print("CuPy not installed — GPU profiling skipped.")
 ```
+
+### 1. Machine Learning Fundamentals
+
+Expect practical, lightweight theory questions:
+
+- What are the main steps in training an ML model?
+
+- How do you evaluate model performance?
+
+- Explain overfitting vs underfitting.
+
+- How would you reduce overfitting?
+
+- What’s the difference between batch size and learning rate?
+
+- What happens if your training loss decreases but validation loss increases?
+
+- How do CNNs differ from RNNs or Transformers?
+
+### 2. Python / Framework (TensorFlow or PyTorch)
+
+They’ll check that you can:
+
+- Write clean, reproducible code
+
+- Understand model compilation, training, and inference
+
+- Debug or profile models
+
+Sample questions:
+
+- How do you create a simple neural network in TensorFlow / PyTorch?
+
+- What does model.compile() or model.train() do?
+
+- What’s the difference between torch.no_grad() and torch.autograd?
+
+- How do you measure training time or inference latency?
+
+- How can you save and reload a model?
+
+- How do you move a model between CPU and GPU in PyTorch?
+
+- How do you visualize or monitor performance in TensorFlow (TensorBoard)?
+
+### 3. Benchmarking & Performance Analysis
+
+This is the core of the role, so expect focused questions here.
+
+Conceptual Questions:
+
+- What metrics would you track to benchmark a model’s performance?
+(Latency, throughput, memory usage, FLOPs, energy consumption, etc.)
+
+- How would you benchmark a model on two different hardware platforms?
+
+- How do you ensure fair benchmarking conditions?
+
+- How do batch size and precision (FP32 vs FP16) affect performance?
+
+- How do you identify where a model is bottlenecked?
+
+- How would you optimize inference performance?
+
+Practical / Coding-Style Questions:
+
+- “Given a model that runs slowly, how would you debug it?”
+
+- “How would you time training vs inference?”
+
+- “How would you measure GPU utilization?”
+
+💡 Mention tools like:
+
+- PyTorch: torch.utils.benchmark, torch.cuda.synchronize()
+
+- TensorFlow: tf.profiler, tf.function for graph optimization
+
+- General: time, nvprof, nvidia-smi, cProfile
+
+### 4. Optimization & Kernel Improvement
+
+They might test your thinking on efficiency:
+
+- What causes computation bottlenecks in ML models?
+
+- How does data movement (CPU↔GPU) affect performance?
+
+- How can you improve kernel execution efficiency?
+
+- What’s the impact of tensor layout (NHWC vs NCHW)?
+
+- What is mixed-precision training and when do you use it?
+
+💡 You don’t need to know CUDA internals deeply, but you should understand how to profile and reduce bottlenecks.
+
+### 5. Software Reliability & Clean Code
+
+They may test your ability to write clean, maintainable code:
+
+- How do you make experiments reproducible?
+(Answer: fix random seeds, log versions, save configs)
+
+- How do you organize ML experiments?
+
+- How do you debug when a model’s output changes unexpectedly?
+
+- How do you write unit tests for ML code?
+
+- What’s your workflow when building an end-to-end demo?
+
+💡 Mention tools like: pytest, argparse, GitHub Actions for automation.
+
+### 6. Collaboration & Curiosity
+
+They’ll likely gauge your passion and curiosity:
+
+- What excites you about benchmarking ML models?
+
+- What’s a project you’ve done that required optimization?
+
+- How do you learn new frameworks or hardware concepts?
+
+### Bonus Topics (for standout answers)
+
+If you want to sound really strong:
+
+- Mention familiarity with profiling tools (TensorBoard Profiler, Nsight Systems)
+
+- Know what FP32 vs FP16 vs INT8 quantization means
+
+- Understand data pipelines (I/O can bottleneck performance)
+
+- Mention parallelization or batch inference to improve throughput
+
+```python
+import torch
+import torch.nn as nn
+import time
+
+# Step 1: Create dummy input data
+X = torch.randn(1000, 32)  # 1000 samples, 32 features
+
+# Step 2: Define a simple model
+class SimpleModel(nn.Module):
+    def __init__(self):
+        super(SimpleModel, self).__init__()
+        self.net = nn.Sequential(
+            nn.Linear(32, 64),
+            nn.ReLU(),
+            nn.Linear(64, 10),
+            nn.Softmax(dim=1)
+        )
+
+    def forward(self, x):
+        return self.net(x)
+
+# Step 3: Create the model
+model = SimpleModel()
+
+# Step 4: Function to benchmark inference time
+def benchmark(model, device, X, num_runs=100):
+    model.to(device)
+    X = X.to(device)
+
+    # Warm-up (important for accurate GPU timing)
+    with torch.no_grad():
+        for _ in range(10):
+            _ = model(X)
+
+    torch.cuda.synchronize() if device.type == 'cuda' else None
+
+    start = time.time()
+    with torch.no_grad():
+        for _ in range(num_runs):
+            _ = model(X)
+        if device.type == 'cuda':
+            torch.cuda.synchronize()
+    end = time.time()
+
+    avg_time = (end - start) / num_runs
+    print(f"{device.type.upper()} average inference time: {avg_time*1000:.3f} ms")
+
+# Step 5: Run on CPU
+benchmark(model, torch.device('cpu'), X)
+
+# Step 6: Run on GPU (if available)
+if torch.cuda.is_available():
+    benchmark(model, torch.device('cuda'), X)
+else:
+    print("❌ GPU not available on this machine.")
+```
+
+If they ask “How would you benchmark model performance?”:
+
+Mention inference latency, throughput, and memory usage
+
+Explain that you’d:
+
+Warm up GPU to avoid cold-start bias
+
+Synchronize with torch.cuda.synchronize()
+
+Run multiple iterations and average the results
+
+Compare across devices or batch sizes
