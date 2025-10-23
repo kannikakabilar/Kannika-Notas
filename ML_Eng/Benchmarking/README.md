@@ -325,3 +325,110 @@ Synchronize with torch.cuda.synchronize()
 Run multiple iterations and average the results
 
 Compare across devices or batch sizes
+
+------------------------------------------------------------------------------------------------------------
+
+## Write a function to calculate model accuracy.
+
+```python
+import torch
+import torch.nn as nn
+
+class Model(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.fc = nn.Linear(10, 2)
+    def forward(self, x):
+        return self.fc(x)
+    # def accuracy(preds, labels):
+        # return (preds.argmax(dim=1) == labels).float().mean()
+
+model = Model()
+print(model(torch.randn(1, 10)))
+```
+Follow-ups:
+- What happens if the labels are one-hot encoded?
+- How would you handle multi-label classification?
+
+## Benchmarking and Performance Analysis
+
+```python
+import torch, time
+
+x = torch.randn(1000, 32)
+model = torch.nn.Linear(32, 64)
+
+def benchmark(device):
+    model.to(device)
+    x_device = x.to(device)
+    torch.cuda.synchronize() if device == 'cuda' else None
+
+    start = time.time()
+    for _ in range(100):
+        _ = model(x_device)
+    torch.cuda.synchronize() if device == 'cuda' else None
+    print(f"{device}: {time.time() - start:.4f}s")
+
+benchmark('cpu')
+if torch.cuda.is_available(): benchmark('cuda')
+```
+Follow-ups:
+- Why do we synchronize with torch.cuda.synchronize()?
+- How would you measure throughput (samples/sec)?
+- What’s the difference between latency and throughput?
+
+### Measure memory usage during training or inference
+
+```python
+import torch
+print(torch.cuda.memory_allocated() / 1e6, "MB")
+```
+Follow-ups:
+- How can you reduce memory usage?
+- How does batch size affect memory?
+- What’s mixed precision training?
+
+### Profile Model Performance
+
+```python
+with torch.profiler.profile(
+    activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA],
+    record_shapes=True
+) as prof:
+    model(x.to('cuda'))
+
+print(prof.key_averages().table(sort_by="cuda_time_total"))
+```
+Follow-ups:
+- What do you look for in profiling results?
+- How can you improve slow kernels?
+
+## Optimization and Debugging
+
+### Slow Training Loop - Why is this slow and how would you fix it?
+
+```python
+for batch in dataloader:
+    X, y = batch
+    preds = model(X)
+    loss = loss_fn(preds, y)
+    loss.backward()
+    optimizer.step()
+```
+
+Answers
+- Move tensors and model to GPU (.to('cuda'))
+- Add optimizer.zero_grad()
+- Use torch.cuda.amp.autocast() for mixed precision
+- Increase batch size for better GPU utilization
+
+### How can you make the experiment reproducible?
+
+```python
+import torch, numpy as np, random
+torch.manual_seed(42)
+np.random.seed(42)
+random.seed(42)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+```
