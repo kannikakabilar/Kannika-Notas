@@ -432,3 +432,56 @@ random.seed(42)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 ```
+
+## Data & Model Handling
+
+### Write code to load and normalize MNIST dataset.
+```python
+from torchvision import datasets, transforms
+
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))
+])
+trainset = datasets.MNIST('.', download=True, train=True, transform=transform)
+```
+
+Follow-ups:
+- Why normalize data?
+- What’s the difference between train and eval mode?
+
+### Print number of parameters
+```python
+import torch.nn as nn
+
+model = nn.Sequential(
+    nn.Conv2d(1, 16, 3, padding=1),
+    nn.ReLU(),
+    nn.MaxPool2d(2),
+    nn.Flatten(),
+    nn.Linear(16*14*14, 10)
+)
+# Answer
+print(sum(p.numel() for p in model.parameters()))
+```
+Follow-ups:
+- How does pooling reduce computation?
+- Why do we flatten before linear layers?
+
+## System & Hardware Awareness
+
+Tenstorrent builds AI hardware, so they might test awareness of computation flow.
+
+- “What’s the difference between CPU, GPU, and specialized AI accelerators?”
+- “What happens when data moves between CPU and GPU?”
+- “How does batch size affect GPU utilization?”
+- “How do you ensure consistent benchmarking across different hardware?”
+- “What factors affect kernel efficiency?”
+
+## Advanced Coding Prompts
+
+If they want to go deeper technically:
+- Implement a mini matrix multiplication benchmark using NumPy and PyTorch, and compare timing.
+- Write code to visualize model performance using matplotlib.
+- Write code to automate benchmarking across batch sizes.
+- Implement a script that logs model performance (time + memory) to a CSV.
