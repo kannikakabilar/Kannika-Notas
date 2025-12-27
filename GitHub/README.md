@@ -1,5 +1,7 @@
 <h1 style="color:#ff4b19">GitHub</h1>
 
+Note: Need to learn about inputs and outputs in GitHub Actions
+
 <h3 style="color:#ff4b19">What is GitHub Actions?</h3>
 
 GitHub Actions is a CI/CD service provided by GitHub that allows you to automate workflows directly within your GitHub repositories.
@@ -14,6 +16,11 @@ Workflows can be triggered by various GitHub events, such as code pushes, pull r
 name: "(Single-card) Demo tests"  # Quotes are needed when using special characters like: () []  {} : , & * # ' " leading or trailing spaces
 
 on:  # Under this 'on' section, you can define various event triggers
+
+  workflow_dispatch:  # allows you to manually trigger the workflow
+
+  schedule:  # gets triggered on a set schedule
+    - cron: '*/10 * * * *'  # runs every 10 minutes
   
   push:  # This workflow will get triggered when a commit is pushed to main or the dev branches
     # Block style
@@ -59,6 +66,35 @@ on:  # Under this 'on' section, you can define various event triggers
     workflows:
       - "Package and release"
       - "(Single-card) Frequent model and ttnn tests"
+
+  repository_dispatch:  # is a webhook-based trigger that allows you to remotely trigger a workflow via a GitHub API
+    types: [trigger-llk-update]
+    # And this is how you can trigger the workflow - You send a POST request to GitHub's API with a custom event type 
+    # which has to be trigger-llk-update and any other event type trigger won't work
+    # curl -X POST \
+    #   -H "Accept: application/vnd.github+json" \
+    #   -H "Authorization: Bearer YOUR_TOKEN" \
+    #   https://api.github.com/repos/OWNER/REPO/dispatches \
+    #   -d '{"event_type":"trigger-llk-update","client_payload":{"key":"value"}}'
+
+  merge_group:  # Runs on merge queue events
+    types:
+      - checks_requested  # When PR enters or moves in the merge queue (The workflow runs tests on tmp commit with the merged code PR+main+any_PRs_queued_above)
+      - destroyed  # When the PR leaves the merge queue
+
+  # Other event triggers
+  issues, issue_comment:  # issue activity
+    types: [created]
+  release, published, created:  # Release-related events
+  pull_request_review, pull_request_review_comment:  # PR review events
+    types: [created, submitted]
+  create, delete:  # Branch/tag creation/deletion
+  fork:  # Repo fork events
+  watch:  # Repo starred events
+  deployment, deployment_status:  # Deployment events
+  check_run, check_suite:  # Check events
+  status:  # Commit status change
+  label:  # Label modifications
 ```
 
 <h3 style="color:#ff4b19">Jobs and Steps</h3>
