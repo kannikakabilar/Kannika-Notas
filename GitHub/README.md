@@ -98,6 +98,58 @@ on:  # Under this 'on' section, you can define various event triggers
   status:  # Commit status change
   label:  # Label modifications
 ```
+<h3 style="color:#ff4b19">workflow_call to make the workflow reusable</h3>
+
+```yaml
+# Calling a workflow that has workflow_call: in it
+name: "Wrapper workflow"
+
+on:
+  workflow_dispatch:
+    inputs:
+      requested-models:
+        description: "List of requested models as JSON array, for example: [\"resnet\", \"sdxl\"]. Default is 'all'"
+        default: "all"
+        type: string
+      run-perf-tests:
+        description: "Run perf variants"
+        type: boolean
+        default: true
+      enable-ops-recording:
+        description: "Enable Tracy ops recording for all tests (generates operations report)"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "0 13,18 * * 0,1,2,3,4,5,6" # frequency of functional models
+    - cron: "0 5 * * 1,3,6" # frequency of perf models
+
+run-name: "(Single-card) Demo tests${{ (inputs.run-perf-tests || (github.event_name != 'workflow_dispatch' && github.event.schedule == '0 5 * * 1,3,6')) && ' (with perf runs)' || ' (no perf)' }}${{ inputs.enable-ops-recording && ' [ops-recording]' || '' }}"
+jobs:
+  build-artifact:
+    uses: ./.github/workflows/build-artifact.yaml
+    permissions:
+      packages: write
+    secrets: inherit
+    with:
+      build-wheel: true
+      version: 22.04
+      tracy: ${{ inputs.enable-ops-recording || false }}
+
+  # Calling the reusable workflow and enter the required inputs under 'with:' section
+  single-card-demo-tests:
+    needs: build-artifact
+    secrets: inherit
+    uses: ./.github/workflows/single-card-demo-tests-impl.yaml
+    with:
+      docker-image: ${{ needs.build-artifact.outputs.dev-docker-image }}
+      build-artifact-name: ${{ needs.build-artifact.outputs.build-artifact-name }}
+      wheel-artifact-name: ${{ needs.build-artifact.outputs.wheel-artifact-name }}
+      arch: wormhole_b0
+      requested-models: ${{ inputs.requested-models || 'all' }}
+      # Using || true after is dangerous since that will always be passed in if first value is falsy
+      run-perf-tests: ${{ inputs.run-perf-tests || (github.event_name != 'workflow_dispatch' && github.event.schedule == '0 5 * * 1,3,6') }}
+      enable-ops-recording: ${{ inputs.enable-ops-recording || false }}
+```
 
 <h3 style="color:#ff4b19">Jobs and Steps</h3>
 Each workflow is composed of jobs, which run on specified virtual environments (like Ubuntu, Windows, or macOS). Jobs contain steps, which can include shell commands, actions, or scripts.
