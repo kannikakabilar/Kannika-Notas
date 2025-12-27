@@ -10,6 +10,57 @@ You define workflows in YAML files stored in the .github/workflows directory of 
 <h3 style="color:#ff4b19">Triggers</h3>
 Workflows can be triggered by various GitHub events, such as code pushes, pull requests, issues, releases, and more. You can also schedule workflows or trigger them via API calls.
 
+```yaml
+name: "(Single-card) Demo tests"  # Quotes are needed when using special characters like: () []  {} : , & * # ' " leading or trailing spaces
+
+on:  # Under this 'on' section, you can define various event triggers
+  
+  push:  # This workflow will get triggered when a commit is pushed to main or the dev branches
+    # Block style
+    branches: [main, dev]  # mention the branch names here
+    # Flow style
+    branches:  # both styles function the same
+      - main
+      - dev
+
+  pull_request:  # By default, having this will trigger this workflow if a PR is created (Draft or Open), when a new commit is pushed to the PR branch, when a closed PR is reopened
+    branches: [main]  # When a PR is created to be merged to main
+    # You can customize the types filter
+    types:
+      - opened
+      - synchronize  # when a new commit is pushed to the PR branch
+      - reopened
+      - ready_for_review  # Draft converted to ready
+      - closed # PR closed (merged or not)
+      - assigned # (or unassigned) assignee changes
+      - labeled  # (or unlabeled) assignee changes
+      - edited
+
+  # Note: pull_request is different from pull_request_target in the following ways
+  # Repo checkout:
+  #  pull_request checks out PR branch code
+  #  pull_request_targe checks out base branch code (the branch you are merging to) by default unless you explicitly mention it
+  # Secrets Access:
+  #  pull_request cannot access secrets when triggered from a fork
+  #  pull_request_target full access to secrets even when triggered from a fork
+  # Permission:
+  #  pull_request read-only from forks
+  #  pull_request_target write access to repos
+  # Overall use pull_request_target when running safe trusted workflows or for bot automation that needs repo write access
+
+  workflow_call:  # Makes the workflow reusable (can be called by other workflows)
+    inputs:
+      nameOfInput1:
+        description: "Please enter input1 value"
+        required: true
+        default: 1
+        type: number
+  workflow_run:  # Triggers when another workflow runs
+    workflows:
+      - "Package and release"
+      - "(Single-card) Frequent model and ttnn tests"
+```
+
 <h3 style="color:#ff4b19">Jobs and Steps</h3>
 Each workflow is composed of jobs, which run on specified virtual environments (like Ubuntu, Windows, or macOS). Jobs contain steps, which can include shell commands, actions, or scripts.
 
