@@ -25,6 +25,8 @@ on:  # Under this 'on' section, you can define various event triggers
   push:  # This workflow will get triggered when a commit is pushed to main or the dev branches
     # Block style
     branches: [main, dev]  # mention the branch names here
+    paths:  # optional/use-as-needed the option triggers the workflow if there's a push to main AND changes include files inside mentioned path
+      - '.github/workflows/**'
     # Flow style
     branches:  # both styles function the same
       - main
