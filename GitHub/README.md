@@ -126,10 +126,10 @@ on:
 run-name: "(Single-card) Demo tests${{ (inputs.run-perf-tests || (github.event_name != 'workflow_dispatch' && github.event.schedule == '0 5 * * 1,3,6')) && ' (with perf runs)' || ' (no perf)' }}${{ inputs.enable-ops-recording && ' [ops-recording]' || '' }}"
 jobs:
   build-artifact:
-    uses: ./.github/workflows/build-artifact.yaml
+    uses: ./.github/workflows/build-artifact.yaml  # Only 1 reusable workflow per job and each 'uses:' can only reference a single workflow file
     permissions:
-      packages: write
-    secrets: inherit
+      packages: write  # Overrides workflow-level permission because workflow-level permissions are always ignored
+    secrets: inherit  # this line allows the reusable workflow to have access to the repo secrets
     with:
       build-wheel: true
       version: 22.04
@@ -141,7 +141,7 @@ jobs:
     secrets: inherit
     uses: ./.github/workflows/single-card-demo-tests-impl.yaml
     with:
-      docker-image: ${{ needs.build-artifact.outputs.dev-docker-image }}
+      docker-image: ${{ needs.build-artifact.outputs.dev-docker-image }}  # The outputs defined in the build-artifact workflow can be used to input here
       build-artifact-name: ${{ needs.build-artifact.outputs.build-artifact-name }}
       wheel-artifact-name: ${{ needs.build-artifact.outputs.wheel-artifact-name }}
       arch: wormhole_b0
@@ -149,6 +149,203 @@ jobs:
       # Using || true after is dangerous since that will always be passed in if first value is falsy
       run-perf-tests: ${{ inputs.run-perf-tests || (github.event_name != 'workflow_dispatch' && github.event.schedule == '0 5 * * 1,3,6') }}
       enable-ops-recording: ${{ inputs.enable-ops-recording || false }}
+```
+
+**build-artifact.yaml**
+
+```yaml
+name: "Build tt-metal artifacts"
+
+permissions:
+  packages: write
+
+on:
+  workflow_call:
+    inputs:
+      build-type:
+        required: false
+        type: string
+        default: "Release"
+      tracy:
+        required: false
+        type: boolean
+        default: false
+        description: "Build with tracy enabled"
+      distributed:
+        required: false
+        type: boolean
+        default: true
+        description: "Build with distributed enabled (Adds OpenMPI dependency)"
+      build-wheel:
+        required: false
+        type: boolean
+        default: false
+        description: "Build Python Wheel"
+      distro:
+        required: false
+        type: string
+        default: "ubuntu"
+      version:
+        required: false
+        type: string
+        default: "22.04"
+      architecture:
+        required: false
+        type: string
+        default: "amd64"
+      toolchain:
+        required: false
+        type: string
+        default: "cmake/x86_64-linux-clang-17-libstdcpp-toolchain.cmake"
+        description: "Toolchain file to use for build"
+      publish-artifact:
+        required: false
+        type: boolean
+        default: true
+        description: "Make resulting artifact available in the workflow"
+      publish-package:
+        required: false
+        type: boolean
+        default: true
+        description: "Make resulting debian packages available in the workflow"
+      skip-tt-train:
+        # FIXME: TT-Train needs to get fixed to not assume a specific toolchain.
+        #        Fow now enabling an opt-out. But this should get removed.
+        required: false
+        type: boolean
+        default: true
+      profile:
+        required: false
+        type: boolean
+        default: false
+        description: "Profile the compilation"
+      build-umd-tests:
+        required: false
+        type: boolean
+        default: false
+        description: "Build UMD tests"
+      fetch-depth:
+        required: false
+        type: number
+        default: 500
+        description: "Git fetch depth for the checkout step. Must be large enough to include all tags and history needed for `git describe`."
+      ref:
+        required: false
+        type: string
+        default: ""
+        description: 'Commit SHA to test (default: HEAD)'
+      use-artifacts-from-run:
+        required: false
+        type: string
+        default: ""
+        description: "Workflow run ID to download artifacts from (skips build)"
+    outputs:
+      ci-build-docker-image:
+        description: "Docker tag for the CI Build Docker image for building TT-Metalium et al"
+        value: ${{ jobs.build-docker-image.outputs.ci-build-tag }}
+      ci-test-docker-image:
+        description: "Docker tag for the CI Test Docker image for testing TT-Metalium et al"
+        value: ${{ jobs.build-docker-image.outputs.ci-test-tag }}
+      dev-docker-image:
+        description: "Docker tag for the dev Docker image for developing TT-Metalium et al"
+        value: ${{ jobs.build-docker-image.outputs.dev-tag }}
+      basic-dev-docker-image:
+        description: "Docker tag for the basic dev Docker image for basic development"
+        value: ${{ jobs.build-docker-image.outputs.basic-dev-tag }}
+      basic-ttnn-runtime-docker-image:
+        description: "Docker tag for the basic TTNN runtime Docker image for running TTNN"
+        value: ${{ jobs.build-docker-image.outputs.basic-ttnn-runtime-tag }}
+      packages-artifact-name:
+        description: "Name to give download-artifact to get the packages"
+        value: ${{ jobs.build-artifact.result == 'success' && jobs.build-artifact.outputs.packages-artifact-name || (jobs.download-artifacts.result == 'success' && jobs.download-artifacts.outputs.packages-artifact-name || '') }}
+      build-artifact-name:
+        description: "Name of the published build artifact"
+        value: ${{ jobs.build-artifact.result == 'success' && jobs.build-artifact.outputs.build_artifact_name || (jobs.download-artifacts.result == 'success' && jobs.download-artifacts.outputs.build_artifact_name || '') }}
+      wheel-artifact-name:
+        description: "Name of the published wheel artifact"
+        value: ${{ jobs.build-wheel.result == 'success' && jobs.build-wheel.outputs.artifact-name || (jobs.download-artifacts.result == 'success' && jobs.download-artifacts.outputs.wheel_artifact_name || '') }}
+
+...
+```
+
+<h3 style="color:#ff4b19">Outputs</h3>
+
+Outputs pass data between steps, jobs, and workflows
+
+**Step Output => Job Output => Another Job**
+
+```yaml
+jobs:
+  my-job1:
+    runs-on: ubuntu-latest
+    outputs:
+      # Define job outputs (what other jobs can access)
+      my-value: ${{ steps.step1.outputs.result }}
+      version: ${{ steps.calculate.outputs.version }}
+    steps:
+      - name: Calculate result
+        id: step1  # MUST have an id to reference later
+        run: |
+          echo "result=hello-world" >> $GITHUB_OUTPUT
+
+      - name: Calculate version
+        id: calculate
+        run: |
+          VERSION="v1.2.3"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+  my-job2:
+    needs: my-job1 # MUST include the needs to indicate this job will run once job1 finishes and produces the output
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use the outputs
+        run: |
+          echo "Got value: ${{ needs.my-job1.outputs.my-value }}
+          echo "Got version: ${{ needs.my-job1.outputs.version }}
+```
+
+**Reusable Workflow Outputs**
+
+```yaml
+# The reusable workflow
+on:
+  workflow_call:
+    outputs:
+      # Define what outputs this workflow returns
+      docker-tag:
+        description: "The Docker image tag"
+        value: ${{ jobs.build.outputs.tag }}
+      artifact-name:
+        description: "Name of the Artifact"
+        value: ${{ jobs.build.outputs.artifact }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.build-image.outputs.image-tag }}
+      artifact: ${{ steps.create.outputs.name }}
+    steps:
+      - id: build-image
+        run: echo "image-tag=myapp:v1.0" >> $GITHUB_OUTPUT
+
+      - id: create
+        run: echo "name=my-artifact-123" >> $GITHUB_OUTPUT
+
+#----------------------------------------------------------------#
+
+# Calling workflow
+
+jobs:
+  build:
+    uses: ./github/workflows/reusable-workflow.yaml
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Using image: ${{ needs.build.outputs.docker-tag }}"
+      - run: echo "Using artifact: ${{ needs.build.outputs.artifact-name }}"
 ```
 
 <h3 style="color:#ff4b19">Jobs and Steps</h3>
