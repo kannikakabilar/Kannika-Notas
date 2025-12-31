@@ -267,6 +267,80 @@ password: $\{\{ secrets.secret_name \}\}
 
 ```
 
+<h3 style="color:#ff4b19">Custom Inputs</h3> 
+
+```yaml
+name: "Nightly tt-metal L2 tests"
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      run_didt_tests:
+        description: 'Run DIDT tests'
+        required: false
+        type: boolean
+        default: false
+      additional_test_categories:
+        description: 'Additional test categories to run (comma-separated, e.g., conv,pool,sdxl,eltwise,matmul,moreh,fused,data_movement,transformers)'
+        required: false
+        type: string
+        default: ''
+      timeout:
+        description: 'Test timeout in minutes'
+        required: false
+        type: number
+        default: 150
+      environment:
+        type: choice  # to have dropdown for inputs but only one option can be selected
+        description: 'Target environment'
+        options:
+          - development
+          - staging
+          - production
+        default: development
+```
+<h3 style="color:#ff4b19">Composite Actions vs Reusable Workflows</h3> 
+
+- reuse a sequence of steps -> composite actions
+- light weight operations -> composite actions
+- different runner requirements -> reusable workflow
+- matrix strategy -> reusable workflow
+
+<h3 style="color:#ff4b19">Handling edge-cases with include and exclude</h3> 
+
+```yaml
+... # Include
+strategy:
+  matrix:
+    test_type: [conv, pool, group_norm]
+    include:
+      - test_type: conv
+        test_path: tests/ttnn/nightly/conv
+        owner: U052J2QDDKQ  # Pavle
+      - test_type: pool
+        test_path: tests/ttnn/nightly/pool
+        owner: U052J2QDDKR  # Evan
+      - test_type: group_norm
+        test_path: tests/ttnn/nightly/group_norm
+        owner: U052J2QDDKS  # Borys
+
+... # Exclude
+strategy:
+  fail-fast: false  # if one job fails in the matrix, don't fail fast and continue to the next job
+  matrix:
+    os: [ubuntu-latest, windows-latest, macos-latest]
+    node: [14, 16, 18, 20]
+    exclude:
+      # Node 14 is not supported on Windows
+      - os: windows-latest
+        node: 14
+      # Node 16 has issues on MacOS
+      - os: macos-latest
+        node: 16
+```
+
 <h3 style="color:#ff4b19">Caching Techniques</h3> 
 
 Caching in GitHub Actions is a technique used to store and reuse files or dependencies between workflow runs to speed up subsequent builds. By caching certain files, you can avoid downloading or generating them each time a workflow runs, which can significantly reduce execution time and improve efficiency.
