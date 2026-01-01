@@ -345,7 +345,7 @@ strategy:
 
 Caching in GitHub Actions is a technique used to store and reuse files or dependencies between workflow runs to speed up subsequent builds. By caching certain files, you can avoid downloading or generating them each time a workflow runs, which can significantly reduce execution time and improve efficiency.
 
-- Caching Step: The actions/cache action is used to cache the node_modules directory. The cache key is based on the operating system and a hash of the package-lock.json file, which means the cache will be updated if dependencies change.
+- Caching Step: The actions/cache action is used to cache the node_modules directory. The cache key is based on the operating system and a hash of the package-lock.json file, which means the cache will be updated if dependencies change. GitHub cache limit only allows 10GB per repo.
 
 ```yaml
 name: CI
@@ -505,6 +505,33 @@ An artifact is a file or collection of files produced during a workflow run. You
 - Check the workflow logs: The workflow logs can provide you with information about the execution of your workflow.
 
 - Use the GitHub Actions debug runner: The GitHub Actions debug runner allows you to run your workflow step by step and to inspect the environment variables and output of each step.
+
+<h3 style="color:#ff4b19">GitHub Tokens</h3>
+
+GitHub actually stopped letting people use passwords for "robot tasks" (like moving code around with tools) because tokens are much safer.
+
+Imagine you have a super-secret clubhouse (that’s your GitHub account) where you keep all your favorite LEGO sets and drawings (your code).
+
+Usually, to get in, you use a master key (your password). But sometimes, you want to let a robot friend or a special tool come in to help you organize your LEGOs, but you don't want to give them your master key because that's too risky!
+
+That’s where a GitHub Token comes in. Think of a GitHub Token like a Special Permission Slip or a Temporary Keycard.
+
+Instead of giving someone your real password, you give them this long, scrambled string of letters and numbers. It says, "The person holding this paper is allowed to look at my LEGOs, but they aren't allowed to take them away!"
+
+Since a GitHub token is just a "permission slip," the code doesn't live inside the token itself. Instead, you choose the permissions (called Scopes) on a checklist when you create the token on --GitHub's website.--
+
+```bash
+# how it looks like: ghp_a1B2c3D4e5F6g7H8i9J0k1L2m3N4o5P6q7R8
+
+# Bash code
+# The robot sends the "Permission Slip" (Token)
+curl -H "Authorization: token YOUR_TOKEN" \
+     https://api.github.com/repos/YourName/YourProject/contents
+
+# The robot tries to use the same token to delete
+curl -X DELETE -H "Authorization: token YOUR_TOKEN" \
+     https://api.github.com/repos/YourName/YourProject
+```
 
 <h2 style="color:#ff4b19">Top 25 GitHub Commands</h2>
 
