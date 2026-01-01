@@ -533,6 +533,35 @@ curl -X DELETE -H "Authorization: token YOUR_TOKEN" \
      https://api.github.com/repos/YourName/YourProject
 ```
 
+<h3 style="color:#ff4b19">Human review required before running a job</h3>
+
+On the left sidebar, click Environments.
+
+Click New environment and give it a name (like production or staging).
+
+Find the section called Deployment protection rules.
+
+Check the box for Required reviewers.
+
+```yaml
+name: Deploy My App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-prod:
+    # This is the magic line that triggers the human approval!
+    environment: production 
+    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying code
+        run: echo "The human said yes, so now I am deploying!"
+```
+
 <h2 style="color:#ff4b19">Top 25 GitHub Commands</h2>
 
 - git init: Initializes a new Git repository.
