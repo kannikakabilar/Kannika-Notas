@@ -1,1 +1,112 @@
+<h1 style="color:#ff4b19">GitHub Actions</h1> 
 
+A CI/CD service provided by GitHub that allows you to automate workflows directly within your GitHub repositories.
+
+<h3 style="color:#ff4b19">Workflows</h3>
+Defined workflows in YAML files stored in the .github/workflows directory of your repository. Each workflow can consist of multiple jobs that can run sequentially or in parallel.
+
+<h2 style="color:#ff4b19">Triggers</h2>
+Workflows can be triggered by various GitHub events, such as push, pull requests, and more. It can also run on schedule workflows or via API calls.
+
+<h3 style="color:#ff4b19">Triggers - Basic</h3>
+
+```yaml
+name: "(Single-card) Demo tests"  # Quotes are needed when using special characters like: () []  {} : , & * # ' " leading or trailing spaces
+
+on:  # Under this 'on' section, you can define various event triggers
+
+  workflow_dispatch:  # allows you to manually trigger the workflow
+
+  schedule:  # gets triggered on a set schedule
+    - cron: '*/10 * * * *'  # runs every 10 minutes
+  
+  push:  # This workflow will get triggered when a commit is pushed to main or the dev branches
+    # Block style
+    branches: [main, dev]  # mention the branch names here
+    paths:  # optional/use-as-needed the option triggers the workflow if there's a push to main AND changes include files inside mentioned path
+      - '.github/workflows/**'
+    # Flow style
+    branches:  # both styles function the same
+      - main
+      - dev
+```
+
+<h3 style="color:#ff4b19">Triggers - pull_request</h3>
+
+```yaml
+name: PR Workflow
+
+on:  
+  pull_request:  # By default, having this will trigger this workflow if a PR is created (Draft or Open), when a new commit is pushed to the PR branch, when a closed PR is reopened
+    branches: [main]  # When a PR is created to be merged to main
+    # You can customize the types filter
+    types:
+      - opened
+      - synchronize  # when a new commit is pushed to the PR branch
+      - reopened
+      - ready_for_review  # Draft converted to ready
+      - closed # PR closed (merged or not)
+      - assigned # (or unassigned) assignee changes
+      - labeled  # (or unlabeled) assignee changes
+      - edited
+
+  # Note: pull_request is different from pull_request_target in the following ways
+  # Repo checkout:
+  #  pull_request checks out PR branch code
+  #  pull_request_targe checks out base branch code (the branch you are merging to) by default unless you explicitly mention it
+  # Secrets Access:
+  #  pull_request cannot access secrets when triggered from a fork
+  #  pull_request_target full access to secrets even when triggered from a fork
+  # Permission:
+  #  pull_request read-only from forks
+  #  pull_request_target write access to repos
+  # Overall use pull_request_target when running safe trusted workflows or for bot automation that needs repo write access
+```
+
+<h3 style="color:#ff4b19">Triggers - workflow_call vs workflow_run</h3>
+
+```yaml
+name: Random Workflow
+
+on:
+  workflow_call:  # Makes the workflow reusable (can be called by other workflows)
+    inputs:
+      nameOfInput1:
+        description: "Please enter input1 value"
+        required: true
+        default: 1
+        type: number
+  workflow_run:  # Triggers when the listed workflow runs
+    workflows:
+      - "Package and release"
+      - "(Single-card) Frequent model and ttnn tests"
+```
+
+<h3 style="color:#ff4b19">Triggers - API Call</h3>
+
+```yaml
+name: Workflow Triggered by API Call
+
+on:
+  repository_dispatch:  # is a webhook-based trigger that allows you to remotely trigger a workflow via a GitHub API
+    types: [trigger-llk-update]
+    # And this is how you can trigger the workflow - You send a POST request to GitHub's API with a custom event type 
+    # which has to be trigger-llk-update and any other event type trigger won't work
+    # curl -X POST \
+    #   -H "Accept: application/vnd.github+json" \
+    #   -H "Authorization: Bearer YOUR_TOKEN" \
+    #   https://api.github.com/repos/OWNER/REPO/dispatches \
+    #   -d '{"event_type":"trigger-llk-update","client_payload":{"key":"value"}}'
+```
+
+<h3 style="color:#ff4b19">Triggers - Merge Queue</h3>
+
+```yaml
+name: Workflow running in Merge Queue
+
+on:
+  merge_group:  # Runs on merge queue events
+    types:
+      - checks_requested  # When PR enters or moves in the merge queue (The workflow runs tests on tmp commit with the merged code PR+main+any_PRs_queued_above)
+      - destroyed  # When the PR leaves the merge queue
+```
