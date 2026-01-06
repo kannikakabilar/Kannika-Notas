@@ -82,6 +82,59 @@ on:
       - "(Single-card) Frequent model and ttnn tests"
 ```
 
+<h3 style="color:#ff4b19">Use workflow_call to make the workflow reusable</h3>
+
+```yaml
+# Calling a workflow that has workflow_call: in it
+name: "Wrapper workflow"
+
+on:
+  workflow_dispatch:
+    inputs:
+      requested-models:
+        description: "List of requested models as JSON array, for example: [\"resnet\", \"sdxl\"]. Default is 'all'"
+        default: "all"
+        type: string
+      run-perf-tests:
+        description: "Run perf variants"
+        type: boolean
+        default: true
+      enable-ops-recording:
+        description: "Enable Tracy ops recording for all tests (generates operations report)"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "0 13,18 * * 0,1,2,3,4,5,6" # frequency of functional models
+    - cron: "0 5 * * 1,3,6" # frequency of perf models
+
+run-name: "(Single-card) Demo tests${{ (inputs.run-perf-tests || (github.event_name != 'workflow_dispatch' && github.event.schedule == '0 5 * * 1,3,6')) && ' (with perf runs)' || ' (no perf)' }}${{ inputs.enable-ops-recording && ' [ops-recording]' || '' }}"
+jobs:
+  build-artifact:
+    uses: ./.github/workflows/build-artifact.yaml  # Only 1 reusable workflow per job and each 'uses:' can only reference a single workflow file
+    permissions:
+      packages: write  # Overrides workflow-level permission because workflow-level permissions are always ignored
+    secrets: inherit  # this line allows the reusable workflow to have access to the repo secrets
+    with:
+      build-wheel: true
+      version: 22.04
+      tracy: ${{ inputs.enable-ops-recording || false }}
+
+  # Calling the reusable workflow and enter the required inputs under 'with:' section
+  single-card-demo-tests:
+    needs: build-artifact
+    secrets: inherit
+    uses: ./.github/workflows/single-card-demo-tests-impl.yaml
+    with:
+      docker-image: ${{ needs.build-artifact.outputs.dev-docker-image }}  # The outputs defined in the build-artifact workflow can be used to input here
+      build-artifact-name: ${{ needs.build-artifact.outputs.build-artifact-name }}
+      wheel-artifact-name: ${{ needs.build-artifact.outputs.wheel-artifact-name }}
+      arch: wormhole_b0
+      requested-models: ${{ inputs.requested-models || 'all' }}
+      # Using || true after is dangerous since that will always be passed in if first value is falsy
+      run-perf-tests: ${{ inputs.run-perf-tests || (github.event_name != 'workflow_dispatch' && github.event.schedule == '0 5 * * 1,3,6') }}
+      enable-ops-recording: ${{ inputs.enable-ops-recording || false }}
+```
+
 <h3 style="color:#ff4b19">Triggers - API Call</h3>
 
 ```yaml
@@ -110,3 +163,25 @@ on:
       - checks_requested  # When PR enters or moves in the merge queue (The workflow runs tests on tmp commit with the merged code PR+main+any_PRs_queued_above)
       - destroyed  # When the PR leaves the merge queue
 ```
+
+<h3 style="color:#ff4b19">Triggers - Other</h3>
+
+```yaml
+name: Other Workflow Triggers
+
+on:
+  # Other event triggers
+  issues, issue_comment:  # issue activity
+    types: [created]
+  release, published, created:  # Release-related events
+  pull_request_review, pull_request_review_comment:  # PR review events
+    types: [created, submitted]
+  create, delete:  # Branch/tag creation/deletion
+  fork:  # Repo fork events
+  watch:  # Repo starred events
+  deployment, deployment_status:  # Deployment events
+  check_run, check_suite:  # Check events
+  status:  # Commit status change
+  label:  # Label modifications
+```
+
