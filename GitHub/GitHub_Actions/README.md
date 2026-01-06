@@ -228,6 +228,7 @@ Outputs can pass data between steps, jobs, and workflows
 Step Output => Job Output => Another Job
 
 <h2 style="color:#ff4b19">Job-level Outputs</h2>
+
 ```yaml
 jobs:
   my-job1:
@@ -259,6 +260,7 @@ jobs:
 ```
 
 <h2 style="color:#ff4b19">Workflow-level Outputs</h2>
+
 ```yaml
 # The reusable workflow
 on:
@@ -300,3 +302,86 @@ jobs:
       - run: echo "Using image: ${{ needs.build.outputs.docker-tag }}"
       - run: echo "Using artifact: ${{ needs.build.outputs.artifact-name }}"
 ```
+
+<h2 style="color:#ff4b19">Jobs and Steps</h2>
+
+Each workflow is composed of jobs, which run on specified virtual environments (like Ubuntu, Windows, or macOS). Jobs contain steps, which can include shell commands, actions, or scripts.
+
+**Example Use Cases:**
+- Continuous Integration: Automatically run tests and build your application whenever code is pushed to the repository.
+- Continuous Deployment: Deploy code to production or staging environments after successful tests.
+- Automated Code Quality Checks: Lint code or run static analysis on pull requests.
+- Notifications: Send alerts or updates to team members based on repository events.
+
+<h3 style="color:#ff4b19">Run multiple commands in a single run: arg</h3>
+
+```yaml
+steps:
+  - name: Run multiple commands
+    run: |
+      echo "Step 1: Install dependencies"
+      npm install
+      echo "Step 2: Run tests"
+      npm test
+```
+
+<h2 style="color:#ff4b19">Actions</h2>
+
+Actions are reusable pieces of code that automate specific tasks within your workflows. The actions are defines somewhere in GitHub's original repo?
+
+```yaml
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Tests
+        uses: my-org/run-tests@v1  # This is your reusable action called Composite Action
+```
+
+<h3 style="color:#ff4b19">Composite Action</h3>
+
+You can define your own action in the actions sub-folder under .github
+
+```yaml
+# .github/actions/my-action/new-action1.yaml
+name: 'My Custom Action'
+description: 'A brief description of what your action does.'
+inputs:
+  input1:
+    description: 'Description of input1'
+    required: true
+    default: 'default-value'
+outputs:
+  output1:
+    description: 'Description of output1'
+runs:
+  using: 'node12' # or 'docker' if you're using a Docker container
+  steps:
+    - name: "Invoke command with retries"
+      shell: bash
+      run: |
+        set +e
+
+        max_retries="${{ inputs.max-retries }}"
+        count=0
+
+        while (( count < max_retries )); do
+          echo "Attempt $((count + 1)) of $max_retries..."
+...
+
+# .github/workflows/cicd.yml
+
+uses: username/repo-name@branch
+with:
+  input1: 'value'
+```
+
+<h3 style="color:#ff4b19">Composite Actions vs Reusable Workflows</h3>
+
+- reuse a sequence of steps -> composite actions
+- light weight operations -> composite actions
+- different runner requirements -> reusable workflow
+- matrix strategy -> reusable workflow
