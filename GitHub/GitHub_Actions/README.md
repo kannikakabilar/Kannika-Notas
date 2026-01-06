@@ -325,6 +325,196 @@ steps:
       npm test
 ```
 
+<h2 style="color:#ff4b19">Matrix Strategies</h2>
+
+<h3 style="color:#ff4b19">Matrix Build</h3>
+It allows you to run multiple versions of your job in parallel like in different OS or different ML model tests.
+
+```yaml
+name: Node.js CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}  # Use the operating system from the matrix
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]  # Define the OS matrix
+        node-version: [12, 14, 16]           # Define the Node.js version matrix
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}  # Use the Node.js version from the matrix
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+```
+
+<h3 style="color:#ff4b19">Handling edge-cases with include and exclude</h3>
+
+```yaml
+... # Include
+strategy:
+  matrix:
+    test_type: [conv, pool, group_norm]
+    include:
+      - test_type: conv
+        test_path: tests/ttnn/nightly/conv
+        owner: U052J2QDDKQ  # Pavle
+      - test_type: pool
+        test_path: tests/ttnn/nightly/pool
+        owner: U052J2QDDKR  # Evan
+      - test_type: group_norm
+        test_path: tests/ttnn/nightly/group_norm
+        owner: U052J2QDDKS  # Borys
+
+... # Exclude
+strategy:
+  fail-fast: false  # if one job fails in the matrix, don't fail fast and continue to the next job
+  matrix:
+    os: [ubuntu-latest, windows-latest, macos-latest]
+    node: [14, 16, 18, 20]
+    exclude:
+      # Node 14 is not supported on Windows
+      - os: windows-latest
+        node: 14
+      # Node 16 has issues on MacOS
+      - os: macos-latest
+        node: 16
+```
+
+<h3 style="color:#ff4b19">Concurrency Group</h3>
+
+Think of a concurrency group as a unique "slot." When you assign a workflow or a job to a group name, GitHub ensures that only one process with that specific name runs at a time.
+
+If a new workflow starts and another one with the same group name is already running, the new one will be "pending" until the first one finishes.
+
+The **cancel-in-progress** feature is an optional setting within a concurrency group. It allows you to tell GitHub: "If a new version of this workflow starts, kill the old one immediately and focus on the latest one."
+
+Example
+
+```yaml
+name: Deployment
+on: [push]
+
+# This is the concurrency configuration
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}  # The name of the workflow - The specific branch or tag
+  # This ensures that pushing to the feature-a branch only cancels other runs on feature-a, without affecting runs happening on the main branch
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - title: Deploying code...
+        run: sleep 60 # Simulating a long task
+```
+
+<h2 style="color:#ff4b19">Containerized Jobs</h2>
+
+To "containerize" a job in GitHub Actions means you want the entire job to run inside a specific Docker container rather than directly on the runner's host machine (the virtual machine). This is incredibly useful because it guarantees that your tools, OS versions, and environment variables are identical every time, regardless of what's installed on the GitHub-hosted runner.
+
+
+```yaml
+# Basic example
+jobs:
+  my_job_name:
+    runs-on: ubuntu-latest
+    # This tells GitHub to start the container, and run every step of this job inside the container
+    container:
+      image: node:18-bookworm
+    
+    steps:
+      - uses: actions/checkout@v4
+      - run: node --version # This runs inside the 'node:18' container
+# ----------------------------------------------------------------------------------------------------
+
+# Advanced example
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/my-org/my-custom-image:latest
+      # Provide credentials for private registries
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+      # Pass environment variables to the container
+      env:
+        NODE_ENV: production
+      # Map ports or volumes
+      ports:
+        - 8080:80
+      volumes:
+        - my_docker_volume:/volume_mount
+      # Add standard Docker 'run' options
+      options: --cpus 1 --user root
+    
+    steps:
+      - run: whoami
+```
+
+<h3 style="color:#ff4b19">Key things to know about containerization</h3>
+
+**Linux Only:** Container jobs only work on Linux runners (ubuntu-latest, etc.). They are not supported on Windows or macOS runners.
+
+**Default Shell:** Inside a container, the default shell is often sh rather than bash. If your scripts rely on "bashisms" (like [[ ]]), you should explicitly set the shell:
+
+```yaml
+defaults:
+  run:
+    shell: bash
+```
+
+<h3 style="color:#ff4b19">Service Containers</h3>
+
+To run a database or a cache alongside your containerized job, you use Service Containers. These are "sidecar" containers that start before your job begins and are destroyed when the job finishes.
+
+When you define a services block, GitHub creates a network and connects both your main job container and the service containers to it. This allows your code to communicate with the service using its ID as the hostname.
+
+```yaml
+jobs:
+  test-database:
+    runs-on: ubuntu-latest
+    # Main container where your code runs
+    container:
+      image: node:18-bookworm
+
+    # Service containers running in the background
+    # Networking: If your job runs in a container, you connect to services using the service name (e.g., postgres or redis). If your job runs directly on the host (runs-on: ubuntu-latest without a container block), you connect via localhost:<mapped-port>.
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: password
+        # Wait for postgres to be "healthy" before starting the job
+        # Health Checks: It's a best practice to use the options key to include a health check. This ensures your code doesn't start running before the database is fully booted up.
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Connect to Database
+        run: |
+          # Use 'postgres' as the hostname
+          npm install pg
+          node -e "const { Client } = require('pg'); const c = new Client('postgresql://postgres:password@postgres:5432'); c.connect().then(() => console.log('Connected!'))"
+```
+
 <h2 style="color:#ff4b19">Actions</h2>
 
 Actions are reusable pieces of code that automate specific tasks within your workflows. The actions are defines somewhere in GitHub's original repo?
