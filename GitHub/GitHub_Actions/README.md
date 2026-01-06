@@ -185,3 +185,118 @@ on:
   label:  # Label modifications
 ```
 
+<h2 style="color:#ff4b19">Inputs</h2>
+Inputs can be checkbox, text field, number, dropdown (that only allows one selected choice)
+
+```yaml
+name: "Nightly tt-metal L2 tests"
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      run_didt_tests:
+        description: 'Run DIDT tests'
+        required: false
+        type: boolean
+        default: false
+      additional_test_categories:
+        description: 'Additional test categories to run (comma-separated, e.g., conv,pool,sdxl,eltwise,matmul,moreh,fused,data_movement,transformers)'
+        required: false
+        type: string
+        default: ''
+      timeout:
+        description: 'Test timeout in minutes'
+        required: false
+        type: number
+        default: 150
+      environment:
+        type: choice  # to have dropdown for inputs but only one option can be selected
+        description: 'Target environment'
+        options:
+          - development
+          - staging
+          - production
+        default: development
+```
+
+<h2 style="color:#ff4b19">Outputs</h2>
+
+Outputs can pass data between steps, jobs, and workflows
+
+Step Output => Job Output => Another Job
+
+<h2 style="color:#ff4b19">Job-level Outputs</h2>
+```yaml
+jobs:
+  my-job1:
+    runs-on: ubuntu-latest
+    outputs:
+      # Define job outputs (what other jobs can access)
+      my-value: ${{ steps.step1.outputs.result }}
+      version: ${{ steps.calculate.outputs.version }}
+    steps:
+      - name: Calculate result
+        id: step1  # MUST have an id to reference later
+        run: |
+          echo "result=hello-world" >> $GITHUB_OUTPUT
+
+      - name: Calculate version
+        id: calculate
+        run: |
+          VERSION="v1.2.3"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+  my-job2:
+    needs: my-job1 # MUST include the needs to indicate this job will run once job1 finishes and produces the output
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use the outputs
+        run: |
+          echo "Got value: ${{ needs.my-job1.outputs.my-value }}
+          echo "Got version: ${{ needs.my-job1.outputs.version }}
+```
+
+<h2 style="color:#ff4b19">Workflow-level Outputs</h2>
+```yaml
+# The reusable workflow
+on:
+  workflow_call:
+    outputs:
+      # Define what outputs this workflow returns
+      docker-tag:
+        description: "The Docker image tag"
+        value: ${{ jobs.build.outputs.tag }}
+      artifact-name:
+        description: "Name of the Artifact"
+        value: ${{ jobs.build.outputs.artifact }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.build-image.outputs.image-tag }}
+      artifact: ${{ steps.create.outputs.name }}
+    steps:
+      - id: build-image
+        run: echo "image-tag=myapp:v1.0" >> $GITHUB_OUTPUT
+
+      - id: create
+        run: echo "name=my-artifact-123" >> $GITHUB_OUTPUT
+
+#----------------------------------------------------------------#
+
+# Calling workflow
+
+jobs:
+  build:
+    uses: ./github/workflows/reusable-workflow.yaml
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Using image: ${{ needs.build.outputs.docker-tag }}"
+      - run: echo "Using artifact: ${{ needs.build.outputs.artifact-name }}"
+```
