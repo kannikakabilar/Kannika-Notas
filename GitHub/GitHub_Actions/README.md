@@ -227,7 +227,7 @@ Outputs can pass data between steps, jobs, and workflows
 
 Step Output => Job Output => Another Job
 
-<h2 style="color:#ff4b19">Job-level Outputs</h2>
+<h3 style="color:#ff4b19">Job-level Outputs</h3>
 
 ```yaml
 jobs:
@@ -259,7 +259,7 @@ jobs:
           echo "Got version: ${{ needs.my-job1.outputs.version }}
 ```
 
-<h2 style="color:#ff4b19">Workflow-level Outputs</h2>
+<h3 style="color:#ff4b19">Workflow-level Outputs</h3>
 
 ```yaml
 # The reusable workflow
