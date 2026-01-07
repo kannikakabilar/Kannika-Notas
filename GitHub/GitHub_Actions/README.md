@@ -325,6 +325,12 @@ steps:
       npm test
 ```
 
+<h3 style="color:#ff4b19">Troubleshooting GitHub Actions Workflow</h3>
+
+- Check the workflow logs: The workflow logs can provide you with information about the execution of your workflow.
+
+- Use the GitHub Actions debug runner: The GitHub Actions debug runner allows you to run your workflow step by step and to inspect the environment variables and output of each step.
+
 <h2 style="color:#ff4b19">Matrix Strategies</h2>
 
 <h3 style="color:#ff4b19">Matrix Build</h3>
@@ -663,4 +669,29 @@ Add rules using the format: @username or @org/team-name.
 
 # The security team must approve changes to the /internal directory
 /internal/ @my-org/security-team
+```
+
+<h3 style="color:#ff4b19">Human review required before running a job</h3>
+
+On the left sidebar, click Environments. > Click New environment and give it a name (like production or staging).
+
+Find the section called Deployment protection rules. > Check the box for Required reviewers.
+
+```yaml
+name: Deploy My App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-prod:
+    # This is the magic line that triggers the human approval!
+    environment: production 
+    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying code
+        run: echo "The human said yes, so now I am deploying!"
 ```
