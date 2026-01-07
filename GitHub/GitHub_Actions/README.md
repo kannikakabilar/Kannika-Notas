@@ -575,3 +575,92 @@ with:
 - light weight operations -> composite actions
 - different runner requirements -> reusable workflow
 - matrix strategy -> reusable workflow
+
+<h2 style="color:#ff4b19">GitHub Tokens</h2>
+
+GitHub actually stopped letting people use passwords for “robot tasks” (like moving code around with tools) because tokens are much safer.
+
+Imagine you have a super-secret clubhouse (that’s your GitHub account) where you keep all your favorite LEGO sets and drawings (your code).
+
+Usually, to get in, you use a master key (your password). But sometimes, you want to let a robot friend or a special tool come in to help you organize your LEGOs, but you don’t want to give them your master key because that’s too risky!
+
+That’s where a GitHub Token comes in. Think of a GitHub Token like a Special Permission Slip or a Temporary Keycard.
+
+Instead of giving someone your real password, you give them this long, scrambled string of letters and numbers. It says, “The person holding this paper is allowed to look at my LEGOs, but they aren’t allowed to take them away!”
+
+Since a GitHub token is just a “permission slip,” the code doesn’t live inside the token itself. Instead, you choose the permissions (called Scopes) on a checklist when you create the token on –GitHub’s website.–
+
+```yaml
+# how it looks like: ghp_a1B2c3D4e5F6g7H8i9J0k1L2m3N4o5P6q7R8
+
+# Bash code
+# The robot sends the "Permission Slip" (Token)
+curl -H "Authorization: token YOUR_TOKEN" \
+     https://api.github.com/repos/YourName/YourProject/contents
+
+# The robot tries to use the same token to delete
+curl -X DELETE -H "Authorization: token YOUR_TOKEN" \
+     https://api.github.com/repos/YourName/YourProject
+```
+
+You don't need to create this token in settings; it is already there as a "secret." You can reference it in your YAML file like this
+
+By default, it only has access to the specific repository where the workflow is running.
+
+```yaml
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use GitHub CLI to list issues
+        run: gh issue list
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+<h2 style="color:#ff4b19">GitHub Secrets</h2>
+
+In GitHub, Secrets are encrypted environment variables that allow you to store sensitive information—like API keys, database passwords, or SSH keys—without exposing them in your code.
+
+Navigate to your repository on GitHub. > Click Settings (top tab).
+
+On the left sidebar, find the Security section and click Secrets and variables > Actions. > Click the New repository secret button.
+
+Name: Use all caps and underscores (e.g., AWS_SECRET_KEY). > Secret: Paste your sensitive value. > Click Add secret.
+
+```yaml
+- name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+```
+
+<h3 style="color:#ff4b19">Require a Minimum Number of Reviewers</h3>
+
+Navigate to your repository on GitHub. > Click Settings > Branches (in the sidebar). > Under Branch protection rules, click Add rule (or Edit an existing one).
+
+In the Branch name pattern, type the branch you want to protect (e.g., main). > Check the box Require a pull request before merging.
+
+Check the sub-box Require approvals. > Select the Required number of approvals (usually 1 or 2).
+
+Pro Tip: Check the box "Do not allow bypassing the above settings" if you want these rules to apply to repository administrators as well. > Scroll to the bottom and click Create or Save changes.
+
+<h3 style="color:#ff4b19">Require Specific Reviewers (CODEOWNERS)</h3>
+
+If you want specific experts to review specific parts of the code (e.g., the security team must review any changes to the /auth folder), use a CODEOWNERS file.
+
+Create a file named CODEOWNERS in your .github/ folder.
+
+Add rules using the format: @username or @org/team-name.
+
+```
+# Every PR needs a review from @octocat
+* @octocat
+
+# Only @seen-it can review changes in the /docs folder
+/docs/  @seen-it
+
+# The security team must approve changes to the /internal directory
+/internal/ @my-org/security-team
+```
