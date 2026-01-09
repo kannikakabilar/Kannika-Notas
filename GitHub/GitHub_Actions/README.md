@@ -695,3 +695,101 @@ jobs:
       - name: Deploying code
         run: echo "The human said yes, so now I am deploying!"
 ```
+
+<h2 style="color:#ff4b19">Caching</h2>
+
+To understand the basics, you have to think of caching as a "Save Game" feature for your CI/CD.
+
+In a standard GitHub Actions run, every job starts on a fresh, empty virtual machine. Without caching, your workflow has to download all your dependencies (like node_modules or Python packages) from the internet every single time you push code.
+
+The actions/cache step essentially performs three actions at different times during your job:
+
+1. Restore (Start of Step): It looks for a "Key" in GitHub's storage. If it finds a match, it downloads those files to your runner.
+
+2. Run (Your Steps): Your workflow runs. If the cache was restored, commands like npm install see the files are already there and finish in seconds.
+
+3. Save (Post-Job): If the job finishes successfully and the cache wasn't found earlier, GitHub automatically zips up the folder and saves it with your "Key" for the next time.
+
+GitHub cache limit only allows 10GB per repo. A basic caching setup usually looks like this in your .yml file:
+
+```yaml
+- name: Cache dependencies
+  uses: actions/cache@v4
+  with:
+    # 1. What are we saving?
+    path: ~/.npm
+    # 2. How do we name this specific version?
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+### For many common languages, GitHub created "Setup" actions that handle the basics for you so you don't have to write the actions/cache block manually.
+- uses: actions/setup-python@v5
+  with:
+    python-version: '3.11'
+    cache: 'pip' # This one line replaces the entire cache block above!
+```
+
+**Cache**
+- Speed up the next run.	
+- Shared across different workflow runs.	
+- Use	node_modules, .cache, venv.	
+- Deleted if not used for 7 days.
+
+**Artifacts**
+- Pass files between jobs or download them later.
+- Only exists for the specific run that created it.
+- Compiled binaries, Test reports, .apk files.
+- Default is 90 days.
+
+<h3 style="color:#ff4b19">Advanced Caching Techniques</h3>
+
+```yaml
+# You can skip entire steps (like expensive builds) if the cache was successfully restored. The actions/cache step provides a cache-hit output.
+
+- name: Cache Primes
+  id: cache-primes
+  uses: actions/cache@v4
+  with:
+    path: prime-numbers
+    key: ${{ runner.os }}-primes
+
+- name: Generate Primes (Only if miss)
+  if: steps.cache-primes.outputs.cache-hit != 'true'
+  run: ./generate-primes.sh
+
+# The key is an exact match. If it fails, the workflow starts from scratch unless you use restore-keys. This is an ordered list of prefixes that GitHub searches if the primary key misses.
+
+- name: Cache dependencies
+  uses: actions/cache@v4
+  with:
+    path: ~/.npm
+    # Primary key (Exact match)
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    # Fallback keys (Prefix match)
+    restore-keys: |
+      ${{ runner.os }}-node-
+      ${{ runner.os }}-
+
+# In a monorepo, a change in apps/web shouldn't necessarily invalidate the cache for apps/api. You can use cache-dependency-path to watch multiple lockfiles or specific paths.
+
+- uses: actions/setup-node@v4
+  with:
+    node-version: '20'
+    cache: 'npm'
+    # Watches lockfiles in all subdirectories
+    cache-dependency-path: '**/package-lock.json'
+
+# Normally, GitHub Actions runners start fresh, so Docker loses its layer cache. You can use the gha (GitHub Actions) cache backend with Docker Buildx to persist these layers.
+
+- name: Set up Docker Buildx
+  uses: docker/setup-buildx-action@v3
+
+- name: Build and push
+  uses: docker/build-push-action@v5
+  with:
+    context: .
+    push: true
+    tags: user/app:latest
+    # Magic happens here:
+    cache-from: type=gha
+    cache-to: type=gha,mode=max
+```
