@@ -853,3 +853,44 @@ GitHub cache limit only allows 10GB per repo. A basic caching setup usually look
     cache-from: type=gha
     cache-to: type=gha,mode=max
 ```
+
+<h2 style="color:#ff4b19">GitHub Marketplace</h2>
+
+The GitHub Marketplace is essentially an "App Store" for automation. Instead of writing complex scripts from scratch to do things like logging into AWS or sending a Slack message, you can "borrow" a pre-built Action written by GitHub or the community.
+
+When you are editing a workflow file (.yml) in the GitHub browser editor, you will see a Marketplace tab on the right side. You can search for keywords like "Slack," "Docker," or "AWS."
+
+Click it to see the documentation. > Copy the snippet provided. > Paste it into your steps: block.
+
+Examples of Common Tasks
+
+- Cloud Deployment:	azure/login, aws-actions/configure-aws-credentials
+- Notifications:	slackapi/slack-github-action, rtCamp/action-slack-notify
+- Code Quality:	github/codeql-action, super-linter/super-linter
+- Versioning:	actions/create-release, mathieudutour/github-tag-action
+
+**Example: Integrating a Marketplace Action**
+
+Let's say you want to send a Slack notification whenever your build fails. Instead of writing a CURL command to the Slack API, you use a Marketplace action.
+
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 # A Marketplace action to get your code
+
+      - name: Run Build
+        run: npm run build
+
+      - name: Notify Slack on Failure
+        if: failure() # Only runs if the previous step failed
+        uses: rtCamp/action-slack-notify@v2 # Found on Marketplace
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: "The build has failed! 🚨"
+```
+
+**Verified Creator:** A blue badge (check icon) next to the organization name (e.g., actions/, aws-actions/, docker/). This means GitHub has verified the identity of the publisher.
+
+**Version Pinning:** To be safe, instead of using @master or @v2, you can pin a specific version (@v2.3.1.0) or even a commit hash (e.g., uses: actions/checkout@a5ac7e5...) to ensure the code doesn't change unexpectedly.
