@@ -894,3 +894,38 @@ jobs:
 **Verified Creator:** A blue badge (check icon) next to the organization name (e.g., actions/, aws-actions/, docker/). This means GitHub has verified the identity of the publisher.
 
 **Version Pinning:** To be safe, instead of using @master or @v2, you can pin a specific version (@v2.3.1.0) or even a commit hash (e.g., uses: actions/checkout@a5ac7e5...) to ensure the code doesn't change unexpectedly.
+
+<h2 style="color:#ff4b19">Workflow run Annotations</h2>
+
+Annotations don't just sit at the bottom of the page; they appear in the Summary view and also highlight the specific line of code in your "Files Changed" tab if the workflow was triggered by a Pull Request.
+
+```yaml
+jobs:
+  lint_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate UI Notifications
+        run: |
+          echo "::warning title=Deprecation Notice::This version of Node is reaching end-of-life."
+          echo "::error title=Build Failure::Missing semi-colon on line 42."
+          echo "::notice title=FYI::The build took 30 seconds less than usual."
+```
+
+**The Three Types of Annotations**
+
+GitHub supports three main levels of "notifications" that appear on the workflow run page:
+
+- ::error: Appears with a red icon. It grabs the most attention.
+- ::warning: Appears with a yellow icon.
+- ::notice: Appears with a blue icon (usually used for general info).
+
+**Where do they show up?**
+These are very powerful because they show up in three places:
+
+- The Workflow Summary: At the top of the summary page, there is a section called "Annotations" that lists all of these.
+- The Logs: Inside the specific step, the line will be highlighted.
+- Pull Request Files: If you provide a filename and line number (see below), GitHub will put a comment bubble directly on that line of code in the PR.
+
