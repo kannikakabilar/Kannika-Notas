@@ -303,6 +303,66 @@ jobs:
       - run: echo "Using artifact: ${{ needs.build.outputs.artifact-name }}"
 ```
 
+<h2 style="color:#ff4b19">Artifacts</h2>
+
+In GitHub Actions, Artifacts are the primary way to persist data after a job has finished. Since each job in a workflow runs in a fresh, isolated runner (virtual machine), any files created in Job A will vanish once Job A ends unless you "upload" them as an artifact.
+
+**Why Use Artifacts?**
+
+- Passing Data Between Jobs: If Job 1 builds your code and Job 2 runs tests on that build, you must upload the build in Job 1 and download it in Job 2.
+
+- Saving Build Outputs: You might want to download the final .exe, .apk, or .zip file directly from the GitHub UI after the workflow is finished.
+
+- Logs and Reports: Saving test results (like HTML reports) to inspect later if a build fails.
+
+```yaml
+name: Artifact Demonstration
+
+on: [push]
+
+jobs:
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create a build file
+        run: echo "This is my production build" > build-output.txt
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-build-package  # The name you'll see in GitHub
+          path: build-output.txt  # The file or directory to upload
+
+  test_job:
+    runs-on: ubuntu-latest
+    needs: build_job # Ensures this job runs after the build_job
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my-build-package # Must match the upload name
+
+      - name: Verify Artifact
+        run: cat build-output.txt
+```
+
+**Key Things to Remember**
+
+- Retention Period: By default, GitHub keeps artifacts for 90 days. You can customize this in the upload-artifact step using retention-days: 5.
+
+- Zipping: When you upload a directory, GitHub automatically zips it for you.
+
+- Version 4 (v4): Always try to use actions/upload-artifact@v4. It is significantly faster than v3 because it uploads files as a single optimized archive.
+
+- Visibility: Once the workflow finishes, you can find the artifacts by clicking on the specific Workflow Run and scrolling to the bottom of the page.
+
+**Outputs vs Artifacts**
+
+Think of Outputs as a text message (short, simple data) and Artifacts as a shipping package (large files or folders). Outputs have a size limit of 1 MB per job and Artifacts have unlimited size (but subject to account storage limits). Outputs are also lost after the workflow finishes but Artifacts persists for 90 days (default).
+
 <h2 style="color:#ff4b19">Jobs and Steps</h2>
 
 Each workflow is composed of jobs, which run on specified virtual environments (like Ubuntu, Windows, or macOS). Jobs contain steps, which can include shell commands, actions, or scripts.
